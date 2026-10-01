@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:56ee51e36e6581f05e6928f527c3224ad1eefc38afd59eb7d6b6e10a39083a6c",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "telefonica__mistica-web-1568",
+  "instruction_path": "tasks/telefonica__mistica-web-1568/instruction.md",
+  "repository": {
+    "base_commit": "602cb838a13013efcf8fdbb0508d3ef7b6b12585",
+    "issue_number": "1568",
+    "issue_url": "https://github.com/Telefonica/mistica-web/issues/1568",
+    "name": "Telefonica/mistica-web",
+    "url": "https://github.com/Telefonica/mistica-web.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-160",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:8e85fd6c4ed4f2ec9dbea91bdbfd660f210504b4fe0b0a6ab315e6f9db228dbf",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {
+      "base_codebase_sha256": "2c947eba6e22da521362ed003e0d94f01f3a89ab0db5277c436948367a67cc20",
+      "canonical_playwright_sha256": "d40d8a6f697f81ec1fb513c476e76ecb076c4d0f09da55c53fe25b540a45ad9b",
+      "canonical_repro_tree_sha256": "43d3a5875f962214bae2790b04b387813f2eadf321c4f4024dc86644340f026a",
+      "gold_patch_sha256": "a34cfb0173712d32b01c2d571da37b2673a28783e342413d1e68753f0c300b80",
+      "official_test_patch_sha256": "75138e4470af3c7fa5566c113226b676db03fe7484c938eb53691b3625dbedad",
+      "upstream_lockfile_sha256": "5af078200762fd1d44e657158af731e3a7e800b4d0d11a2775c8810b1a0a62ea"
+    },
+    "f2p_count": 5,
+    "p2p_count": 106,
+    "reproduction_type": null
+  },
+  "instance_id": "vuetifyjs__vuetify-22850",
+  "instruction_path": "tasks/vuetifyjs__vuetify-22850/instruction.md",
+  "repository": {
+    "base_commit": "d8b16d4f793a813baabdceaf6171750d940bdf06",
+    "issue_number": 22850,
+    "issue_url": "https://github.com/vuetifyjs/vuetify/issues/22850",
+    "name": "vuetifyjs/vuetify",
+    "url": "https://github.com/vuetifyjs/vuetify.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-022",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

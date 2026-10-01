@@ -1,0 +1,1 @@
+A Button inside TooltipTrigger stops opening its tooltip from pointer hover when the Button has isPending. Keyboard focus still opens the same tooltip. Expected: the pending action remains non-pressable while its explanatory tooltip remains available to pointer users.

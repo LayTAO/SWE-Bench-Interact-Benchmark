@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:aa5d5409ff09735c56f6d9be22d85460ba173c0a9e2b6759d5dcb649ce293ddb",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "adobe__react-spectrum-5692",
+  "instruction_path": "tasks/adobe__react-spectrum-5692/instruction.md",
+  "repository": {
+    "base_commit": "99d073a7ab4f780adbf1c72e0138190a97915271",
+    "issue_number": "5692",
+    "issue_url": "https://github.com/adobe/react-spectrum/issues/5692",
+    "name": "adobe/react-spectrum",
+    "url": "https://github.com/adobe/react-spectrum.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-075",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

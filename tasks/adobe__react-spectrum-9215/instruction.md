@@ -1,0 +1,1 @@
+Reported environment: react-aria-components 1.13.0, Chrome on macOS. The benchmark's pre-fix base checkout exhibits the same user-visible behavior. Steps: open a ComboBox that uses section headers, then click or try to highlight a section header (for example "Fruit"). Expected: the ComboBox stays open so the header text can be selected. Actual: the ComboBox closes completely.

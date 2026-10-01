@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:fa664ee11b466288645d0f7c786ff0c584649367ced9d8a4d16db2e7e8b1a6d3",
+    "memory_mb": 8192,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "repo-native-playwright"
+  },
+  "instance_id": "carbon-design-system__carbon-22320",
+  "instruction_path": "tasks/carbon-design-system__carbon-22320/instruction.md",
+  "repository": {
+    "base_commit": "6d7540d5a22a0c70b3b81bac0733e5abab5e8376",
+    "issue_number": 22320,
+    "issue_url": "https://github.com/carbon-design-system/carbon/issues/22320",
+    "name": "carbon-design-system/carbon",
+    "url": "https://github.com/carbon-design-system/carbon.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-145",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

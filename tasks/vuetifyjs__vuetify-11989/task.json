@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:be8171622eed81e07205c15a883131aad959f98433c20ecb8accd48627656c96",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "vuetifyjs__vuetify-11989",
+  "instruction_path": "tasks/vuetifyjs__vuetify-11989/instruction.md",
+  "repository": {
+    "base_commit": "7c8b0b4076ec1042c1892cc49f0adc4ce1159472",
+    "issue_number": "11989",
+    "issue_url": "https://github.com/vuetifyjs/vuetify/issues/11989",
+    "name": "vuetifyjs/vuetify",
+    "url": "https://github.com/vuetifyjs/vuetify.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-049",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

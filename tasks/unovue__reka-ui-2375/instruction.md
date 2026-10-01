@@ -1,0 +1,1 @@
+In a five-position PinInput with '*' as the placeholder, typing into the first position can leave its placeholder empty after focus advances. The consumed position should show '*' and only the active empty position should hide it.

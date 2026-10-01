@@ -1,0 +1,1 @@
+A layout animation with an explicit duration can make a child visibly bounce or drift when its size changes. Preserve the child's intended anchor while the parent and child progress at different animation rates.

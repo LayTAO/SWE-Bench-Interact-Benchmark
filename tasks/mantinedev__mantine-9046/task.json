@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:c46a46539e85d5ffd187992c8e2e922aa0d455eb4285f070794e73307d412279",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "mantinedev__mantine-9046",
+  "instruction_path": "tasks/mantinedev__mantine-9046/instruction.md",
+  "repository": {
+    "base_commit": "2494b3eec8bddb3269d39dda0ea999bec1e3f98c",
+    "issue_number": "9046",
+    "issue_url": "https://github.com/mantinedev/mantine/issues/9046",
+    "name": "mantinedev/mantine",
+    "url": "https://github.com/mantinedev/mantine.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-U-002",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

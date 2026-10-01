@@ -1,0 +1,1 @@
+Carbon Combobox组件在清除搜索查询后不显示已选选项

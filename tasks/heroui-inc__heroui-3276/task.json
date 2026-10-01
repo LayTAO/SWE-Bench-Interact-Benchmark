@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:032f0418faa081bc5fb0f35da12998f5f4aac055b94045a8e6691f1c2f604f3f",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "repo-native-playwright"
+  },
+  "instance_id": "heroui-inc__heroui-3276",
+  "instruction_path": "tasks/heroui-inc__heroui-3276/instruction.md",
+  "repository": {
+    "base_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b",
+    "issue_number": 3276,
+    "issue_url": "https://github.com/heroui-inc/heroui/issues/3276",
+    "name": "heroui-inc/heroui",
+    "url": "https://github.com/heroui-inc/heroui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-146",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

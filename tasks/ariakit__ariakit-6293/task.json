@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:7757243b1a7cdc566a181ac8798386c28598119a311c6a552370f71a7562f77a",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "ariakit__ariakit-6293",
+  "instruction_path": "tasks/ariakit__ariakit-6293/instruction.md",
+  "repository": {
+    "base_commit": "953dfa92d50a277578c0b0aad960dd612142b705",
+    "issue_number": "6293",
+    "issue_url": "https://github.com/ariakit/ariakit/issues/6293",
+    "name": "ariakit/ariakit",
+    "url": "https://github.com/ariakit/ariakit.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-005",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:51a017ffdde03d62b4916eb48bf089accba7ef5f2cb0850209b2d2f74c500d9d",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "microsoft__fluentui-32260",
+  "instruction_path": "tasks/microsoft__fluentui-32260/instruction.md",
+  "repository": {
+    "base_commit": "b5e427c24efd04fbd54dd4e43819ddc24be0ac16",
+    "issue_number": "32260",
+    "issue_url": "https://github.com/microsoft/fluentui/issues/32260",
+    "name": "microsoft/fluentui",
+    "url": "https://github.com/microsoft/fluentui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-056",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

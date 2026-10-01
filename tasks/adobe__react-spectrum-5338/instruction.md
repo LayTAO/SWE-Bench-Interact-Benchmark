@@ -1,0 +1,1 @@
+A Modal/Dialog contains one or more ComboBoxes. After opening a ComboBox, clicking the ModalOverlay/underlay outside the ComboBox does not dismiss the ComboBox; the user must click inside the modal content area instead. Expected: clicking the overlay closes the open ComboBox. Actual: the ComboBox stays open.

@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:3c0044398c09c39b9b50704d9f937f200bcb858793008557beb350aba2a97085",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "unovue__reka-ui-2674",
+  "instruction_path": "tasks/unovue__reka-ui-2674/instruction.md",
+  "repository": {
+    "base_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8",
+    "issue_number": "2674",
+    "issue_url": "https://github.com/unovue/reka-ui/issues/2674",
+    "name": "unovue/reka-ui",
+    "url": "https://github.com/unovue/reka-ui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-021",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

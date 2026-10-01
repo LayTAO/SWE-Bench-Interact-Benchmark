@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:6d54701aad20fea37a7219293601601b1a0764cbc82498d29835047fbb8b5a6e",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "repo-native-playwright"
+  },
+  "instance_id": "primefaces__primevue-8100",
+  "instruction_path": "tasks/primefaces__primevue-8100/instruction.md",
+  "repository": {
+    "base_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b",
+    "issue_number": 8100,
+    "issue_url": "https://github.com/primefaces/primevue/issues/8100",
+    "name": "primefaces/primevue",
+    "url": "https://github.com/primefaces/primevue.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-154",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

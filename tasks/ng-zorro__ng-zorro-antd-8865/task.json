@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:7667ca60ecfc4659344ba3fe2d17c91546fb8116aa34bfd6e8a5a30fa74154d1",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "repo-native-playwright"
+  },
+  "instance_id": "ng-zorro__ng-zorro-antd-8865",
+  "instruction_path": "tasks/ng-zorro__ng-zorro-antd-8865/instruction.md",
+  "repository": {
+    "base_commit": "30c25f0201130ccb00c8d2ba2e709763d7bcfd6e",
+    "issue_number": 8865,
+    "issue_url": "https://github.com/NG-ZORRO/ng-zorro-antd/issues/8865",
+    "name": "NG-ZORRO/ng-zorro-antd",
+    "url": "https://github.com/NG-ZORRO/ng-zorro-antd.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-152",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

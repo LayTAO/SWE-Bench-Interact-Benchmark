@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:a535850c9a1474e6bfc4fb6194f97cbb6834130ff832220c1ec4628887a1de94",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "tailwindlabs__headlessui-3749",
+  "instruction_path": "tasks/tailwindlabs__headlessui-3749/instruction.md",
+  "repository": {
+    "base_commit": "a12f9f245f7a7a3baca1c52e25fd05642a0e11e8",
+    "issue_number": "3749",
+    "issue_url": "https://github.com/tailwindlabs/headlessui/issues/3749",
+    "name": "tailwindlabs/headlessui",
+    "url": "https://github.com/tailwindlabs/headlessui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-043",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

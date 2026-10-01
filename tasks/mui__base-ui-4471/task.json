@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:e901ac3b1b9448f4e46bd161e92ba402a363597bd6a2d25a6331b375159e479f",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "minimal-app-playwright"
+  },
+  "instance_id": "mui__base-ui-4471",
+  "instruction_path": "tasks/mui__base-ui-4471/instruction.md",
+  "repository": {
+    "base_commit": "4e5b1c21648df3bad0811615f2fc82b150c56a25",
+    "issue_number": "4471",
+    "issue_url": "https://github.com/mui/base-ui/issues/4471",
+    "name": "mui/base-ui",
+    "url": "https://github.com/mui/base-ui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-105",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

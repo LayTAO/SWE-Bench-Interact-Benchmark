@@ -1,0 +1,34 @@
+{
+  "agent_environment": {
+    "cpus": 2,
+    "image": "docker.io/ltao615/swe-bench-interact@sha256:88d82862448f83e1150c503d8213941ad400349acf526cc53e89e480c46e2cdd",
+    "memory_mb": 4096,
+    "network_mode": "public",
+    "os": "linux",
+    "storage_mb": 20480,
+    "timeout_sec": 1800.0
+  },
+  "evaluation": {
+    "commitments": {},
+    "f2p_count": null,
+    "p2p_count": null,
+    "reproduction_type": "repo-native-playwright"
+  },
+  "instance_id": "mui__material-ui-47203",
+  "instruction_path": "tasks/mui__material-ui-47203/instruction.md",
+  "repository": {
+    "base_commit": "3b84cd251606c66148197ef54a869f99b6662ac8",
+    "issue_number": 47203,
+    "issue_url": "https://github.com/mui/material-ui/issues/47203",
+    "name": "mui/material-ui",
+    "url": "https://github.com/mui/material-ui.git"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "benchmark": "InteractRepair",
+    "benchmark_version": "4.0",
+    "source_id": "IR-I-151",
+    "status": "accepted",
+    "track": "interact"
+  }
+}

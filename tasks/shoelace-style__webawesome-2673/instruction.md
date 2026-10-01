@@ -1,0 +1,1 @@
+When focus is inside a wa-tree item, pressing Enter or Space throws an error and prevents the focused control from handling the key press. The key press should be handled by the focused control without changing tree selection.

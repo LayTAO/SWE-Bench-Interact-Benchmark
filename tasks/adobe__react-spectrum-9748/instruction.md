@@ -1,0 +1,1 @@
+When a fully defined color is typed into the ColorPicker color field and the popover is dismissed by clicking outside, the visible/selected color remains unchanged instead of committing the typed value.

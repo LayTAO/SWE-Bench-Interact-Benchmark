@@ -1,0 +1,1 @@
+Reported environment: react-aria-components 1.7.1 on Chrome and macOS. Place a trigger near the bottom of the viewport and open a Popover that contains both a Menu and additional content. Expected: the Popover flips above the trigger so all content remains visible. Actual: it remains below the trigger and part of its content is clipped outside the viewport.
