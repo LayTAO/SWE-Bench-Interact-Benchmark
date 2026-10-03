@@ -8,6 +8,7 @@ and cryptographic commitments needed to identify the evaluation materials.
 ## Release contents
 
 - `tasks.jsonl`: machine-readable index of all tasks.
+- `cohort.json`: the fixed 103-task paper cohort.
 - `tasks/<instance_id>/instruction.md`: the instruction visible to the Agent.
 - `tasks/<instance_id>/task.json`: public task metadata and Agent environment.
 - `tasks/<instance_id>/environment/Dockerfile`: Agent environment recipe.
@@ -17,7 +18,10 @@ and cryptographic commitments needed to identify the evaluation materials.
 - `BUILDING.md`: build instructions and reproducibility limitations.
 - `MANIFEST.sha256`: checksums for every released file.
 
-This release contains **111 accepted tasks** from InteractRepair 4.0.
+This release contains **103 accepted tasks** from InteractRepair 4.0.
+The task set matches the 103 issues selected in all eight Harbor experiment
+groups. The authoring collection contains additional tasks outside this cohort;
+only the IDs in `cohort.json` belong to this paper release.
 
 ## Deliberate disclosure boundary
 
@@ -46,7 +50,7 @@ Pull one Agent image:
 python3 scripts/pull_agent_images.py --instance vuetifyjs__vuetify-22850
 ```
 
-Pulling all 111 images requires substantial network bandwidth and disk space, so
+Pulling all 103 images requires substantial network bandwidth and disk space, so
 the helper requires `--all` explicitly.
 
 To inspect or rebuild an Agent environment, see [BUILDING.md](BUILDING.md).

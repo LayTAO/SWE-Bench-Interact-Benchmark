@@ -53,15 +53,6 @@
     "mode": "source",
     "rebuild_verified": false
   },
-  "adobe__react-spectrum-7080": {
-    "dockerfile": "tasks/adobe__react-spectrum-7080/environment/Dockerfile",
-    "dockerfile_sha256": "d10f8cc1ef4d1b4667bc8d2656421dd51497c744dbd774f1c786544da874b3af",
-    "from_images": [
-      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
   "adobe__react-spectrum-7960": {
     "dockerfile": "tasks/adobe__react-spectrum-7960/environment/Dockerfile",
     "dockerfile_sha256": "29c901ecac564f7569e27182380b459a7d86ac4badef9681ab01d2a41768f1d6",
@@ -206,15 +197,6 @@
     "mode": "source",
     "rebuild_verified": false
   },
-  "ariakit__ariakit-4345": {
-    "dockerfile": "tasks/ariakit__ariakit-4345/environment/Dockerfile",
-    "dockerfile_sha256": "eb0b9b3eaec6bff74cb62a1aeea2fd42a51639a07ab3a24f2858b616d6b6113f",
-    "from_images": [
-      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
   "ariakit__ariakit-4825": {
     "dockerfile": "tasks/ariakit__ariakit-4825/environment/Dockerfile",
     "dockerfile_sha256": "4d493c7b75d1f633b408f094f5012ca1e6a02dec109c749d0ef5ec8eb7b566ed",
@@ -308,15 +290,6 @@
   "carbon-design-system__carbon-20771": {
     "dockerfile": "tasks/carbon-design-system__carbon-20771/environment/Dockerfile",
     "dockerfile_sha256": "a71c9d6b7ca231bbec8686c082c83361b9c33ce5efc886ae36417e0b094d59d2",
-    "from_images": [
-      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
-  "carbon-design-system__carbon-21107": {
-    "dockerfile": "tasks/carbon-design-system__carbon-21107/environment/Dockerfile",
-    "dockerfile_sha256": "29d97e975704d1a112924bc98d2b694a67f08af1c60524a0948507999a36f63d",
     "from_images": [
       "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
     ],
@@ -512,15 +485,6 @@
     "mode": "source",
     "rebuild_verified": false
   },
-  "mui__base-ui-4619": {
-    "dockerfile": "tasks/mui__base-ui-4619/environment/Dockerfile",
-    "dockerfile_sha256": "e68afd008200575eda879832c6f36d937011451b1de51d521167aebb497dd5ad",
-    "from_images": [
-      "mcr.microsoft.com/playwright:v1.59.1-noble"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
   "mui__base-ui-4640": {
     "dockerfile": "tasks/mui__base-ui-4640/environment/Dockerfile",
     "dockerfile_sha256": "09fe59bc6fe760bc090f041c0bc8e5e3f293f4a4e5a9484818ccd433afea47bd",
@@ -535,15 +499,6 @@
     "dockerfile_sha256": "cab2e172ac4faba9fe209875123323b2fa6dc40ca95f2cb5f68fd189b60d7b03",
     "from_images": [
       "mcr.microsoft.com/playwright:v1.59.1-noble"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
-  "mui__base-ui-4722": {
-    "dockerfile": "tasks/mui__base-ui-4722/environment/Dockerfile",
-    "dockerfile_sha256": "67c6bc74e5dd944ce959f85069e01371211cc84f4c9b6d1d5c3a67d2c593ce34",
-    "from_images": [
-      "mcr.microsoft.com/playwright:v1.58.2-noble"
     ],
     "mode": "source",
     "rebuild_verified": false
@@ -764,29 +719,11 @@
     "mode": "source",
     "rebuild_verified": false
   },
-  "tailwindlabs__headlessui-3738": {
-    "dockerfile": "tasks/tailwindlabs__headlessui-3738/environment/Dockerfile",
-    "dockerfile_sha256": "8aa600a4d41da0d3393c4973a1890cc11664f15d26f6c8690823200aa09bf591",
-    "from_images": [
-      "public.ecr.aws/docker/library/node:20-bookworm"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
   "tailwindlabs__headlessui-3749": {
     "dockerfile": "tasks/tailwindlabs__headlessui-3749/environment/Dockerfile",
     "dockerfile_sha256": "7f5b500367f249f76108678915446cf8be72c8a02af8a9c843d4402536d9b447",
     "from_images": [
       "public.ecr.aws/docker/library/node:20-bookworm"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
-  "telefonica__mistica-web-1568": {
-    "dockerfile": "tasks/telefonica__mistica-web-1568/environment/Dockerfile",
-    "dockerfile_sha256": "348b3201cac103f398dcb561b19865dd5fa19f5cdee9177ca0a4909879ccf146",
-    "from_images": [
-      "public.ecr.aws/docker/library/node:24-bookworm"
     ],
     "mode": "source",
     "rebuild_verified": false
@@ -976,15 +913,6 @@
     "dockerfile_sha256": "ba64973ea64959d29b7d521cce8a9e551121022e2bf9206812ebc001bf63d815",
     "from_images": [
       "public.ecr.aws/docker/library/node:14-bullseye"
-    ],
-    "mode": "source",
-    "rebuild_verified": false
-  },
-  "vuetifyjs__vuetify-22387": {
-    "dockerfile": "tasks/vuetifyjs__vuetify-22387/environment/Dockerfile",
-    "dockerfile_sha256": "60d63e156d604df576bce4e6707818dae09487d272f4544aaf39efb578fae61e",
-    "from_images": [
-      "public.ecr.aws/docker/library/node:24-bookworm"
     ],
     "mode": "source",
     "rebuild_verified": false

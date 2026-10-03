@@ -22,9 +22,10 @@ downloads images only; it does not run an Agent or score patches.
 
 ## Build-context requirements
 
-There are 111 Agent Dockerfiles in `tasks/*/environment/Dockerfile`:
+There are 103 Agent Dockerfiles in `tasks/*/environment/Dockerfile`,
+matching the paper cohort in `cohort.json`:
 
-- 108 recipes copy `base/` into `/workspace/repo`. The helper fetches the task's
+- 100 recipes copy `base/` into `/workspace/repo`. The helper fetches the task's
   exact base commit and exports it with `git archive`, without upstream history.
 - Three recipes overlay an existing Agent image: `ariakit__ariakit-1652`,
   `mui__material-ui-45301`, and `radix-ui__primitives-4014`. Their source and

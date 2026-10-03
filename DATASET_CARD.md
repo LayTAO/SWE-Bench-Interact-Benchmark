@@ -7,6 +7,10 @@ frontend defects whose symptoms require browser interaction to reproduce and
 validate.  Tasks are derived from accepted InteractRepair instances and pair a
 history-free upstream base commit with an immutable Agent environment.
 
+The paper release contains the fixed 103-task cohort evaluated across eight
+Harbor experiment groups. `cohort.json` is the authoritative public membership
+list. Trajectories and experiment selection records remain private.
+
 ## Public fields
 
 Each task exposes its identifier, source project and issue, base commit, cleaned
