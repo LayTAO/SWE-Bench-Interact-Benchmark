@@ -10,7 +10,11 @@ and cryptographic commitments needed to identify the evaluation materials.
 - `tasks.jsonl`: machine-readable index of all tasks.
 - `tasks/<instance_id>/instruction.md`: the instruction visible to the Agent.
 - `tasks/<instance_id>/task.json`: public task metadata and Agent environment.
+- `tasks/<instance_id>/environment/Dockerfile`: Agent environment recipe.
+- `builds.json`: recipe hashes and source/overlay build requirements.
 - `scripts/pull_agent_images.py`: helper for pulling immutable Agent images.
+- `scripts/prepare_agent_build.py`: prepare an isolated build context.
+- `BUILDING.md`: build instructions and reproducibility limitations.
 - `MANIFEST.sha256`: checksums for every released file.
 
 This release contains **111 accepted tasks** from InteractRepair 4.0.
@@ -44,6 +48,10 @@ python3 scripts/pull_agent_images.py --instance vuetifyjs__vuetify-22850
 
 Pulling all 111 images requires substantial network bandwidth and disk space, so
 the helper requires `--all` explicitly.
+
+To inspect or rebuild an Agent environment, see [BUILDING.md](BUILDING.md).
+The recipes include source builds and overlays on existing Agent images; they
+are not a guarantee of byte-identical reconstruction of the frozen images.
 
 ## Images and upstream licensing
 

@@ -1,0 +1,1001 @@
+{
+  "adobe__react-spectrum-10092": {
+    "dockerfile": "tasks/adobe__react-spectrum-10092/environment/Dockerfile",
+    "dockerfile_sha256": "dc9b49e9c8bbc43605e9fc364185b35bfbe60f54dab80c7812c5c2eda975bf5b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-2181": {
+    "dockerfile": "tasks/adobe__react-spectrum-2181/environment/Dockerfile",
+    "dockerfile_sha256": "a97939bf5e50d98026980e6a8da92f942168330fb79f54520e56027b95be4e3c",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:cd59a61258b82b86c1ff0ead50c8a689f6c3483c5ed21036e11ee741add419eb"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-5102": {
+    "dockerfile": "tasks/adobe__react-spectrum-5102/environment/Dockerfile",
+    "dockerfile_sha256": "e981674c873d3420b66880ce5c2066db2cc845bbc04171fdfbfa3d883b0b7b47",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-5338": {
+    "dockerfile": "tasks/adobe__react-spectrum-5338/environment/Dockerfile",
+    "dockerfile_sha256": "e2981e1abaaddaad2a68f41a71070ee7e1637090958c4324af64a2224094495e",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-5692": {
+    "dockerfile": "tasks/adobe__react-spectrum-5692/environment/Dockerfile",
+    "dockerfile_sha256": "d6fb31b6fc1e4a4385af8693397bb333f79be253cd087bac0ea85b31c2910088",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-5973": {
+    "dockerfile": "tasks/adobe__react-spectrum-5973/environment/Dockerfile",
+    "dockerfile_sha256": "c6753b15178050986477871b55fb5f158705edaa7245f6d7f644bbac90770058",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-7080": {
+    "dockerfile": "tasks/adobe__react-spectrum-7080/environment/Dockerfile",
+    "dockerfile_sha256": "d10f8cc1ef4d1b4667bc8d2656421dd51497c744dbd774f1c786544da874b3af",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-7960": {
+    "dockerfile": "tasks/adobe__react-spectrum-7960/environment/Dockerfile",
+    "dockerfile_sha256": "29c901ecac564f7569e27182380b459a7d86ac4badef9681ab01d2a41768f1d6",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-7973": {
+    "dockerfile": "tasks/adobe__react-spectrum-7973/environment/Dockerfile",
+    "dockerfile_sha256": "3bae79737b522ce6a274e765ab4f2bd2e4b7e75a0dee4e36c2b9f7c6436df8b5",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-8198": {
+    "dockerfile": "tasks/adobe__react-spectrum-8198/environment/Dockerfile",
+    "dockerfile_sha256": "a6af56e8e17e9f9f4b443063fdf678d2e469a685d89d51a1bee54d0a6ad6f61b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-8291": {
+    "dockerfile": "tasks/adobe__react-spectrum-8291/environment/Dockerfile",
+    "dockerfile_sha256": "a60f72decfc1045421258c3d7cdc36a2e4c43eeaa32e3b25ed83a30b2c402f27",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:8a34c4ab3ea2c5cd194f07e317b2a8f09461d3c8b05c4e34c8ccd56d56024c4d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-8556": {
+    "dockerfile": "tasks/adobe__react-spectrum-8556/environment/Dockerfile",
+    "dockerfile_sha256": "7478ea36fc6952f97921e4e930d2abe69c0de71737243ecef1621b099365e15b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-8871": {
+    "dockerfile": "tasks/adobe__react-spectrum-8871/environment/Dockerfile",
+    "dockerfile_sha256": "404fcbd801776d386a12dacc760bb9f547667d38943b7090b7e2fbe7e090d232",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-9215": {
+    "dockerfile": "tasks/adobe__react-spectrum-9215/environment/Dockerfile",
+    "dockerfile_sha256": "3b3ef4c103b28dd891584292d423171f8df62b61ad243ba4c991bef4fb0699bc",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-9427": {
+    "dockerfile": "tasks/adobe__react-spectrum-9427/environment/Dockerfile",
+    "dockerfile_sha256": "a146ebd09ccdefc893ffc1c67c58e5accbb7e2b28237bd98e684e1fc1ea1242b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-9460": {
+    "dockerfile": "tasks/adobe__react-spectrum-9460/environment/Dockerfile",
+    "dockerfile_sha256": "27ed5e54558a2aeb2c54faa6c8a3ce74cb2aa4529321231bff422b88b0b8b9fa",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-9748": {
+    "dockerfile": "tasks/adobe__react-spectrum-9748/environment/Dockerfile",
+    "dockerfile_sha256": "b9a92417d36c7486118302f1efa1ca25282112317beb815971d36951edd4f338",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "adobe__react-spectrum-9949": {
+    "dockerfile": "tasks/adobe__react-spectrum-9949/environment/Dockerfile",
+    "dockerfile_sha256": "961c3c4acd23d3974d2de6131e2d9cdfcca107c1d5cc0368b278efd9368f57d0",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "angular__components-25077": {
+    "dockerfile": "tasks/angular__components-25077/environment/Dockerfile",
+    "dockerfile_sha256": "6c760f6d3c055b8d7700d32b4091ed5e5cf713d51fb1096e14fb81e90d6e89ae",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:cd59a61258b82b86c1ff0ead50c8a689f6c3483c5ed21036e11ee741add419eb"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "angular__components-32661": {
+    "dockerfile": "tasks/angular__components-32661/environment/Dockerfile",
+    "dockerfile_sha256": "f95ef2a92d6f2b890ef8c98f2d07adf4654428f4ec3b55130447b594884fe4dc",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-1652": {
+    "dockerfile": "tasks/ariakit__ariakit-1652/environment/Dockerfile",
+    "dockerfile_sha256": "0b64edbcf4d5355cf44b6e8f8db68ec096f271e1990fb6027b7e89db3b7a19c5",
+    "from_images": [
+      "docker.io/ltao615/swe-bench-interact@sha256:6889bae7e878580ac1b240d8ca49d2f67e1f13281a6514530af1afae16cc6229"
+    ],
+    "mode": "image-overlay",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-2450": {
+    "dockerfile": "tasks/ariakit__ariakit-2450/environment/Dockerfile",
+    "dockerfile_sha256": "096d356b0bbe0b61ca393512d9de8bc9a75b9799c6d903004c7ba02a0b7ba2db",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-2501": {
+    "dockerfile": "tasks/ariakit__ariakit-2501/environment/Dockerfile",
+    "dockerfile_sha256": "a5d5f5683a1e6a678aae1e428d1ec089e5e98e0e3b953511c216e39627ba644f",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-4345": {
+    "dockerfile": "tasks/ariakit__ariakit-4345/environment/Dockerfile",
+    "dockerfile_sha256": "eb0b9b3eaec6bff74cb62a1aeea2fd42a51639a07ab3a24f2858b616d6b6113f",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-4825": {
+    "dockerfile": "tasks/ariakit__ariakit-4825/environment/Dockerfile",
+    "dockerfile_sha256": "4d493c7b75d1f633b408f094f5012ca1e6a02dec109c749d0ef5ec8eb7b566ed",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm-slim"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6293": {
+    "dockerfile": "tasks/ariakit__ariakit-6293/environment/Dockerfile",
+    "dockerfile_sha256": "e54ec667f7c802131859ef56a7d021b653b62a49df4546d106920d52950a6252",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6297": {
+    "dockerfile": "tasks/ariakit__ariakit-6297/environment/Dockerfile",
+    "dockerfile_sha256": "e54ec667f7c802131859ef56a7d021b653b62a49df4546d106920d52950a6252",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6310": {
+    "dockerfile": "tasks/ariakit__ariakit-6310/environment/Dockerfile",
+    "dockerfile_sha256": "aea29d5c2fa53b24bdd352f4687cb0a86f6ce0c55f952cf654a0f34ac9e7eb54",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6344": {
+    "dockerfile": "tasks/ariakit__ariakit-6344/environment/Dockerfile",
+    "dockerfile_sha256": "6549430fb1380a40e2761608155ddb7b241dd36e6d9574aac28b22d48e648a1c",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6346": {
+    "dockerfile": "tasks/ariakit__ariakit-6346/environment/Dockerfile",
+    "dockerfile_sha256": "b120d59c3b881d79240dc5ec8f67763bc2d6ca29a2dcefee14e1726dab52c5bb",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ariakit__ariakit-6663": {
+    "dockerfile": "tasks/ariakit__ariakit-6663/environment/Dockerfile",
+    "dockerfile_sha256": "192bff862fdd6399e78e5d40cc643a8f49efc293fc9add725511793374a7e0a0",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:be23f54a88d34e8824c741b19b91064094f92c1c97b194144bfc8b50d67258e2"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-17119": {
+    "dockerfile": "tasks/carbon-design-system__carbon-17119/environment/Dockerfile",
+    "dockerfile_sha256": "e4bdaf46038942c078990f65cea7fecb2ecf5dfaf102d69166fc7789324a965b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-17903": {
+    "dockerfile": "tasks/carbon-design-system__carbon-17903/environment/Dockerfile",
+    "dockerfile_sha256": "aaa15d8245f967aa612f6d8082ba9918582a05334a6c15e8a56b5979b8bc6021",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-20349": {
+    "dockerfile": "tasks/carbon-design-system__carbon-20349/environment/Dockerfile",
+    "dockerfile_sha256": "83169db1ae4b7f4a02f9a0349556f0290ee1ec085ef9024cc3b83bc4ea6579ff",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-20771": {
+    "dockerfile": "tasks/carbon-design-system__carbon-20771/environment/Dockerfile",
+    "dockerfile_sha256": "a71c9d6b7ca231bbec8686c082c83361b9c33ce5efc886ae36417e0b094d59d2",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-21107": {
+    "dockerfile": "tasks/carbon-design-system__carbon-21107/environment/Dockerfile",
+    "dockerfile_sha256": "29d97e975704d1a112924bc98d2b694a67f08af1c60524a0948507999a36f63d",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-21508": {
+    "dockerfile": "tasks/carbon-design-system__carbon-21508/environment/Dockerfile",
+    "dockerfile_sha256": "ef539cad57610349f31d6ba6df1a444de6054864d05471133efcdca01611de9d",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-21872": {
+    "dockerfile": "tasks/carbon-design-system__carbon-21872/environment/Dockerfile",
+    "dockerfile_sha256": "a080ac45fbcbadff695bd4e5701eac1499079f2fc47e8e7f49cbde8fe84d82fb",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-22016": {
+    "dockerfile": "tasks/carbon-design-system__carbon-22016/environment/Dockerfile",
+    "dockerfile_sha256": "bb5ab7c1bc3f3de7d71430f151f84d76d2f300cd2e5f39fcc319749acb8394fa",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "carbon-design-system__carbon-22320": {
+    "dockerfile": "tasks/carbon-design-system__carbon-22320/environment/Dockerfile",
+    "dockerfile_sha256": "8b7a775c34dca912ad0788c4f97c19638d90746a83d043b228c22f3356eeb821",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "chakra-ui__zag-3186": {
+    "dockerfile": "tasks/chakra-ui__zag-3186/environment/Dockerfile",
+    "dockerfile_sha256": "d54b92fab983fdaf246eab28e4eb610cb193e7e8701a8e07750e6bed0c5ec2e5",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "element-plus__element-plus-19051": {
+    "dockerfile": "tasks/element-plus__element-plus-19051/environment/Dockerfile",
+    "dockerfile_sha256": "64b7bbb5688e82fad27e86c2e049410c8fae26e7a18ffbe3a6506627578b2632",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "element-plus__element-plus-22878": {
+    "dockerfile": "tasks/element-plus__element-plus-22878/environment/Dockerfile",
+    "dockerfile_sha256": "eb1ae7d76a4bbee0ad7d9283b109d92059ce45661f5ea03296f1c09ac84dec1b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "element-plus__element-plus-24006": {
+    "dockerfile": "tasks/element-plus__element-plus-24006/environment/Dockerfile",
+    "dockerfile_sha256": "138763b3b6e9215733e393dfca621b5ab8336b5098e8ce5cc82488081fad3d71",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "element-plus__element-plus-24075": {
+    "dockerfile": "tasks/element-plus__element-plus-24075/environment/Dockerfile",
+    "dockerfile_sha256": "fd1023bff43eb225326f00edd30e1182357a723e34bf9734a77426248003864a",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "element-plus__element-plus-24564": {
+    "dockerfile": "tasks/element-plus__element-plus-24564/environment/Dockerfile",
+    "dockerfile_sha256": "76490719e6054813bb099f14e02543a8e98e77badab523ab9d270e629f0455ce",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "floating-ui__floating-ui-3207": {
+    "dockerfile": "tasks/floating-ui__floating-ui-3207/environment/Dockerfile",
+    "dockerfile_sha256": "7e91025b0a297ff53f1deddde06908e56cb680ae144a420c8468e8ef95fb27be",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "heroui-inc__heroui-3276": {
+    "dockerfile": "tasks/heroui-inc__heroui-3276/environment/Dockerfile",
+    "dockerfile_sha256": "325f4598bc392be77b957f4ae7b167b7b4cdd836109b34a1b2b92fc555ad52be",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mantinedev__mantine-9046": {
+    "dockerfile": "tasks/mantinedev__mantine-9046/environment/Dockerfile",
+    "dockerfile_sha256": "9301c2ea69a5d35b3be3593ffb83fce25861a72497d9b48d4e68973e3192785c",
+    "from_images": [
+      "public.ecr.aws/docker/library/node@sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "melt-ui__melt-ui-1084": {
+    "dockerfile": "tasks/melt-ui__melt-ui-1084/environment/Dockerfile",
+    "dockerfile_sha256": "8bcf84ada84b009dc08c7fd2e5b907b6967e7b278149249b62fa43264ab7ff51",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "melt-ui__melt-ui-945": {
+    "dockerfile": "tasks/melt-ui__melt-ui-945/environment/Dockerfile",
+    "dockerfile_sha256": "24e1e04e5850adf0af64dac32b7482392a2e815cedf3b5052e53f024026f6b4d",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "microsoft__fluentui-32260": {
+    "dockerfile": "tasks/microsoft__fluentui-32260/environment/Dockerfile",
+    "dockerfile_sha256": "5ed4721335a6c7b86f436b63bbbc1a38715686ffea9174e987251d5dc4c68936",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "motiondivision__motion-3028": {
+    "dockerfile": "tasks/motiondivision__motion-3028/environment/Dockerfile",
+    "dockerfile_sha256": "c970ccff8df02e0d99a2b0ae14acb419625635e953fbf4be96d26188cd8f0ca9",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "motiondivision__motion-3232": {
+    "dockerfile": "tasks/motiondivision__motion-3232/environment/Dockerfile",
+    "dockerfile_sha256": "01c9fac45385103d836f8266983f8218dd5edf2b92fa5ea4d61d446186b8736b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4471": {
+    "dockerfile": "tasks/mui__base-ui-4471/environment/Dockerfile",
+    "dockerfile_sha256": "981ee151d0a38a917910ac1425c73bdae6b8197d9e08a48635f5d21fdb58b52a",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4547": {
+    "dockerfile": "tasks/mui__base-ui-4547/environment/Dockerfile",
+    "dockerfile_sha256": "8425bc38211179b8d4ac797dcb3b0d679203c434f28ee476423d4a69f72da8f4",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.59.1-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4553": {
+    "dockerfile": "tasks/mui__base-ui-4553/environment/Dockerfile",
+    "dockerfile_sha256": "e2875c305e8bb068156d6ae67c0d3928f4823e9837f66563bc9eaf92d836d058",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.59.1-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4619": {
+    "dockerfile": "tasks/mui__base-ui-4619/environment/Dockerfile",
+    "dockerfile_sha256": "e68afd008200575eda879832c6f36d937011451b1de51d521167aebb497dd5ad",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.59.1-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4640": {
+    "dockerfile": "tasks/mui__base-ui-4640/environment/Dockerfile",
+    "dockerfile_sha256": "09fe59bc6fe760bc090f041c0bc8e5e3f293f4a4e5a9484818ccd433afea47bd",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.59.1-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4663": {
+    "dockerfile": "tasks/mui__base-ui-4663/environment/Dockerfile",
+    "dockerfile_sha256": "cab2e172ac4faba9fe209875123323b2fa6dc40ca95f2cb5f68fd189b60d7b03",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.59.1-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4722": {
+    "dockerfile": "tasks/mui__base-ui-4722/environment/Dockerfile",
+    "dockerfile_sha256": "67c6bc74e5dd944ce959f85069e01371211cc84f4c9b6d1d5c3a67d2c593ce34",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-4947": {
+    "dockerfile": "tasks/mui__base-ui-4947/environment/Dockerfile",
+    "dockerfile_sha256": "e68d8c6919d2f8d58c58b75b6735e3cd89ba261f4d8b443ee2b65bf3b0a9aceb",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-5107": {
+    "dockerfile": "tasks/mui__base-ui-5107/environment/Dockerfile",
+    "dockerfile_sha256": "81be83609ff7e94152c072dd6b2b86aa51fa26c1d992459696fc60429b826a75",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-5175": {
+    "dockerfile": "tasks/mui__base-ui-5175/environment/Dockerfile",
+    "dockerfile_sha256": "b3a977f4581786f6d6235215bd3493c17728c5784f5ce07b7d8a21e75d35d36c",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__base-ui-5239": {
+    "dockerfile": "tasks/mui__base-ui-5239/environment/Dockerfile",
+    "dockerfile_sha256": "b75f9a3760287433295f7dd7c9c2e2fbfca3b0b0c811312a3053dbcab06bff4b",
+    "from_images": [
+      "mcr.microsoft.com/playwright@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__material-ui-13962": {
+    "dockerfile": "tasks/mui__material-ui-13962/environment/Dockerfile",
+    "dockerfile_sha256": "987659c3b268254ad42c20a067e81220e383ac641f96899b33fa097d058fd191",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:10-buster-slim"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__material-ui-36838": {
+    "dockerfile": "tasks/mui__material-ui-36838/environment/Dockerfile",
+    "dockerfile_sha256": "d09cad15279cd78b14e92cac9258612800449904fff28ad7aefdf6f5db547097",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__material-ui-40250": {
+    "dockerfile": "tasks/mui__material-ui-40250/environment/Dockerfile",
+    "dockerfile_sha256": "379a2e5950b141ebd1ff4cd78098812dcd27c96ed2c6bf97ae29fc95a3bb0198",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "mui__material-ui-45301": {
+    "dockerfile": "tasks/mui__material-ui-45301/environment/Dockerfile",
+    "dockerfile_sha256": "64a325b3cbfc996719f6baa95a3cf5dff7d306c8cb8bbc5536533b7e749bface",
+    "from_images": [
+      "docker.io/ltao615/swe-bench-interact@sha256:42d70c9df4972d7ae5d39fedb997a72b1e705d504ca42c1a0294f81a41705767"
+    ],
+    "mode": "image-overlay",
+    "rebuild_verified": false
+  },
+  "mui__material-ui-47203": {
+    "dockerfile": "tasks/mui__material-ui-47203/environment/Dockerfile",
+    "dockerfile_sha256": "c3c42fb6562bdd2dc1cadc8259f68f1d0d4a2316c01ecf9a23bff553cec38abf",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ng-zorro__ng-zorro-antd-8865": {
+    "dockerfile": "tasks/ng-zorro__ng-zorro-antd-8865/environment/Dockerfile",
+    "dockerfile_sha256": "b960fea58eca53bf14f27619227201441abe5e6536ac70fc0d8985062078bc21",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "ni__nimble-2022": {
+    "dockerfile": "tasks/ni__nimble-2022/environment/Dockerfile",
+    "dockerfile_sha256": "22d11cf0df3cd5317052f12bee821569b6610581d8a58a0dd398e331cf2c83e2",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.42.0-jammy"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "patternfly__patternfly-react-11384": {
+    "dockerfile": "tasks/patternfly__patternfly-react-11384/environment/Dockerfile",
+    "dockerfile_sha256": "f8d3e454ed34c3928e5eb1595f0efe2a8fc16442cc7b09eda79d66e5671fbe72",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "primefaces__primereact-8382": {
+    "dockerfile": "tasks/primefaces__primereact-8382/environment/Dockerfile",
+    "dockerfile_sha256": "2d8160875dd7cd7db4bfdb70fedfbd6e8352d389ec0a5be86b5791d8d455025a",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "primefaces__primevue-8100": {
+    "dockerfile": "tasks/primefaces__primevue-8100/environment/Dockerfile",
+    "dockerfile_sha256": "733a5d041312e34386f69f3579bc79c8184bfa96fa099a639fcb210d4d8fa3b5",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "radix-ui__primitives-1287": {
+    "dockerfile": "tasks/radix-ui__primitives-1287/environment/Dockerfile",
+    "dockerfile_sha256": "c7bfab78716ed5019dae9d8463f21d5401e2f8514254f10c9d09831373f5fcf1",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "radix-ui__primitives-3232": {
+    "dockerfile": "tasks/radix-ui__primitives-3232/environment/Dockerfile",
+    "dockerfile_sha256": "10a42dc44223484d0dc2f177006a3b289d61e5b6118d56bbce29341dfc3ba11e",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "radix-ui__primitives-3971": {
+    "dockerfile": "tasks/radix-ui__primitives-3971/environment/Dockerfile",
+    "dockerfile_sha256": "49e41c06a486048d9e6eaa33beaadb797fd95163a341acf1d58e193cbc7d283a",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.52.0-jammy"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "radix-ui__primitives-4014": {
+    "dockerfile": "tasks/radix-ui__primitives-4014/environment/Dockerfile",
+    "dockerfile_sha256": "e7e3e4649185f681ac88b55a0be820771147dd2f7a5e69a65ecff30888f17e89",
+    "from_images": [
+      "docker.io/ltao615/swe-bench-interact@sha256:d35ba5571fcdc18ca18a03ef272b135595dec37a718a5db4ca0179ab59d27ec5"
+    ],
+    "mode": "image-overlay",
+    "rebuild_verified": false
+  },
+  "react-bootstrap__react-bootstrap-6514": {
+    "dockerfile": "tasks/react-bootstrap__react-bootstrap-6514/environment/Dockerfile",
+    "dockerfile_sha256": "4c25a253987bd2fbc9298347689fa4635cb097fb44b8499cadaffef8ff161522",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:16-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "sage__carbon-6841": {
+    "dockerfile": "tasks/sage__carbon-6841/environment/Dockerfile",
+    "dockerfile_sha256": "5dde4bc10c7b5cb204c13c48ed042cc5de2b27688d48607c0b2b83f5b5775769",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "shoelace-style__webawesome-2673": {
+    "dockerfile": "tasks/shoelace-style__webawesome-2673/environment/Dockerfile",
+    "dockerfile_sha256": "b03ca90db45efb1e5cc5922d9f23bd8e41aba39e42d2736b5b9347d4e5cbb206",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "shopify__polaris-react-3856": {
+    "dockerfile": "tasks/shopify__polaris-react-3856/environment/Dockerfile",
+    "dockerfile_sha256": "7c2035613be72c30562bd755e54226b5db713a01219659329a82ba172559034e",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "shopify__polaris-react-7097": {
+    "dockerfile": "tasks/shopify__polaris-react-7097/environment/Dockerfile",
+    "dockerfile_sha256": "380c1935a2d9201f134bb5c0d84b6db0ff9a0ecb3c699d772e93df56082226ce",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "sl-design-system__components-3150": {
+    "dockerfile": "tasks/sl-design-system__components-3150/environment/Dockerfile",
+    "dockerfile_sha256": "fcf2f704849ab7d268656e7b00b8e5b6d61e549f74e1f12f03017b14f1971db5",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "tailwindlabs__headlessui-3738": {
+    "dockerfile": "tasks/tailwindlabs__headlessui-3738/environment/Dockerfile",
+    "dockerfile_sha256": "8aa600a4d41da0d3393c4973a1890cc11664f15d26f6c8690823200aa09bf591",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "tailwindlabs__headlessui-3749": {
+    "dockerfile": "tasks/tailwindlabs__headlessui-3749/environment/Dockerfile",
+    "dockerfile_sha256": "7f5b500367f249f76108678915446cf8be72c8a02af8a9c843d4402536d9b447",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:20-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "telefonica__mistica-web-1568": {
+    "dockerfile": "tasks/telefonica__mistica-web-1568/environment/Dockerfile",
+    "dockerfile_sha256": "348b3201cac103f398dcb561b19865dd5fa19f5cdee9177ca0a4909879ccf146",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-1618": {
+    "dockerfile": "tasks/unovue__reka-ui-1618/environment/Dockerfile",
+    "dockerfile_sha256": "d42a95e2f324255f7db902d4ef350e234d21b08b92143b861f7d42ef595b719c",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2259": {
+    "dockerfile": "tasks/unovue__reka-ui-2259/environment/Dockerfile",
+    "dockerfile_sha256": "f56af0d1659b07536c178e7547cdea511cd2308b173c0d161322de4d061270de",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2261": {
+    "dockerfile": "tasks/unovue__reka-ui-2261/environment/Dockerfile",
+    "dockerfile_sha256": "c42397554e1c9095c1f8bc0e256f26a07411857d596ecc5e5ab49af32e9fc707",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2296": {
+    "dockerfile": "tasks/unovue__reka-ui-2296/environment/Dockerfile",
+    "dockerfile_sha256": "f733d53bd45bd6fcda55302b3abe9dbd4f1847df525c65fabc6f020b5fe19729",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2375": {
+    "dockerfile": "tasks/unovue__reka-ui-2375/environment/Dockerfile",
+    "dockerfile_sha256": "1ffb9af381fb816976da66c5e852ce52b890c956b898e17213f710c17116b96c",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2383": {
+    "dockerfile": "tasks/unovue__reka-ui-2383/environment/Dockerfile",
+    "dockerfile_sha256": "404cb924293b232ed1c840b3bfe3de32d1a999c604ccde0169b6c70fa5cd0a3d",
+    "from_images": [
+      "mcr.microsoft.com/playwright:v1.58.2-noble"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2463": {
+    "dockerfile": "tasks/unovue__reka-ui-2463/environment/Dockerfile",
+    "dockerfile_sha256": "1ba9f0dc73d720ca82084a33f2576ce3623aa9ce3a61da90bfc73d72a8242970",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2474": {
+    "dockerfile": "tasks/unovue__reka-ui-2474/environment/Dockerfile",
+    "dockerfile_sha256": "71ff9f129712a4effbe762e1ef1459704278522df99ecf91b49d1ec65472ad83",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2483": {
+    "dockerfile": "tasks/unovue__reka-ui-2483/environment/Dockerfile",
+    "dockerfile_sha256": "37df7c6181fa0aec3c8d1cc92cc401e5e7ea99dae19ab59a4cf4eecf47b69fb6",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2505": {
+    "dockerfile": "tasks/unovue__reka-ui-2505/environment/Dockerfile",
+    "dockerfile_sha256": "0c7b860ab2e22308829d3e123d6a1aa52e0aa810e1a789374d1ca10dc8d1aa94",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2506": {
+    "dockerfile": "tasks/unovue__reka-ui-2506/environment/Dockerfile",
+    "dockerfile_sha256": "54bfa4d2edce5b0437a4a62a42bcbfd4a0474765b60f7c4b6c2c5d2e94f1e725",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2540": {
+    "dockerfile": "tasks/unovue__reka-ui-2540/environment/Dockerfile",
+    "dockerfile_sha256": "f56af0d1659b07536c178e7547cdea511cd2308b173c0d161322de4d061270de",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2567": {
+    "dockerfile": "tasks/unovue__reka-ui-2567/environment/Dockerfile",
+    "dockerfile_sha256": "e61bd1e48f4fbc866342df00589a959aae776717ba80e500df2e01eb07b9b50b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2580": {
+    "dockerfile": "tasks/unovue__reka-ui-2580/environment/Dockerfile",
+    "dockerfile_sha256": "85a9fb7f272cb04b792937cad3612823226e20fb001e86d71f37f2d1efdcba5b",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2599": {
+    "dockerfile": "tasks/unovue__reka-ui-2599/environment/Dockerfile",
+    "dockerfile_sha256": "9698221d0ca06bb28c9055b2b13f09fb334bbca8ea5cddbcb6d3de8dda123b40",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2644": {
+    "dockerfile": "tasks/unovue__reka-ui-2644/environment/Dockerfile",
+    "dockerfile_sha256": "db23b9914eeb554c9244a8087b7a65de58090f163d61d8b11d77ae8d6841767d",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2660": {
+    "dockerfile": "tasks/unovue__reka-ui-2660/environment/Dockerfile",
+    "dockerfile_sha256": "acecd050d6a17787923ab6d218cc58d7d65516bf5bdf5120bca4ea36a4d24013",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2674": {
+    "dockerfile": "tasks/unovue__reka-ui-2674/environment/Dockerfile",
+    "dockerfile_sha256": "1cd5c341189031ac941c219851b556b92623546f410be582cafebfe09104686d",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2677": {
+    "dockerfile": "tasks/unovue__reka-ui-2677/environment/Dockerfile",
+    "dockerfile_sha256": "1cd5c341189031ac941c219851b556b92623546f410be582cafebfe09104686d",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "unovue__reka-ui-2749": {
+    "dockerfile": "tasks/unovue__reka-ui-2749/environment/Dockerfile",
+    "dockerfile_sha256": "995c964f296641ea593473f7a7bbc6bab97002af589eacbbf9ebc51e3f9fb088",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:22-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "vuetifyjs__vuetify-11989": {
+    "dockerfile": "tasks/vuetifyjs__vuetify-11989/environment/Dockerfile",
+    "dockerfile_sha256": "ba64973ea64959d29b7d521cce8a9e551121022e2bf9206812ebc001bf63d815",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:14-bullseye"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "vuetifyjs__vuetify-22387": {
+    "dockerfile": "tasks/vuetifyjs__vuetify-22387/environment/Dockerfile",
+    "dockerfile_sha256": "60d63e156d604df576bce4e6707818dae09487d272f4544aaf39efb578fae61e",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  },
+  "vuetifyjs__vuetify-22850": {
+    "dockerfile": "tasks/vuetifyjs__vuetify-22850/environment/Dockerfile",
+    "dockerfile_sha256": "f04abce92b5d235897e88fbfd395f0e5dbc200f7585e4262eba5bf6a028c814a",
+    "from_images": [
+      "public.ecr.aws/docker/library/node:24-bookworm"
+    ],
+    "mode": "source",
+    "rebuild_verified": false
+  }
+}
