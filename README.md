@@ -56,21 +56,3 @@ the developer tests when their prerequisites are satisfied.
 passing canonical browser behavior, all F2P tests passing, and all P2P tests
 passing. Otherwise, `reward=0`. Agent-authored tests do not replace these checks.
 Resolved rate is the number of tasks with `reward=1` divided by the task count.
-
-## Artifact contents
-
-- `cohort.json`: the frozen 103-task list.
-- `tasks.jsonl`: source revisions, task identity, and test counts.
-- `tasks/<instance>/instruction.md` and `task.toml`: native task definitions.
-- `shared/` and task material indexes: reproduction pages, assertions, F2P/P2P
-  test patches, and verifier entry points.
-- `runtime/`: patch capture, material preparation, integrity checks, and summary.
-- `images.lock.json` and `MANIFEST.sha256`: image identities and released files.
-
-Reference repairs, experiment trajectories, and credentials are not included.
-Publishing tests does not make them agent-visible in an evaluation run: keep
-the evaluator separate and do not mount this release repository in the agent.
-
-Release validation status is recorded in `release.json`. Static file checks do
-not establish registry access or end-to-end execution; those checks must pass
-before marking a candidate release as runnable.
