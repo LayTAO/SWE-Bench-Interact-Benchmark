@@ -1,0 +1,12 @@
+{
+  "base_commit": "c215ca6cf92fb0fbebe5821b5ad3597071d4c49f",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "install_command": "corepack pnpm install --frozen-lockfile",
+  "instance_id": "unovue__reka-ui-2749",
+  "package_manager": "pnpm 10.13.1",
+  "repo_url": "https://github.com/unovue/reka-ui.git",
+  "repository": "unovue/reka-ui",
+  "runtime": "Node.js 22; repository-locked Vitest; jsdom",
+  "schema_version": "3.0",
+  "test_command": "pnpm --filter reka-ui exec vitest run src/FocusScope/FocusScope.test.ts --reporter=json"
+}

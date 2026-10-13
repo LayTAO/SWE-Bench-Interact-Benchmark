@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "<Modal> > Should not hide modal when keyboard is false"
+  ],
+  "PASS_TO_PASS": [
+    "<Modal> > Should not call onEscapeKeyDown when keyboard is false"
+  ],
+  "base_commit": "847f04a613f523161f558e5fd2d406d9381cee9a",
+  "instance_id": "react-bootstrap__react-bootstrap-6514",
+  "schema_version": "4.0"
+}

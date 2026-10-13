@@ -1,0 +1,25 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "value_after_manual_input == 07:40:00",
+      "value_after_blur == 07:40:00",
+      "model_end == 07:40:00"
+    ]
+  },
+  "environment_gate": [
+    "The exact TimePicker source renders the range panel and outside button."
+  ],
+  "expected": {
+    "bug_observed": true,
+    "model_end": "09:40:00",
+    "value_after_blur": "09:40:00",
+    "value_after_manual_input": "07:40:00"
+  },
+  "instance_id": "element-plus__element-plus-22878",
+  "predicate_id": "time_picker_cancel_keeps_model_and_display_in_sync",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The end input is edited through the semantic input locator after cancel."
+  ]
+}

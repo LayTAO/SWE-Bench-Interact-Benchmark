@@ -1,0 +1,24 @@
+{
+  "FAIL_TO_PASS": [
+    "markTreeInside marks the given elements and restores them",
+    "stays open on right-clicking a persistent element before the dialog is focused",
+    "stays open when interacting with a persistent element before the dialog is focused"
+  ],
+  "PASS_TO_PASS": [
+    "keeps the documented behavior after the dialog has been focused",
+    "markAndDisableTreeOutside skips focus traps and restores disabled elements",
+    "markTreeOutside restores previous marks after nested cleanup",
+    "markTreeOutside skips backdrops and restores marks",
+    "orchestrate defers stale style cleanups",
+    "orchestrate defers the initial cleanup until it is current",
+    "orchestrate keeps element and key cleanup stacks independent",
+    "orchestrate restores cleanup stacks in LIFO order",
+    "orchestrate skips disposed entries when restoring previous cleanups",
+    "still closes when interacting outside before the dialog is focused",
+    "walkTreeOutside skips elements outside the active snapshot",
+    "walkTreeOutside skips nested elements that share an ancestor"
+  ],
+  "base_commit": "0cdb9864926a3835a6a456906f7e2c64fe4a5ae5",
+  "instance_id": "ariakit__ariakit-6344",
+  "schema_version": "4.0"
+}

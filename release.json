@@ -1,0 +1,20 @@
+{
+  "anonymous_image_pull_verified": false,
+  "harbor_version": "0.22.0",
+  "image_layer_disclosure_audited": false,
+  "images_rebuilt": false,
+  "material_references": 2635,
+  "reference_repairs_included": false,
+  "repositories": 28,
+  "resource_memory_mb": {
+    "4096": 96,
+    "8192": 7
+  },
+  "runtime_verified": false,
+  "status": "candidate",
+  "tasks": 103,
+  "test_selection": "unchanged; repeated assertion names preserved",
+  "trajectories_included": false,
+  "unique_material_files": 1543,
+  "version": "0.2.0-candidate"
+}

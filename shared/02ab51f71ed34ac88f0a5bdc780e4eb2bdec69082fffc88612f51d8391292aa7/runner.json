@@ -1,0 +1,12 @@
+{
+  "base_commit": "f237f286f2968b79f08c3b7450f74d2295bb8cdf",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "npm ci --ignore-scripts --no-audit --no-fund",
+  "instance_id": "primefaces__primereact-8382",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/primefaces/primereact.git",
+  "repository": "primefaces/primereact",
+  "runtime": "Node 20 with repository-locked npm official test runner",
+  "schema_version": "4.0",
+  "test_command": "jest components/lib/inputnumber/InputNumber.spec.js --runInBand"
+}

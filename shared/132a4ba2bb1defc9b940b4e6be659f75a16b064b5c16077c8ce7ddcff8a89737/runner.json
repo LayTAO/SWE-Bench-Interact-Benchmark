@@ -1,0 +1,14 @@
+{
+  "base_commit": "d2c01cdbe4c6f79ca60ec8698b972c9e583dbb59",
+  "base_image": "node:18",
+  "buggy_commit": "d2c01cdbe4c6f79ca60ec8698b972c9e583dbb59",
+  "build_command": "",
+  "install_command": "npm ci",
+  "instance_id": "ariakit__ariakit-2501",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/ariakit/ariakit.git",
+  "repository": "ariakit/ariakit",
+  "runtime": "Node.js 18",
+  "schema_version": "4.0",
+  "test_command": "ARIAKIT_TEST_LOADER=react npx vitest run examples/dialog-nested-mounted/test.ts examples/dialog-nested-multiple/test.ts --threads --single-thread"
+}

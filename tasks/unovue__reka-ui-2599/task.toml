@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/unovue__reka-ui-2599"
+version = "0.2.0-candidate"
+description = "[Bug]: <DatePickerRoot> overwrites time with the previously selected value"
+
+[metadata]
+instance_id = "unovue__reka-ui-2599"
+repository = "unovue/reka-ui"
+base_commit = "edbeb9348dba6eb7e9af208953f6c6a9e502fa9b"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:deef7863b9f52923cfa42232b138a0837bf26913217b570159032966d76a2f4e"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:533dc324d8565955096589ec747a851c91bb143aeb8b43058c246a669b578cea"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

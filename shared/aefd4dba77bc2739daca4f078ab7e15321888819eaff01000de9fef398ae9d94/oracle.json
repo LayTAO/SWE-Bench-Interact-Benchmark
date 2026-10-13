@@ -1,0 +1,22 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "trigger_valid == true",
+      "bug_observed == true"
+    ]
+  },
+  "environment_gate": [
+    "The app and exact subject artifact load without a page crash.",
+    "The target has plausible bounded structure."
+  ],
+  "expected": {
+    "bug_observed": false
+  },
+  "instance_id": "carbon-design-system__carbon-20771",
+  "predicate_id": "issue_carbon_design_system_carbon_20771_bug_predicate",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "All declared actions complete and the issue-derived observation is available."
+  ]
+}

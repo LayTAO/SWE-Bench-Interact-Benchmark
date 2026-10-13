@@ -1,0 +1,12 @@
+{
+  "base_commit": "e8153093a0673f7da2feb381eb6ab07074f47e2e",
+  "base_image": "node:24",
+  "install_command": "corepack yarn install --immutable",
+  "instance_id": "carbon-design-system__carbon-22016",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/carbon-design-system/carbon.git",
+  "repository": "carbon-design-system/carbon",
+  "runtime": "Node.js 24",
+  "schema_version": "3.0",
+  "test_command": "corepack yarn workspace typescript-config-carbon build && corepack yarn workspaces foreach --recursive --topological --from @carbon/web-components run build && cd packages/web-components && corepack yarn web-test-runner src/components/multi-select/__tests__/multi-select-test.js --config .interactrepair-wtr.config.mjs --coverage=false --concurrency=1"
+}

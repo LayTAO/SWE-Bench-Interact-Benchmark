@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-5692"
+version = "0.2.0-candidate"
+description = "Selecting unavailable dates with keyboard selects previous avaialable date in Calendar, DatePicker, useCalendarState, etc"
+
+[metadata]
+instance_id = "adobe__react-spectrum-5692"
+repository = "adobe/react-spectrum"
+base_commit = "99d073a7ab4f780adbf1c72e0138190a97915271"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:aa5d5409ff09735c56f6d9be22d85460ba173c0a9e2b6759d5dcb649ce293ddb"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:76b8d294f818756757043aa046da21af3299dd5f01312a12b23b806750d06063"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 16384
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

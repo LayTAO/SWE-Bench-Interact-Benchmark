@@ -1,0 +1,14 @@
+{
+  "base_commit": "f7f4794017bd2fd915a6fda1572b28bb147b5e37",
+  "base_image": "node:22",
+  "buggy_commit": "f7f4794017bd2fd915a6fda1572b28bb147b5e37",
+  "build_command": "",
+  "install_command": "node .yarn/releases/yarn-4.10.3.cjs install --immutable",
+  "instance_id": "carbon-design-system__carbon-20349",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/carbon-design-system/carbon.git",
+  "repository": "carbon-design-system/carbon",
+  "runtime": "Node.js 22",
+  "schema_version": "4.0",
+  "test_command": "node .yarn/releases/yarn-4.10.3.cjs workspace typescript-config-carbon build && node .yarn/releases/yarn-4.10.3.cjs workspaces foreach --recursive --topological --from @carbon/web-components run build && cd packages/web-components && node ../../.yarn/releases/yarn-4.10.3.cjs web-test-runner src/components/menu-button/__tests__/menu-button-test.js src/components/menu/__tests__/menu-item-test.js src/components/menu/__tests__/menu-test.js --config .interactrepair-wtr.config.mjs --coverage=false --concurrency=1"
+}

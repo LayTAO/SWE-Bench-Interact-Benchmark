@@ -1,0 +1,124 @@
+diff --git a/app/src/sandbox/form-push-6293/index.react.tsx b/app/src/sandbox/form-push-6293/index.react.tsx
+new file mode 100644
+index 0000000000..6754afd9d5
+--- /dev/null
++++ b/app/src/sandbox/form-push-6293/index.react.tsx
+@@ -0,0 +1,58 @@
++import * as Ariakit from "@ariakit/react";
++import { useState } from "react";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6293
++export default function Example() {
++  const form = Ariakit.useFormStore({
++    defaultValues: {
++      tags: ["React"],
++      emails: [] as string[],
++    },
++  });
++
++  const tags = Ariakit.useStoreState(form, (state) => state.values.tags);
++  const emails = Ariakit.useStoreState(form, (state) => state.values.emails);
++  const [focused, setFocused] = useState("none");
++
++  return (
++    <Ariakit.Form store={form}>
++      <output>Focused field: {focused}</output>
++
++      <fieldset>
++        <legend>Tags</legend>
++        {tags.map((_, index) => {
++          const name = `tags.${index}`;
++          return (
++            <Ariakit.FormInput
++              key={index}
++              name={name}
++              aria-label={name}
++              onFocus={() => setFocused(name)}
++            />
++          );
++        })}
++        <Ariakit.FormPush name="tags" value="">
++          Add tag
++        </Ariakit.FormPush>
++      </fieldset>
++
++      <fieldset>
++        <legend>Emails</legend>
++        {emails.map((_, index) => {
++          const name = `emails.${index}`;
++          return (
++            <Ariakit.FormInput
++              key={index}
++              name={name}
++              aria-label={name}
++              onFocus={() => setFocused(name)}
++            />
++          );
++        })}
++        <Ariakit.FormPush name="emails" value="">
++          Add email
++        </Ariakit.FormPush>
++      </fieldset>
++    </Ariakit.Form>
++  );
++}
+diff --git a/app/src/sandbox/form-push-6293/test-browser.ts b/app/src/sandbox/form-push-6293/test-browser.ts
+new file mode 100644
+index 0000000000..7ce83d8846
+--- /dev/null
++++ b/app/src/sandbox/form-push-6293/test-browser.ts
+@@ -0,0 +1,24 @@
++import { withFramework } from "#app/test-utils/preview.ts";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6293
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("FormPush focuses the field it creates after an existing item", async ({
++    q,
++  }) => {
++    await q.button("Add tag").click();
++    await test.expect(q.textbox("tags.1")).toBeFocused();
++    await test.expect(q.status()).toHaveText("Focused field: tags.1");
++  });
++
++  test("FormPush keeps auto-focusing fields in an initially empty array", async ({
++    q,
++  }) => {
++    await q.button("Add email").click();
++    await test.expect(q.textbox("emails.0")).toBeFocused();
++    await test.expect(q.status()).toHaveText("Focused field: emails.0");
++
++    await q.button("Add email").click();
++    await test.expect(q.textbox("emails.1")).toBeFocused();
++    await test.expect(q.status()).toHaveText("Focused field: emails.1");
++  });
++});
+diff --git a/app/src/sandbox/form-push-6293/test.ts b/app/src/sandbox/form-push-6293/test.ts
+new file mode 100644
+index 0000000000..9e5e2f6738
+--- /dev/null
++++ b/app/src/sandbox/form-push-6293/test.ts
+@@ -0,0 +1,24 @@
++import { click, q } from "@ariakit/test";
++import { expect, test } from "vitest";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6293
++
++function activeFieldName() {
++  return document.activeElement?.getAttribute("name") ?? null;
++}
++
++test("FormPush focuses the field it creates after an existing item", async () => {
++  await click(q.button("Add tag"));
++  expect(activeFieldName()).toBe("tags.1");
++  expect(q.status()).toHaveTextContent("Focused field: tags.1");
++});
++
++test("FormPush keeps auto-focusing fields in an initially empty array", async () => {
++  await click(q.button("Add email"));
++  expect(activeFieldName()).toBe("emails.0");
++  expect(q.status()).toHaveTextContent("Focused field: emails.0");
++
++  await click(q.button("Add email"));
++  expect(activeFieldName()).toBe("emails.1");
++  expect(q.status()).toHaveTextContent("Focused field: emails.1");
++});

@@ -1,0 +1,28 @@
+{
+  "environment_gate": [
+    "the exact repeat-click directive renders a target"
+  ],
+  "expected_fixed": {
+    "released_callback_count": "stable"
+  },
+  "instance_id": "element-plus__element-plus-19051",
+  "issue_derived_path": [
+    "press and hold the repeat-click target",
+    "dispatch mouseup through a propagation-stopping listener",
+    "observe callback count after the release"
+  ],
+  "observation_channels": [
+    "callback counter",
+    "mouse event order",
+    "page-error stream"
+  ],
+  "observed_buggy": {
+    "released_callback_count": "continues increasing"
+  },
+  "schema_version": "1.0",
+  "states": [
+    "idle",
+    "repeating",
+    "released"
+  ]
+}

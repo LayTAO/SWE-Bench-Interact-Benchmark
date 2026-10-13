@@ -1,0 +1,36 @@
+{
+  "expected_fixed_state": {
+    "hour": "14",
+    "value": "14:30:00"
+  },
+  "instance_id": "unovue__reka-ui-2463",
+  "observation_channels": [
+    "hour segment text",
+    "bound value text",
+    "active segment",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "hour": "04",
+    "value": "04:30:00"
+  },
+  "preconditions": [
+    "A TimeField with locale en-US, hourCycle=24, granularity minute, and initial value 00:30 is visible.",
+    "The hour segment is visible and focusable."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2463 interaction",
+  "states": [
+    {
+      "actions": [
+        "Focus the hour segment.",
+        "Type '1' then '4'."
+      ],
+      "checkpoints": [
+        "The hour segment displays 14.",
+        "The bound value contains 14:30:00."
+      ],
+      "name": "enter_two_digit_hour"
+    }
+  ]
+}

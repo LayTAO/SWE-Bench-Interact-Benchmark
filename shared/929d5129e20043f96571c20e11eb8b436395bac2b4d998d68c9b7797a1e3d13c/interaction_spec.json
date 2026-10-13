@@ -1,0 +1,40 @@
+{
+  "actions": [
+    "Load the repository-native combobox-ime preview.",
+    "Focus Fruit.",
+    "Replay the Issue's Korean IME sequence through CDP.",
+    "Record focus transitions and final value."
+  ],
+  "checkpoints": [
+    "The app and combobox load without page errors.",
+    "Composition events are emitted.",
+    "Buggy moves focus into an option between compositions; Fixed keeps focus in the combobox and produces 사과."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "focus_moved_to_option_between_compositions": false,
+    "input_value": "사과"
+  },
+  "instance_id": "ariakit__ariakit-6663",
+  "observation_channels": [
+    "CDP IME",
+    "composition event order",
+    "focus",
+    "input value",
+    "ARIA roles",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "focus_moved_to_option_between_compositions": true
+  },
+  "preconditions": [
+    "The repository-native Combobox IME preview serves and the Fruit combobox is accessible."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The combobox is focused.",
+    "The Korean composition boundary is replayed through Chromium CDP.",
+    "Focus events between compositionend and compositionstart and the final input value are observed."
+  ]
+}

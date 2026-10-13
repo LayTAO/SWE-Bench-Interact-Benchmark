@@ -1,0 +1,71 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/components/date-picker-panel/__tests__/date-picker-panel.test.tsx
+Environment: jsdom, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" auto-adjusted maxDate should converge to minDate when all dates in between are disabled
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" auto-adjusted maxDate should not be a disabled date when input start date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" auto-adjusted minDate should not be a disabled date when input end date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" both picker show correct value
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" click now button
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" confirm button honors picked date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" dateFormat & timeFormat
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" defaultTime only takes effect when time is not selected
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" defaultTime takes effect when the type is datetime
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" first click accuracy
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" inherit time across different picker view
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" now button: can not choose disabled date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" now button: should be disabled when current date is disabled
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" selectableRange
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" should handle array value without errors
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" shows weekNumber
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetime" time-picker select && input time && input date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" clear button should empty the input value
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" confirm honors disabledDate
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" input date
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" prop defaultTime should not confilt with prop shortcuts
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" select daterange and default Time and input format
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" select same date, different time
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" select time
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" selectableRange
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should get the display date in disabled-hours callback
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should not corrupt start date when typing intermediate end date values
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should not duplicate panels after confirm left time input
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should not duplicate panels after confirm right time input
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should not duplicate panels on update inner input nor change panels
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" should render buttons with correct disabled status when unlinkPanels is true
+- DatePickerPanel :type="datetime" & :type="datetimerange" :type="datetimerange" shows weekNumber
+- DatePickerPanel :type="datetime" & :type="datetimerange" should append set dates when model value change on daterange
+- DatePickerPanel :type="datetime" & :type="datetimerange" should append set dates when model value change on monthrange
+- DatePickerPanel :type="datetime" & :type="datetimerange" should append set dates when model value change on yearrange
+- DatePickerPanel common disabled actions :type='date' should cells element have disabled
+- DatePickerPanel common disabled actions :type='date' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='daterange' should cells element have disabled
+- DatePickerPanel common disabled actions :type='daterange' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='dates' should cells element have disabled
+- DatePickerPanel common disabled actions :type='dates' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='datetime' should cells element have disabled
+- DatePickerPanel common disabled actions :type='datetime' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='datetimerange' should cells element have disabled
+- DatePickerPanel common disabled actions :type='datetimerange' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='month' should cells element have disabled
+- DatePickerPanel common disabled actions :type='month' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='monthrange' should cells element have disabled
+- DatePickerPanel common disabled actions :type='monthrange' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='months' should cells element have disabled
+- DatePickerPanel common disabled actions :type='months' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='week' should cells element have disabled
+- DatePickerPanel common disabled actions :type='week' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='year' should cells element have disabled
+- DatePickerPanel common disabled actions :type='year' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='yearrange' should cells element have disabled
+- DatePickerPanel common disabled actions :type='yearrange' should not trigger any interaction
+- DatePickerPanel common disabled actions :type='years' should cells element have disabled
+- DatePickerPanel common disabled actions :type='years' should not trigger any interaction
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 0" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 1" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 2" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 3" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 4" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 5" works
+- DatePickerPanel should correctly select a date when weekStart change dayjs "weekStart: 6" works
+- DatePickerPanel should have border

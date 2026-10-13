@@ -1,0 +1,53 @@
+{
+  "expected_fixed_state": {
+    "target_error_count": 0
+  },
+  "instance_id": "unovue__reka-ui-1618",
+  "observation_channels": [
+    "console errors",
+    "page errors",
+    "calendar and cell geometry",
+    "visible date count",
+    "action completion"
+  ],
+  "observed_buggy_state": {
+    "error": "calendar comparison reads calendar from an undefined value",
+    "target_error_count": "greater than zero"
+  },
+  "preconditions": [
+    "The exact Radix Vue/Reka UI subject state is mounted read-only.",
+    "The repository-native DatePicker story is loaded with its date field and calendar.",
+    "No non-404 target console or page error exists before the interaction."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #1618 report and repository DatePicker story",
+  "states": [
+    {
+      "actions": [
+        "Open the DatePicker."
+      ],
+      "checkpoints": [
+        "At least 28 date targets are visible and the calendar grid passes bounded geometry checks."
+      ],
+      "name": "calendar_open"
+    },
+    {
+      "actions": [
+        "Select the first in-view date."
+      ],
+      "checkpoints": [
+        "The selection action completes; reopen the calendar if it closes."
+      ],
+      "name": "first_selection"
+    },
+    {
+      "actions": [
+        "Select the same date again."
+      ],
+      "checkpoints": [
+        "Record non-404 console and page errors after the second selection."
+      ],
+      "name": "same_date_reselected"
+    }
+  ]
+}

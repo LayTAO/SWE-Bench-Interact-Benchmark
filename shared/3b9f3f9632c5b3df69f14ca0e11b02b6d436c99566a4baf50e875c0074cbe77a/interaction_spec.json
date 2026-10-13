@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "聚焦 Slider",
+    "按方向键步进",
+    "读取最终值"
+  ],
+  "expected_fixed": "键盘步进值精确保持在声明的 step 网格上。",
+  "instance_id": "mui__base-ui-4547",
+  "issue_derived_path": [
+    "聚焦 Slider",
+    "按方向键步进",
+    "读取最终值"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "键盘步进累积浮点精度误差。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

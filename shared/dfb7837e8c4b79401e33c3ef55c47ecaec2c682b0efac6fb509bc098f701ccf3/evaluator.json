@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "DropZone drag and drop via mouse should support custom styles on the visually hidden drop button wrapper"
+  ],
+  "PASS_TO_PASS": [
+    "DropZone drag and drop via keyboard should allow drag and drop",
+    "DropZone drag and drop via keyboard should not allow drag and drop if disabled",
+    "DropZone drag and drop via mouse should focus the dropzone visually hidden button if click happens on a non-focusable element",
+    "DropZone drag and drop via mouse should not trigger drag events if disabled",
+    "DropZone drag and drop via mouse should support data attribute drop-target"
+  ],
+  "base_commit": "7ef230221c459a0d8cd31f7a1e202ad4867bdb2f",
+  "instance_id": "adobe__react-spectrum-10092",
+  "schema_version": "4.0"
+}

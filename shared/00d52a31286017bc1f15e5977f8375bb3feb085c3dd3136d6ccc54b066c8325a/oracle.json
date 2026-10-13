@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "active_test_id": "not after or menu remains visible"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "active_test_id": "after",
+    "menu_visible": false
+  },
+  "instance_id": "unovue__reka-ui-2296",
+  "rendering_gate": [
+    "Visible, non-overlapping trigger, menu item, and following button."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The item is focused before Tab."
+  ]
+}

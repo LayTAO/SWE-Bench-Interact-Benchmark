@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "focusScope given a FocusScope with Combobox input inside Dialog (#2749) should let the Combobox input keep focus inside a Dialog",
+    "focusScope given a FocusScope with portaled Select content inside Dialog (#2749) should move focus into the Select content, not trap it back to the Dialog"
+  ],
+  "PASS_TO_PASS": [
+    "focusScope given a FocusScope where the first focusable has a negative tabindex should skip the element with a negative tabindex on shift+tab",
+    "focusScope given a FocusScope where the first focusable has a negative tabindex should skip the element with a negative tabindex on tab",
+    "focusScope given a FocusScope with SelectTrigger inside Dialog (#2550) should auto-focus the first tabbable element when SelectTrigger is present",
+    "focusScope given a FocusScope with internal focus handlers should properly blur the last element in the scope before cycling back",
+    "focusScope given a default FocusScope should focus container when focused element is removed from the DOM",
+    "focusScope given a default FocusScope should focus the first element in scope on tab from the last element in scope",
+    "focusScope given a default FocusScope should focus the last element in the scope on shift+tab from the first element in scope",
+    "focusScope given a default FocusScope should focus the next element in the scope on tab"
+  ],
+  "base_commit": "c215ca6cf92fb0fbebe5821b5ad3597071d4c49f",
+  "instance_id": "unovue__reka-ui-2749",
+  "schema_version": "4.0"
+}

@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "given a FocusScope with SelectTrigger inside Dialog (#2550) > should auto-focus the first tabbable element when SelectTrigger is present"
+  ],
+  "PASS_TO_PASS": [
+    "given a default FocusScope > should focus the last element in the scope on shift+tab from the first element in scope"
+  ],
+  "base_commit": "49d1d32b0bfb82453632d0ca72f526a60efccaa9",
+  "instance_id": "unovue__reka-ui-2506",
+  "schema_version": "4.0"
+}

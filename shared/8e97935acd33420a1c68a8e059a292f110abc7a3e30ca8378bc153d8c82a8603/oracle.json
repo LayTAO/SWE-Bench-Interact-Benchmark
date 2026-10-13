@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "bug_observed == true"
+    ]
+  },
+  "environment_gate": [
+    "independent page renders from candidate source",
+    "Playwright executes actual tests with zero retries",
+    "page_errors is empty"
+  ],
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    },
+    "fixed_state": "The tooltip closes when its scroll ancestor scrolls."
+  },
+  "instance_id": "melt-ui__melt-ui-945",
+  "predicate_id": "melt_tooltip_closes_when_scrolled_outside_content",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "scenario.spec.cjs verifies the issue interaction before observing the symptom"
+  ]
+}

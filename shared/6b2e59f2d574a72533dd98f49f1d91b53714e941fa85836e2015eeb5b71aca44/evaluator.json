@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "Table.vue does not mutate filtered-value when filter-multiple is false"
+  ],
+  "PASS_TO_PASS": [
+    "Table.vue filter click dropdown",
+    "Table.vue filter clear filter",
+    "Table.vue filter click filter"
+  ],
+  "base_commit": "f2b994f72fb68f37d5d585e19f740b301e8eeeca",
+  "instance_id": "element-plus__element-plus-24564",
+  "schema_version": "4.0"
+}

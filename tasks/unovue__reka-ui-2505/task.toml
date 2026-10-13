@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/unovue__reka-ui-2505"
+version = "0.2.0-candidate"
+description = "[Bug]: DropdownMenu: Sub Trigger doesn't handle hovering correctly as of 2.9.1"
+
+[metadata]
+instance_id = "unovue__reka-ui-2505"
+repository = "unovue/reka-ui"
+base_commit = "883bb71d5c1928711ed2cd652dc093155d5260a8"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:338f57f635457ff55e9e24e079ec62ce74af91422a72c2f45a98ab259ca877dc"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d82980c1955134f6eaf584fd52d79d4c4b3e8053de1285d412a5ba0daf283f6b"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

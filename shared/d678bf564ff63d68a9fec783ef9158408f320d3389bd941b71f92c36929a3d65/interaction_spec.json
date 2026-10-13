@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "打开菜单",
+    "快速切换 trigger",
+    "再次打开菜单"
+  ],
+  "expected_fixed": "快速切换后菜单仍可继续打开和交互。",
+  "instance_id": "mui__base-ui-5239",
+  "issue_derived_path": [
+    "打开菜单",
+    "快速切换 trigger",
+    "再次打开菜单"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "快速切换后菜单进入永久冻结状态。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

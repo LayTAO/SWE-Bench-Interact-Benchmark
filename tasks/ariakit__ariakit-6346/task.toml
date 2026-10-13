@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/ariakit__ariakit-6346"
+version = "0.2.0-candidate"
+description = "Tabs in a Select/Combobox popover: the first setSelectedId after the popover opens or toggles doesn't update the active tab"
+
+[metadata]
+instance_id = "ariakit__ariakit-6346"
+repository = "ariakit/ariakit"
+base_commit = "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:b6401f543cfb681a21c2ba90b51412e84988699031a73e5989b1b266c7ec6bce"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:89c670bd18cb8c21269a06934dbc876859036eb29ace70c549495923ecc280f7"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

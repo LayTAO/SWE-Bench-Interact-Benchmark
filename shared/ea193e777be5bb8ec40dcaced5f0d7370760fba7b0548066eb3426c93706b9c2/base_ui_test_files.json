@@ -1,0 +1,5 @@
+[
+  "packages/react/src/checkbox/root/CheckboxRoot.test.tsx",
+  "packages/react/src/radio/root/RadioRoot.test.tsx",
+  "packages/react/src/switch/root/SwitchRoot.test.tsx"
+]

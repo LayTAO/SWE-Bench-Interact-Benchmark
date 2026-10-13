@@ -1,0 +1,16 @@
+{
+  "base_commit": "fa398ade6d882d488e8db9b22e25aff71672b6a3",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "buggy_commit": "fa398ade6d882d488e8db9b22e25aff71672b6a3",
+  "chrome_oracle": true,
+  "install_command": "node .yarn/releases/yarn-3.6.4.cjs install --immutable",
+  "instance_id": "motiondivision__motion-3232",
+  "official_test_files": [
+    "packages/motion-dom/src/value/types/__tests__/index.test.ts"
+  ],
+  "package_manager": "yarn@3.6.4",
+  "repo_url": "https://github.com/motiondivision/motion.git",
+  "repository": "motiondivision/motion",
+  "schema_version": "3.0",
+  "test_command": "jest --config packages/motion-dom/jest.config.json --reporters default --runTestsByPath packages/motion-dom/src/value/types/__tests__/index.test.ts --runInBand --json"
+}

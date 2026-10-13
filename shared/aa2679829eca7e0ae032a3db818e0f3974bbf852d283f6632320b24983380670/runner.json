@@ -1,0 +1,12 @@
+{
+  "base_commit": "b5e427c24efd04fbd54dd4e43819ddc24be0ac16",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "export YARN_CACHE_FOLDER=/yarn-cache; yarn --version && yarn install --frozen-lockfile --non-interactive",
+  "instance_id": "microsoft__fluentui-32260",
+  "package_manager": "image-provided-yarn-classic",
+  "repo_url": "https://github.com/microsoft/fluentui.git",
+  "repository": "microsoft/fluentui",
+  "runtime": "public.ecr.aws/docker/library/node:20-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

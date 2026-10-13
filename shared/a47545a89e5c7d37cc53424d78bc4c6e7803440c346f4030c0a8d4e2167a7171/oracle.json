@@ -1,0 +1,38 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "selected_assertions_discovered == true",
+      "ArrowLeft caret assertion fails",
+      "ArrowRight caret assertion fails"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure",
+    "no test-file import failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Combobox.Root /> prop: grid moves the input caret on ArrowLeft when no item is highlighted in grid mode",
+      "<Combobox.Root /> prop: grid moves the input caret on ArrowRight when no item is highlighted in grid mode"
+    ],
+    "fixed_named_assertions": [
+      "<Combobox.Root /> prop: grid moves the input caret on ArrowLeft when no item is highlighted in grid mode",
+      "<Combobox.Root /> prop: grid moves the input caret on ArrowRight when no item is highlighted in grid mode",
+      "<Combobox.Root /> prop: grid keeps grid navigation when autoHighlight surfaces an item before typing arrow keys"
+    ],
+    "fixed_state": "3 个选定的 Chromium 断言全部通过。"
+  },
+  "instance_id": "mui__base-ui-4947",
+  "predicate_id": "combobox_grid_input_caret_moves_without_highlight",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "render the grid combobox fixture",
+    "focus the input without an active item",
+    "press ArrowLeft and ArrowRight",
+    "inspect caret and grid navigation assertions"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "FormPush focuses the field it creates after an existing item",
+    "FormPush keeps auto-focusing fields in an initially empty array"
+  ],
+  "PASS_TO_PASS": [
+    "FormPush keeps focus within an array whose name has regex metacharacters",
+    "FormPush keeps focus within the target array, not a sibling sharing the name prefix",
+    "FormRemove moves focus to the next field when the array name has regex metacharacters"
+  ],
+  "base_commit": "953dfa92d50a277578c0b0aad960dd612142b705",
+  "instance_id": "ariakit__ariakit-6293",
+  "schema_version": "4.0"
+}

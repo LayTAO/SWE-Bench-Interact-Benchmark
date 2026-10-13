@@ -1,0 +1,40 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Focus Fruit and type b.",
+    "Move to Apple with ArrowDown.",
+    "Press Control+C and Meta+C.",
+    "Repeat with Control+V and observe state."
+  ],
+  "checkpoints": [
+    "Apple is the focused option before shortcuts.",
+    "Modifier shortcuts preserve or disrupt option focus as reported.",
+    "Paste returns focus to the combobox with the panel open."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "paste_focus": "combobox",
+    "shortcuts_preserve_option_focus": true
+  },
+  "instance_id": "ariakit__ariakit-6297",
+  "observation_channels": [
+    "DOM",
+    "focus",
+    "ARIA roles",
+    "controlled value",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "shortcuts_preserve_option_focus": false
+  },
+  "preconditions": [
+    "The Ariakit Combobox for Fruit is visible."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "Typing b opens the filtered list and highlights Apple.",
+    "Control+C and Meta+C are pressed while the option is focused.",
+    "The active option, controlled value, expanded state and panel are observed."
+  ]
+}

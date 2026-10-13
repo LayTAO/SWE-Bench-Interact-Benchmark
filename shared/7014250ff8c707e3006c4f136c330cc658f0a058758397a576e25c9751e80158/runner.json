@@ -1,0 +1,14 @@
+{
+  "base_commit": "c67ecf2954dda1f520fe3c4a68f1c6bc47a597d8",
+  "base_image": "node:24",
+  "buggy_commit": "c67ecf2954dda1f520fe3c4a68f1c6bc47a597d8",
+  "build_command": "",
+  "install_command": "corepack yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-9949",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24",
+  "schema_version": "4.0",
+  "test_command": "corepack yarn jest packages/react-aria-components/test/Tabs.test.js --runInBand"
+}

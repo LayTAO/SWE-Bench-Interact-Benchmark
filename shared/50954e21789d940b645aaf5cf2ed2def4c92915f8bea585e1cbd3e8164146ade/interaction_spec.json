@@ -1,0 +1,47 @@
+{
+  "actions": [
+    "Load the native source-backed preview.",
+    "Click Attachments.",
+    "Click Attachments again with a 200ms delay.",
+    "Read the hidden button tabindex and disclosure focus.",
+    "Click Attachments a third time and read the visible button focus."
+  ],
+  "checkpoints": [
+    "The dialog and semantic buttons are visible without page or console errors.",
+    "The close transition returns focus to Attachments and records Choose file tabindex=-1.",
+    "Buggy leaves focus on Attachments after reopen; Fixed focuses Choose file."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "close_choose_file_tabindex": "-1",
+    "close_disclosure_focused": true,
+    "first_open_choose_file_focused": true,
+    "reopen_choose_file_focused": true
+  },
+  "instance_id": "ariakit__ariakit-6310",
+  "observation_channels": [
+    "Playwright accessibility roles",
+    "DOM focus",
+    "ARIA dialog visibility",
+    "tabindex",
+    "console errors",
+    "page errors",
+    "screenshot"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "close_choose_file_tabindex": "-1",
+    "close_disclosure_focused": true,
+    "first_open_choose_file_focused": true,
+    "reopen_choose_file_focused": false
+  },
+  "preconditions": [
+    "The native Ariakit Popover preview has hydrated and the Attachments disclosure is visible."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The portaled Attachments popover is open and its visible Choose file button is focused.",
+    "The popover is closed after a delayed disclosure click; the hidden file input precedes a disabled visible button.",
+    "The portaled popover is reopened and focus is observed on the first visible focusable control."
+  ]
+}

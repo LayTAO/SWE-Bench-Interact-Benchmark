@@ -5,6 +5,5 @@ type: dataset
 authors:
   - family-names: "Tao"
     given-names: "Lei"
-version: "0.1.2"
-date-released: "2026-10-13"
+version: "0.2.0-candidate"
 repository-code: "https://github.com/LayTAO/SWE-Bench-Interact-Benchmark"

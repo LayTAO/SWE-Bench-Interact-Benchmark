@@ -1,0 +1,27 @@
+{
+  "services": {
+    "main": {
+      "platform": "linux/amd64",
+      "volumes": [
+        {
+          "bind": {
+            "create_host_path": false
+          },
+          "read_only": true,
+          "source": "../../../runtime/capture_patch.sh",
+          "target": "/opt/interactbench/capture_patch.sh",
+          "type": "bind"
+        },
+        {
+          "bind": {
+            "create_host_path": false
+          },
+          "read_only": true,
+          "source": "../../../runtime/prepared.json",
+          "target": "/opt/interactbench/prepared.json",
+          "type": "bind"
+        }
+      ]
+    }
+  }
+}

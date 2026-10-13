@@ -1,0 +1,342 @@
+diff --git a/packages/mui-material/src/Menu/Menu.test.js b/packages/mui-material/src/Menu/Menu.test.js
+index d4a98a3632fc36..cfbe417e82873f 100644
+--- a/packages/mui-material/src/Menu/Menu.test.js
++++ b/packages/mui-material/src/Menu/Menu.test.js
+@@ -3,6 +3,7 @@ import { spy } from 'sinon';
+ import { expect } from 'chai';
+ import {
+   createRenderer,
++  createMount,
+   describeConformance,
+   screen,
+   fireEvent,
+@@ -11,9 +12,11 @@ import {
+ import Menu, { menuClasses as classes } from '@mui/material/Menu';
+ import Popover from '@mui/material/Popover';
+ import { createTheme, ThemeProvider } from '@mui/material/styles';
++import { MenuPaper } from './Menu';
+ 
+ describe('<Menu />', () => {
+   const { render } = createRenderer({ clock: 'fake' });
++  const mount = createMount();
+ 
+   describeConformance(<Menu anchorEl={() => document.createElement('div')} open />, () => ({
+     classes,
+@@ -127,6 +130,27 @@ describe('<Menu />', () => {
+     });
+   });
+ 
++  describe('prop: PaperProps', () => {
++    it('should be passed to the paper component', () => {
++      const customElevation = 12;
++      const customClasses = { rounded: { borderRadius: 12 } };
++      const wrapper = mount(
++        <Menu
++          anchorEl={document.createElement('div')}
++          open
++          PaperProps={{
++            'data-testid': 'paper',
++            elevation: customElevation,
++            classes: customClasses,
++          }}
++        />,
++      );
++
++      expect(wrapper.find(MenuPaper).props().elevation).to.equal(customElevation);
++      expect(wrapper.find(MenuPaper).props().classes).to.contain(customClasses);
++    });
++  });
++
+   it('should pass onClose prop to Popover', () => {
+     const handleClose = spy();
+     render(<Menu anchorEl={document.createElement('div')} open onClose={handleClose} />);
+@@ -275,15 +299,21 @@ describe('<Menu />', () => {
+     });
+   });
+ 
+-  describe('should be customizable in theme', () => {
+-    it('should override Paper styles in Menu taking MuiMenu.paper styles into account', function test() {
++  describe('theme customization', () => {
++    it('should override Menu Paper styles following correct precedence', function test() {
+       if (/jsdom/.test(window.navigator.userAgent)) {
+         this.skip();
+       }
++
++      const menuPaperOverrides = { borderRadius: 4 };
++      const popoverPaperOverrides = { borderRadius: 8, height: 100 };
++      const rootPaperOverrides = { borderRadius: 16, height: 200, width: 200 };
++
+       const theme = createTheme({
+         components: {
+-          MuiMenu: { styleOverrides: { paper: { borderRadius: 4 } } },
+-          MuiPaper: { styleOverrides: { rounded: { borderRadius: 90 } } },
++          MuiMenu: { styleOverrides: { paper: menuPaperOverrides } },
++          MuiPopover: { styleOverrides: { paper: popoverPaperOverrides } },
++          MuiPaper: { styleOverrides: { root: rootPaperOverrides } },
+         },
+       });
+ 
+@@ -301,14 +331,16 @@ describe('<Menu />', () => {
+ 
+       const paper = screen.getByTestId('paper');
+       expect(paper).toHaveComputedStyle({
+-        borderTopLeftRadius: '4px',
+-        borderBottomLeftRadius: '4px',
+-        borderTopRightRadius: '4px',
+-        borderBottomRightRadius: '4px',
++        borderTopLeftRadius: `${menuPaperOverrides.borderRadius}px`,
++        borderBottomLeftRadius: `${menuPaperOverrides.borderRadius}px`,
++        borderTopRightRadius: `${menuPaperOverrides.borderRadius}px`,
++        borderBottomRightRadius: `${menuPaperOverrides.borderRadius}px`,
++        height: `${popoverPaperOverrides.height}px`,
++        width: `${rootPaperOverrides.width}px`,
+       });
+     });
+ 
+-    it('should override Paper styles in Menu using styles in MuiPaper slot', function test() {
++    it('should override Menu Paper styles using styles in MuiPaper slot', function test() {
+       if (/jsdom/.test(window.navigator.userAgent)) {
+         this.skip();
+       }
+@@ -340,4 +372,16 @@ describe('<Menu />', () => {
+       });
+     });
+   });
++
++  describe('paper', () => {
++    it('should use MenuPaper component', () => {
++      const wrapper = mount(
++        <Menu anchorEl={document.createElement('div')} open>
++          <div />
++        </Menu>,
++      );
++
++      expect(wrapper.find(MenuPaper)).to.have.length(1);
++    });
++  });
+ });
+diff --git a/packages/mui-material/src/Popover/Popover.test.js b/packages/mui-material/src/Popover/Popover.test.js
+index 50f74a2fa24acc..d591040c56bf2f 100644
+--- a/packages/mui-material/src/Popover/Popover.test.js
++++ b/packages/mui-material/src/Popover/Popover.test.js
+@@ -1,15 +1,16 @@
+ import * as React from 'react';
+ import { expect } from 'chai';
+-import { spy, stub } from 'sinon';
++import { spy, stub, match } from 'sinon';
+ import { act, createMount, createRenderer, describeConformance, screen } from 'test/utils';
+ import PropTypes from 'prop-types';
+ import Grow from '@mui/material/Grow';
+ import Modal from '@mui/material/Modal';
+ import Paper from '@mui/material/Paper';
+-import Popover, { popoverClasses as classes } from '@mui/material/Popover';
++import Popover, { popoverClasses as classes, PopoverPaper } from '@mui/material/Popover';
+ import { ThemeProvider, createTheme } from '@mui/material/styles';
+ import { getOffsetLeft, getOffsetTop } from './Popover';
+ import useForkRef from '../utils/useForkRef';
++import styled from '../styles/styled';
+ 
+ const FakePaper = React.forwardRef(function FakeWidthPaper(props, ref) {
+   const handleMocks = React.useCallback((paperInstance) => {
+@@ -34,6 +35,14 @@ const FakePaper = React.forwardRef(function FakeWidthPaper(props, ref) {
+   );
+ });
+ 
++const ReplacementPaper = styled(Paper, {
++  name: 'ReplacementPaper',
++  slot: 'Paper',
++  overridesResolver: (props, styles) => styles.paper,
++})({
++  backgroundColor: 'red',
++});
++
+ describe('<Popover />', () => {
+   const { clock, render } = createRenderer({ clock: 'fake' });
+   const mount = createMount();
+@@ -45,6 +54,17 @@ describe('<Popover />', () => {
+     muiName: 'MuiPopover',
+     refInstanceof: window.HTMLDivElement,
+     testDeepOverrides: { slotName: 'paper', slotClassName: classes.paper },
++    slots: {
++      root: {
++        expectedClassName: classes.root,
++      },
++      paper: {
++        expectedClassName: classes.paper,
++        testWithComponent: React.forwardRef((props, ref) => (
++          <ReplacementPaper ref={ref} {...props} data-testid="custom" />
++        )),
++      },
++    },
+     skip: [
+       'rootClass', // portal, can't determine the root
+       'componentProp',
+@@ -53,6 +73,7 @@ describe('<Popover />', () => {
+       'themeStyleOverrides', // portal, can't determine the root
+       'themeVariants',
+       'reactTestRenderer', // react-transition-group issue
++      'slotPropsCallback', // not supported yet
+     ],
+   }));
+ 
+@@ -285,8 +306,8 @@ describe('<Popover />', () => {
+   });
+ 
+   describe('paper', () => {
+-    it('should have Paper as a child of Transition', () => {
+-      render(
++    it('should have PopoverPaper as a child of Transition', () => {
++      const wrapper = mount(
+         <Popover
+           anchorEl={document.createElement('div')}
+           open
+@@ -296,6 +317,7 @@ describe('<Popover />', () => {
+         </Popover>,
+       );
+ 
++      expect(wrapper.find(PopoverPaper)).to.have.lengthOf(1);
+       expect(screen.getByTestId('paper')).not.to.equal(null);
+     });
+ 
+@@ -320,27 +342,46 @@ describe('<Popover />', () => {
+         </Popover>,
+       );
+ 
+-      expect(wrapper.find(Paper).props().elevation).to.equal(8);
++      expect(wrapper.find(PopoverPaper).props().elevation).to.equal(8);
+ 
+       wrapper.setProps({ elevation: 16 });
+-      expect(wrapper.find(Paper).props().elevation).to.equal(16);
++      expect(wrapper.find(PopoverPaper).props().elevation).to.equal(16);
+     });
+   });
+ 
+-  describe('PaperProps.ref', () => {
+-    it('should position popover correctly', () => {
+-      const handleEntering = spy();
+-      render(
+-        <Popover
+-          anchorEl={document.createElement('div')}
+-          open
+-          PaperProps={{ 'data-testid': 'Popover', ref: () => null }}
+-          TransitionProps={{ onEntering: handleEntering }}
+-        >
+-          <div />
+-        </Popover>,
+-      );
+-      expect(handleEntering.args[0][0]).toHaveInlineStyle({ top: '16px', left: '16px' });
++  describe('prop: PaperProps', () => {
++    describe('ref', () => {
++      it('should position popover correctly', () => {
++        const handleEntering = spy();
++        render(
++          <Popover
++            anchorEl={document.createElement('div')}
++            open
++            PaperProps={{ 'data-testid': 'Popover', ref: () => null }}
++            TransitionProps={{ onEntering: handleEntering }}
++          >
++            <div />
++          </Popover>,
++        );
++        expect(handleEntering.args[0][0]).toHaveInlineStyle({ top: '16px', left: '16px' });
++      });
++    });
++
++    describe('className', () => {
++      it('should add the className to the paper', () => {
++        const className = 'MyPaperClassName';
++        render(
++          <Popover
++            anchorEl={document.createElement('div')}
++            open
++            PaperProps={{ 'data-testid': 'paper', className }}
++          >
++            <div />
++          </Popover>,
++        );
++
++        expect(screen.getByTestId('paper')).to.have.class(className);
++      });
+     });
+   });
+ 
+@@ -368,6 +409,33 @@ describe('<Popover />', () => {
+         expect(element.style.transformOrigin).to.match(/-16px -16px( 0px)?/);
+       });
+     });
++
++    describe('paper styles', () => {
++      it('should have opacity 1 only after onEntering has been called', () => {
++        const onEnteringSpy = spy();
++        const paperRenderSpy = spy(PopoverPaper, 'render');
++
++        const wrapper = mount(
++          <Popover
++            anchorEl={document.createElement('div')}
++            open={false}
++            TransitionProps={{
++              onEntering: onEnteringSpy,
++            }}
++          >
++            <div />
++          </Popover>,
++        );
++
++        wrapper.setProps({ open: true });
++
++        expect(
++          paperRenderSpy
++            .withArgs(match({ style: { opacity: 1 } }))
++            .firstCall.calledAfter(onEnteringSpy.lastCall),
++        ).to.equal(true);
++      });
++    });
+   });
+ 
+   describe('prop: anchorEl', () => {
+@@ -902,4 +970,44 @@ describe('<Popover />', () => {
+       ),
+     ).not.to.throw();
+   });
++
++  describe('prop: slotProps', () => {
++    describe('paper', () => {
++      it('should override PaperProps', () => {
++        const slotPropsElevation = 12;
++        const paperPropsElevation = 14;
++
++        const wrapper = mount(
++          <Popover
++            anchorEl={document.createElement('div')}
++            open
++            PaperProps={{ elevation: paperPropsElevation }}
++            slotProps={{ paper: { elevation: slotPropsElevation } }}
++          >
++            <div />
++          </Popover>,
++        );
++
++        expect(slotPropsElevation).not.to.equal(paperPropsElevation);
++        expect(wrapper.find(PopoverPaper).props().elevation).to.equal(slotPropsElevation);
++      });
++
++      it('should position popover correctly when ref is provided', () => {
++        const handleEntering = spy();
++        const paperRef = { current: null };
++        render(
++          <Popover
++            anchorEl={document.createElement('div')}
++            open
++            slotProps={{ paper: { ref: paperRef } }}
++            TransitionProps={{ onEntering: handleEntering }}
++          >
++            <div />
++          </Popover>,
++        );
++        expect(paperRef.current).not.to.equal(null);
++        expect(handleEntering.args[0][0]).toHaveInlineStyle({ top: '16px', left: '16px' });
++      });
++    });
++  });
+ });

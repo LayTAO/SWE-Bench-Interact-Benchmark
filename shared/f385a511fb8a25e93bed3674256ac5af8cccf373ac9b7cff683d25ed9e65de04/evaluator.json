@@ -1,0 +1,27 @@
+{
+  "FAIL_TO_PASS": [
+    "VAutocomplete.ts should set isFocused to false onBlur"
+  ],
+  "PASS_TO_PASS": [
+    "VAutocomplete.ts should activate when search changes and not active",
+    "VAutocomplete.ts should cache items passed via prop",
+    "VAutocomplete.ts should change autocomplete attribute",
+    "VAutocomplete.ts should conditionally show the menu",
+    "VAutocomplete.ts should emit search input changes",
+    "VAutocomplete.ts should filter autocomplete search results",
+    "VAutocomplete.ts should filter numeric primitives",
+    "VAutocomplete.ts should have explicit tabindex passed through when autocomplete",
+    "VAutocomplete.ts should not delete item if readonly",
+    "VAutocomplete.ts should not display menu when tab focused",
+    "VAutocomplete.ts should not duplicate items after items update when caching is turned on",
+    "VAutocomplete.ts should not filter text with no items",
+    "VAutocomplete.ts should not respond to click",
+    "VAutocomplete.ts should react to keydown",
+    "VAutocomplete.ts should render role=combobox correctly when autocomplete",
+    "VAutocomplete.ts should reset lazySearch",
+    "VAutocomplete.ts should select input text on focus"
+  ],
+  "base_commit": "7c8b0b4076ec1042c1892cc49f0adc4ce1159472",
+  "instance_id": "vuetifyjs__vuetify-11989",
+  "schema_version": "4.0"
+}

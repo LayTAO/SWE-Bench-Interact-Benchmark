@@ -1,0 +1,17 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/slider/root/SliderRoot.test.tsx, packages/react/src/slider/utils/roundValueToStep.test.ts
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowRight rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowUp rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowRight rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowUp rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowLeft rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowUp rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowLeft rounds fractional values to the configured step
+- <Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowUp rounds fractional values to the configured step
+- roundValueToStep preserves precision from the step origin
+- <Slider.Root /> keyboard interactions ltr orientation: horizontal key: PageUp preserves largeStep increments when step uses a different grid
+- <Slider.Root /> keyboard interactions ltr orientation: vertical key: PageUp preserves largeStep increments when step uses a different grid
+- <Slider.Root /> keyboard interactions rtl orientation: horizontal key: PageUp preserves largeStep increments when step uses a different grid
+- <Slider.Root /> keyboard interactions rtl orientation: vertical key: PageUp preserves largeStep increments when step uses a different grid

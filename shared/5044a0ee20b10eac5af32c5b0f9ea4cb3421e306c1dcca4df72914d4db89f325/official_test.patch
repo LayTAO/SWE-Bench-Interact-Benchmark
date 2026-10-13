@@ -1,0 +1,583 @@
+diff --git a/apps/storybook/stories/context-menu.stories.tsx b/apps/storybook/stories/context-menu.stories.tsx
+index 70475a28..cf3ed199 100644
+--- a/apps/storybook/stories/context-menu.stories.tsx
++++ b/apps/storybook/stories/context-menu.stories.tsx
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { ContextMenu } from 'radix-ui';
++import { ContextMenu, Dialog } from 'radix-ui';
+ import { foodGroups } from '@repo/test-data/foods';
+ import styles from './context-menu.stories.module.css';
+ import { ExternalOverlayTrigger } from './external-overlay';
+@@ -494,6 +494,73 @@ export const WithExtensionOverlay = () => {
+   );
+ };
+ 
++// Regression story for https://github.com/radix-ui/primitives/issues/3971
++export const DismissesOnlyContextMenuInsideDialog = () => {
++  const [dialogOpen, setDialogOpen] = React.useState(false);
++  const [menuOpen, setMenuOpen] = React.useState(false);
++  const [isModal, setIsModal] = React.useState<boolean | undefined>(undefined);
++
++  if (!dialogOpen && menuOpen) {
++    setMenuOpen(false);
++  }
++
++  return (
++    <div style={{ display: 'grid', gap: 16, padding: 40, justifyItems: 'start' }}>
++      <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
++        <Dialog.Trigger className={styles.trigger}>Open dialog</Dialog.Trigger>
++        <label>
++          <input
++            type="checkbox"
++            checked={isModal || false}
++            ref={(node) => {
++              if (node && isModal === undefined) {
++                node.indeterminate = true;
++              }
++            }}
++            onChange={(event) => {
++              event.target.indeterminate = false;
++              setIsModal((prev) => !prev);
++            }}
++          />
++          <span>Modal</span>
++        </label>
++        <Dialog.Portal>
++          <Dialog.Content
++            style={{
++              position: 'fixed',
++              top: 100,
++              left: '50%',
++              transform: 'translateX(-50%)',
++              width: 360,
++              padding: 20,
++              backgroundColor: 'white',
++              border: '1px solid #ccc',
++              borderRadius: 8,
++            }}
++          >
++            <Dialog.Title>Dialog with nested context menu</Dialog.Title>
++            <ContextMenu.Root open={menuOpen} onOpenChange={setMenuOpen} modal={isModal}>
++              <ContextMenu.Trigger className={styles.trigger}>
++                Right click inside dialog
++              </ContextMenu.Trigger>
++              <ContextMenu.Portal>
++                <ContextMenu.Content className={styles.content}>
++                  <ContextMenu.Item className={styles.item}>Item one</ContextMenu.Item>
++                  <ContextMenu.Item className={styles.item}>Item two</ContextMenu.Item>
++                </ContextMenu.Content>
++              </ContextMenu.Portal>
++            </ContextMenu.Root>
++            <p style={{ marginTop: 12, marginBottom: 0 }}>
++              dialog: {dialogOpen ? 'open' : 'closed'} | menu: {menuOpen ? 'open' : 'closed'}
++            </p>
++            <Dialog.Close style={{ marginTop: 12 }}>Close dialog</Dialog.Close>
++          </Dialog.Content>
++        </Dialog.Portal>
++      </Dialog.Root>
++    </div>
++  );
++};
++
+ export const WithLabels = () => (
+   <div style={{ textAlign: 'center', padding: 50 }}>
+     <ContextMenu.Root>
+diff --git a/apps/storybook/stories/dropdown-menu.stories.tsx b/apps/storybook/stories/dropdown-menu.stories.tsx
+index f3874378..80731be0 100644
+--- a/apps/storybook/stories/dropdown-menu.stories.tsx
++++ b/apps/storybook/stories/dropdown-menu.stories.tsx
+@@ -564,6 +564,64 @@ export const NestedComposition = () => {
+   );
+ };
+ 
++// Regression story for https://github.com/radix-ui/primitives/issues/3971
++export const DismissesOnlyMenuInsideDialog = () => {
++  const [dialogOpen, setDialogOpen] = React.useState(false);
++  const [menuOpen, setMenuOpen] = React.useState(false);
++
++  React.useEffect(() => {
++    if (!dialogOpen) {
++      setMenuOpen(false);
++    }
++  }, [dialogOpen]);
++
++  return (
++    <div
++      style={{
++        display: 'grid',
++        gap: 16,
++        alignItems: 'start',
++        justifyItems: 'start',
++        padding: 40,
++      }}
++    >
++      <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
++        <Dialog.Trigger className={styles.trigger}>Open dialog</Dialog.Trigger>
++        <Dialog.Portal>
++          <Dialog.Content className={styles.dialog}>
++            <Dialog.Title>Dialog with nested dropdown</Dialog.Title>
++            <DropdownMenu.Root open={menuOpen} onOpenChange={setMenuOpen}>
++              <DropdownMenu.Trigger
++                className={styles.trigger}
++                style={{ width: '100%', marginBottom: 12 }}
++              >
++                Open menu
++              </DropdownMenu.Trigger>
++              <DropdownMenu.Portal>
++                <DropdownMenu.Content className={styles.content} sideOffset={5}>
++                  <DropdownMenu.Item className={styles.item}>Item one</DropdownMenu.Item>
++                  <DropdownMenu.Item className={styles.item}>Item two</DropdownMenu.Item>
++                  <DropdownMenu.Arrow />
++                </DropdownMenu.Content>
++              </DropdownMenu.Portal>
++            </DropdownMenu.Root>
++
++            <button type="button" className={styles.item} style={{ width: '100%' }}>
++              Dialog surface button
++            </button>
++
++            <p style={{ marginTop: 12, marginBottom: 0 }}>
++              dialog: {dialogOpen ? 'open' : 'closed'} | menu: {menuOpen ? 'open' : 'closed'}
++            </p>
++
++            <Dialog.Close style={{ marginTop: 12 }}>Close dialog</Dialog.Close>
++          </Dialog.Content>
++        </Dialog.Portal>
++      </Dialog.Root>
++    </div>
++  );
++};
++
+ export const SingleItemAsDialogTrigger = () => {
+   const dropdownTriggerRef = React.useRef<React.ComponentRef<typeof DropdownMenu.Trigger>>(null);
+   const dropdownTriggerRef2 = React.useRef<React.ComponentRef<typeof DropdownMenu.Trigger>>(null);
+diff --git a/apps/storybook/stories/menubar.stories.tsx b/apps/storybook/stories/menubar.stories.tsx
+index 76784368..10e856a7 100644
+--- a/apps/storybook/stories/menubar.stories.tsx
++++ b/apps/storybook/stories/menubar.stories.tsx
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { Menubar } from 'radix-ui';
++import { Dialog, Menubar } from 'radix-ui';
+ import { foodGroups } from '@repo/test-data/foods';
+ import styles from './menubar.stories.module.css';
+ import { ExternalOverlayTrigger } from './external-overlay';
+@@ -217,6 +217,64 @@ export const WithExtensionOverlay = () => {
+   );
+ };
+ 
++// Regression story for https://github.com/radix-ui/primitives/issues/3971
++export const DismissesOnlyMenubarInsideDialog = () => {
++  const [dialogOpen, setDialogOpen] = React.useState(false);
++  const [menuValue, setMenuValue] = React.useState('');
++
++  if (!dialogOpen && menuValue !== '') {
++    setMenuValue('');
++  }
++
++  return (
++    <div style={{ display: 'grid', gap: 16, padding: 40, justifyItems: 'start' }}>
++      <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
++        <Dialog.Trigger className={styles.trigger}>Open dialog</Dialog.Trigger>
++        <Dialog.Portal>
++          <Dialog.Overlay
++            data-testid="dialog-overlay"
++            style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
++          />
++          <Dialog.Content
++            style={{
++              position: 'fixed',
++              top: 100,
++              left: '50%',
++              transform: 'translateX(-50%)',
++              width: 360,
++              padding: 20,
++              backgroundColor: 'white',
++              border: '1px solid #ccc',
++              borderRadius: 8,
++            }}
++          >
++            <Dialog.Title>Dialog with nested menubar</Dialog.Title>
++            <Menubar.Root className={styles.root} value={menuValue} onValueChange={setMenuValue}>
++              <Menubar.Menu value="actions">
++                <Menubar.Trigger className={styles.trigger}>Actions</Menubar.Trigger>
++                <Menubar.Portal>
++                  <Menubar.Content className={styles.content} sideOffset={2}>
++                    <Menubar.Item className={styles.item}>Item one</Menubar.Item>
++                    <Menubar.Item className={styles.item}>Item two</Menubar.Item>
++                  </Menubar.Content>
++                </Menubar.Portal>
++              </Menubar.Menu>
++            </Menubar.Root>
++            <button type="button" className={styles.item} style={{ width: '100%', marginTop: 12 }}>
++              Dialog surface button
++            </button>
++            <p style={{ marginTop: 12, marginBottom: 0 }}>
++              dialog: {dialogOpen ? 'open' : 'closed'} | menu:{' '}
++              {menuValue === '' ? 'closed' : 'open'}
++            </p>
++            <Dialog.Close style={{ marginTop: 12 }}>Close dialog</Dialog.Close>
++          </Dialog.Content>
++        </Dialog.Portal>
++      </Dialog.Root>
++    </div>
++  );
++};
++
+ export const Cypress = () => {
+   const [loop, setLoop] = React.useState(false);
+   const [rtl, setRtl] = React.useState(false);
+diff --git a/apps/storybook/stories/popover.stories.tsx b/apps/storybook/stories/popover.stories.tsx
+index 8d70ac0e..22d4430f 100644
+--- a/apps/storybook/stories/popover.stories.tsx
++++ b/apps/storybook/stories/popover.stories.tsx
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { Popover } from 'radix-ui';
++import { Dialog, Popover } from 'radix-ui';
+ import { Popper } from 'radix-ui/internal';
+ import styles from './popover.stories.module.css';
+ import { ExternalOverlayTrigger } from './external-overlay';
+@@ -151,6 +151,75 @@ export const WithExtensionOverlay = () => {
+   );
+ };
+ 
++// Regression story for https://github.com/radix-ui/primitives/issues/3971
++export const DismissesOnlyPopoverInsideDialog = () => {
++  const [dialogOpen, setDialogOpen] = React.useState(false);
++  const [popoverOpen, setPopoverOpen] = React.useState(false);
++  const [isModal, setIsModal] = React.useState<boolean | undefined>(undefined);
++
++  if (!dialogOpen && popoverOpen) {
++    setPopoverOpen(false);
++  }
++
++  return (
++    <div style={{ display: 'grid', gap: 16, padding: 40, justifyItems: 'start' }}>
++      <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
++        <Dialog.Trigger className={styles.trigger}>Open dialog</Dialog.Trigger>
++        <label>
++          <input
++            type="checkbox"
++            checked={isModal || false}
++            ref={(node) => {
++              if (node && isModal === undefined) {
++                node.indeterminate = true;
++              }
++            }}
++            onChange={(event) => {
++              event.target.indeterminate = false;
++              setIsModal((prev) => !prev);
++            }}
++          />
++          <span>Modal</span>
++        </label>
++        <Dialog.Portal>
++          <Dialog.Overlay
++            data-testid="dialog-overlay"
++            style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
++          />
++          <Dialog.Content
++            style={{
++              position: 'fixed',
++              top: 100,
++              left: '50%',
++              transform: 'translateX(-50%)',
++              width: 320,
++              padding: 20,
++              backgroundColor: 'white',
++              border: '1px solid #ccc',
++              borderRadius: 8,
++            }}
++          >
++            <Dialog.Title>Dialog with nested popover</Dialog.Title>
++            <Popover.Root open={popoverOpen} onOpenChange={setPopoverOpen} modal={isModal}>
++              <Popover.Trigger className={styles.trigger}>Open popover</Popover.Trigger>
++              <Popover.Portal>
++                <Popover.Content className={styles.content} sideOffset={5}>
++                  <Popover.Close className={styles.close}>Close popover</Popover.Close>
++                  <Popover.Arrow className={styles.arrow} width={20} height={10} />
++                </Popover.Content>
++              </Popover.Portal>
++            </Popover.Root>
++            <p style={{ marginTop: 12, marginBottom: 0 }}>
++              dialog: {dialogOpen ? 'open' : 'closed'} | popover: {popoverOpen ? 'open' : 'closed'}
++            </p>
++            <Dialog.Close style={{ marginTop: 12 }}>Close dialog</Dialog.Close>
++          </Dialog.Content>
++        </Dialog.Portal>
++      </Dialog.Root>
++    </div>
++  );
++};
++
+ export const Animated = () => {
+   return (
+     <div
+diff --git a/apps/storybook/stories/select.stories.tsx b/apps/storybook/stories/select.stories.tsx
+index 6d963620..8f06589f 100644
+--- a/apps/storybook/stories/select.stories.tsx
++++ b/apps/storybook/stories/select.stories.tsx
+@@ -250,6 +250,79 @@ export const WithExtensionOverlay = () => {
+   );
+ };
+ 
++// Regression story for https://github.com/radix-ui/primitives/issues/3971
++export const DismissesOnlySelectInsideDialog = () => {
++  const [dialogOpen, setDialogOpen] = React.useState(false);
++  const [selectOpen, setSelectOpen] = React.useState(false);
++
++  if (!dialogOpen && selectOpen) {
++    setSelectOpen(false);
++  }
++
++  return (
++    <div style={{ display: 'grid', gap: 16, padding: 40, justifyItems: 'start' }}>
++      <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
++        <Dialog.Trigger className={styles.trigger}>Open dialog</Dialog.Trigger>
++        <Dialog.Portal>
++          <Dialog.Content
++            aria-describedby={undefined}
++            style={{
++              position: 'fixed',
++              top: 100,
++              left: '50%',
++              transform: 'translateX(-50%)',
++              width: 360,
++              padding: 20,
++              backgroundColor: 'white',
++              border: '1px solid #ccc',
++              borderRadius: 8,
++            }}
++          >
++            <Dialog.Title>Dialog with nested select</Dialog.Title>
++            <Label>
++              Choose a value:
++              <Select.Root open={selectOpen} onOpenChange={setSelectOpen} defaultValue="two">
++                <Select.Trigger className={styles.trigger}>
++                  <Select.Value />
++                  <Select.Icon />
++                </Select.Trigger>
++                <Select.Portal>
++                  <Select.Content className={styles.content} sideOffset={5}>
++                    <Select.Viewport className={styles.viewport}>
++                      <Select.Item className={styles.item} value="one">
++                        <Select.ItemText>One</Select.ItemText>
++                        <Select.ItemIndicator className={styles.indicator}>
++                          <TickIcon />
++                        </Select.ItemIndicator>
++                      </Select.Item>
++                      <Select.Item className={styles.item} value="two">
++                        <Select.ItemText>Two</Select.ItemText>
++                        <Select.ItemIndicator className={styles.indicator}>
++                          <TickIcon />
++                        </Select.ItemIndicator>
++                      </Select.Item>
++                      <Select.Item className={styles.item} value="three">
++                        <Select.ItemText>Three</Select.ItemText>
++                        <Select.ItemIndicator className={styles.indicator}>
++                          <TickIcon />
++                        </Select.ItemIndicator>
++                      </Select.Item>
++                    </Select.Viewport>
++                  </Select.Content>
++                </Select.Portal>
++              </Select.Root>
++            </Label>
++            <p style={{ marginTop: 12, marginBottom: 0 }}>
++              dialog: {dialogOpen ? 'open' : 'closed'} | select: {selectOpen ? 'open' : 'closed'}
++            </p>
++            <Dialog.Close style={{ marginTop: 12 }}>Close dialog</Dialog.Close>
++          </Dialog.Content>
++        </Dialog.Portal>
++      </Dialog.Root>
++    </div>
++  );
++};
++
+ export const Position = () => (
+   <div
+     style={{
+diff --git a/cypress/e2e/ContextMenu.cy.ts b/cypress/e2e/ContextMenu.cy.ts
+index 287c285b..f3e8b8dd 100644
+--- a/cypress/e2e/ContextMenu.cy.ts
++++ b/cypress/e2e/ContextMenu.cy.ts
+@@ -311,3 +311,23 @@ describe('ContextMenu extension overlay interactions', () => {
+     cy.findByText('New Tab').should('not.exist');
+   });
+ });
++
++describe('ContextMenu nested in Dialog', () => {
++  beforeEach(() => {
++    cy.visitStory('contextmenu--dismisses-only-context-menu-inside-dialog');
++  });
++
++  it('dismisses only the context menu when clicking inside dialog outside menu', () => {
++    cy.findByText('Open dialog').click();
++    cy.findByText('Right click inside dialog').rightclick();
++
++    cy.findByText('Dialog with nested context menu').should('be.visible');
++    cy.findByText('dialog: open | menu: open').should('exist');
++
++    cy.findByText('Dialog with nested context menu').realClick();
++
++    cy.findByText('Dialog with nested context menu').should('be.visible');
++    cy.findByText('dialog: open | menu: closed').should('exist');
++    cy.findByText('Item one').should('not.exist');
++  });
++});
+diff --git a/cypress/e2e/DropdownMenu.cy.ts b/cypress/e2e/DropdownMenu.cy.ts
+index 1bdfced1..caa127d2 100644
+--- a/cypress/e2e/DropdownMenu.cy.ts
++++ b/cypress/e2e/DropdownMenu.cy.ts
+@@ -266,3 +266,23 @@ describe('DropdownMenu extension overlay interactions', () => {
+     cy.findByText('New Tab').should('not.exist');
+   });
+ });
++
++describe('DropdownMenu nested in Dialog', () => {
++  beforeEach(() => {
++    cy.visitStory('dropdownmenu--dismisses-only-menu-inside-dialog');
++  });
++
++  it('dismisses only the menu when clicking inside dialog outside menu', () => {
++    cy.findByText('Open dialog').click();
++    cy.findByText('Open menu').click();
++
++    cy.findByText('Dialog with nested dropdown').should('be.visible');
++    cy.findByText('dialog: open | menu: open').should('exist');
++
++    cy.findByText('Dialog with nested dropdown').realClick();
++
++    cy.findByText('Dialog with nested dropdown').should('be.visible');
++    cy.findByText('dialog: open | menu: closed').should('exist');
++    cy.findByText('Item one').should('not.exist');
++  });
++});
+diff --git a/cypress/e2e/Popover.cy.ts b/cypress/e2e/Popover.cy.ts
+index 604b51d7..c95e0f82 100644
+--- a/cypress/e2e/Popover.cy.ts
++++ b/cypress/e2e/Popover.cy.ts
+@@ -14,3 +14,50 @@ describe('Popover', () => {
+     cy.findByText('close').should('be.visible');
+   });
+ });
++
++describe('non-modal popover nested in dialog', () => {
++  beforeEach(() => {
++    cy.visitStory('popover--dismisses-only-popover-inside-dialog');
++
++    // click twice to ensure the popover is not modal
++    cy.findByLabelText('Modal').click();
++    cy.findByLabelText('Modal').click();
++  });
++
++  it('dismisses both the popover and the dialog when clicking outside both layers', () => {
++    cy.findByText('Open dialog').click();
++    cy.findByText('Open popover').click();
++
++    cy.findByText('dialog: open | popover: open').should('exist');
++
++    cy.get('body').click(5, 5, { force: true });
++
++    // The dialog closing unmounts its content (including the status text), so we
++    // assert the dismissable affordances are gone and the trigger is back.
++    cy.findByText('Close popover').should('not.exist');
++    cy.findByText('Close dialog').should('not.exist');
++    cy.findByText('Open dialog').should('be.visible');
++  });
++});
++
++describe('modal popover nested in dialog', () => {
++  beforeEach(() => {
++    cy.visitStory('popover--dismisses-only-popover-inside-dialog');
++    cy.findByLabelText('Modal').click();
++  });
++
++  it('dismisses only the popover when clicking outside the popover', () => {
++    cy.findByText('Open dialog').click();
++    cy.findByText('Open popover').click();
++
++    cy.findByText('dialog: open | popover: open').should('exist');
++
++    // A modal popover shields the dialog, so an outside interaction dismisses
++    // only the popover while the dialog stays open.
++    cy.get('body').click(5, 5, { force: true });
++
++    cy.findByText('dialog: open | popover: closed').should('exist');
++    cy.findByText('Close popover').should('not.exist');
++    cy.findByText('Close dialog').should('be.visible');
++  });
++});
+diff --git a/cypress/e2e/Select.cy.ts b/cypress/e2e/Select.cy.ts
+index 42943cf0..d3365448 100644
+--- a/cypress/e2e/Select.cy.ts
++++ b/cypress/e2e/Select.cy.ts
+@@ -81,6 +81,26 @@ describe('Select extension overlay interactions', () => {
+   });
+ });
+ 
++describe('Select nested in Dialog', () => {
++  beforeEach(() => {
++    cy.visitStory('select--dismisses-only-select-inside-dialog');
++  });
++
++  it('dismisses only the select when clicking inside dialog outside select', () => {
++    cy.findByText('Open dialog').click();
++    cy.findByRole('combobox', { name: /choose a value/i }).click();
++
++    cy.findByText('Dialog with nested select').should('be.visible');
++    cy.findByText('dialog: open | select: open').should('exist');
++
++    cy.findByText('Dialog with nested select').realClick();
++
++    cy.findByText('Dialog with nested select').should('be.visible');
++    cy.findByText('dialog: open | select: closed').should('exist');
++    cy.findByRole('option', { name: 'One' }).should('not.exist');
++  });
++});
++
+ describe('Select (shadow DOM)', () => {
+   beforeEach(() => {
+     cy.visitStory('select--cypress-shadow-dom');
+diff --git a/packages/react/dismissable-layer/src/dismissable-layer.test.tsx b/packages/react/dismissable-layer/src/dismissable-layer.test.tsx
+index 93546013..49ae8771 100644
+--- a/packages/react/dismissable-layer/src/dismissable-layer.test.tsx
++++ b/packages/react/dismissable-layer/src/dismissable-layer.test.tsx
+@@ -397,6 +397,35 @@ describe('DismissableLayer', () => {
+     expect(onDismiss).not.toHaveBeenCalled();
+   });
+ 
++  // Regression test for https://github.com/radix-ui/primitives/issues/3971
++  it('does not dismiss a deferred parent when a child layer dismisses first', async () => {
++    const onParentDismiss = vi.fn();
++    const onChildDismiss = vi.fn();
++
++    render(
++      <>
++        <DismissableLayer.Root
++          disableOutsidePointerEvents
++          deferPointerDownOutside
++          onDismiss={onParentDismiss}
++        >
++          <button type="button">parent</button>
++        </DismissableLayer.Root>
++        <DismissableLayer.Root disableOutsidePointerEvents onDismiss={onChildDismiss}>
++          <button type="button">child</button>
++        </DismissableLayer.Root>
++        <button type="button">outside</button>
++      </>,
++    );
++    await waitForDocumentPointerDownListener();
++
++    firePointerMouseClick(screen.getByText('outside'));
++    await waitForDocumentPointerDownListener();
++
++    expect(onChildDismiss).toHaveBeenCalledTimes(1);
++    expect(onParentDismiss).not.toHaveBeenCalled();
++  });
++
+   // Regression test for https://github.com/radix-ui/primitives/issues/3963
+   it('keeps a stable composed ref (no infinite render loop)', () => {
+     assertStableComposedRef((ref) => (

@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "ComboBox > should not close the combobox when clicking on a section header"
+  ],
+  "PASS_TO_PASS": [
+    "ComboBox > provides slots",
+    "ComboBox > should support slot",
+    "ComboBox > should close on scroll",
+    "ComboBox > should not close on input scrolling for cursor placement"
+  ],
+  "base_commit": "4c91299dab6579252a9d21029b9ba35c9763ad07",
+  "instance_id": "adobe__react-spectrum-9215",
+  "schema_version": "4.0"
+}

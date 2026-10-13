@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "controlled_open_false == true",
+      "panel_is_closed == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Collapsible.Panel /> prop: keepMounted hides the panel after external controlled close when true and no animations are applied"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "controlled keepMounted panel 在 open=false 后正确关闭。"
+  },
+  "instance_id": "mui__base-ui-4553",
+  "predicate_id": "mui_collapsible_controlled_keep_mounted_panel_closes",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "打开受控面板",
+    "更新 open=false",
+    "检查 panel 状态"
+  ]
+}

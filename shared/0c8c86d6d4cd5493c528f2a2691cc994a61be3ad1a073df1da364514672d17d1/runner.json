@@ -1,0 +1,12 @@
+{
+  "base_commit": "a4a6a1143235af4dba9bc88121f24e287757ef22",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "element-plus__element-plus-19051",
+  "package_manager": "pnpm",
+  "repo_url": "https://github.com/element-plus/element-plus.git",
+  "repository": "element-plus/element-plus",
+  "runtime": "Node 20 with repository-locked pnpm official test runner",
+  "schema_version": "4.0",
+  "test_command": "vitest run packages/directives/__tests__/repeat-click.test.tsx"
+}

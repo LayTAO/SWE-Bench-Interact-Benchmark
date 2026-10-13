@@ -1,0 +1,40 @@
+{
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictTemplates": true
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "paths": {
+      "@subject-cascader": [
+        "/subject/components/cascader/public-api.ts"
+      ],
+      "ng-zorro-antd/*": [
+        "/subject/components/*"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2022",
+    "useDefineForClassFields": false
+  },
+  "exclude": [
+    "/workspace/subject/components/**/*.spec.ts",
+    "/workspace/subject/components/**/*.spec.tsx"
+  ],
+  "files": [
+    "src/main.ts",
+    "/workspace/subject/components/cascader/public-api.ts",
+    "/workspace/subject/components/cascader/cascader.component.ts"
+  ],
+  "include": [
+    "/workspace/subject/components/**/*.ts"
+  ]
+}

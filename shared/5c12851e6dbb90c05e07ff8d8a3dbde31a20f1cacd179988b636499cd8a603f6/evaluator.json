@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "CdkVirtualScrollViewport with append only should not set a transform when scrolling"
+  ],
+  "PASS_TO_PASS": [
+    "CdkVirtualScrollViewport with append only should not remove item that have already been rendered",
+    "CdkVirtualScrollViewport with append only rendered offset should always start at 0",
+    "CdkVirtualScrollViewport with append only should set content offset to bottom of content",
+    "CdkVirtualScrollViewport with append only should set content offset to top of content"
+  ],
+  "base_commit": "8eab22fae4d49392ab095a03140d9a1b02c1fa1e",
+  "instance_id": "angular__components-25077",
+  "schema_version": "4.0"
+}

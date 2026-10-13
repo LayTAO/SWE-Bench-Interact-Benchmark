@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "focused_after_clicks != [true,true,true,true]"
+    ]
+  },
+  "environment_gate": [
+    "The exact source component loads without a page error.",
+    "The external button and autocomplete input are visible with plausible, non-overlapping geometry."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "focused_after_clicks": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "instance_id": "vuetifyjs__vuetify-11989",
+  "predicate_id": "repeated_external_focus_requests_alternate",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Exactly four external focus requests are issued.",
+    "The first request focuses the autocomplete input."
+  ]
+}

@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/shoelace-style__webawesome-2673"
+version = "0.2.0-candidate"
+description = "wa-tree: Enter/Space throws when focus is inside a tree item"
+
+[metadata]
+instance_id = "shoelace-style__webawesome-2673"
+repository = "shoelace-style/webawesome"
+base_commit = "b2f63906a701c4463f66c6ef557eb0a06fb0f36c"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c2ece8bf982b3cdb546f1fb8f63eba890018f4e9cac1f9106f6c74db21de6bff"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a3d7988b725dc49dd0c7bc0b507ae4c8af7b2193d72063decb21eb8ac16a281c"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/carbon-design-system__carbon-20771"
+version = "0.2.0-candidate"
+description = "[Bug]: 点击外部时Dropdown选中项"
+
+[metadata]
+instance_id = "carbon-design-system__carbon-20771"
+repository = "carbon-design-system/carbon"
+base_commit = "925b746d92d72f9c9cf3fa3434843d049d630680"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d6fd415801ade2455a31b742f1fb65075d8e9ea2525039385671626ed5ac73df"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f52051400302ac5ddba6cb9f7bf3d0069985892fc69d21ef4fdb57057490852a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

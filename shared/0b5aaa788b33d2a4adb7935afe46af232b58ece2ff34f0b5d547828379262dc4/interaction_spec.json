@@ -1,0 +1,42 @@
+{
+  "actions": [
+    "Click Search commands input.",
+    "Hover Rename symbol.",
+    "Click the already-active input."
+  ],
+  "checkpoints": [
+    "The option is semantically focused after hover.",
+    "Buggy leaves option active and input data-focused absent; Fixed restores input state."
+  ],
+  "expected_fixed_state": {
+    "aria_activedescendant": null,
+    "bug_observed": false,
+    "document_active_element_is_input": true,
+    "focused_option": null,
+    "input_data_focused": true
+  },
+  "instance_id": "adobe__react-spectrum-8198",
+  "observation_channels": [
+    "role-based input/menuitem",
+    "document.activeElement",
+    "data-focused",
+    "aria-activedescendant",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "aria_activedescendant": "non-empty",
+    "bug_observed": true,
+    "document_active_element_is_input": true,
+    "focused_option": "Rename symbol",
+    "input_data_focused": false
+  },
+  "preconditions": [
+    "The exact React Aria Components Autocomplete source renders a SearchField and menu."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The input is focused before option hover.",
+    "Hovering Rename symbol transfers virtual focus to that option.",
+    "Clicking the same input should recover input focus state."
+  ]
+}

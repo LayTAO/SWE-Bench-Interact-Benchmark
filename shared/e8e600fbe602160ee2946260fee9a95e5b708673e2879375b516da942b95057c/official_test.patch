@@ -1,0 +1,319 @@
+diff --git a/app/src/sandbox/tab-select-6346/index.react.tsx b/app/src/sandbox/tab-select-6346/index.react.tsx
+new file mode 100644
+index 00000000..5b097341
+--- /dev/null
++++ b/app/src/sandbox/tab-select-6346/index.react.tsx
+@@ -0,0 +1,52 @@
++import * as Ariakit from "@ariakit/react";
++
++function BrowseTabButton(props: { tabId: string; children: string }) {
++  const tab = Ariakit.useTabContext();
++  return (
++    <button onClick={() => tab?.setSelectedId(props.tabId)}>
++      {props.children}
++    </button>
++  );
++}
++
++export default function Example() {
++  return (
++    <>
++      <style>{`[data-active-item] { outline: 2px solid red; }`}</style>
++      <Ariakit.SelectProvider defaultValue="Apple" virtualFocus={false}>
++        <Ariakit.SelectLabel>Grocery</Ariakit.SelectLabel>
++        <Ariakit.Select />
++        <Ariakit.SelectPopover
++          gutter={4}
++          sameWidth
++          style={{ background: "white", border: "1px solid gray", padding: 8 }}
++        >
++          <Ariakit.TabProvider defaultSelectedId="tab-fruits">
++            <Ariakit.TabList aria-label="Categories">
++              <Ariakit.Tab id="tab-fruits">Fruits</Ariakit.Tab>
++              <Ariakit.Tab id="tab-vegetables">Vegetables</Ariakit.Tab>
++            </Ariakit.TabList>
++            <Ariakit.TabPanel tabId="tab-fruits">
++              <Ariakit.SelectList>
++                <Ariakit.SelectItem value="Apple" />
++                <Ariakit.SelectItem value="Banana" />
++              </Ariakit.SelectList>
++              <BrowseTabButton tabId="tab-vegetables">
++                Browse vegetables
++              </BrowseTabButton>
++            </Ariakit.TabPanel>
++            <Ariakit.TabPanel tabId="tab-vegetables">
++              <Ariakit.SelectList>
++                <Ariakit.SelectItem value="Carrot" />
++                <Ariakit.SelectItem value="Potato" />
++              </Ariakit.SelectList>
++              <BrowseTabButton tabId="tab-fruits">
++                Browse fruits
++              </BrowseTabButton>
++            </Ariakit.TabPanel>
++          </Ariakit.TabProvider>
++        </Ariakit.SelectPopover>
++      </Ariakit.SelectProvider>
++    </>
++  );
++}
+diff --git a/app/src/sandbox/tab-select-6346/test-browser.ts b/app/src/sandbox/tab-select-6346/test-browser.ts
+new file mode 100644
+index 00000000..360c0e3f
+--- /dev/null
++++ b/app/src/sandbox/tab-select-6346/test-browser.ts
+@@ -0,0 +1,63 @@
++import { withFramework } from "#app/test-utils/preview.ts";
++
++// See https://github.com/ariakit/ariakit/issues/6346
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("activates the tab selected by setSelectedId after the popover opens", async ({
++    q,
++  }) => {
++    await q.combobox("Grocery").click();
++    await test.expect(q.tab("Fruits")).toHaveAttribute("aria-selected", "true");
++
++    await q.button("Browse vegetables").click();
++
++    await test
++      .expect(q.tab("Vegetables"))
++      .toHaveAttribute("aria-selected", "true");
++    await test.expect(q.tab("Vegetables")).toHaveAttribute("data-active-item");
++    await test
++      .expect(q.tab("Vegetables"))
++      .not.toHaveAttribute("tabindex", "-1");
++
++    await q.button("Browse fruits").click();
++
++    await test.expect(q.tab("Fruits")).toHaveAttribute("aria-selected", "true");
++    await test.expect(q.tab("Fruits")).toHaveAttribute("data-active-item");
++    await test.expect(q.tab("Fruits")).not.toHaveAttribute("tabindex", "-1");
++  });
++
++  test("activates the tab selected by setSelectedId after the popover toggles", async ({
++    q,
++  }) => {
++    await q.combobox("Grocery").click();
++    await test.expect(q.tab("Fruits")).toHaveAttribute("aria-selected", "true");
++
++    await q.button("Browse vegetables").click();
++    await test
++      .expect(q.tab("Vegetables"))
++      .toHaveAttribute("aria-selected", "true");
++
++    await q.combobox("Grocery").click();
++    await test
++      .expect(q.combobox("Grocery"))
++      .toHaveAttribute("aria-expanded", "false");
++
++    await q.combobox("Grocery").click();
++    await test.expect(q.tab("Fruits")).toHaveAttribute("aria-selected", "true");
++
++    await q.button("Browse vegetables").click();
++
++    await test
++      .expect(q.tab("Vegetables"))
++      .toHaveAttribute("aria-selected", "true");
++    await test.expect(q.tab("Vegetables")).toHaveAttribute("data-active-item");
++    await test
++      .expect(q.tab("Vegetables"))
++      .not.toHaveAttribute("tabindex", "-1");
++
++    await q.button("Browse fruits").click();
++
++    await test.expect(q.tab("Fruits")).toHaveAttribute("aria-selected", "true");
++    await test.expect(q.tab("Fruits")).toHaveAttribute("data-active-item");
++    await test.expect(q.tab("Fruits")).not.toHaveAttribute("tabindex", "-1");
++  });
++});
+diff --git a/app/src/sandbox/tab-select-6346/test.ts b/app/src/sandbox/tab-select-6346/test.ts
+new file mode 100644
+index 00000000..a0c2f8ea
+--- /dev/null
++++ b/app/src/sandbox/tab-select-6346/test.ts
+@@ -0,0 +1,49 @@
++import { click, q } from "@ariakit/test";
++import { expect, test } from "vitest";
++
++// See https://github.com/ariakit/ariakit/issues/6346
++test("activates the tab selected by setSelectedId after the popover opens", async () => {
++  await click(q.combobox.ensure("Grocery"));
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("aria-selected", "true");
++
++  await click(q.button.ensure("Browse vegetables"));
++
++  expect(q.tab.ensure("Vegetables")).toHaveAttribute("aria-selected", "true");
++  expect(q.tab.ensure("Vegetables")).toHaveAttribute("data-active-item");
++  expect(q.tab.ensure("Vegetables")).not.toHaveAttribute("tabindex", "-1");
++
++  await click(q.button.ensure("Browse fruits"));
++
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("aria-selected", "true");
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("data-active-item");
++  expect(q.tab.ensure("Fruits")).not.toHaveAttribute("tabindex", "-1");
++});
++
++test("activates the tab selected by setSelectedId after the popover toggles", async () => {
++  await click(q.combobox.ensure("Grocery"));
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("aria-selected", "true");
++
++  await click(q.button.ensure("Browse vegetables"));
++  expect(q.tab.ensure("Vegetables")).toHaveAttribute("aria-selected", "true");
++
++  await click(q.combobox.ensure("Grocery"));
++  expect(q.combobox.ensure("Grocery")).toHaveAttribute(
++    "aria-expanded",
++    "false",
++  );
++
++  await click(q.combobox.ensure("Grocery"));
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("aria-selected", "true");
++
++  await click(q.button.ensure("Browse vegetables"));
++
++  expect(q.tab.ensure("Vegetables")).toHaveAttribute("aria-selected", "true");
++  expect(q.tab.ensure("Vegetables")).toHaveAttribute("data-active-item");
++  expect(q.tab.ensure("Vegetables")).not.toHaveAttribute("tabindex", "-1");
++
++  await click(q.button.ensure("Browse fruits"));
++
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("aria-selected", "true");
++  expect(q.tab.ensure("Fruits")).toHaveAttribute("data-active-item");
++  expect(q.tab.ensure("Fruits")).not.toHaveAttribute("tabindex", "-1");
++});
+diff --git a/packages/ariakit-components/src/tab/tab-store.test.ts b/packages/ariakit-components/src/tab/tab-store.test.ts
+index 09b433ce..75433530 100644
+--- a/packages/ariakit-components/src/tab/tab-store.test.ts
++++ b/packages/ariakit-components/src/tab/tab-store.test.ts
+@@ -1,5 +1,7 @@
+ import { init } from "@ariakit/store";
+ import { expect, test } from "vitest";
++import { createComboboxStore } from "../combobox/combobox-store.ts";
++import { createSelectStore } from "../select/select-store.ts";
+ import { createTabStore } from "./tab-store.ts";
+ 
+ function flushBatch() {
+@@ -121,3 +123,124 @@ test("tracks explicit panel item state updates", () => {
+ 
+   expect(store.panel("tab-1")).toBeNull();
+ });
++
++test("syncs activeId on the first setSelectedId with a select parent", async () => {
++  const select = createSelectStore();
++  const store = createTabStore({
++    composite: select,
++    defaultSelectedId: "tab-1",
++  });
++  const stop = init(store);
++
++  try {
++    store.setSelectedId("tab-2");
++    await flushBatch();
++
++    expect(store.getState().selectedId).toBe("tab-2");
++    expect(store.getState().activeId).toBe("tab-2");
++  } finally {
++    stop();
++  }
++});
++
++test("syncs activeId on the first setSelectedId after a popover toggle", async () => {
++  const select = createSelectStore();
++  const store = createTabStore({
++    composite: select,
++    defaultSelectedId: "tab-1",
++  });
++  const stop = init(store);
++
++  try {
++    select.setOpen(true);
++    select.setOpen(false);
++    await flushBatch();
++
++    store.setSelectedId("tab-2");
++    await flushBatch();
++
++    expect(store.getState().activeId).toBe("tab-2");
++  } finally {
++    stop();
++  }
++});
++
++test("skips the activeId sync when restoring selectedId on popover toggle", async () => {
++  const select = createSelectStore();
++  const store = createTabStore({
++    composite: select,
++    defaultSelectedId: "tab-1",
++  });
++  const stop = init(store);
++
++  try {
++    store.setSelectedId("tab-2");
++    await flushBatch();
++
++    select.setOpen(true);
++    await flushBatch();
++
++    expect(store.getState().selectedId).toBe("tab-1");
++    expect(store.getState().activeId).toBe("tab-2");
++  } finally {
++    stop();
++  }
++});
++
++test("syncs activeId when a restore shares a flush with a later setSelectedId", async () => {
++  const select = createSelectStore();
++  const store = createTabStore({
++    composite: select,
++    defaultSelectedId: "tab-1",
++  });
++  const stop = init(store);
++
++  try {
++    store.setSelectedId("tab-2");
++    await flushBatch();
++
++    select.setOpen(true);
++    store.setSelectedId("tab-3");
++    await flushBatch();
++
++    expect(store.getState().selectedId).toBe("tab-3");
++    expect(store.getState().activeId).toBe("tab-3");
++  } finally {
++    stop();
++  }
++});
++
++test("does not leak a restore armed right before the store is destroyed", async () => {
++  const combobox = createComboboxStore({ defaultOpen: true });
++  const store = createTabStore({ combobox, defaultSelectedId: "tab-1" });
++  const stop = init(store);
++
++  try {
++    combobox.setState("selectedValue", "value");
++    store.setSelectedId("tab-2");
++    await flushBatch();
++
++    expect(store.getState().activeId).toBe("tab-2");
++
++    combobox.setOpen(false);
++    stop();
++    await flushBatch();
++  } finally {
++    stop();
++  }
++
++  const restart = init(store);
++
++  try {
++    await flushBatch();
++    expect(store.getState().selectedId).toBe("tab-1");
++
++    store.setSelectedId("tab-3");
++    await flushBatch();
++
++    expect(store.getState().selectedId).toBe("tab-3");
++    expect(store.getState().activeId).toBe("tab-3");
++  } finally {
++    restart();
++  }
++});

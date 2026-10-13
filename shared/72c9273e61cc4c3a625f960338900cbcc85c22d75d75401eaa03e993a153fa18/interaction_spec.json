@@ -1,0 +1,36 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Click Run detached transition.",
+    "Observe callback status and detached element count."
+  ],
+  "checkpoints": [
+    "The detached element is removed from the document.",
+    "Buggy leaves the callback waiting; Fixed fires the callback."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "callback_status": "callback fired",
+    "detached_element_count": 0
+  },
+  "instance_id": "adobe__react-spectrum-7973",
+  "observation_channels": [
+    "semantic button click",
+    "output text",
+    "DOM connectivity",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "callback_status": "waiting",
+    "detached_element_count": 0
+  },
+  "preconditions": [
+    "The exact runAfterTransition source is loaded in a browser context."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "A connected element reports a transitionrun and is then detached before transitionend.",
+    "runAfterTransition queues a callback for the next animation frame."
+  ]
+}

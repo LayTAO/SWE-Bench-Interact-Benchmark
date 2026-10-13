@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "DateField should do nothing when pressing enter"
+  ],
+  "PASS_TO_PASS": [
+    "DateField provides slots"
+  ],
+  "base_commit": "77b3442e4150116f3d35995b5a98b582d9e6f231",
+  "instance_id": "adobe__react-spectrum-5102",
+  "schema_version": "4.0"
+}

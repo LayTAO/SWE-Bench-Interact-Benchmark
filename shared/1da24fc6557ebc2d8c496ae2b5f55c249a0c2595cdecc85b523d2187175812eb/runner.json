@@ -1,0 +1,12 @@
+{
+  "base_commit": "847f04a613f523161f558e5fd2d406d9381cee9a",
+  "base_image": "public.ecr.aws/docker/library/node:16-bookworm",
+  "install_command": "yarn install --frozen-lockfile --ignore-scripts --network-timeout 100000",
+  "instance_id": "react-bootstrap__react-bootstrap-6514",
+  "package_manager": "yarn@1.22.22",
+  "repo_url": "https://github.com/react-bootstrap/react-bootstrap.git",
+  "repository": "react-bootstrap/react-bootstrap",
+  "runtime": "Node.js 16; Yarn 1.22.22; Karma ChromeHeadless",
+  "schema_version": "4.0",
+  "test_command": "BROWSER=ChromeHeadless CONTINUOUS_INTEGRATION=true yarn test-browser --single-run"
+}

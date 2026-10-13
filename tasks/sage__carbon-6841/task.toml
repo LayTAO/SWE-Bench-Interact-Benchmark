@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/sage__carbon-6841"
+version = "0.2.0-candidate"
+description = "Disparity between Multi-select and Simple-select hit box"
+
+[metadata]
+instance_id = "sage__carbon-6841"
+repository = "Sage/carbon"
+base_commit = "b03cee20bf9aa04a9f70ec2f7a1dc7251fa8938a"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:be4e351f188048bb84aef59c03de17140a3671c9ebd379a499d08ccff994af3d"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5c5c68c08c4729abd564a0289e92be2acc32af43e16fb7978850fdfedfce11fb"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

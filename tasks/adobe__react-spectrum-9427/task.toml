@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-9427"
+version = "0.2.0-candidate"
+description = "Calendar Month/Year dropdown awkward autofocus behaviour (docs example)"
+
+[metadata]
+instance_id = "adobe__react-spectrum-9427"
+repository = "adobe/react-spectrum"
+base_commit = "2ff5b8198b376084c1eb5ef08e0b14233934e899"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d3a1400ef2a62783d6457c17196087b51368b0733dff0fabf45b1bbd3df013f1"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:80abc2d3d6413d5c6338e81f2c2bbad38f02bb7d238e49cb00777c43f3375031"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

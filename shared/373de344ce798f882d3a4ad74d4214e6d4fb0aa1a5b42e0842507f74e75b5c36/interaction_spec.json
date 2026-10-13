@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "开始打开手势",
+    "中断手势或触发 context menu",
+    "点击 Drawer 外部"
+  ],
+  "expected_fixed": "中断手势后 outside press 仍关闭 Drawer。",
+  "instance_id": "mui__base-ui-4471",
+  "issue_derived_path": [
+    "开始打开手势",
+    "中断手势或触发 context menu",
+    "点击 Drawer 外部"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "中断手势后 outside press dismissal 被永久禁用，Drawer 仍存在。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

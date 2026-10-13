@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "sl-select keyboard interactions should prevent default on listbox mousedown when the listbox itself is the target"
+  ],
+  "PASS_TO_PASS": [
+    "sl-select disabled should not toggle the expanded state when clicked",
+    "sl-select keyboard interactions should open the popover on ArrowDown key",
+    "sl-select keyboard interactions should close the popover on Escape key",
+    "sl-select keyboard interactions should close the popover when focus leaves the select",
+    "sl-select keyboard interactions should not prevent default on listbox mousedown when an option is the target",
+    "sl-select keyboard interactions should focus the button after the popover closes",
+    "sl-select keyboard interactions should navigate options with ArrowDown key",
+    "sl-select keyboard interactions should stop Escape key propagation when the listbox is open",
+    "sl-select focus management should move focus away from select-button when tabbing out of an open select",
+    "sl-select focus management should focus a select-button when pressing Escape"
+  ],
+  "base_commit": "946eda3c933c3fe90c460f0645d90cd45e5738b4",
+  "instance_id": "sl-design-system__components-3150",
+  "schema_version": "4.0"
+}

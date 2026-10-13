@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "Autocomplete should restore focused styles to the input when clicking it after hovering an option",
+    "Autocomplete should restore focused styles to the input when clicking it after keyboard focusing an option",
+    "Autocomplete should restore the input state after clicking outside the autocomplete and then back into the input"
+  ],
+  "PASS_TO_PASS": [
+    "Autocomplete Breadcrumbs doesnt get filtered by Autocomplete",
+    "Autocomplete Tabs doesnt get filtered by Autocomplete",
+    "Autocomplete Tree doesnt get filtered by Autocomplete",
+    "Autocomplete should allow user to filter by node information",
+    "Autocomplete should apply focusVisible/focused to virtually focused menu items when keyboard navigating"
+  ],
+  "base_commit": "e2414021454df4847d0f211dd98b44607b976917",
+  "instance_id": "adobe__react-spectrum-8198",
+  "schema_version": "4.0"
+}

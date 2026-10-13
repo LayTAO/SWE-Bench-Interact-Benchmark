@@ -1,0 +1,23 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After the Issue-derived close/reopen sequence, Buggy leaves focus on the disclosure while Fixed focuses the visible Choose file button.",
+    "fixed_observed": false,
+    "name": "reopened_portaled_popover_focuses_visible_control"
+  },
+  "expected": {
+    "buggy": {
+      "close_choose_file_tabindex": "-1",
+      "close_disclosure_focused": true,
+      "first_open_choose_file_focused": true,
+      "reopen_choose_file_focused": false
+    },
+    "fixed": {
+      "close_choose_file_tabindex": "-1",
+      "close_disclosure_focused": true,
+      "first_open_choose_file_focused": true,
+      "reopen_choose_file_focused": true
+    }
+  },
+  "schema_version": "1.0"
+}

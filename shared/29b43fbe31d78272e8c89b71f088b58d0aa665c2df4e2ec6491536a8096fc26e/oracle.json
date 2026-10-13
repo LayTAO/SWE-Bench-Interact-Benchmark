@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "fixed_state": false
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "body_pointer_events_when_false": "not none",
+    "body_pointer_events_when_true": "none"
+  },
+  "instance_id": "unovue__reka-ui-2677",
+  "rendering_gate": [
+    "Both Dialog contents have plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Both Dialogs become visible in sequence."
+  ]
+}

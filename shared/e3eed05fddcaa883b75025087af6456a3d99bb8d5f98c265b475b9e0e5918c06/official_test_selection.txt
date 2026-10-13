@@ -1,0 +1,24 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/navigation-menu/trigger/NavigationMenuTrigger.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <NavigationMenu.Trigger /> releases the pointer-events lock on the list when the open trigger unmounts
+- <NavigationMenu.Trigger /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <NavigationMenu.Trigger /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <NavigationMenu.Trigger /> Base UI component API prop forwarding forwards custom props to the default element
+- <NavigationMenu.Trigger /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <NavigationMenu.Trigger /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <NavigationMenu.Trigger /> Base UI component API prop: className should apply the className when passed as a string
+- <NavigationMenu.Trigger /> Base UI component API prop: render renders a customized root element with a function
+- <NavigationMenu.Trigger /> Base UI component API prop: render renders a customized root element with an element
+- <NavigationMenu.Trigger /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <NavigationMenu.Trigger /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <NavigationMenu.Trigger /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <NavigationMenu.Trigger /> Base UI component API prop: render should pass the ref to the custom component
+- <NavigationMenu.Trigger /> Base UI component API ref attaches the ref
+- <NavigationMenu.Trigger /> does not let a previously hovered trigger reapply popup sizes after a later switch
+- <NavigationMenu.Trigger /> does not let interrupted mutation resizing reapply popup sizes after a later switch
+- <NavigationMenu.Trigger /> handles focus and positioner height
+- <NavigationMenu.Trigger /> handles positioner width correctly
+- <NavigationMenu.Trigger /> opens a vertical menu with the mirrored arrow key in RTL mode
+- <NavigationMenu.Trigger /> repositions the positioner when switching triggers via hover

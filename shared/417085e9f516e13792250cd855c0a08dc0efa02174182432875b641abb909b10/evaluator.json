@@ -1,0 +1,23 @@
+{
+  "FAIL_TO_PASS": [
+    " Tooltip When tooltip is open and the user scrolls outside the content, it closes"
+  ],
+  "PASS_TO_PASS": [
+    " 2 tooltips, different groups When a tooltip opens, the other stays open",
+    " 2 tooltips, group=false When a tooltip opens, the other stays open",
+    " 2 tooltips, group=true When a tooltip opens, the other closes",
+    " 2 tooltips, group=true When both are rendered with open=true, the first closes",
+    " 2 tooltips, group=undefined When a tooltip opens, the other stays open",
+    " Single tooltip, group=true Tooltip does not prevent itself from opening",
+    " Tooltip Applies custom ids when provided",
+    " Tooltip It opens when focused, and closes when blurred",
+    " Tooltip It opens when hovered, and closes when left",
+    " Tooltip When focusing the trigger, you should be able to click the content",
+    " Tooltip When the tooltip is open and the user scrolls inside the content, it stays open",
+    " Tooltip When the tooltip was opened by focusing, leaving the trigger does not close it",
+    " Tooltip When the tooltip was opened by pointer, blurring the trigger does not close it"
+  ],
+  "base_commit": "bd6ba738da4c3427b2b3fc716ac7730aab8254fb",
+  "instance_id": "melt-ui__melt-ui-945",
+  "schema_version": "4.0"
+}

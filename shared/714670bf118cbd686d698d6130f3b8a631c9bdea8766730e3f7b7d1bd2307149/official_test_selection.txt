@@ -1,0 +1,191 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/checkbox/root/CheckboxRoot.test.tsx, packages/react/src/radio/root/RadioRoot.test.tsx, packages/react/src/switch/root/SwitchRoot.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <Checkbox.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called
+- <Checkbox.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button
+- <Checkbox.Root /> prop: onClick propagates a single click event to ancestors per user click
+- <Checkbox.Root /> prop: onClick propagates a single click event to ancestors with a native button
+- <Radio.Root /> prop: onClick does not propagate a click to ancestors when selecting with arrow keys
+- <Radio.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called
+- <Radio.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button
+- <Radio.Root /> prop: onClick propagates a single click event to ancestors per user click
+- <Radio.Root /> prop: onClick propagates a single click event to ancestors with a native button
+- <Switch.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called
+- <Switch.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button
+- <Switch.Root /> prop: onClick propagates a single click event to ancestors per user click
+- <Switch.Root /> prop: onClick propagates a single click event to ancestors with a native button
+- <Checkbox.Root /> ARIA attributes sets the correct aria attributes
+- <Checkbox.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <Checkbox.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <Checkbox.Root /> Base UI component API prop forwarding forwards custom props to the default element
+- <Checkbox.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <Checkbox.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <Checkbox.Root /> Base UI component API prop: className should apply the className when passed as a string
+- <Checkbox.Root /> Base UI component API prop: render renders a customized root element with a function
+- <Checkbox.Root /> Base UI component API prop: render renders a customized root element with an element
+- <Checkbox.Root /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <Checkbox.Root /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <Checkbox.Root /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <Checkbox.Root /> Base UI component API prop: render should pass the ref to the custom component
+- <Checkbox.Root /> Base UI component API ref attaches the ref
+- <Checkbox.Root /> Field Field.Description
+- <Checkbox.Root /> Field Field.Label explicit association when label and checkbox are siblings
+- <Checkbox.Root /> Field Field.Label implicit association sets `for` on the label
+- <Checkbox.Root /> Field [data-dirty]
+- <Checkbox.Root /> Field [data-filled] adds [data-filled] attribute when any checkbox is filled when inside a group
+- <Checkbox.Root /> Field [data-filled] adds [data-filled] attribute when checked after being initially unchecked
+- <Checkbox.Root /> Field [data-filled] removes [data-filled] attribute when unchecked after being initially checked
+- <Checkbox.Root /> Field [data-focused]
+- <Checkbox.Root /> Field [data-invalid]
+- <Checkbox.Root /> Field [data-touched]
+- <Checkbox.Root /> Field [data-valid]
+- <Checkbox.Root /> Field does not set [data-focused] when disabled
+- <Checkbox.Root /> Field prop: validationMode=onBlur
+- <Checkbox.Root /> Field prop: validationMode=onSubmit
+- <Checkbox.Root /> Field props: validationMode=onChange
+- <Checkbox.Root /> Field revalidates when a controlled value changes externally
+- <Checkbox.Root /> Field should receive disabled prop from Field.Root
+- <Checkbox.Root /> Field should receive name prop from Field.Root
+- <Checkbox.Root /> Field validates once when changed by the user
+- <Checkbox.Root /> Form clears external errors on change
+- <Checkbox.Root /> Form does not submit the form with Enter when an ancestor prevents default
+- <Checkbox.Root /> Form does not submit the form with Enter when the consumer prevents default
+- <Checkbox.Root /> Form does not submit the form with Enter when the default button is disabled
+- <Checkbox.Root /> Form does not submit the form with Enter when there is no submit button
+- <Checkbox.Root /> Form does not submit uncheckedValue when disabled
+- <Checkbox.Root /> Form matches native checkbox form submission behavior
+- <Checkbox.Root /> Form should include the checkbox value in form submission, matching native checkbox behavior
+- <Checkbox.Root /> Form should include the custom checkbox value in form submission, matching native checkbox behavior
+- <Checkbox.Root /> Form should submit custom uncheckedValue when checkbox is unchecked
+- <Checkbox.Root /> Form should submit uncheckedValue when checkbox is unchecked and uncheckedValue is specified
+- <Checkbox.Root /> Form submits the form once with Enter when rendered as a native button
+- <Checkbox.Root /> Form submits the form when Enter is pressed while focused
+- <Checkbox.Root /> Form submits the form with Enter when readOnly
+- <Checkbox.Root /> Form submits to an external form when `form` is provided
+- <Checkbox.Root /> Form submits to an external form with Enter when `form` is provided
+- <Checkbox.Root /> Form submits uncheckedValue to an external form when unchecked
+- <Checkbox.Root /> Form triggers native HTML validation on submit
+- <Checkbox.Root /> can render a native button
+- <Checkbox.Root /> extra props can override the built-in attributes
+- <Checkbox.Root /> interactions can be activated with Space key
+- <Checkbox.Root /> interactions does not activate with Enter key
+- <Checkbox.Root /> interactions does not update its state when onCheckedChange cancels the event
+- <Checkbox.Root /> interactions should call onCheckedChange when clicked
+- <Checkbox.Root /> interactions should change its state when clicked
+- <Checkbox.Root /> interactions should report keyboard modifier event properties when calling onCheckedChange
+- <Checkbox.Root /> interactions should update its state if the underlying input is toggled
+- <Checkbox.Root /> interactions should update its state when changed from outside
+- <Checkbox.Root /> prop: disabled should not change its state when clicked
+- <Checkbox.Root /> prop: disabled uses aria-disabled instead of HTML disabled
+- <Checkbox.Root /> prop: indeterminate sets grouped parent aria when manually indeterminate
+- <Checkbox.Root /> prop: indeterminate sets grouped parent native input state when manually indeterminate
+- <Checkbox.Root /> prop: indeterminate sets indeterminate style hooks on the root and indicator
+- <Checkbox.Root /> prop: indeterminate sets the native input state when indeterminate
+- <Checkbox.Root /> prop: indeterminate should not be overridden by `checked` prop
+- <Checkbox.Root /> prop: indeterminate should not change its state when clicked
+- <Checkbox.Root /> prop: indeterminate should not have the aria attribute when `indeterminate` is not set
+- <Checkbox.Root /> prop: indeterminate should set the `aria-checked` attribute as "mixed"
+- <Checkbox.Root /> prop: readOnly should have the `aria-readonly` attribute
+- <Checkbox.Root /> prop: readOnly should not change its state when clicked
+- <Checkbox.Root /> prop: readOnly should not change its state when its label is clicked
+- <Checkbox.Root /> prop: readOnly should not have the aria attribute when `readOnly` is not set
+- <Checkbox.Root /> sets `aria-labelledby` from a sibling label associated with the hidden input
+- <Checkbox.Root /> should change state when clicking the checkbox if it has a wrapping label
+- <Checkbox.Root /> should place the style hooks on the root and the indicator
+- <Checkbox.Root /> should set the name attribute only on the input
+- <Checkbox.Root /> should update its state if the underlying input is toggled
+- <Checkbox.Root /> updates fallback `aria-labelledby` when the hidden input id changes
+- <Checkbox.Root /> with native <label> should associate `id` with the native button when `nativeButton=true`
+- <Checkbox.Root /> with native <label> should toggle the checkbox when a explicitly linked <label> is clicked
+- <Checkbox.Root /> with native <label> should toggle the checkbox when a wrapping <label> is clicked
+- <Radio.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <Radio.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <Radio.Root /> Base UI component API prop forwarding forwards custom props to the default element
+- <Radio.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <Radio.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <Radio.Root /> Base UI component API prop: className should apply the className when passed as a string
+- <Radio.Root /> Base UI component API prop: render renders a customized root element with a function
+- <Radio.Root /> Base UI component API prop: render renders a customized root element with an element
+- <Radio.Root /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <Radio.Root /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <Radio.Root /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <Radio.Root /> Base UI component API prop: render should pass the ref to the custom component
+- <Radio.Root /> Base UI component API ref attaches the ref
+- <Radio.Root /> allows `null` value
+- <Radio.Root /> associates `id` with the native button when `nativeButton=true`
+- <Radio.Root /> does not forward `value` prop
+- <Radio.Root /> prop: disabled uses aria-disabled instead of HTML disabled
+- <Radio.Root /> sets `aria-labelledby` from a sibling label associated with the hidden input
+- <Radio.Root /> updates fallback `aria-labelledby` when the hidden input id changes
+- <Switch.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <Switch.Root /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <Switch.Root /> Base UI component API prop forwarding forwards custom props to the default element
+- <Switch.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <Switch.Root /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <Switch.Root /> Base UI component API prop: className should apply the className when passed as a string
+- <Switch.Root /> Base UI component API prop: render renders a customized root element with a function
+- <Switch.Root /> Base UI component API prop: render renders a customized root element with an element
+- <Switch.Root /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <Switch.Root /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <Switch.Root /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <Switch.Root /> Base UI component API prop: render should pass the ref to the custom component
+- <Switch.Root /> Base UI component API ref attaches the ref
+- <Switch.Root /> Field Field.Description
+- <Switch.Root /> Field Field.Label explicit association when rendering a non-native button
+- <Switch.Root /> Field Field.Label explicit association when rendering a non-native label
+- <Switch.Root /> Field Field.Label explicit association when the label is sibling to the switch
+- <Switch.Root /> Field Field.Label implicit sets `for` on the label
+- <Switch.Root /> Field [data-dirty]
+- <Switch.Root /> Field [data-filled] adds [data-filled] attribute when checked after being initially unchecked
+- <Switch.Root /> Field [data-filled] removes [data-filled] attribute when unchecked after being initially checked
+- <Switch.Root /> Field [data-focused]
+- <Switch.Root /> Field [data-touched]
+- <Switch.Root /> Field prop: validationMode=onBlur
+- <Switch.Root /> Field prop: validationMode=onChange
+- <Switch.Root /> Field prop: validationMode=onSubmit
+- <Switch.Root /> Field revalidates when a controlled value changes externally
+- <Switch.Root /> Field should receive disabled prop from Field.Root
+- <Switch.Root /> Field should receive name prop from Field.Root
+- <Switch.Root /> Field validates once when changed by the user
+- <Switch.Root /> Form clears external errors on change
+- <Switch.Root /> Form does not submit uncheckedValue when disabled
+- <Switch.Root /> Form matches native checkbox form submission behavior
+- <Switch.Root /> Form should include the switch value in form submission, matching native checkbox behavior
+- <Switch.Root /> Form should submit custom uncheckedValue when switch is off
+- <Switch.Root /> Form should submit uncheckedValue when switch is off and uncheckedValue is specified
+- <Switch.Root /> Form submits custom value and uncheckedValue across an off/on/off cycle
+- <Switch.Root /> Form submits to an external form when `form` is provided
+- <Switch.Root /> Form submits uncheckedValue to an external form when off
+- <Switch.Root /> Form triggers native HTML validation on submit
+- <Switch.Root /> can render a native button
+- <Switch.Root /> extra props sets `aria-labelledby` from a sibling label associated with the hidden input
+- <Switch.Root /> extra props should override the built-in attributes
+- <Switch.Root /> extra props updates fallback `aria-labelledby` when the hidden input id changes
+- <Switch.Root /> interactions can be activated with Enter key
+- <Switch.Root /> interactions can be activated with Space key
+- <Switch.Root /> interactions should change its state when clicked
+- <Switch.Root /> interactions should update its state if the underlying input is toggled
+- <Switch.Root /> interactions should update its state when changed from outside
+- <Switch.Root /> prop: disabled should not change its state when clicked
+- <Switch.Root /> prop: disabled should not have the `disabled` attribute when `disabled` is not set
+- <Switch.Root /> prop: disabled uses aria-disabled instead of HTML disabled
+- <Switch.Root /> prop: inputRef should be able to access the native input
+- <Switch.Root /> prop: onCheckedChange does not change state when canceled via a hidden input click
+- <Switch.Root /> prop: onCheckedChange does not change state when canceled via a root click
+- <Switch.Root /> prop: onCheckedChange should call onCheckedChange when clicked
+- <Switch.Root /> prop: onCheckedChange should report keyboard modifier event properties when calling onCheckedChange
+- <Switch.Root /> prop: onClick should call onClick when clicked
+- <Switch.Root /> prop: readOnly should have the `aria-readonly` attribute
+- <Switch.Root /> prop: readOnly should not change its state when clicked
+- <Switch.Root /> prop: readOnly should not change its state when its label is clicked
+- <Switch.Root /> prop: readOnly should not have the aria attribute when `readOnly` is not set
+- <Switch.Root /> prop: required should have the `aria-required` attribute
+- <Switch.Root /> prop: required should not have the aria attribute when `required` is not set
+- <Switch.Root /> should not set the value attribute by default
+- <Switch.Root /> should place the style hooks on the root and the thumb
+- <Switch.Root /> should set the name attribute only on the input
+- <Switch.Root /> should set the value attribute only on the input
+- <Switch.Root /> with native <label> should associate `id` with the native button when `nativeButton=true`
+- <Switch.Root /> with native <label> should toggle the switch when a explicitly linked <label> is clicked
+- <Switch.Root /> with native <label> should toggle the switch when a wrapping <label> is clicked

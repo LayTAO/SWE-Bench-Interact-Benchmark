@@ -1,0 +1,11 @@
+{
+  "base_commit": "ad68e8404b965354526e0b9bc63e6c748fa3a954",
+  "base_image": "local Node 22.18.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "mui__base-ui-4663",
+  "package_manager": "pnpm@10.33.2",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "VITEST_ENV=chromium PLAYWRIGHT_BROWSERS_PATH=<pinned-browser-cache> pnpm exec vitest run --config packages/react/vitest.config.mts packages/react/src/select/item/SelectItem.test.tsx --reporter=json --outputFile=<isolated-output> --browser chromium"
+}

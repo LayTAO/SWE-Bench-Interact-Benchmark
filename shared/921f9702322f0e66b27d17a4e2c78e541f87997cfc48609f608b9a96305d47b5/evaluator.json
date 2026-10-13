@@ -1,0 +1,38 @@
+{
+  "FAIL_TO_PASS": [
+    "given a Combobox with openOnFocus should close content when focus moves to an element outside"
+  ],
+  "PASS_TO_PASS": [
+    "given default Combobox should pass axe accessibility tests",
+    "given default Combobox should show placeholder",
+    "given default Combobox opening the popup should pass axe accessibility tests",
+    "given default Combobox opening the popup should show the popup content",
+    "given default Combobox opening the popup should reset searchTerm when close",
+    "given default Combobox opening the popup should not reset searchTerm when close",
+    "given default Combobox opening the popup after selecting a value should show value correctly",
+    "given default Combobox opening the popup after selecting a value should close the popup",
+    "given default Combobox opening the popup after selecting a value should emit `update:modelValue` event",
+    "given default Combobox opening the popup after selecting a value after opening the modal again should focus on the selected value",
+    "given default Combobox opening the popup after selecting a value after opening the modal again should render the icon",
+    "given a Combobox with multiple prop opening the popup should show the popup content",
+    "given a Combobox with multiple prop opening the popup after selecting a value should not show searchTerm value",
+    "given a Combobox with multiple prop opening the popup after selecting a value should keep popup open",
+    "given a Combobox with multiple prop opening the popup after selecting a value should emit `update:modelValue` event",
+    "given a Combobox with object opening the popup should show the popup content",
+    "given a Combobox with object opening the popup after keypress input should filter with the searchTerm (Dur)",
+    "given a Combobox with object opening the popup if no display-value provided after selecting a value should not show searchTerm value",
+    "given a Combobox with object opening the popup if no display-value provided after selecting a value should not keep popup open",
+    "given a Combobox with object opening the popup if display-value provided after selecting a value should show searchTerm value",
+    "given a Combobox with object opening the popup if display-value provided after selecting a value should not keep popup open",
+    "given a Combobox with openOnFocus should open when input is focused",
+    "given a Combobox with openOnFocus should not restore focus to input when closing",
+    "given combobox in a form should have hidden input field",
+    "given combobox in a form after selecting option and clicking submit button should trigger submit once",
+    "given combobox in a form after selecting other option and click submit button again should trigger submit once",
+    "given combobox in a form after selecting an option via keyboard should show value correctly",
+    "given combobox in a form after selecting an option via keyboard should not bubble up the Enter keydown event to the form"
+  ],
+  "base_commit": "dcad3850135534fa3ab9fe4a4fc1244ddbd1896a",
+  "instance_id": "unovue__reka-ui-2483",
+  "schema_version": "4.0"
+}

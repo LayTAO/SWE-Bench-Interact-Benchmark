@@ -1,0 +1,188 @@
+diff --git a/packages/react-core/src/components/Truncate/__tests__/Truncate.test.tsx b/packages/react-core/src/components/Truncate/__tests__/Truncate.test.tsx
+index 9d1541f0..3abc4b0d 100644
+--- a/packages/react-core/src/components/Truncate/__tests__/Truncate.test.tsx
++++ b/packages/react-core/src/components/Truncate/__tests__/Truncate.test.tsx
+@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
+ import '@testing-library/jest-dom';
+ 
+ jest.mock('../../Tooltip', () => ({
+-  Tooltip: ({ content, position, children, ...props }) => (
++  Tooltip: ({ content, position, children, triggerRef, ...props }) => (
+     <div data-testid="Tooltip-mock" {...props}>
+       <div data-testid="Tooltip-mock-content-container">Test {content}</div>
+       <p>{`position: ${position}`}</p>
+diff --git a/packages/react-core/src/components/Truncate/__tests__/__snapshots__/Truncate.test.tsx.snap b/packages/react-core/src/components/Truncate/__tests__/__snapshots__/Truncate.test.tsx.snap
+index 9c1455a9..028952dd 100644
+--- a/packages/react-core/src/components/Truncate/__tests__/__snapshots__/Truncate.test.tsx.snap
++++ b/packages/react-core/src/components/Truncate/__tests__/__snapshots__/Truncate.test.tsx.snap
+@@ -13,27 +13,28 @@ exports[`Truncation with maxCharsDisplayed Matches snapshot with default positio
+     <p>
+       position: top
+     </p>
++  </div>
++  <span
++    class="pf-v6-c-truncate pf-m-fixed"
++    tabindex="0"
++  >
+     <span
+-      class="pf-v6-c-truncate pf-m-fixed"
++      class="pf-v6-c-truncate__text"
+     >
+-      <span
+-        class="pf-v6-c-truncate__text"
+-      >
+-        Tes
+-      </span>
+-      <span
+-        aria-hidden="true"
+-        class="pf-v6-c-truncate__omission"
+-      >
+-        …
+-      </span>
+-      <span
+-        class="pf-v6-screen-reader"
+-      >
+-        t truncation content
+-      </span>
++      Tes
+     </span>
+-  </div>
++    <span
++      aria-hidden="true"
++      class="pf-v6-c-truncate__omission"
++    >
++      …
++    </span>
++    <span
++      class="pf-v6-screen-reader"
++    >
++      t truncation content
++    </span>
++  </span>
+ </DocumentFragment>
+ `;
+ 
+@@ -50,16 +51,17 @@ exports[`renders default truncation 1`] = `
+     <p>
+       position: top
+     </p>
++  </div>
++  <span
++    class="pf-v6-c-truncate"
++    tabindex="0"
++  >
+     <span
+-      class="pf-v6-c-truncate"
++      class="pf-v6-c-truncate__start"
+     >
+-      <span
+-        class="pf-v6-c-truncate__start"
+-      >
+-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+-      </span>
++      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+     </span>
+-  </div>
++  </span>
+ </DocumentFragment>
+ `;
+ 
+@@ -76,15 +78,16 @@ exports[`renders start truncation with &lrm; at end 1`] = `
+     <p>
+       position: top
+     </p>
++  </div>
++  <span
++    class="pf-v6-c-truncate"
++    tabindex="0"
++  >
+     <span
+-      class="pf-v6-c-truncate"
++      class="pf-v6-c-truncate__end"
+     >
+-      <span
+-        class="pf-v6-c-truncate__end"
+-      >
+-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+-      </span>
++      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+     </span>
+-  </div>
++  </span>
+ </DocumentFragment>
+ `;
+diff --git a/packages/react-integration/cypress/integration/truncate.spec.ts b/packages/react-integration/cypress/integration/truncate.spec.ts
+new file mode 100644
+index 00000000..c84ccafc
+--- /dev/null
++++ b/packages/react-integration/cypress/integration/truncate.spec.ts
+@@ -0,0 +1,23 @@
++describe('Truncate Demo Test', () => {
++  it('Navigate to demo section', () => {
++    cy.visit('http://localhost:3000/truncate-demo-nav-link');
++  });
++
++  it('Verify no tooltip renders by default', () => {
++    cy.get('.pf-v6-c-tooltip').should('not.exist');
++  });
++
++  it('Verify non-truncated content in wide container does not have tabindex', () => {
++    cy.get('#no-truncate').should('not.have.attr', 'tabindex');
++  });
++
++  it('Verify truncated content in small container does have tabindex', () => {
++    cy.get('#basic-truncate').should('have.attr', 'tabindex');
++  });
++
++  it('Verify tooltip renders when truncate is focused', () => {
++    cy.get('#basic-truncate').should('have.attr', 'tabindex');
++    cy.get('#basic-truncate').focus();
++    cy.get('.pf-v6-c-tooltip').should('exist');
++  });
++});
+diff --git a/packages/react-integration/demo-app-ts/src/Demos.ts b/packages/react-integration/demo-app-ts/src/Demos.ts
+index 38da48a3..61a7c733 100644
+--- a/packages/react-integration/demo-app-ts/src/Demos.ts
++++ b/packages/react-integration/demo-app-ts/src/Demos.ts
+@@ -462,6 +462,11 @@ export const Demos: DemoInterface[] = [
+     name: 'Tree View Demo',
+     componentType: Examples.TreeViewDemo
+   },
++  {
++    id: 'truncate-demo',
++    name: 'Truncate Demo',
++    componentType: Examples.TruncateDemo
++  },
+   {
+     id: 'wizard-demo',
+     name: 'Wizard Demo',
+diff --git a/packages/react-integration/demo-app-ts/src/components/demos/TruncateDemo/TruncateDemo.tsx b/packages/react-integration/demo-app-ts/src/components/demos/TruncateDemo/TruncateDemo.tsx
+new file mode 100644
+index 00000000..488c9530
+--- /dev/null
++++ b/packages/react-integration/demo-app-ts/src/components/demos/TruncateDemo/TruncateDemo.tsx
+@@ -0,0 +1,13 @@
++import { Truncate } from '@patternfly/react-core';
++
++export const TruncateDemo: React.FunctionComponent = () => (
++  <>
++    <div style={{ width: '100px' }}>
++      <Truncate id="basic-truncate" content={'basic truncated content'} />
++    </div>
++    <div style={{ width: '800px' }}>
++      <Truncate id="no-truncate" content={'no truncation in wide container'} />
++    </div>
++  </>
++);
++TruncateDemo.displayName = 'TruncateDemo';
+diff --git a/packages/react-integration/demo-app-ts/src/components/demos/index.ts b/packages/react-integration/demo-app-ts/src/components/demos/index.ts
+index 764b6035..66987548 100644
+--- a/packages/react-integration/demo-app-ts/src/components/demos/index.ts
++++ b/packages/react-integration/demo-app-ts/src/components/demos/index.ts
+@@ -88,5 +88,6 @@ export * from './ToolbarDemo/ToolbarDemo';
+ export * from './ToolbarDemo/ToolbarVisibilityDemo';
+ export * from './TooltipDemo/TooltipDemo';
+ export * from './TreeViewDemo/TreeViewDemo';
++export * from './TruncateDemo/TruncateDemo';
+ export * from './WizardDemo/WizardDemo';
+ export * from './WizardDeprecatedDemo/WizardDeprecatedDemo';

@@ -1,0 +1,14 @@
+{
+  "base_commit": "edb0789c60fe08a7632664acc7f9a702a1aae4f5",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "buggy_commit": "edb0789c60fe08a7632664acc7f9a702a1aae4f5",
+  "build_command": "",
+  "install_command": "corepack enable && corepack prepare pnpm@10.13.1 --activate && pnpm install --frozen-lockfile --store-dir /pnpm-store --network-concurrency=4",
+  "instance_id": "unovue__reka-ui-2383",
+  "package_manager": "pnpm 10.13.1",
+  "repo_url": "https://github.com/unovue/reka-ui.git",
+  "repository": "unovue/reka-ui",
+  "runtime": "Node.js 22.23.1",
+  "schema_version": "4.0",
+  "test_command": "cd packages/core && pnpm exec vitest run src/NavigationMenu/NavigationMenu.test.ts --maxWorkers=1 --reporter=json --outputFile=\"$RESULTS_DIR/$MODE.raw.json\""
+}

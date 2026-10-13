@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/patternfly__patternfly-react-11384"
+version = "0.2.0-candidate"
+description = "truncated content cannot be focused via keyboard"
+
+[metadata]
+instance_id = "patternfly__patternfly-react-11384"
+repository = "patternfly/patternfly-react"
+base_commit = "b9815886da3adc7a96bc2d48adacf86e8a752e61"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:44361bd86e458a5a405b14244d67eb83bda0ea38f85f7912724b09939970c072"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:bfb2f15e9edeaad18119cd334fc9d480376d1de27120536778bd0d6541ac4430"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

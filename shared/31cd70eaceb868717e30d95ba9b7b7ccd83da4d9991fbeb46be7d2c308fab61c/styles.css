@@ -1,0 +1,4 @@
+:root {font-family: system-ui, sans-serif; color: #17202a; background: #f7f8fa;}
+body {margin: 0; min-height: 100vh;}
+.page {display: grid; gap: 1rem; place-items: start; padding: 3rem;}
+.popover {display: grid; gap: .75rem; padding: 1rem; background: white; border: 1px solid #9aa4b2; box-shadow: 0 8px 24px rgb(0 0 0 / 15%);}

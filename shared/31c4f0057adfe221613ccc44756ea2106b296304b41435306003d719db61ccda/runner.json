@@ -1,0 +1,14 @@
+{
+  "base_commit": "dcad3850135534fa3ab9fe4a4fc1244ddbd1896a",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "buggy_commit": "dcad3850135534fa3ab9fe4a4fc1244ddbd1896a",
+  "build_command": "",
+  "install_command": "corepack pnpm install --frozen-lockfile",
+  "instance_id": "unovue__reka-ui-2483",
+  "package_manager": "pnpm 10.13.1",
+  "repo_url": "https://github.com/unovue/reka-ui.git",
+  "repository": "unovue/reka-ui",
+  "runtime": "Node.js 22; Vitest 4.1.8; jsdom",
+  "schema_version": "4.0",
+  "test_command": "pnpm --filter reka-ui exec vitest run src/Combobox/Combobox.test.ts --reporter=json"
+}

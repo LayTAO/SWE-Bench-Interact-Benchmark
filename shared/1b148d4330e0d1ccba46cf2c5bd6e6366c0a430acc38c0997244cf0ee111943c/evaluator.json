@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "Ctrl+C on a focused item does not commit inline autocomplete",
+    "Meta+C on a focused item does not commit inline autocomplete"
+  ],
+  "PASS_TO_PASS": [
+    "autocomplete on arrow down key",
+    "autocomplete on arrow up key",
+    "clicking on combobox input makes the inline autocomplete the value",
+    "paste shortcut on a focused item moves focus to the input"
+  ],
+  "base_commit": "953dfa92d50a277578c0b0aad960dd612142b705",
+  "instance_id": "ariakit__ariakit-6297",
+  "schema_version": "4.0"
+}

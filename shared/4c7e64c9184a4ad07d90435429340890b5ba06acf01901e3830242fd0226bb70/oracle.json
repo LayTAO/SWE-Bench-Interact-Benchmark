@@ -1,0 +1,21 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "The exact Issue-derived sequence creates the fields but the active element remains on the prior field or body in Buggy; Fixed focuses each newly created field.",
+    "fixed_observed": false,
+    "name": "newly_pushed_form_fields_are_not_focused"
+  },
+  "expected": {
+    "buggy": {
+      "after_email_0_active": "",
+      "after_email_1_active": "",
+      "after_tag_active": "tags.0"
+    },
+    "fixed": {
+      "after_email_0_active": "emails.0",
+      "after_email_1_active": "emails.1",
+      "after_tag_active": "tags.1"
+    }
+  },
+  "schema_version": "1.0"
+}

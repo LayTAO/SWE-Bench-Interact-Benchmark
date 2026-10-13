@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@babel/core": "7.28.5",
+    "@babel/plugin-transform-flow-strip-types": "7.27.1",
+    "@babel/plugin-transform-react-jsx": "7.27.1",
+    "@babel/plugin-transform-react-jsx-self": "7.27.1",
+    "@babel/plugin-transform-react-jsx-source": "7.27.1",
+    "@vitejs/plugin-react": "4.7.0",
+    "playwright-core": "1.58.2",
+    "react-refresh": "0.14.2",
+    "sass": "1.89.2",
+    "vite": "5.4.21",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "name": "interactrepair-ir-m-118-146-oracle-tooling",
+  "private": true,
+  "type": "module"
+}

@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "given DropdownMenu tab navigation should allow Tab to move focus out of non-modal menu"
+  ],
+  "PASS_TO_PASS": [
+    "given DropdownMenu tab navigation should prevent Tab in modal menu",
+    "given DropdownMenu tab navigation should prevent Tab in modal submenu",
+    "given default DropdownMenu after opening the dropdown after selecting the first item should close the modal",
+    "given default DropdownMenu after opening the dropdown after selecting the first item should emit select event",
+    "given default DropdownMenu after opening the dropdown should pass axe accessibility tests",
+    "given default DropdownMenu after opening the dropdown should render the menu",
+    "given default DropdownMenu should pass axe accessibility tests",
+    "given default DropdownMenu should render trigger button"
+  ],
+  "base_commit": "178e6cdd787858552a3f9700dc2ba8ee9b9201e5",
+  "instance_id": "unovue__reka-ui-2296",
+  "schema_version": "4.0"
+}

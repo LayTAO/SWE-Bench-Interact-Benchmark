@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/ng-zorro__ng-zorro-antd-8865"
+version = "0.2.0-candidate"
+description = "Cascader cannot automatically fold the children menu when unselected"
+
+[metadata]
+instance_id = "ng-zorro__ng-zorro-antd-8865"
+repository = "NG-ZORRO/ng-zorro-antd"
+base_commit = "30c25f0201130ccb00c8d2ba2e709763d7bcfd6e"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7667ca60ecfc4659344ba3fe2d17c91546fb8116aa34bfd6e8a5a30fa74154d1"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:fa9a712503bd055c11b9ce6e28092e761017519f00e913d5891a068e50e5a573"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

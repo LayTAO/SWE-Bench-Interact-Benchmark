@@ -1,0 +1,12 @@
+{
+  "base_commit": "b9815886da3adc7a96bc2d48adacf86e8a752e61",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "install_command": "yarn install --immutable --mode=skip-build",
+  "instance_id": "patternfly__patternfly-react-11384",
+  "package_manager": "yarn@4.7.0",
+  "repo_url": "https://github.com/patternfly/patternfly-react.git",
+  "repository": "patternfly/patternfly-react",
+  "runtime": "Node 22 with repository-locked Yarn and Cypress official browser runner",
+  "schema_version": "4.0",
+  "test_command": "cypress run --spec cypress/integration/truncate.spec.ts"
+}

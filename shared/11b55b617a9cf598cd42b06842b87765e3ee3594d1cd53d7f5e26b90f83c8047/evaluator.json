@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "Combobox should close the combobox when clicking outside the combobox on a dialog backdrop"
+  ],
+  "PASS_TO_PASS": [
+    "useOverlay Mouse Events should not hide the overlay when clicking outside if isDismissable is false"
+  ],
+  "base_commit": "80ef0d833d85f3897cfbab2b00291bf85f42e46a",
+  "instance_id": "adobe__react-spectrum-9748",
+  "schema_version": "4.0"
+}

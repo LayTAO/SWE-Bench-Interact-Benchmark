@@ -1,0 +1,35 @@
+{
+  "FAIL_TO_PASS": [
+    "<Popover /> focuses the initial element that activated the popover when the popover is closed using the esc key"
+  ],
+  "PASS_TO_PASS": [
+    "<Popover /> invokes setActivatorAttributes with active, ariaHasPopup, activatorDisabled, and id",
+    "<Popover /> invokes setActivatorAttributes activatorDisabled true when the activator is disabled",
+    "<Popover /> renders a portal",
+    "<Popover /> renders an activator",
+    "<Popover /> renders a positionedOverlay when active is true",
+    "<Popover /> doesn’t render a popover when active is false",
+    "<Popover /> passes 'preferredPosition' to PopoverOverlay",
+    "<Popover /> passes 'preferredAlignment' to PopoverOverlay",
+    "<Popover /> passes 'preferInputActivator' to PopoverOverlay",
+    "<Popover /> has a div as activatorWrapper by default",
+    "<Popover /> has a span as activatorWrapper when activatorWrapper prop is set to span",
+    "<Popover /> passes autofocusTarget to PopoverOverlay",
+    "<Popover /> passes sectioned to PopoverOverlay",
+    "<Popover /> passes fullWidth to PopoverOverlay",
+    "<Popover /> passes fluidContent to PopoverOverlay",
+    "<Popover /> passes 'zIndexOverride' to PopoverOverlay",
+    "<Popover /> calls onClose when you click outside the Popover",
+    "<Popover /> does not call onClose when Popover is opening and trigger was not the activator",
+    "<Popover /> focuses the next available element when the popover is closed using the tab key",
+    "<Popover /> focuses the activator when another focusable element is not available when the popover is closed",
+    "<Popover /> doesn't focuses the activator or another focusable element when the popover is closed",
+    "<Popover /> forceUpdatePosition exposes a function that allows the Overlay to be programmatically re-rendered",
+    "<Popover /> captureOverscroll when not passed does not pass the prop as true to the Pane component",
+    "<Popover /> captureOverscroll when passed as true passes the prop as true to the Pane component",
+    "<Popover /> captureOverscroll when passed as false passes the prop as false to the Pane component"
+  ],
+  "base_commit": "7434e521de2833c38dd418726606351bad57d599",
+  "instance_id": "shopify__polaris-react-3856",
+  "schema_version": "4.0"
+}

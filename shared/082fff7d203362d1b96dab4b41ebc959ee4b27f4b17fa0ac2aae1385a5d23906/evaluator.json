@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "ComboBox ComboBox autocomplete should open the menu and select null when Enter is pressed with no input and no highlighted item"
+  ],
+  "PASS_TO_PASS": [
+    "ComboBox ComboBox autocomplete should autocomplete with the first matching suggestion when multiple matches exist",
+    "ComboBox ComboBox autocomplete should match case exactly with option list when Tab is pressed",
+    "ComboBox ComboBox autocomplete should not autocomplete on Tab after backspace"
+  ],
+  "base_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b",
+  "instance_id": "carbon-design-system__carbon-17119",
+  "schema_version": "4.0"
+}

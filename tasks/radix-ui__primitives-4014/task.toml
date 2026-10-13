@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/radix-ui__primitives-4014"
+version = "0.2.0-candidate"
+description = "[DismissableLayer] Escape handlers go stale on React 19.2 (regression in 1.1.14)"
+
+[metadata]
+instance_id = "radix-ui__primitives-4014"
+repository = "radix-ui/primitives"
+base_commit = "52682b33d149c58b2d3d2cd851c9b778eabc4dd6"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c052e99265d4071cc2f6950c74ebe1d82bedd35a52f9f0ba6975cd44e41df499"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:be6fdbd66fe114043c6891a6a9b7de93f58062d62f53d24d8e80117043325358"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,70 @@
+{
+  "expected_fixed_state": {
+    "focused_after_clicks": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "instance_id": "vuetifyjs__vuetify-11989",
+  "observation_channels": [
+    "document.activeElement",
+    "button and input geometry",
+    "page errors",
+    "console errors"
+  ],
+  "observed_buggy_state": {
+    "focused_after_clicks": [
+      true,
+      false,
+      true,
+      false
+    ]
+  },
+  "preconditions": [
+    "The exact Vuetify 2 subject state is mounted read-only.",
+    "A source-backed VAutocomplete labelled Choice is visible.",
+    "An external button calls the VAutocomplete focus method."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #11989 report and official regression scenario",
+  "states": [
+    {
+      "actions": [
+        "Load the source-backed minimal app."
+      ],
+      "checkpoints": [
+        "The button and autocomplete input have valid, vertically ordered geometry."
+      ],
+      "name": "ready"
+    },
+    {
+      "actions": [
+        "Click Focus autocomplete."
+      ],
+      "checkpoints": [
+        "The autocomplete input becomes document.activeElement."
+      ],
+      "name": "first_focus"
+    },
+    {
+      "actions": [
+        "Click Focus autocomplete three more times."
+      ],
+      "checkpoints": [
+        "Record document.activeElement after each request."
+      ],
+      "name": "repeated_focus"
+    },
+    {
+      "actions": [
+        "Compare all four observations."
+      ],
+      "checkpoints": [
+        "Fixed focuses the input after every request; Buggy alternates between focused and unfocused."
+      ],
+      "name": "result"
+    }
+  ]
+}

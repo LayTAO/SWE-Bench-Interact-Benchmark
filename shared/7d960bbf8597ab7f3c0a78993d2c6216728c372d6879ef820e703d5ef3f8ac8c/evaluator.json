@@ -1,0 +1,16 @@
+{
+  "FAIL_TO_PASS": [
+    "increments correctly with step=0.25",
+    "small step accumulation remains precise",
+    "step works after setting initial value programmatically"
+  ],
+  "PASS_TO_PASS": [
+    "handles scientific notation by setting value prop",
+    "handles large decimals (many fraction digits) within precision cap",
+    "caps precision at safe 15 decimals",
+    "invalid values (NaN, Infinity) do not break controlled value"
+  ],
+  "base_commit": "f237f286f2968b79f08c3b7450f74d2295bb8cdf",
+  "instance_id": "primefaces__primereact-8382",
+  "schema_version": "4.0"
+}

@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "点击控件",
+    "调用 stopPropagation",
+    "检查祖先 click 计数"
+  ],
+  "expected_fixed": "stopPropagation 会阻止祖先收到 Checkbox 点击事件。",
+  "instance_id": "mui__base-ui-5175",
+  "issue_derived_path": [
+    "点击控件",
+    "调用 stopPropagation",
+    "检查祖先 click 计数"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "stopPropagation 不生效，祖先仍收到点击。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

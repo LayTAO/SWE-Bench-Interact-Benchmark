@@ -1,0 +1,32 @@
+{
+  "FAIL_TO_PASS": [
+    "DismissableLayer calls the latest escape key handler after re-rendering",
+    "DismissableLayer observes the latest state when preventing escape dismissal"
+  ],
+  "PASS_TO_PASS": [
+    "DismissableLayer cancels pending touch outside dismissal when pointer down moves back inside",
+    "DismissableLayer defers touch pointer down outside dismissal until click",
+    "DismissableLayer dismisses immediately on non-primary mouse pointer down outside",
+    "DismissableLayer dismisses immediately on non-primary pen pointer down outside",
+    "DismissableLayer dismisses immediately on pointer down outside by default",
+    "DismissableLayer dismisses on an outside pointer interaction",
+    "DismissableLayer dismisses on focus outside",
+    "DismissableLayer dismisses when a later outside interaction event is stopped by default",
+    "DismissableLayer dismisses when a registered dismiss surface stops propagation",
+    "DismissableLayer dismisses when a registered dismiss surface stops propagation without deferring",
+    "DismissableLayer does not dismiss a deferred parent when a child layer dismisses first",
+    "DismissableLayer does not dismiss on focus inside",
+    "DismissableLayer does not dismiss on pointer down inside",
+    "DismissableLayer does not dismiss when a later outside interaction event is stopped and pointer down outside is deferred",
+    "DismissableLayer does not dismiss when focus moves outside during a deferred stopped interaction",
+    "DismissableLayer does not dismiss when interact outside is prevented for a pointer down outside event",
+    "DismissableLayer does not dismiss when interacting with a branch",
+    "DismissableLayer does not dismiss when pointer down outside is prevented",
+    "DismissableLayer keeps a stable composed ref (no infinite render loop)",
+    "DismissableLayer only exempts registered dismiss surfaces from stopped propagation",
+    "DismissableLayer treats a shadow tree inside the layer as inside"
+  ],
+  "base_commit": "52682b33d149c58b2d3d2cd851c9b778eabc4dd6",
+  "instance_id": "radix-ui__primitives-4014",
+  "schema_version": "4.0"
+}

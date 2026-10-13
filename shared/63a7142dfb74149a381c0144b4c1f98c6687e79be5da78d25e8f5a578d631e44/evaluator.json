@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "combobox input preserves scroll position when results change"
+  ],
+  "PASS_TO_PASS": [
+    "combobox keeps focus when selected item reappears after filtering",
+    "pressing escape closes the popover"
+  ],
+  "base_commit": "b166c1a7fe8dc9eeca41af5fd420179df5bac493",
+  "instance_id": "ariakit__ariakit-4825",
+  "schema_version": "4.0"
+}

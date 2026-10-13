@@ -1,0 +1,25 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After the Issue-derived keyboard and clear-button sequence, Buggy leaves Apple active after the input is empty while Fixed clears the active option.",
+    "fixed_observed": false,
+    "name": "combobox_cancel_clears_active_option"
+  },
+  "expected": {
+    "buggy": {
+      "clear_empty": true,
+      "final_apple_active": true,
+      "first_clear_empty": true,
+      "second_typed_value": true,
+      "typed_value": true
+    },
+    "fixed": {
+      "clear_empty": true,
+      "final_apple_active": false,
+      "first_clear_empty": true,
+      "second_typed_value": true,
+      "typed_value": true
+    }
+  },
+  "schema_version": "1.0"
+}

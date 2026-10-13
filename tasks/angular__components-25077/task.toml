@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/angular__components-25077"
+version = "0.2.0-candidate"
+description = "bug(VIRTUAL-SCROLL): In append only mode, when scrolling fast, list is jumping to start"
+
+[metadata]
+instance_id = "angular__components-25077"
+repository = "angular/components"
+base_commit = "8eab22fae4d49392ab095a03140d9a1b02c1fa1e"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5cb0477ff351f05304554f9cb059946d7beba853de312eae3460521a63613b5b"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:01fd12dc232fe7cce5a36baf99bd95f9ffd238fa30fa15dca0ecd2a2d46bfa0c"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,18 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "During the Issue-derived Korean IME boundary, DOM focus enters an option between syllables in Buggy; Fixed does not and produces the expected value.",
+    "fixed_observed": false,
+    "name": "ime_composition_focus_is_stolen"
+  },
+  "expected": {
+    "buggy": {
+      "focus_moved_to_option_between_compositions": true
+    },
+    "fixed": {
+      "focus_moved_to_option_between_compositions": false,
+      "input_value": "사과"
+    }
+  },
+  "schema_version": "1.0"
+}

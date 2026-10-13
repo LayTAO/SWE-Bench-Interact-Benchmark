@@ -1,0 +1,12 @@
+{
+  "base_commit": "52682b33d149c58b2d3d2cd851c9b778eabc4dd6",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "export COREPACK_HOME=/corepack; corepack enable && corepack prepare pnpm@11.5.0 --activate && pnpm config set store-dir /pnpm/store && pnpm install --frozen-lockfile",
+  "instance_id": "radix-ui__primitives-4014",
+  "package_manager": "pnpm@11.5.0",
+  "repo_url": "https://github.com/radix-ui/primitives.git",
+  "repository": "radix-ui/primitives",
+  "runtime": "public.ecr.aws/docker/library/node:24-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

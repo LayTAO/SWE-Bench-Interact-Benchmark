@@ -1,0 +1,14 @@
+{
+  "base_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "buggy_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b",
+  "build_command": "",
+  "install_command": "corepack enable && pnpm install --frozen-lockfile",
+  "instance_id": "primefaces__primevue-8100",
+  "package_manager": "pnpm",
+  "repo_url": "https://github.com/primefaces/primevue.git",
+  "repository": "primefaces/primevue",
+  "runtime": "Node.js 22.23.1",
+  "schema_version": "4.0",
+  "test_command": "cd packages/primevue && pnpm exec vitest run src/multiselect/MultiSelect.spec.js --threads=false --reporter=json --outputFile=\"$RESULTS_DIR/runner.raw.json\""
+}

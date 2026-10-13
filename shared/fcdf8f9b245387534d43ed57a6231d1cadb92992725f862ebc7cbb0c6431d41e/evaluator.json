@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "Verify truncated content in small container does have tabindex",
+    "Verify tooltip renders when truncate is focused"
+  ],
+  "PASS_TO_PASS": [
+    "Navigate to demo section",
+    "Verify no tooltip renders by default",
+    "Verify non-truncated content in wide container does not have tabindex"
+  ],
+  "base_commit": "b9815886da3adc7a96bc2d48adacf86e8a752e61",
+  "instance_id": "patternfly__patternfly-react-11384",
+  "schema_version": "4.0"
+}

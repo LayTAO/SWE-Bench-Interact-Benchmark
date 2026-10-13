@@ -1,0 +1,12 @@
+{
+  "base_commit": "77b3442e4150116f3d35995b5a98b582d9e6f231",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-5102",
+  "package_manager": "yarn@4.9.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/react-aria-components/test/DateField.test.js --runInBand --json"
+}

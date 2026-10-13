@@ -1,0 +1,16 @@
+{
+  "FAIL_TO_PASS": [
+    "https://github.com/ariakit/ariakit/issues/1652"
+  ],
+  "PASS_TO_PASS": [
+    "a11y",
+    "clear input with keyboard (tab + enter)",
+    "clear input with keyboard (tab + space)",
+    "clear input with keyboard after typing",
+    "clear input with mouse",
+    "clear input with mouse after typing"
+  ],
+  "base_commit": "b4d916339554f64967ff7c1154b171f319bef28d",
+  "instance_id": "ariakit__ariakit-1652",
+  "schema_version": "4.0"
+}

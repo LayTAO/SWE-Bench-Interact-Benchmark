@@ -1,0 +1,17 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "Clicking the Issue-derived FileTrigger after the hidden DropZone button is positioned outside the viewport causes a large ancestor scroll only in Buggy.",
+    "fixed_observed": false,
+    "name": "file_trigger_scrolls_positioned_ancestor"
+  },
+  "expected": {
+    "buggy": {
+      "absolute_scroll_delta_gt": 100
+    },
+    "fixed": {
+      "absolute_scroll_delta_lte": 1
+    }
+  },
+  "schema_version": "1.0"
+}

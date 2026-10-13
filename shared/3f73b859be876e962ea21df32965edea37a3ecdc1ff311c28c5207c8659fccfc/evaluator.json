@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "MultiSelect should move focus to the next control when the user tabs away with the menu open"
+  ],
+  "PASS_TO_PASS": [
+    "MultiSelect Component API should accept a `ref` for the underlying button element",
+    "MultiSelect Component API should apply floating styles when `autoAlign` is enabled",
+    "MultiSelect Component API should call onChange when the selection changes from user selection"
+  ],
+  "base_commit": "6d7540d5a22a0c70b3b81bac0733e5abab5e8376",
+  "instance_id": "carbon-design-system__carbon-22320",
+  "schema_version": "4.0"
+}

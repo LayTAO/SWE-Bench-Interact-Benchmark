@@ -1,0 +1,258 @@
+diff --git a/packages/react/src/checkbox/root/CheckboxRoot.test.tsx b/packages/react/src/checkbox/root/CheckboxRoot.test.tsx
+index 08361f9b..fa338910 100644
+--- a/packages/react/src/checkbox/root/CheckboxRoot.test.tsx
++++ b/packages/react/src/checkbox/root/CheckboxRoot.test.tsx
+@@ -35,6 +35,69 @@ describe('<Checkbox.Root />', () => {
+     });
+   });
+ 
++  describe('prop: onClick', () => {
++    it('propagates a single click event to ancestors per user click', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Checkbox.Root data-testid="checkbox" />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByTestId('checkbox'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Checkbox.Root data-testid="checkbox" onClick={(event) => event.stopPropagation()} />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByTestId('checkbox'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('propagates a single click event to ancestors with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Checkbox.Root nativeButton render={<button />} data-testid="checkbox" />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByTestId('checkbox'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Checkbox.Root
++            nativeButton
++            render={<button />}
++            data-testid="checkbox"
++            onClick={(event) => event.stopPropagation()}
++          />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByTestId('checkbox'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-checked', 'true');
++    });
++  });
++
+   describe('interactions', () => {
+     it('should change its state when clicked', async () => {
+       await render(<Checkbox.Root />);
+diff --git a/packages/react/src/radio/root/RadioRoot.test.tsx b/packages/react/src/radio/root/RadioRoot.test.tsx
+index a6e24867..f6614d9f 100644
+--- a/packages/react/src/radio/root/RadioRoot.test.tsx
++++ b/packages/react/src/radio/root/RadioRoot.test.tsx
+@@ -1,4 +1,4 @@
+-import { expect } from 'vitest';
++import { expect, vi } from 'vitest';
+ import * as React from 'react';
+ import { Radio } from '@base-ui/react/radio';
+ import { RadioGroup } from '@base-ui/react/radio-group';
+@@ -119,6 +119,102 @@ describe('<Radio.Root />', () => {
+     });
+   });
+ 
++  describe('prop: onClick', () => {
++    it('propagates a single click event to ancestors per user click', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <RadioGroup>
++          <div onClick={handleParentClick}>
++            <Radio.Root value="a" data-testid="radio" />
++          </div>
++        </RadioGroup>,
++      );
++
++      fireEvent.click(screen.getByTestId('radio'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByTestId('radio')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <RadioGroup>
++          <div onClick={handleParentClick}>
++            <Radio.Root
++              value="a"
++              data-testid="radio"
++              onClick={(event) => event.stopPropagation()}
++            />
++          </div>
++        </RadioGroup>,
++      );
++
++      fireEvent.click(screen.getByTestId('radio'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByTestId('radio')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('propagates a single click event to ancestors with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <RadioGroup>
++          <div onClick={handleParentClick}>
++            <Radio.Root value="a" nativeButton render={<button />} data-testid="radio" />
++          </div>
++        </RadioGroup>,
++      );
++
++      fireEvent.click(screen.getByTestId('radio'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByTestId('radio')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <RadioGroup>
++          <div onClick={handleParentClick}>
++            <Radio.Root
++              value="a"
++              nativeButton
++              render={<button />}
++              data-testid="radio"
++              onClick={(event) => event.stopPropagation()}
++            />
++          </div>
++        </RadioGroup>,
++      );
++
++      fireEvent.click(screen.getByTestId('radio'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByTestId('radio')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate a click to ancestors when selecting with arrow keys', async () => {
++      const handleParentClick = vi.fn();
++      const { user } = await render(
++        <div onClick={handleParentClick}>
++          <RadioGroup defaultValue="a">
++            <Radio.Root value="a" data-testid="radio-a" />
++            <Radio.Root value="b" data-testid="radio-b" />
++          </RadioGroup>
++        </div>,
++      );
++
++      await user.click(screen.getByTestId('radio-a'));
++      handleParentClick.mockClear();
++
++      await user.keyboard('{ArrowDown}');
++
++      expect(screen.getByTestId('radio-b')).toHaveAttribute('aria-checked', 'true');
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++    });
++  });
++
+   describe('prop: disabled', () => {
+     it('uses aria-disabled instead of HTML disabled', async () => {
+       await render(
+diff --git a/packages/react/src/switch/root/SwitchRoot.test.tsx b/packages/react/src/switch/root/SwitchRoot.test.tsx
+index b84446ce..c5209ea7 100644
+--- a/packages/react/src/switch/root/SwitchRoot.test.tsx
++++ b/packages/react/src/switch/root/SwitchRoot.test.tsx
+@@ -224,6 +224,66 @@ describe('<Switch.Root />', () => {
+ 
+       expect(handleClick.mock.calls.length).toBe(1);
+     });
++
++    it('propagates a single click event to ancestors per user click', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Switch.Root />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByRole('switch'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByRole('switch')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Switch.Root onClick={(event) => event.stopPropagation()} />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByRole('switch'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByRole('switch')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('propagates a single click event to ancestors with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Switch.Root nativeButton render={<button />} />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByRole('switch'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(1);
++      expect(screen.getByRole('switch')).toHaveAttribute('aria-checked', 'true');
++    });
++
++    it('does not propagate to ancestors when stopPropagation() is called with a native button', async () => {
++      const handleParentClick = vi.fn();
++      await render(
++        <div onClick={handleParentClick}>
++          <Switch.Root
++            nativeButton
++            render={<button />}
++            onClick={(event) => event.stopPropagation()}
++          />
++        </div>,
++      );
++
++      fireEvent.click(screen.getByRole('switch'));
++
++      expect(handleParentClick).toHaveBeenCalledTimes(0);
++      expect(screen.getByRole('switch')).toHaveAttribute('aria-checked', 'true');
++    });
+   });
+ 
+   describe('prop: disabled', () => {

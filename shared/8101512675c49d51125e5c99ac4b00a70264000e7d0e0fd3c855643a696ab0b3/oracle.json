@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "reactive_round_trip": "does not match expected"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "disabled_state": "data-disabled and disabled present",
+    "enabled_again": "both absent"
+  },
+  "instance_id": "unovue__reka-ui-2644",
+  "rendering_gate": [
+    "Two distinct Listbox options have plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The first option begins enabled."
+  ]
+}

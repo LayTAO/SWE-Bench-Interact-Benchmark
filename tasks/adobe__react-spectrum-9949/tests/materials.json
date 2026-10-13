@@ -1,0 +1,127 @@
+{
+  "canonical_repro/interaction_spec.json": {
+    "mode": 420,
+    "sha256": "25c4450ca3224bfcd93ea22ddfb327e9208184d8283375c7ceb8deae2a746472",
+    "source": "shared/25c4450ca3224bfcd93ea22ddfb327e9208184d8283375c7ceb8deae2a746472/interaction_spec.json"
+  },
+  "canonical_repro/legacy/construction/scripts/build_subject_package.sh": {
+    "mode": 493,
+    "sha256": "de5062a6ca7f630d83ef3be813d886532ed3999614531df60584cfeb3f4b4152",
+    "source": "shared/de5062a6ca7f630d83ef3be813d886532ed3999614531df60584cfeb3f4b4152/build_subject_package.sh"
+  },
+  "canonical_repro/legacy/construction/scripts/verify_reproduction.sh": {
+    "mode": 493,
+    "sha256": "b8794804fc6db9e2e1e31e136d227eed3609383a21dac1b0f4b7c0c5311e7822",
+    "source": "shared/b8794804fc6db9e2e1e31e136d227eed3609383a21dac1b0f4b7c0c5311e7822/verify_reproduction.sh"
+  },
+  "canonical_repro/legacy/environment/runner.json": {
+    "mode": 420,
+    "sha256": "ab60f55769acdc6ab43be940738efada1cd3e0aff7a61e416de033acd9973776",
+    "source": "shared/ab60f55769acdc6ab43be940738efada1cd3e0aff7a61e416de033acd9973776/runner.json"
+  },
+  "canonical_repro/legacy/hidden/patches/official_test.patch": {
+    "mode": 420,
+    "sha256": "4de2f9b6244fa251aed3c1d03d4b396853417fc12a87bb0c7f94ce0fba915eb5",
+    "source": "shared/4de2f9b6244fa251aed3c1d03d4b396853417fc12a87bb0c7f94ce0fba915eb5/official_test.patch"
+  },
+  "canonical_repro/legacy/public/repro/app/.parcelrc": {
+    "mode": 420,
+    "sha256": "3a0749caa06771c5269df545574b1518642e5355c66957440204f4cdc7fff2c4",
+    "source": "shared/3a0749caa06771c5269df545574b1518642e5355c66957440204f4cdc7fff2c4/.parcelrc"
+  },
+  "canonical_repro/legacy/public/repro/app/index.html": {
+    "mode": 420,
+    "sha256": "62c932f74bf38ec12f8ebb9f62abc5b127e65743aaa073bf7ffdf374c5be19d5",
+    "source": "shared/62c932f74bf38ec12f8ebb9f62abc5b127e65743aaa073bf7ffdf374c5be19d5/index.html"
+  },
+  "canonical_repro/legacy/public/repro/app/main.jsx": {
+    "mode": 420,
+    "sha256": "3f7f311aa5cefe55ea8aa095907b5b5d5b2da53237e8b0c006acc34a258347e7",
+    "source": "shared/3f7f311aa5cefe55ea8aa095907b5b5d5b2da53237e8b0c006acc34a258347e7/main.jsx"
+  },
+  "canonical_repro/legacy/public/repro/app/styles.css": {
+    "mode": 420,
+    "sha256": "6b551439fddb2fdf88af0c86aaad9eac6e923aba44d69dbeec8414dcf72bdbfc",
+    "source": "shared/6b551439fddb2fdf88af0c86aaad9eac6e923aba44d69dbeec8414dcf72bdbfc/styles.css"
+  },
+  "canonical_repro/legacy/public/repro/scripts/run.sh": {
+    "mode": 493,
+    "sha256": "cab53b40056383831aca9c98c73c3ec65a126d96eceacb3930a67f6b2e593c38",
+    "source": "shared/cab53b40056383831aca9c98c73c3ec65a126d96eceacb3930a67f6b2e593c38/run.sh"
+  },
+  "canonical_repro/legacy/public/repro/tooling/capture.mjs": {
+    "mode": 420,
+    "sha256": "a444c43f2501542ce67fb5b3c148c8b6270c58d3b5c5f68debac612e03f13996",
+    "source": "shared/a444c43f2501542ce67fb5b3c148c8b6270c58d3b5c5f68debac612e03f13996/capture.mjs"
+  },
+  "canonical_repro/legacy/public/repro/tooling/package.json": {
+    "mode": 420,
+    "sha256": "0ed2d24279c31485a3c49d956615fc36cab6b927d0ef73939ee7c6d3e978d22b",
+    "source": "shared/0ed2d24279c31485a3c49d956615fc36cab6b927d0ef73939ee7c6d3e978d22b/package.json"
+  },
+  "canonical_repro/oracle/oracle.json": {
+    "mode": 420,
+    "sha256": "dc5ca913c2818e567ee1c4bfcf60c6ffdc7012b9249c5e5e4b5eeea6b04a542b",
+    "source": "shared/dc5ca913c2818e567ee1c4bfcf60c6ffdc7012b9249c5e5e4b5eeea6b04a542b/oracle.json"
+  },
+  "canonical_repro/playwright/scenario.spec.ts": {
+    "mode": 420,
+    "sha256": "f45cab740e5dc0a99be08fa141221cae15418d962de96b796aba75cd1a376006",
+    "source": "shared/f45cab740e5dc0a99be08fa141221cae15418d962de96b796aba75cd1a376006/scenario.spec.ts"
+  },
+  "canonical_repro/scripts/validate.sh": {
+    "mode": 493,
+    "sha256": "0902138d7542ef7ede3e786093ce5ff5d2e911017eddb156e4fdef30855c2fcc",
+    "source": "shared/0902138d7542ef7ede3e786093ce5ff5d2e911017eddb156e4fdef30855c2fcc/validate.sh"
+  },
+  "test.sh": {
+    "mode": 493,
+    "sha256": "caceb87c03b935a6c354f4d50bb2ffff884d8f5206ee28c6cda3e3b2294c919d",
+    "source": "shared/caceb87c03b935a6c354f4d50bb2ffff884d8f5206ee28c6cda3e3b2294c919d/test.sh"
+  },
+  "verifier/check_patch.cjs": {
+    "mode": 493,
+    "sha256": "f38f80baff01358cf782ee78906a349ccd3548f67a5fb1b0d0b46f17ef45b13e",
+    "source": "shared/f38f80baff01358cf782ee78906a349ccd3548f67a5fb1b0d0b46f17ef45b13e/check_patch.cjs"
+  },
+  "verifier/evaluator.json": {
+    "mode": 420,
+    "sha256": "3bbc63db427dab69fac5cd5c515e24fd58c65b2d0d56207e6212004c2f1b918e",
+    "source": "shared/3bbc63db427dab69fac5cd5c515e24fd58c65b2d0d56207e6212004c2f1b918e/evaluator.json"
+  },
+  "verifier/inprocess-engine.sh": {
+    "mode": 493,
+    "sha256": "f1b82f5b47e13eb1e7840075aded88d4b8f2f16f9d27c153ba5f61c4affffb39",
+    "source": "shared/f1b82f5b47e13eb1e7840075aded88d4b8f2f16f9d27c153ba5f61c4affffb39/inprocess-engine.sh"
+  },
+  "verifier/official_test.patch": {
+    "mode": 420,
+    "sha256": "4de2f9b6244fa251aed3c1d03d4b396853417fc12a87bb0c7f94ce0fba915eb5",
+    "source": "shared/4de2f9b6244fa251aed3c1d03d4b396853417fc12a87bb0c7f94ce0fba915eb5/official_test.patch"
+  },
+  "verifier/run_build.sh": {
+    "mode": 493,
+    "sha256": "36570571f2944d2a9c5638faf0da7b02f2ac3e62971e059266f45f7202feaa96",
+    "source": "shared/36570571f2944d2a9c5638faf0da7b02f2ac3e62971e059266f45f7202feaa96/run_build.sh"
+  },
+  "verifier/run_canonical.sh": {
+    "mode": 493,
+    "sha256": "3b0384f93bfeaf767e4577f444c218d9963a59bdc3118eb5e7341ae046c1168b",
+    "source": "shared/3b0384f93bfeaf767e4577f444c218d9963a59bdc3118eb5e7341ae046c1168b/run_canonical.sh"
+  },
+  "verifier/run_official.sh": {
+    "mode": 493,
+    "sha256": "44ffc6e952b368e4c1461eedcd01eed699bef218afbbb78c63ae75370b6f6549",
+    "source": "shared/44ffc6e952b368e4c1461eedcd01eed699bef218afbbb78c63ae75370b6f6549/run_official.sh"
+  },
+  "verifier/runner.json": {
+    "mode": 420,
+    "sha256": "7014250ff8c707e3006c4f136c330cc658f0a058758397a576e25c9751e80158",
+    "source": "shared/7014250ff8c707e3006c4f136c330cc658f0a058758397a576e25c9751e80158/runner.json"
+  },
+  "verifier/summarize_official.cjs": {
+    "mode": 493,
+    "sha256": "5a174e05acf77c7569d633cac3ba08a6e7ee4fd2e40d7c38c4eda81d65b6ff87",
+    "source": "shared/5a174e05acf77c7569d633cac3ba08a6e7ee4fd2e40d7c38c4eda81d65b6ff87/summarize_official.cjs"
+  }
+}

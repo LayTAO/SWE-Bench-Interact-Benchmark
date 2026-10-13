@@ -1,0 +1,39 @@
+{
+  "FAIL_TO_PASS": [
+    "TagPicker Keyboard navigation input should delete input content on Backspace when input is not empty and selected"
+  ],
+  "PASS_TO_PASS": [
+    "TagPicker Keyboard navigation Tags should focus on input once all tags have been removed",
+    "TagPicker Keyboard navigation Tags should focus on last tag on Shift + Tab",
+    "TagPicker Keyboard navigation Tags should memorize last focused tag while switching focus between tags and input",
+    "TagPicker Keyboard navigation Tags should navigate from tags to input and back with Arrow key press",
+    "TagPicker Keyboard navigation Tags should not navigate circularly between tags with Arrow key press",
+    "TagPicker Keyboard navigation Tags should remove tag on Backspace key press and focus on next one",
+    "TagPicker Keyboard navigation input should delete input content on Backspace when input is not empty",
+    "TagPicker Keyboard navigation input should move to last tag on Backspace key press on input, when input is empty",
+    "TagPicker Keyboard navigation input should move to last tag on Backspace key press on input, when input is not empty but the cursor is on the first character",
+    "TagPicker Keyboard navigation should close listbox and select activedescendant on Enter key press",
+    "TagPicker Keyboard navigation should close listbox and select activedescendant on Space key press",
+    "TagPicker Keyboard navigation should close listbox on input Escape key press",
+    "TagPicker Keyboard navigation should move aria-activedescendant on ArrowDown",
+    "TagPicker Keyboard navigation should move aria-activedescendant on ArrowUp",
+    "TagPicker Keyboard navigation should not open listbox on input Space key press",
+    "TagPicker Keyboard navigation should not open listbox on input focus",
+    "TagPicker Keyboard navigation should open listbox on input ArrowDown key press",
+    "TagPicker Keyboard navigation should open listbox on input ArrowUp key press",
+    "TagPicker Keyboard navigation should open listbox on input Enter key press",
+    "TagPicker Mouse navigation should dismiss a tag on clear all click",
+    "TagPicker Mouse navigation should dismiss a tag on tag click",
+    "TagPicker Mouse navigation should not open/close a listbox once secondary action is clicked",
+    "TagPicker Mouse navigation should open/close a listbox once expandIcon is clicked",
+    "TagPicker Mouse navigation should open/close a listbox once surface (control) is clicked",
+    "TagPicker Mouse navigation should open/close a listbox once trigger is clicked",
+    "TagPicker Mouse navigation should select a tag on option click",
+    "TagPicker should not render popover when \"noPopover\"",
+    "TagPicker should render a closed listbox",
+    "TagPicker should render an opened listbox"
+  ],
+  "base_commit": "b5e427c24efd04fbd54dd4e43819ddc24be0ac16",
+  "instance_id": "microsoft__fluentui-32260",
+  "schema_version": "4.0"
+}

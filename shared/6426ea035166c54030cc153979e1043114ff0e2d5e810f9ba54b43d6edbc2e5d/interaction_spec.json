@@ -1,0 +1,42 @@
+{
+  "actions": [
+    "Load the FormPush example.",
+    "Activate Add tag.",
+    "Activate Add email twice.",
+    "Read semantic focus and field-name state."
+  ],
+  "checkpoints": [
+    "tags.0 is present and emails is empty.",
+    "Each push creates the expected textbox.",
+    "The active element is recorded after each push."
+  ],
+  "expected_fixed_state": {
+    "after_email_0_active": "emails.0",
+    "after_email_1_active": "emails.1",
+    "after_tag_active": "tags.1",
+    "bug_observed": false
+  },
+  "instance_id": "ariakit__ariakit-6293",
+  "observation_channels": [
+    "DOM",
+    "focus",
+    "accessibility roles",
+    "console",
+    "page errors"
+  ],
+  "observed_buggy_state": {
+    "after_email_0_active": "",
+    "after_email_1_active": "",
+    "after_tag_active": "tags.0",
+    "bug_observed": true
+  },
+  "preconditions": [
+    "The exact Ariakit Form renders one existing tag field and an empty email array."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The initial controls are visible.",
+    "Adding a tag creates tags.1 and should focus it.",
+    "Adding emails creates emails.0 and emails.1 and should focus each new field."
+  ]
+}

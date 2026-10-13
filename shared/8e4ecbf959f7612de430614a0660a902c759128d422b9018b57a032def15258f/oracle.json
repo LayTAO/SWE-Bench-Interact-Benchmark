@@ -1,0 +1,19 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "Selecting July from the Month Select moves keyboard focus into the calendar grid only in Buggy.",
+    "fixed_observed": false,
+    "name": "calendar_month_selection_moves_focus_to_grid"
+  },
+  "expected": {
+    "buggy": {
+      "active_control": "calendar-grid-or-cell",
+      "grid_focused": true
+    },
+    "fixed": {
+      "active_control": "month-select-button",
+      "grid_focused": false
+    }
+  },
+  "schema_version": "1.0"
+}

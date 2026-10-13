@@ -1,0 +1,12 @@
+{
+  "base_commit": "946eda3c933c3fe90c460f0645d90cd45e5738b4",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "install_command": "node .yarn/releases/yarn-4.13.0.cjs workspaces focus @sl-design-system/monorepo @sl-design-system/select @sl-design-system/stylelint-config @sl-design-system/vitest-browser-lit",
+  "instance_id": "sl-design-system__components-3150",
+  "package_manager": "Yarn 4.13.0 (immutable lockfile, focused public workspaces)",
+  "repo_url": "https://github.com/sl-design-system/components.git",
+  "repository": "sl-design-system/components",
+  "runtime": "Node.js 22.22.0; Chromium 145.0.7632.6",
+  "schema_version": "3.0",
+  "test_command": "node .yarn/releases/yarn-4.13.0.cjs node scripts/build-packages.js components; node .yarn/releases/yarn-4.13.0.cjs vitest --config .interactrepair-select.vitest.config.ts packages/components/select/src/select.spec.ts --retry=0 --reporter=json"
+}

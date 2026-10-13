@@ -1,0 +1,30 @@
+{
+  "environment_gate": [
+    "the exact notification renders with autoClose"
+  ],
+  "expected_fixed": {
+    "hovered_notification": "present"
+  },
+  "instance_id": "mantinedev__mantine-9046",
+  "issue_derived_path": [
+    "show a notification with autoClose",
+    "hover the notification",
+    "advance time beyond autoClose",
+    "move the pointer away"
+  ],
+  "observation_channels": [
+    "notification DOM lifetime",
+    "hover state",
+    "timer/console events"
+  ],
+  "observed_buggy": {
+    "hovered_notification": "removed"
+  },
+  "schema_version": "1.0",
+  "states": [
+    "visible",
+    "hovered",
+    "timer-expired",
+    "left"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "calcRelativeBox Resolves relative box with anchor={x:0.5,y:0.5}",
+    "calcRelativePosition With anchor=0.5, centered child produces offset ~0",
+    "calcRelativeAxisPosition with anchor anchor=1 measures from parent.max",
+    "calcRelativeAxis with anchor anchor=0.5 resolves from parent center"
+  ],
+  "PASS_TO_PASS": [
+    "isNear Correctly indicate when the provided value is within maxDistance of the provided target",
+    "calcAxisDelta Correctly calculate the a delta that, when applied to source, will make it the same as target",
+    "calcAxisDelta Accepts a custom origin",
+    "calcRelativeBox Resolves relative box from parent.min (default anchor=0)",
+    "calcRelativePosition Calculates relative position from parent.min (default anchor=0)",
+    "calcRelativePosition Roundtrip: calcRelativePosition then calcRelativeBox returns original box",
+    "calcRelativePosition Roundtrip with anchor=0 also works (backward compatible)",
+    "calcRelativeAxisPosition with anchor anchor=0 is identical to default (parent.min)",
+    "calcRelativeAxis with anchor anchor=0 is identical to default (parent.min)"
+  ],
+  "base_commit": "947bc6b692d471cfca0320b163f0015527b0177f",
+  "instance_id": "motiondivision__motion-3028",
+  "schema_version": "4.0"
+}

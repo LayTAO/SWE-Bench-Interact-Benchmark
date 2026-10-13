@@ -1,0 +1,14 @@
+{
+  "base_commit": "947bc6b692d471cfca0320b163f0015527b0177f",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "buggy_commit": "947bc6b692d471cfca0320b163f0015527b0177f",
+  "build_command": "",
+  "install_command": "node .yarn/releases/yarn-3.6.4.cjs install --immutable",
+  "instance_id": "motiondivision__motion-3028",
+  "package_manager": "yarn@3.6.4",
+  "repo_url": "https://github.com/motiondivision/motion.git",
+  "repository": "motiondivision/motion",
+  "runtime": "",
+  "schema_version": "4.0",
+  "test_command": "jest --config environment/jest-runner.config.json --reporters default --runTestsByPath packages/motion-dom/src/projection/geometry/__tests__/delta-calc.test.ts --runInBand --json"
+}

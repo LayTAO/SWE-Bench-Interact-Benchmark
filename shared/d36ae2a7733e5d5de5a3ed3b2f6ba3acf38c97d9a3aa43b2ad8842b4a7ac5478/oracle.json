@@ -1,0 +1,26 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "blur_completed == true",
+      "start_value == 06/20/2024",
+      "end_value == 06/10/2024"
+    ]
+  },
+  "environment_gate": [
+    "both inputs have non-zero geometry and machine value is readable"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_end": "06/10/2024",
+    "buggy_start": "06/20/2024",
+    "fixed_end": "06/20/2024",
+    "fixed_start": "06/10/2024"
+  },
+  "instance_id": "chakra-ui__zag-3186",
+  "predicate_id": "zag_date_picker_blur_normalizes_range",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "both dates were typed and the second field was blurred through the same route"
+  ]
+}

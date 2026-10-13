@@ -1,0 +1,41 @@
+{
+  "actions": [
+    "Load the exact source-backed Calendar app.",
+    "Click the selected June 16 cell.",
+    "Press ArrowLeft to focus unavailable June 15 and press Enter.",
+    "Read the selected grid cell and page/console errors."
+  ],
+  "checkpoints": [
+    "Buggy changes the selection to June 14; Fixed keeps June 16 selected."
+  ],
+  "expected_fixed_state": {
+    "attempted_date": "15",
+    "bug_observed": false,
+    "final_selected": "16",
+    "initial_selected": "16"
+  },
+  "instance_id": "adobe__react-spectrum-5692",
+  "observation_channels": [
+    "Playwright accessibility roles",
+    "keyboard focus",
+    "ARIA selected state",
+    "native Calendar rendering",
+    "console/page errors",
+    "screenshot"
+  ],
+  "observed_buggy_state": {
+    "attempted_date": "15",
+    "bug_observed": true,
+    "final_selected": "14",
+    "initial_selected": "16"
+  },
+  "preconditions": [
+    "The native Calendar renders June 2019 with June 15 marked unavailable."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The exact Buggy or Fixed subject is loaded.",
+    "June 16 is selected, focus moves left to unavailable June 15, and Enter is pressed.",
+    "The selected grid cell is read through semantic ARIA state."
+  ]
+}

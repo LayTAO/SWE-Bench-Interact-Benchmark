@@ -1,0 +1,12 @@
+{
+  "base_commit": "2494b3eec8bddb3269d39dda0ea999bec1e3f98c",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "yarn install --immutable --mode=skip-build",
+  "instance_id": "mantinedev__mantine-9046",
+  "package_manager": "yarn@4.17.0",
+  "repo_url": "https://github.com/mantinedev/mantine.git",
+  "repository": "mantinedev/mantine",
+  "runtime": "Node 20 with repository-locked Yarn official test runner",
+  "schema_version": "4.0",
+  "test_command": "jest packages/@mantine/notifications/src/Notifications.test.tsx --runInBand"
+}

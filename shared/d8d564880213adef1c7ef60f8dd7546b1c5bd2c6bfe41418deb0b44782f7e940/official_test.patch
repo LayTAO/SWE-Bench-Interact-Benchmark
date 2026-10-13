@@ -1,0 +1,229 @@
+diff --git a/packages/react/dropdown-menu/src/dropdown-menu.test.tsx b/packages/react/dropdown-menu/src/dropdown-menu.test.tsx
+index c7431a0484..40840d4a25 100644
+--- a/packages/react/dropdown-menu/src/dropdown-menu.test.tsx
++++ b/packages/react/dropdown-menu/src/dropdown-menu.test.tsx
+@@ -1,6 +1,7 @@
+ import * as React from 'react';
++import ReactDOM from 'react-dom';
+ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+-import { afterEach, describe, it, expect } from 'vitest';
++import { afterEach, describe, it, expect, vi } from 'vitest';
+ import { assertStableComposedRef } from '@repo/test-utils/ref-stability';
+ import * as DropdownMenu from './dropdown-menu';
+ 
+@@ -86,6 +87,52 @@ describe('closing on window blur', () => {
+   });
+ });
+ 
++// Regression tests for https://github.com/radix-ui/primitives/issues/3232
++describe('keys from focusable descendants', () => {
++  afterEach(cleanup);
++
++  const MenuWithPortaledInput = () => (
++    <DropdownMenu.Root defaultOpen>
++      <DropdownMenu.Trigger>{TRIGGER_TEXT}</DropdownMenu.Trigger>
++      <DropdownMenu.Portal>
++        <DropdownMenu.Content>
++          <DropdownMenu.Item onSelect={(event) => event.preventDefault()}>
++            {ITEM_TEXT}
++            {ReactDOM.createPortal(<input data-testid="input" defaultValue="" />, document.body)}
++          </DropdownMenu.Item>
++        </DropdownMenu.Content>
++      </DropdownMenu.Portal>
++    </DropdownMenu.Root>
++  );
++
++  it('does not intercept Space/Enter typed into a portaled focusable descendant', async () => {
++    render(<MenuWithPortaledInput />);
++    const input = await waitFor(() => screen.getByTestId('input'));
++    input.focus();
++    // `fireEvent` returns `false` when `preventDefault` was called on the event.
++    expect(fireEvent.keyDown(input, { key: ' ' })).toBe(true);
++    expect(fireEvent.keyDown(input, { key: 'Enter' })).toBe(true);
++  });
++
++  it('still selects the item via Space/Enter when the item itself is focused', async () => {
++    const onSelect = vi.fn();
++    render(
++      <DropdownMenu.Root defaultOpen>
++        <DropdownMenu.Trigger>{TRIGGER_TEXT}</DropdownMenu.Trigger>
++        <DropdownMenu.Portal>
++          <DropdownMenu.Content>
++            <DropdownMenu.Item onSelect={onSelect}>{ITEM_TEXT}</DropdownMenu.Item>
++          </DropdownMenu.Content>
++        </DropdownMenu.Portal>
++      </DropdownMenu.Root>,
++    );
++    const item = await waitFor(() => screen.getByText(ITEM_TEXT));
++    item.focus();
++    fireEvent.keyDown(item, { key: 'Enter' });
++    await waitFor(() => expect(onSelect).toHaveBeenCalledTimes(1));
++  });
++});
++
+ // Regression tests for https://github.com/radix-ui/primitives/issues/3963
+ describe('ref stability', () => {
+   afterEach(cleanup);
+diff --git a/packages/react/select/src/select.test.tsx b/packages/react/select/src/select.test.tsx
+index e49bb9f2c5..cee91ebfde 100644
+--- a/packages/react/select/src/select.test.tsx
++++ b/packages/react/select/src/select.test.tsx
+@@ -1,6 +1,7 @@
+ import * as React from 'react';
++import * as ReactDOM from 'react-dom';
+ import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+-import { afterEach, describe, it, expect } from 'vitest';
++import { afterEach, describe, it, expect, vi } from 'vitest';
+ import { assertStableComposedRef } from '@repo/test-utils/ref-stability';
+ import * as Select from './select';
+ 
+@@ -142,6 +143,48 @@ describe('clearing an optional value (#2706)', () => {
+   });
+ });
+ 
++// Regression tests for https://github.com/radix-ui/primitives/issues/3232
++describe('keys from focusable descendants', () => {
++  afterEach(cleanup);
++
++  const SelectWithPortaledInput = (props: React.ComponentProps<typeof Select.Root>) => (
++    <Select.Root defaultOpen {...props}>
++      <Select.Trigger aria-label="Choice">
++        <Select.Value placeholder={PLACEHOLDER_TEXT} />
++      </Select.Trigger>
++      <Select.Portal>
++        <Select.Content position="popper">
++          <Select.Viewport>
++            <Select.Item value="apple">
++              <Select.ItemText>Apple</Select.ItemText>
++              {ReactDOM.createPortal(<input data-testid="input" defaultValue="" />, document.body)}
++            </Select.Item>
++          </Select.Viewport>
++        </Select.Content>
++      </Select.Portal>
++    </Select.Root>
++  );
++
++  it('does not select an item from Space/Enter typed into a portaled focusable descendant', async () => {
++    const onValueChange = vi.fn();
++    render(<SelectWithPortaledInput onValueChange={onValueChange} />);
++    const input = await waitFor(() => screen.getByTestId('input'));
++    input.focus();
++    fireEvent.keyDown(input, { key: ' ' });
++    fireEvent.keyDown(input, { key: 'Enter' });
++    expect(onValueChange).not.toHaveBeenCalled();
++  });
++
++  it('still selects the item via Enter when the item itself is focused', async () => {
++    const onValueChange = vi.fn();
++    render(<SelectWithPortaledInput onValueChange={onValueChange} />);
++    const item = await waitFor(() => screen.getByRole('option', { name: 'Apple', hidden: true }));
++    item.focus();
++    fireEvent.keyDown(item, { key: 'Enter' });
++    expect(onValueChange).toHaveBeenCalledWith('apple');
++  });
++});
++
+ // Regression tests for https://github.com/radix-ui/primitives/issues/3963
+ describe('Select ref stability', () => {
+   afterEach(cleanup);
+diff --git a/packages/react/tabs/src/tabs.test.tsx b/packages/react/tabs/src/tabs.test.tsx
+new file mode 100644
+index 0000000000..611457cf26
+--- /dev/null
++++ b/packages/react/tabs/src/tabs.test.tsx
+@@ -0,0 +1,43 @@
++import * as React from 'react';
++import * as ReactDOM from 'react-dom';
++import { afterEach, describe, it, expect, vi } from 'vitest';
++import { cleanup, fireEvent, render, screen } from '@testing-library/react';
++import * as Tabs from './tabs';
++
++// Regression tests for https://github.com/radix-ui/primitives/issues/3232
++describe('keys from focusable descendants', () => {
++  afterEach(cleanup);
++
++  const TabsWithPortaledInput = (props: React.ComponentProps<typeof Tabs.Root>) => (
++    <Tabs.Root defaultValue="one" activationMode="manual" {...props}>
++      <Tabs.List>
++        <Tabs.Trigger value="one">One</Tabs.Trigger>
++        <Tabs.Trigger value="two">
++          Two
++          {ReactDOM.createPortal(<input data-testid="input" defaultValue="" />, document.body)}
++        </Tabs.Trigger>
++      </Tabs.List>
++      <Tabs.Content value="one">One content</Tabs.Content>
++      <Tabs.Content value="two">Two content</Tabs.Content>
++    </Tabs.Root>
++  );
++
++  it('does not activate a tab from Space/Enter typed into a portaled focusable descendant', () => {
++    const onValueChange = vi.fn();
++    render(<TabsWithPortaledInput onValueChange={onValueChange} />);
++    const input = screen.getByTestId('input');
++    input.focus();
++    fireEvent.keyDown(input, { key: ' ' });
++    fireEvent.keyDown(input, { key: 'Enter' });
++    expect(onValueChange).not.toHaveBeenCalled();
++  });
++
++  it('still activates the tab via Space/Enter when the trigger itself is focused', () => {
++    const onValueChange = vi.fn();
++    render(<TabsWithPortaledInput onValueChange={onValueChange} />);
++    const trigger = screen.getByText('Two');
++    trigger.focus();
++    fireEvent.keyDown(trigger, { key: 'Enter' });
++    expect(onValueChange).toHaveBeenCalledWith('two');
++  });
++});
+diff --git a/packages/react/toolbar/src/toolbar.test.tsx b/packages/react/toolbar/src/toolbar.test.tsx
+index f4ef81ba10..9ce02df87e 100644
+--- a/packages/react/toolbar/src/toolbar.test.tsx
++++ b/packages/react/toolbar/src/toolbar.test.tsx
+@@ -1,4 +1,6 @@
+-import { cleanup, render, fireEvent, getByText } from '@testing-library/react';
++import * as React from 'react';
++import * as ReactDOM from 'react-dom';
++import { cleanup, render, fireEvent, getByText, screen } from '@testing-library/react';
+ import * as Toolbar from './toolbar';
+ import { afterEach, describe, it, vi, expect } from 'vitest';
+ 
+@@ -34,3 +36,39 @@ describe('given a default Toolbar', () => {
+     expect(spy).toHaveBeenCalledTimes(1);
+   });
+ });
++
++// Regression tests for https://github.com/radix-ui/primitives/issues/3232
++describe('keys from focusable descendants', () => {
++  afterEach(cleanup);
++
++  it('does not activate a ToolbarLink from Space typed into a portaled focusable descendant', () => {
++    const onClick = vi.fn();
++    render(
++      <Toolbar.Root>
++        <Toolbar.Link href="#" onClick={onClick}>
++          Link
++          {ReactDOM.createPortal(<input data-testid="input" defaultValue="" />, document.body)}
++        </Toolbar.Link>
++      </Toolbar.Root>,
++    );
++    const input = screen.getByTestId('input');
++    input.focus();
++    fireEvent.keyDown(input, { key: ' ' });
++    expect(onClick).not.toHaveBeenCalled();
++  });
++
++  it('still activates the ToolbarLink via Space when the link itself is focused', () => {
++    const onClick = vi.fn();
++    render(
++      <Toolbar.Root>
++        <Toolbar.Link href="#" onClick={onClick}>
++          Link
++        </Toolbar.Link>
++      </Toolbar.Root>,
++    );
++    const link = screen.getByText('Link');
++    link.focus();
++    fireEvent.keyDown(link, { key: ' ' });
++    expect(onClick).toHaveBeenCalledTimes(1);
++  });
++});

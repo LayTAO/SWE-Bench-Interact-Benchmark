@@ -1,0 +1,39 @@
+{
+  "actions": [
+    "Load the page.",
+    "Click the semantic Block Escape button.",
+    "Press Escape with Playwright keyboard input.",
+    "Read the status, layer geometry, and page-error stream."
+  ],
+  "checkpoints": [
+    "Initial status is open-unblocked.",
+    "After the click status is open-blocked.",
+    "The final status is read only after the trigger completes."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "final_status": "open-blocked"
+  },
+  "instance_id": "radix-ui__primitives-4014",
+  "observation_channels": [
+    "DOM",
+    "focus",
+    "keyboard event",
+    "component lifetime",
+    "console"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "final_status": "closed"
+  },
+  "preconditions": [
+    "The exact DismissableLayer source renders open.",
+    "The layer and Block Escape control are visible and page errors are absent."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "Layer starts open with Escape unblocked.",
+    "The user activates Block Escape and the state reports open-blocked.",
+    "The user presses Escape and the final layer state is observed."
+  ]
+}

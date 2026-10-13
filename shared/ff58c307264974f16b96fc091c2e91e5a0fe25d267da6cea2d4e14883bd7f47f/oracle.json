@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "fixed_state": "false"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "after_composition": "one or more updates",
+    "during_composition": "options visible, no empty marker, zero updates"
+  },
+  "instance_id": "unovue__reka-ui-2540",
+  "rendering_gate": [
+    "Card, input, and distinct options have plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Autocomplete opens with at least one option before composition."
+  ]
+}

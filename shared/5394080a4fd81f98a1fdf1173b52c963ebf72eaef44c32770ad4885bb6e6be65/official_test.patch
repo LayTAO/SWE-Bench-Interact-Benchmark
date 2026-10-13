@@ -1,0 +1,208 @@
+diff --git a/app/src/examples/combobox-group/test.ts b/app/src/examples/combobox-group/test.ts
+index 1b9bd417..7212fe42 100644
+--- a/app/src/examples/combobox-group/test.ts
++++ b/app/src/examples/combobox-group/test.ts
+@@ -1,4 +1,4 @@
+-import { click, dispatch, hover, press, q, type } from "@ariakit/test";
++import { click, dispatch, hover, press, q, sleep, type } from "@ariakit/test";
+ import { expect, test } from "vitest";
+ 
+ function getSelectionValue(element: Element | HTMLInputElement | null) {
+@@ -115,6 +115,7 @@ test("composition text", async () => {
+   expect(q.option("John Smith")).not.toBeInTheDocument();
+   await type("á", q.combobox(), { isComposing: true });
+   await dispatch.compositionEnd(q.combobox());
++  await sleep();
+   expect(q.combobox()).toHaveValue("ánnual_report.pdf");
+   expect(getSelectionValue(q.combobox())).toBe("nnual_report.pdf");
+   expect(q.option("annual_report.pdf")).toHaveFocus();
+diff --git a/app/src/sandbox/combobox-ime-6663/index.react.tsx b/app/src/sandbox/combobox-ime-6663/index.react.tsx
+new file mode 100644
+index 00000000..3adbbcc9
+--- /dev/null
++++ b/app/src/sandbox/combobox-ime-6663/index.react.tsx
+@@ -0,0 +1,30 @@
++import * as Ariakit from "@ariakit/react";
++import { useState } from "react";
++
++const fruits = ["사과", "바나나", "체리", "레몬", "오렌지"];
++
++export default function Example() {
++  const [keyword, setKeyword] = useState("");
++
++  return (
++    <>
++      <p>
++        Current keyword: <output>{keyword || "(empty)"}</output>
++      </p>
++      <Ariakit.ComboboxProvider>
++        <Ariakit.ComboboxLabel>Fruit</Ariakit.ComboboxLabel>
++        <Ariakit.Combobox
++          autoSelect
++          placeholder="과일을 검색하세요"
++          value={keyword}
++          onChange={(event) => setKeyword(event.target.value)}
++        />
++        <Ariakit.ComboboxPopover gutter={4} sameWidth>
++          {fruits.map((fruit) => (
++            <Ariakit.ComboboxItem key={fruit} value={fruit} />
++          ))}
++        </Ariakit.ComboboxPopover>
++      </Ariakit.ComboboxProvider>
++    </>
++  );
++}
+diff --git a/app/src/sandbox/combobox-ime-6663/test-chrome.ts b/app/src/sandbox/combobox-ime-6663/test-chrome.ts
+new file mode 100644
+index 00000000..c1642803
+--- /dev/null
++++ b/app/src/sandbox/combobox-ime-6663/test-chrome.ts
+@@ -0,0 +1,97 @@
++import type { CDPSession, Page } from "@playwright/test";
++import { withFramework } from "#app/test-utils/preview.ts";
++
++interface ImeTraceEvent {
++  data?: string;
++  role?: string | null;
++  type: string;
++}
++
++declare global {
++  interface Window {
++    __comboboxImeEvents?: ImeTraceEvent[];
++  }
++}
++
++async function traceImeEvents(page: Page) {
++  await page.evaluate(() => {
++    const events: ImeTraceEvent[] = [];
++    window.__comboboxImeEvents = events;
++    for (const type of ["compositionstart", "compositionend", "focusin"]) {
++      document.addEventListener(
++        type,
++        (event) => {
++          const target = event.target as HTMLElement | null;
++          const data =
++            event instanceof CompositionEvent ? event.data : undefined;
++          events.push({
++            type,
++            data,
++            role: target?.getAttribute("role"),
++          });
++        },
++        true,
++      );
++    }
++  });
++}
++
++async function setComposition(cdp: CDPSession, text: string) {
++  await cdp.send("Input.imeSetComposition", {
++    text,
++    selectionStart: text.length,
++    selectionEnd: text.length,
++  });
++}
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6663
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("keeps DOM focus in the combobox between Korean IME syllables", async ({
++    page,
++    q,
++  }) => {
++    const combobox = q.combobox("Fruit");
++    const cdp = await page.context().newCDPSession(page);
++
++    await combobox.focus();
++    await traceImeEvents(page);
++
++    // This CDP sequence is derived from a real macOS Korean 2-set trace for
++    // typing t k r h k, which should produce 사과. CDP preserves the final
++    // value, but it still exposes the harmful focus move that makes the native
++    // macOS IME drop the composed 고 syllable and produce 사ㅏ.
++    await setComposition(cdp, "ㅅ");
++    await setComposition(cdp, "사");
++    await setComposition(cdp, "삭");
++    await setComposition(cdp, "사");
++    const insertText = cdp.send("Input.insertText", { text: "사" });
++    const nextSyllable = setComposition(cdp, "고");
++    await Promise.all([insertText, nextSyllable]);
++
++    const focusMove = await page.evaluate(() => {
++      const events = window.__comboboxImeEvents ?? [];
++      const end = events.findIndex(
++        (event) => event.type === "compositionend" && event.data === "사",
++      );
++      const start = events.findIndex(
++        (event, index) => index > end && event.type === "compositionstart",
++      );
++      const movedToOption =
++        end >= 0 &&
++        start > end &&
++        events
++          .slice(end + 1, start)
++          .some((event) => event.type === "focusin" && event.role === "option");
++      return { end, events, movedToOption, start };
++    });
++    test.expect(focusMove.end).toBeGreaterThanOrEqual(0);
++    test.expect(focusMove.start).toBeGreaterThan(focusMove.end);
++    test.expect(focusMove.movedToOption).toBe(false);
++
++    await setComposition(cdp, "과");
++    await cdp.send("Input.insertText", { text: "과" });
++
++    await test.expect(combobox).toHaveValue("사과");
++    await test.expect(q.text("Current keyword: 사과")).toBeVisible();
++  });
++});
+diff --git a/app/src/sandbox/combobox-ime-6663/test.ts b/app/src/sandbox/combobox-ime-6663/test.ts
+new file mode 100644
+index 00000000..4830ed65
+--- /dev/null
++++ b/app/src/sandbox/combobox-ime-6663/test.ts
+@@ -0,0 +1,27 @@
++import { dispatch, q, sleep, type } from "@ariakit/test";
++import { expect, test } from "vitest";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6663
++test("keeps focus in the combobox between IME composition sessions", async () => {
++  const combobox = q.combobox.ensure("Fruit");
++
++  combobox.focus();
++  await type("사", combobox, { isComposing: true });
++  expect(combobox).toHaveFocus();
++
++  // A Korean IME commits the previous syllable and immediately starts
++  // composing the next one within a single keystroke, so no animation frames
++  // pass between compositionend and the next compositionstart.
++  await dispatch.compositionEnd(combobox);
++  await dispatch.compositionStart(combobox);
++  await sleep();
++
++  expect(q.option("사과")).not.toHaveFocus();
++  expect(combobox).toHaveFocus();
++
++  await type("고", combobox, { isComposing: true });
++  await dispatch.compositionEnd(combobox);
++  await sleep();
++
++  expect(q.option("사과")).toHaveFocus();
++});
+diff --git a/examples/combobox-group/test.ts b/examples/combobox-group/test.ts
+index ab50441c..2bdb8a0f 100644
+--- a/examples/combobox-group/test.ts
++++ b/examples/combobox-group/test.ts
+@@ -1,4 +1,4 @@
+-import { click, dispatch, hover, press, q, type } from "@ariakit/test";
++import { click, dispatch, hover, press, q, sleep, type } from "@ariakit/test";
+ import { expect, test } from "vitest";
+ 
+ function getSelectionValue(element: Element | HTMLInputElement | null) {
+@@ -108,6 +108,7 @@ test("composition text", async () => {
+   expect(q.option("Apple")).not.toBeInTheDocument();
+   await type("á", q.combobox(), { isComposing: true });
+   await dispatch.compositionEnd(q.combobox());
++  await sleep();
+   expect(q.combobox()).toHaveValue("ápple");
+   expect(getSelectionValue(q.combobox())).toBe("pple");
+   expect(q.option("Apple")).toHaveFocus();

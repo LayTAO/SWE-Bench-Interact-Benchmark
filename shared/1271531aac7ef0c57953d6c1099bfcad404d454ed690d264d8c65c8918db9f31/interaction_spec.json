@@ -1,0 +1,50 @@
+{
+  "expected_fixed_state": {
+    "console_errors": [],
+    "hash": "#node-1",
+    "link_clicks": 1,
+    "page_errors": [],
+    "tree_selection": 0
+  },
+  "instance_id": "shoelace-style__webawesome-2673",
+  "observation_channels": [
+    "custom-element readiness",
+    "link geometry",
+    "page errors",
+    "console errors",
+    "link click count",
+    "location hash",
+    "tree selection"
+  ],
+  "observed_buggy_state": {
+    "hash": "",
+    "link_clicks": 0,
+    "page_error_contains": "Cannot read properties of undefined (reading 'disabled')"
+  },
+  "preconditions": [
+    "The exact subject build is served read-only.",
+    "A wa-tree contains a wa-tree-item with an embedded link."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2673 interaction",
+  "states": [
+    {
+      "actions": [
+        "Load the tree and focus the embedded link."
+      ],
+      "checkpoints": [
+        "The tree and link are connected and have non-zero geometry."
+      ],
+      "name": "link_focused"
+    },
+    {
+      "actions": [
+        "Press Enter while the link is focused."
+      ],
+      "checkpoints": [
+        "No page or console error occurs; the link click is observed; tree selection remains unchanged."
+      ],
+      "name": "enter_pressed"
+    }
+  ]
+}

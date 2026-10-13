@@ -1,0 +1,31 @@
+{
+  "FAIL_TO_PASS": [
+    "Select should close listbox by clicking selector button again"
+  ],
+  "PASS_TO_PASS": [
+    "Select should render correctly",
+    "Select ref should be forwarded",
+    "Select should render correctly (dynamic)",
+    "Select should render correctly with section (static)",
+    "Select should render correctly with section (dynamic)",
+    "Select should work with single selection (controlled)",
+    "Select should work with multiple selection (controlled)",
+    "Select should work with dynamic placeholder and renderValue",
+    "Select should close dropdown when clicking outside select",
+    "Select should close dropdown when clicking outside select with modal open",
+    "Select disabled select shouldn't update by keyboard",
+    "Select onSelectionChange should be called with a Set of item ids upon selection",
+    "Select onSelectionChange should be called with a Set of item keys upon selection",
+    "Select should display selected items as comma-separated string inside the select",
+    "Select should close listbox by clicking another select",
+    "Select should display placeholder text when unselected",
+    "Select should display placeholder text when unselected (controlled)",
+    "Select should unset form value",
+    "Select with React Hook Form should work with defaultValues",
+    "Select with React Hook Form should not submit form when required field is empty",
+    "Select with React Hook Form should submit form when required field is not empty"
+  ],
+  "base_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b",
+  "instance_id": "heroui-inc__heroui-3276",
+  "schema_version": "4.0"
+}

@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "useForwardRef should update currentElement when as-child conditional child swaps"
+  ],
+  "PASS_TO_PASS": [
+    "useForwardRef should forward child component exposed properties to parent ref",
+    "useForwardRef should forward component instance for component",
+    "useForwardRef should forward multiple exposed properties from child component",
+    "useForwardRef should forward plain DOM element ref",
+    "useForwardRef should forward plain DOM element ref - 2",
+    "useForwardRef should forward plain DOM element ref - fragment",
+    "useForwardRef should forward plain DOM element ref - fragment - 2",
+    "useForwardRef should forward plain DOM element ref - fragment - 3",
+    "useForwardRef should merge child component exposed properties with parent component props"
+  ],
+  "base_commit": "16abe8e19a8078d3a194bd7a01a161a9e7bc3fc0",
+  "instance_id": "unovue__reka-ui-2474",
+  "schema_version": "4.0"
+}

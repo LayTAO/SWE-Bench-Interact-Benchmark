@@ -1,0 +1,44 @@
+{
+  "expected_fixed_state": {
+    "bug_predicate": false
+  },
+  "instance_id": "ni__nimble-2022",
+  "observation_channels": [
+    "DOM state",
+    "ARIA/focus state",
+    "geometry",
+    "scroll/event state",
+    "page and console errors"
+  ],
+  "observed_buggy_state": {
+    "bug_predicate": true
+  },
+  "preconditions": [
+    "The exact Base or Fixed subject state is the only state input changed between runs."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue report and the legacy Buggy-side interaction description",
+  "states": [
+    {
+      "actions": [
+        "Load the frozen reproduction."
+      ],
+      "checkpoints": [
+        "The target component renders with bounded geometry and no startup error."
+      ],
+      "name": "initial"
+    },
+    {
+      "actions": [
+        "open a filterable Select and type text that highlights another option",
+        "Tab to the next control",
+        "return focus to the Select and press Enter",
+        "compare the displayed value before and after reopening"
+      ],
+      "checkpoints": [
+        "The issue-derived observation is recorded after the complete action sequence."
+      ],
+      "name": "triggered"
+    }
+  ]
+}

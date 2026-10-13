@@ -1,0 +1,14 @@
+{
+  "base_commit": "3cab2428c9ede4507c3040023aff31fd07eff76b",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "buggy_commit": "3cab2428c9ede4507c3040023aff31fd07eff76b",
+  "build_command": "",
+  "install_command": "npm install --global yarn@1.22.22 && yarn install --frozen-lockfile --ignore-engines",
+  "instance_id": "mui__material-ui-36838",
+  "package_manager": "yarn 1.22.22",
+  "repo_url": "https://github.com/mui/material-ui.git",
+  "repository": "mui/material-ui",
+  "runtime": "Node.js 18.20.8",
+  "schema_version": "4.0",
+  "test_command": "cp /opt/interactrepair/interactrepair.karma.tests.js test/interactrepair.karma.tests.js && cp /opt/interactrepair/karma.interactrepair.conf.js test/karma.interactrepair.conf.js && RESULTS_JSON=\"$RESULTS_DIR/$MODE.raw.json\" INTERACTREPAIR_CHROME_BIN=\"$CHROME_BIN\" yarn karma start test/karma.interactrepair.conf.js --single-run"
+}

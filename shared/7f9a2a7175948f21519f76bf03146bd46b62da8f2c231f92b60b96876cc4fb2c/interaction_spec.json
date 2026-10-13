@@ -1,0 +1,32 @@
+{
+  "actions": [
+    "聚焦或悬停触发器",
+    "滚动离开内容",
+    "检查 tooltip 是否关闭"
+  ],
+  "expected_fixed": "滚动离开 tooltip 内容后 tooltip 关闭。",
+  "instance_id": "melt-ui__melt-ui-945",
+  "issue_derived_path": [
+    "聚焦或悬停触发器",
+    "滚动离开内容",
+    "检查 tooltip 是否关闭"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "accessibility attributes",
+    "focus or scroll events",
+    "page-error stream"
+  ],
+  "observed_buggy": "滚动离开后 tooltip 仍保持打开。",
+  "preconditions": [
+    "independent minimal app imports the candidate source",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

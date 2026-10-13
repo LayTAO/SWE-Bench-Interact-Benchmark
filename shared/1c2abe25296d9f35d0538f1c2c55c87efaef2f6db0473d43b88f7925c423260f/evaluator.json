@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "getAllTabbableIn fallback returns only focusable candidates",
+    "getFirstTabbableIn fallback skips non-focusable candidates",
+    "getLastTabbableIn fallback returns the last focusable candidate",
+    "reopened portaled popover focuses the first focusable element when a hidden element comes first"
+  ],
+  "PASS_TO_PASS": [
+    "getClosestFocusable returns null when no focusable ancestor exists",
+    "getClosestFocusable walks past a selector-matching but non-focusable ancestor",
+    "getFirstTabbableIn falls back to the first focusable candidate",
+    "getFirstTabbableIn returns null for empty containers",
+    "getFirstTabbableIn returns the container itself when included and tabbable"
+  ],
+  "base_commit": "be8ee165b1ec6a197be0e4247a4359547f95b267",
+  "instance_id": "ariakit__ariakit-6310",
+  "schema_version": "4.0"
+}

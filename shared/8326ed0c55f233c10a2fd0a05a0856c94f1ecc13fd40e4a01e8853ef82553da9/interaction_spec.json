@@ -1,0 +1,38 @@
+{
+  "environment_gate": [
+    "InputNumber and increment control render"
+  ],
+  "expected_fixed": {
+    "values": [
+      "0.25",
+      "0.50",
+      "0.75"
+    ]
+  },
+  "instance_id": "primefaces__primereact-8382",
+  "issue_derived_path": [
+    "render InputNumber with step 0.25",
+    "click increment",
+    "repeat the action",
+    "read the input value after each transition"
+  ],
+  "observation_channels": [
+    "input value",
+    "spinbutton aria value",
+    "button/keyboard event order"
+  ],
+  "observed_buggy": {
+    "values": [
+      "0.3",
+      "0.6",
+      "0.8"
+    ]
+  },
+  "schema_version": "1.0",
+  "states": [
+    "zero",
+    "first-quarter",
+    "second-quarter",
+    "accumulated"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "7c8b0b4076ec1042c1892cc49f0adc4ce1159472",
+  "base_image": "public.ecr.aws/docker/library/node:14-bullseye",
+  "install_command": "export YARN_CACHE_FOLDER=/yarn-cache; yarn --version && yarn install --frozen-lockfile --non-interactive",
+  "instance_id": "vuetifyjs__vuetify-11989",
+  "package_manager": "image-provided-yarn-classic",
+  "repo_url": "https://github.com/vuetifyjs/vuetify.git",
+  "repository": "vuetifyjs/vuetify",
+  "runtime": "public.ecr.aws/docker/library/node:14-bullseye; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

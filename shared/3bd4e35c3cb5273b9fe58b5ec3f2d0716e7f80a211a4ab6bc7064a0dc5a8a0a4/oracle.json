@@ -1,0 +1,27 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "space_default_prevented == true",
+      "enter_default_prevented == true"
+    ]
+  },
+  "environment_gate": [
+    "The exact DropdownMenu source renders the open menu and portaled input.",
+    "The input has a visible non-zero rectangle and no page errors."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "enter_default_prevented": false,
+    "space_default_prevented": false
+  },
+  "instance_id": "radix-ui__primitives-3232",
+  "predicate_id": "portaled_input_space_enter_are_intercepted",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The oracle-ready marker is attached.",
+    "Both key events are dispatched with cancelable=true to the semantic input locator."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "environment_gate": [
+    "the exact TagPicker source renders the input and existing tags"
+  ],
+  "instance_id": "microsoft__fluentui-32260",
+  "issue_derived_path": [
+    "render the TagPicker with existing tags",
+    "type text into the semantic input",
+    "select all and press Backspace",
+    "inspect input value and focused element"
+  ],
+  "observation_channels": [
+    "semantic input value",
+    "active element test id",
+    "page-error stream"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial-selected",
+    "typed",
+    "selected-backspace"
+  ]
+}

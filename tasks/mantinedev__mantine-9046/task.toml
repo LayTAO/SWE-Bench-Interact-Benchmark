@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/mantinedev__mantine-9046"
+version = "0.2.0-candidate"
+description = "notification closes while hovered when autoClose is enabled"
+
+[metadata]
+instance_id = "mantinedev__mantine-9046"
+repository = "mantinedev/mantine"
+base_commit = "2494b3eec8bddb3269d39dda0ea999bec1e3f98c"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c46a46539e85d5ffd187992c8e2e922aa0d455eb4285f070794e73307d412279"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:4c2cde572e0b39e2d5ce6939275cc8ed9cc8dba7194ad361a3c2ad643585dd7b"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

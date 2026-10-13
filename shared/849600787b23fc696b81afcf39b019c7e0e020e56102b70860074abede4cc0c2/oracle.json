@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "root_combobox_hidden == true"
+    ]
+  },
+  "environment_gate": [
+    "independent page renders from candidate source",
+    "Playwright executes actual tests with zero retries",
+    "page_errors is empty"
+  ],
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    },
+    "fixed_state": "The root combobox remains exposed to accessibility after its nested virtual menu opens."
+  },
+  "instance_id": "floating-ui__floating-ui-3207",
+  "predicate_id": "floating_focus_manager_preserves_virtual_root_combobox",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "scenario.spec.cjs verifies the issue interaction before observing the symptom"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "nested layers with disableOutsidePointerEvents (#2674) should keep body pointer-events none after a nested layer closes while outer stays open",
+    "nested layers with disableOutsidePointerEvents (#2674) should keep body pointer-events none when a nested layer toggles disableOutsidePointerEvents to false while mounted",
+    "nested layers with disableOutsidePointerEvents (#2674) should restore and re-lock body pointer-events as the only layer toggles disableOutsidePointerEvents",
+    "nested layers with disableOutsidePointerEvents (#2674) should restore body pointer-events after the last layer closes"
+  ],
+  "PASS_TO_PASS": [
+    "given a default DismissableLayer after clicking a trigger focus Outside should close layer",
+    "given a default DismissableLayer after clicking a trigger focus Outside should not close layer when prevented",
+    "given a default DismissableLayer after clicking a trigger pressing Escape should close layer",
+    "given a default DismissableLayer after clicking a trigger pressing Escape should not close layer when prevented",
+    "given a default DismissableLayer after clicking a trigger should render the content",
+    "given a default DismissableLayer should render button without content",
+    "isLayerExist should return false for non-Element targets without throwing"
+  ],
+  "base_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8",
+  "instance_id": "unovue__reka-ui-2674",
+  "schema_version": "4.0"
+}

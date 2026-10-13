@@ -1,0 +1,23 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "opened_on_pointer_down == true",
+      "listbox_visible_after_outside_release == true"
+    ]
+  },
+  "environment_gate": [
+    "The exact Select source renders a visible combobox and listbox."
+  ],
+  "expected": {
+    "bug_observed": true,
+    "listbox_visible_after_outside_release": false,
+    "opened_on_pointer_down": true
+  },
+  "instance_id": "mui__material-ui-45301",
+  "predicate_id": "select_pointer_cancel_keeps_listbox_closed_after_outside_release",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The pointer is held on the semantic combobox, moved outside, then released."
+  ]
+}

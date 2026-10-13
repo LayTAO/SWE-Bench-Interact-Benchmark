@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "Dropdown should preserve selectedItem when menu is closed programmatically"
+  ],
+  "PASS_TO_PASS": [
+    "Dropdown Component API should accept a `ref` for the underlying button element",
+    "Dropdown Component API should respect decorator prop",
+    "Dropdown Component API should respect deprecated slug prop"
+  ],
+  "base_commit": "925b746d92d72f9c9cf3fa3434843d049d630680",
+  "instance_id": "carbon-design-system__carbon-20771",
+  "schema_version": "4.0"
+}

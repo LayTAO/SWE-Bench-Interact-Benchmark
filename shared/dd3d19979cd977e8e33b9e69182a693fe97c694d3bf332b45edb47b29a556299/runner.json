@@ -1,0 +1,12 @@
+{
+  "base_commit": "2ff5b8198b376084c1eb5ef08e0b14233934e899",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-9427",
+  "package_manager": "yarn@4.2.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/react-aria-components/test/Calendar.test.js --runInBand --json"
+}

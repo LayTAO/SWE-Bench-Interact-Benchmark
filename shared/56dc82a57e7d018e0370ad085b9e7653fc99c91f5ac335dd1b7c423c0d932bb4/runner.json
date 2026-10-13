@@ -1,0 +1,11 @@
+{
+  "base_commit": "0ac9d81713bf9e91e1d89578cabdbc4db0b67009",
+  "base_image": "mcr.microsoft.com/playwright:v1.42.0-jammy",
+  "install_command": "npm ci",
+  "instance_id": "ni__nimble-2022",
+  "package_manager": "npm (package-lock.json)",
+  "repo_url": "https://github.com/ni/nimble.git",
+  "repository": "ni/nimble",
+  "schema_version": "3.0",
+  "test_command": "npm run build-components -w packages/nimble-components; npm run test-chrome:verbose -w packages/nimble-components"
+}

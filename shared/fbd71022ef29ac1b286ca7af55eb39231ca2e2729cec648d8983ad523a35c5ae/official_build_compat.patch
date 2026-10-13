@@ -1,0 +1,19 @@
+diff --git a/tools/bazel/web_test_suite.bzl b/tools/bazel/web_test_suite.bzl
+index 739b039c8..8d705c984 100644
+--- a/tools/bazel/web_test_suite.bzl
++++ b/tools/bazel/web_test_suite.bzl
+@@ -3,11 +3,14 @@ load("@rules_browsers//wtr:index.bzl", "wtr_test")
+ 
+ def _web_test(name, tags = [], deps = [], bootstrap = [], **kwargs):
+     spec_bundle(
++        bazel_sandbox_plugin = False,
+         name = "%s_bundle" % name,
+         srcs = ["//src:build-tsconfig"],
+         bootstrap = bootstrap,
+         deps = deps,
+         config = {
++            "absWorkingDir": "__HARBOR_BAZEL_BIN_ROOT__",
++            "alias": {"@angular/cdk": "./src/cdk"},
+             "resolveExtensions": [".js"],
+             "tsconfig": "./src/bazel-tsconfig-build.json",
+         },

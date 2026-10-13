@@ -1,0 +1,43 @@
+{
+  "expected_fixed_state": {
+    "active_test_id": "after",
+    "menu_visible": false
+  },
+  "instance_id": "unovue__reka-ui-2296",
+  "observation_channels": [
+    "document.activeElement",
+    "menu visibility",
+    "control geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "active_test_id": "item",
+    "menu_visible": true
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A non-modal DropdownMenu sits between two buttons."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2296 interaction",
+  "states": [
+    {
+      "actions": [
+        "Focus the trigger and press Enter."
+      ],
+      "checkpoints": [
+        "The menu item is visible and focused."
+      ],
+      "name": "menu_open"
+    },
+    {
+      "actions": [
+        "Press Tab once from the focused item."
+      ],
+      "checkpoints": [
+        "Record focus and menu visibility."
+      ],
+      "name": "tab_once"
+    }
+  ]
+}

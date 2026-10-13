@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "forwarded_current_element_after_swap": "not span"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "actual_dom_tag_after_swap": "span",
+    "forwarded_current_element_after_swap": "span"
+  },
+  "instance_id": "unovue__reka-ui-2474",
+  "rendering_gate": [
+    "Card, stage, and both conditional roots have plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Actual DOM root becomes a distant span replacement."
+  ]
+}

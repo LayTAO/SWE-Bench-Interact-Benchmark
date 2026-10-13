@@ -1,0 +1,12 @@
+{
+  "base_commit": "84ec907de4ebe841871cac2b9d2279f6446db606",
+  "base_image": "node:18",
+  "install_command": "npm ci",
+  "instance_id": "ariakit__ariakit-2450",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/ariakit/ariakit.git",
+  "repository": "ariakit/ariakit",
+  "runtime": "Node.js 18",
+  "schema_version": "3.0",
+  "test_command": "ARIAKIT_TEST_LOADER=react npx vitest run examples/dialog-menu/test.ts examples/select-menu-default-open/test.ts --threads --single-thread"
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "c71256dfdb981a628120d6bbafdc3001836dd9a8",
+  "base_image": "node:22",
+  "install_command": "corepack enable && pnpm install --frozen-lockfile",
+  "instance_id": "angular__components-32661",
+  "package_manager": "pnpm",
+  "repo_url": "https://github.com/angular/components.git",
+  "repository": "angular/components",
+  "runtime": "Node.js 22",
+  "schema_version": "3.0",
+  "test_command": "pnpm test material/sidenav --no-watch"
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>InteractRepair Carbon web component reproduction</title>
+    <style>
+      body { margin: 0; font-family: IBM Plex Sans, Arial, sans-serif; background: #f4f4f4; color: #161616; }
+      main { min-height: 100vh; padding: 40px; }
+      h1 { margin: 0 0 8px; font-size: 28px; }
+      p { max-width: 700px; margin: 0 0 32px; line-height: 1.5; color: #525252; }
+      .stage { position: relative; width: 620px; min-height: 380px; padding: 28px; background: white; border: 1px solid #d6d6d6; }
+      #after { display: block; margin-top: 48px; }
+      #overlap { position: absolute; left: 28px; top: 116px; z-index: 10; width: 340px; height: 100px; padding: 16px; background: #d0e2ff; border: 2px solid #0f62fe; pointer-events: auto; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Carbon interaction reproduction</h1>
+      <p>Exercise the component and inspect the resulting overlay, focus, selection, or item order.</p>
+      <div id="root" class="stage"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

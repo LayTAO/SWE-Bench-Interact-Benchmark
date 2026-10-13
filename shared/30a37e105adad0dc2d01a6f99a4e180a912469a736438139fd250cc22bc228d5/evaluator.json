@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "<Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowRight rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowUp rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowRight rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowUp rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowLeft rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowUp rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowLeft rounds fractional values to the configured step",
+    "<Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowUp rounds fractional values to the configured step",
+    "roundValueToStep preserves precision from the step origin"
+  ],
+  "PASS_TO_PASS": [
+    "<Slider.Root /> keyboard interactions ltr orientation: horizontal key: PageUp preserves largeStep increments when step uses a different grid",
+    "<Slider.Root /> keyboard interactions ltr orientation: vertical key: PageUp preserves largeStep increments when step uses a different grid",
+    "<Slider.Root /> keyboard interactions rtl orientation: horizontal key: PageUp preserves largeStep increments when step uses a different grid",
+    "<Slider.Root /> keyboard interactions rtl orientation: vertical key: PageUp preserves largeStep increments when step uses a different grid"
+  ],
+  "base_commit": "1e718e9771aea4c4cecebb43731fc014b5bba71d",
+  "instance_id": "mui__base-ui-4547",
+  "schema_version": "4.0"
+}

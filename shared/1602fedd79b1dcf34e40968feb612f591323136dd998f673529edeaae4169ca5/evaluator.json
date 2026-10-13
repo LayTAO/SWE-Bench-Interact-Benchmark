@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "timeField > allows typing two-digit hours (e.g. 14) in 24h mode regardless of locale"
+  ],
+  "PASS_TO_PASS": [
+    "should pass axe accessibility tests"
+  ],
+  "base_commit": "84b044f3cf1f87a282952f9ed31967b89cd6776f",
+  "instance_id": "unovue__reka-ui-2463",
+  "schema_version": "4.0"
+}

@@ -1,0 +1,39 @@
+{
+  "expected_fixed_state": {
+    "selected_button": {
+      "aria_pressed": "true",
+      "aria_selected": null
+    }
+  },
+  "instance_id": "unovue__reka-ui-2261",
+  "observation_channels": [
+    "selected cell attributes",
+    "role",
+    "page and console errors"
+  ],
+  "observed_buggy_state": {
+    "selected_button": {
+      "aria_pressed": null,
+      "aria_selected": "true"
+    }
+  },
+  "preconditions": [
+    "A RangeCalendar with a selected January 1980 date range is visible.",
+    "Selected calendar cells render as buttons."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2261 interaction",
+  "states": [
+    {
+      "actions": [
+        "Open/render the range calendar.",
+        "Inspect a selected date button's ARIA attributes."
+      ],
+      "checkpoints": [
+        "The selected date button has aria-pressed=true.",
+        "The selected date button has no aria-selected attribute."
+      ],
+      "name": "inspect_selected_cell_semantics"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "export COREPACK_HOME=/corepack; corepack enable && corepack prepare pnpm@11.9.0 --activate && pnpm config set store-dir /pnpm/store && pnpm install --frozen-lockfile",
+  "instance_id": "ariakit__ariakit-6346",
+  "package_manager": "pnpm@11.9.0",
+  "repo_url": "https://github.com/ariakit/ariakit.git",
+  "repository": "ariakit/ariakit",
+  "runtime": "public.ecr.aws/docker/library/node:24-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

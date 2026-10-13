@@ -1,0 +1,40 @@
+{
+  "expected_fixed_state": {
+    "selected_time": "00:00:00.000"
+  },
+  "instance_id": "unovue__reka-ui-2599",
+  "observation_channels": [
+    "emitted model fields",
+    "calendar-cell geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "selected_time": "retains a stale non-zero field"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "DatePicker starts with a model containing a non-zero time."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2599 interaction",
+  "states": [
+    {
+      "actions": [
+        "Clear the model."
+      ],
+      "checkpoints": [
+        "Open the calendar."
+      ],
+      "name": "clear"
+    },
+    {
+      "actions": [
+        "Select an available in-month day."
+      ],
+      "checkpoints": [
+        "Record the emitted time fields."
+      ],
+      "name": "select_date"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "a12f9f245f7a7a3baca1c52e25fd05642a0e11e8",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "npm ci --cache /npm-cache --prefer-offline --no-audit --no-fund",
+  "instance_id": "tailwindlabs__headlessui-3749",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/tailwindlabs/headlessui.git",
+  "repository": "tailwindlabs/headlessui",
+  "runtime": "public.ecr.aws/docker/library/node:20-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

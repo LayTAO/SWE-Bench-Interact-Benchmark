@@ -1,0 +1,51 @@
+{
+  "actions": [
+    "Load the native source-backed Combobox preview.",
+    "Tab to the Combobox and type `a`.",
+    "Tab to Clear input and press Enter.",
+    "Type `a` again and click Clear input.",
+    "Read the empty input and the semantic Apple active-state attributes."
+  ],
+  "checkpoints": [
+    "The input, Clear input button, and listbox options render without page or console errors.",
+    "The first keyboard clear empties the input and does not leave Apple active.",
+    "The second clear empties the input; Buggy leaves Apple aria-selected=true and data-active-item, while Fixed leaves no option active."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "clear_empty": true,
+    "final_apple_active": false,
+    "first_clear_apple_focused": false,
+    "first_clear_empty": true,
+    "second_typed_value": true,
+    "typed_value": true
+  },
+  "instance_id": "ariakit__ariakit-1652",
+  "observation_channels": [
+    "Playwright accessibility roles",
+    "DOM input value",
+    "ARIA selected state",
+    "data-active-item state",
+    "console errors",
+    "page errors",
+    "screenshot"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "clear_empty": true,
+    "final_apple_active": true,
+    "first_clear_apple_focused": false,
+    "first_clear_empty": true,
+    "second_typed_value": true,
+    "typed_value": true
+  },
+  "preconditions": [
+    "The native Ariakit Combobox preview has hydrated and the labeled food input is visible."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The Combobox contains a typed `a` and auto-selects Apple as the active option.",
+    "The Clear input button is activated by keyboard and the empty Combobox has no active Apple option.",
+    "After typing `a` again and clicking Clear input, Buggy keeps Apple active while Fixed clears the active option."
+  ]
+}

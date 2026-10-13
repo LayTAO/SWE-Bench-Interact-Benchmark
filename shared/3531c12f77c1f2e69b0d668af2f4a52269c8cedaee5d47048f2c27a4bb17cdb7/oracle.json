@@ -1,0 +1,29 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "trigger_valid == true",
+      "after.selections.length > 0"
+    ]
+  },
+  "environment_gate": [
+    "The app and exact subject packages load without a page error.",
+    "The initial list contains nine options.",
+    "The input, trigger, and listbox satisfy repository-native alignment and size bounds."
+  ],
+  "expected": {
+    "aria_expanded": "false",
+    "bug_observed": false,
+    "listbox_visible": false,
+    "selection_event_count": 0
+  },
+  "instance_id": "adobe__react-spectrum-2181",
+  "predicate_id": "outside_release_selects_restored_menu_item",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Filtering to Nuclear produces one option and a shorter listbox.",
+    "The pointer coordinate is outside the filtered rectangle and inside the original rectangle.",
+    "Pointer down clears the input before pointer up.",
+    "The menu closes after pointer up."
+  ]
+}

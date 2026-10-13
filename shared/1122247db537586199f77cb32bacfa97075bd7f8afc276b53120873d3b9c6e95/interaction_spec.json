@@ -1,0 +1,34 @@
+{
+  "environment_gate": [
+    "demo route and both Truncate examples render"
+  ],
+  "expected_fixed": {
+    "focused_tooltip": true,
+    "narrow_tabindex": true,
+    "wide_tabindex": false
+  },
+  "instance_id": "patternfly__patternfly-react-11384",
+  "issue_derived_path": [
+    "open the Truncate demo",
+    "Tab to the narrow truncated content",
+    "observe focus and Tooltip",
+    "inspect wide untruncated content"
+  ],
+  "observation_channels": [
+    "tabindex",
+    "document.activeElement",
+    "Tooltip DOM",
+    "layout width"
+  ],
+  "observed_buggy": {
+    "focused_tooltip": false,
+    "narrow_tabindex": false
+  },
+  "schema_version": "1.0",
+  "states": [
+    "demo-loaded",
+    "narrow-truncated",
+    "wide-untruncated",
+    "focused"
+  ]
+}

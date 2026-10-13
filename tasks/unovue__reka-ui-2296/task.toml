@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/unovue__reka-ui-2296"
+version = "0.2.0-candidate"
+description = "[Bug]: Unable to use Tab to move focus outside of open, non-modal DropdownMenu"
+
+[metadata]
+instance_id = "unovue__reka-ui-2296"
+repository = "unovue/reka-ui"
+base_commit = "178e6cdd787858552a3f9700dc2ba8ee9b9201e5"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:38bc02725db2e758ea5951e035e55cc13325dadc59c5404f347452ebebd47e61"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:21e78e048713621a1dfaa726ccaec289520c9559e52d143481ecd09effdf294a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

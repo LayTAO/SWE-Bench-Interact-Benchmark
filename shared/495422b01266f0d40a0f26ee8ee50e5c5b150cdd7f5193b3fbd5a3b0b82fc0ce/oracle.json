@@ -1,0 +1,25 @@
+{
+  "bug_predicate": {
+    "selected_button": "a selected role=button has aria-selected or lacks aria-pressed"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "environment_valid": true,
+    "rendering_valid": true,
+    "selected_button": {
+      "aria_pressed": "true",
+      "aria_selected": null
+    },
+    "trigger_valid": true
+  },
+  "instance_id": "unovue__reka-ui-2261",
+  "rendering_gate": [
+    "At least one selected calendar cell button is visible."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The selected cell exposes the expected button ARIA state."
+  ]
+}

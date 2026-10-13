@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/mui__base-ui-5175"
+version = "0.2.0-candidate"
+description = "[checkbox] onClick stopPropagation does not work inside Checkbox"
+
+[metadata]
+instance_id = "mui__base-ui-5175"
+repository = "mui/base-ui"
+base_commit = "d5a03c8f1ae4e91d1cb02c0ea34daf2f7c0ed21d"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7e1af5ba529870295b505ab0abcecd73069d4ed3300f381805c2bde921a80779"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:38b2e9fb315858606c3b503e02ffa8059d94e34410ffcaae165b1ddb32c3d25f"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

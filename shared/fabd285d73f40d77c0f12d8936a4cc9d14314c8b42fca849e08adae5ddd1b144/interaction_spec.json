@@ -1,0 +1,41 @@
+{
+  "expected_fixed_state": {
+    "false": "body is not locked",
+    "true": "body pointer-events is none"
+  },
+  "instance_id": "unovue__reka-ui-2677",
+  "observation_channels": [
+    "body inline style",
+    "Dialog visibility and geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "false": "body pointer-events is none"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "Modal Dialogs are rendered without a DialogOverlay."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2677 interaction",
+  "states": [
+    {
+      "actions": [
+        "Open content with disableOutsidePointerEvents=false."
+      ],
+      "checkpoints": [
+        "Record body pointer-events."
+      ],
+      "name": "explicit_false"
+    },
+    {
+      "actions": [
+        "Close the first Dialog and open content with the prop true."
+      ],
+      "checkpoints": [
+        "Record body pointer-events."
+      ],
+      "name": "explicit_true"
+    }
+  ]
+}

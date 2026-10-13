@@ -1,0 +1,11 @@
+{
+  "base_commit": "05346a6a6f16f2e853ef01bed9149381eebedf26",
+  "base_image": "node:22-bookworm",
+  "install_command": "node .yarn/releases/yarn-4.2.2.cjs install --immutable",
+  "instance_id": "adobe__react-spectrum-7960",
+  "package_manager": "yarn@4.2.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "schema_version": "3.0",
+  "test_command": "node .yarn/releases/yarn-4.2.2.cjs jest packages/@react-aria/overlays/test/calculatePosition.test.ts packages/@react-aria/overlays/test/useOverlayPosition.test.tsx --runInBand"
+}

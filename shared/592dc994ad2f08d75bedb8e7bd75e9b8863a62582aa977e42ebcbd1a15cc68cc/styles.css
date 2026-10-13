@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #172033;
+}
+main { padding: 42px; min-height: 500px; }
+.card { max-width: 760px; padding: 28px; border: 1px solid #c5ccda; border-radius: 12px; background: white; }
+.card button, .card input, .card select, .card [contenteditable], .dialog button { font: inherit; }
+.card button, .card input, .card select, .dialog button, .field { border: 2px solid #3659d9; border-radius: 8px; background: white; padding: 10px 14px; }
+.menu, .popup { z-index: 30; min-width: 180px; border: 1px solid #8997ad; border-radius: 8px; background: white; padding: 6px; box-shadow: 0 12px 30px rgb(30 50 80 / 20%); }
+.item { padding: 9px 12px; border-radius: 5px; outline: none; }
+.item[data-highlighted] { background: #dfe7ff; }
+.overlay { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; background: rgb(16 24 40 / 45%); }
+.dialog { position: fixed; z-index: 21; top: 50%; left: 50%; min-width: 420px; padding: 24px; border-radius: 12px; background: white; box-shadow: 0 20px 48px rgb(0 0 0 / 25%); transform: translate(-50%, -50%); }
+.row { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.segments { display: inline-flex; align-items: center; gap: 2px; margin-top: 22px; padding: 12px; border: 2px solid #3659d9; border-radius: 9px; background: white; }
+.segment { min-width: 1.4em; padding: 4px; border-radius: 4px; outline: none; text-align: center; }
+.segment:focus { background: #ffe3a3; box-shadow: 0 0 0 3px #f59e0b; }
+:focus-visible { outline: 4px solid #f59e0b; outline-offset: 3px; }

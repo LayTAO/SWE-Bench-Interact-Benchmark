@@ -1,0 +1,38 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "keyboard_step_applied == true",
+      "value_has_no_floating_point_drift == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowRight rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions ltr orientation: horizontal key: ArrowUp rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowRight rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions ltr orientation: vertical key: ArrowUp rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowLeft rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions rtl orientation: horizontal key: ArrowUp rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowLeft rounds fractional values to the configured step",
+      "<Slider.Root /> keyboard interactions rtl orientation: vertical key: ArrowUp rounds fractional values to the configured step",
+      "roundValueToStep preserves precision from the step origin"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "键盘步进值精确保持在声明的 step 网格上。"
+  },
+  "instance_id": "mui__base-ui-4547",
+  "predicate_id": "mui_slider_keyboard_step_rounding_is_exact",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "聚焦 Slider",
+    "按方向键步进",
+    "读取最终值"
+  ]
+}

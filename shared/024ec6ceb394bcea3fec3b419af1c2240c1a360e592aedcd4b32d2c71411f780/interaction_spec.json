@@ -1,0 +1,43 @@
+{
+  "expected_fixed_state": {
+    "actual_dom_tag": "span",
+    "forwarded_current_element": "span"
+  },
+  "instance_id": "unovue__reka-ui-2474",
+  "observation_channels": [
+    "actual nodeName",
+    "reactive currentElement output",
+    "root geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "actual_dom_tag": "span",
+    "forwarded_current_element": "button"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "An as-child Primitive forwards a conditional button root."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2474 interaction and official root-cause scenario",
+  "states": [
+    {
+      "actions": [
+        "Observe the initial button and forwarded element output."
+      ],
+      "checkpoints": [
+        "Both report button."
+      ],
+      "name": "initial_root"
+    },
+    {
+      "actions": [
+        "Click Reload trigger to render a span root."
+      ],
+      "checkpoints": [
+        "Record actual DOM tag and forwarded element output."
+      ],
+      "name": "replacement_root"
+    }
+  ]
+}

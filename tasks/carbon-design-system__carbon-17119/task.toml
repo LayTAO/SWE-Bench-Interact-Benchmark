@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/carbon-design-system__carbon-17119"
+version = "0.2.0-candidate"
+description = "Carbon Combobox组件在清除搜索查询后不显示已选选项"
+
+[metadata]
+instance_id = "carbon-design-system__carbon-17119"
+repository = "carbon-design-system/carbon"
+base_commit = "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:15fe7a8d30fb19e19c74966c3af18610e8786fd012e7e94b5d7ef1c3cb7ac38a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:efcc5c320b064264023bdb7876b44905b81836e230159380f91767312bc91809"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

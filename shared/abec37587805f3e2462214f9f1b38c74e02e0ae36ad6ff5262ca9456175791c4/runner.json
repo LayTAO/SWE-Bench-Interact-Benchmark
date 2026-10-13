@@ -1,0 +1,12 @@
+{
+  "base_commit": "7ef230221c459a0d8cd31f7a1e202ad4867bdb2f",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-10092",
+  "package_manager": "yarn@4.13.0",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/react-aria-components/test/DropZone.test.js --runInBand --json"
+}

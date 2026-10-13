@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "@mantine/core/Notifications does not close notification on hover when autoClose is enabled"
+  ],
+  "PASS_TO_PASS": [
+    "@mantine/core/Notifications calls onOpen when notification is mounted",
+    "@mantine/core/Notifications calls onClose when notification is hidden",
+    "@mantine/core/Notifications priority keeps higher priority notifications visible and pushes lower priority ones into the queue"
+  ],
+  "base_commit": "2494b3eec8bddb3269d39dda0ea999bec1e3f98c",
+  "instance_id": "mantinedev__mantine-9046",
+  "schema_version": "4.0"
+}

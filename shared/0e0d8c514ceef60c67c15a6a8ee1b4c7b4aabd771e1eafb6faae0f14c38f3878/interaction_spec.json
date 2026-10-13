@@ -1,0 +1,37 @@
+{
+  "actions": [
+    "Click Month control.",
+    "Click the July option.",
+    "Read active element and calendar grid focus."
+  ],
+  "checkpoints": [
+    "Selection changes to July.",
+    "Buggy moves focus to the calendar grid; Fixed keeps focus on Month control."
+  ],
+  "expected_fixed_state": {
+    "active_control": "month-select-button",
+    "bug_observed": false,
+    "grid_focused": false
+  },
+  "instance_id": "adobe__react-spectrum-9427",
+  "observation_channels": [
+    "role-based button/option/grid",
+    "document.activeElement",
+    "selected month text",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "active_control": "calendar-grid-or-cell",
+    "bug_observed": true,
+    "grid_focused": true
+  },
+  "preconditions": [
+    "The Calendar renders Month and Year Select controls."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "Month Select is opened.",
+    "July is selected.",
+    "Focus after selection is observed."
+  ]
+}

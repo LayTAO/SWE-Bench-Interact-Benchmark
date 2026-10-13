@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/element-plus__element-plus-24564"
+version = "0.2.0-candidate"
+description = "Table filtered-value does not stay synchronized in single-select filtering"
+
+[metadata]
+instance_id = "element-plus__element-plus-24564"
+repository = "element-plus/element-plus"
+base_commit = "f2b994f72fb68f37d5d585e19f740b301e8eeeca"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:0e93e8d113c589cc352b5c8009f49eb2389385e31af86bf98a57861b7001c104"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ef88b29c75cb8fd3d415487ea98008e0b058d59b53ec4dcff8963c2ca34f69f2"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

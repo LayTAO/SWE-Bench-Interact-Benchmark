@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "Tabs should detect block-size in transition for TabPanels",
+    "Tabs should detect inline-size in transition for TabPanels"
+  ],
+  "PASS_TO_PASS": [
+    "Tabs can add tabs and keep the current selected key",
+    "Tabs finds the first non-disabled tab",
+    "Tabs press events should support press events on items when using keyboard"
+  ],
+  "base_commit": "c67ecf2954dda1f520fe3c4a68f1c6bc47a597d8",
+  "instance_id": "adobe__react-spectrum-9949",
+  "schema_version": "4.0"
+}

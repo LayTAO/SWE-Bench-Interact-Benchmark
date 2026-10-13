@@ -1,0 +1,11 @@
+{
+  "base_commit": "4e5b1c21648df3bad0811615f2fc82b150c56a25",
+  "base_image": "local Node 22.18.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "mui__base-ui-4471",
+  "package_manager": "pnpm@10.32.1",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "VITEST_ENV=chromium PLAYWRIGHT_BROWSERS_PATH=<pinned-browser-cache> pnpm exec vitest run --config packages/react/vitest.config.mts packages/react/src/drawer/swipe-area/DrawerSwipeArea.test.tsx --reporter=json --outputFile=<isolated-output> --browser chromium"
+}

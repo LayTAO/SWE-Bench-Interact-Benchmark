@@ -1,0 +1,106 @@
+:root {
+  color: #111;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f4f5;
+}
+
+.page {
+  padding: 32px;
+}
+
+.react-aria-Calendar {
+  width: fit-content;
+  background: #fff;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.react-aria-Heading {
+  margin: 0;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.react-aria-Select {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.react-aria-Label {
+  font-size: 0.75rem;
+  color: #52525b;
+}
+
+.react-aria-Button {
+  padding: 8px 12px;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.react-aria-Popover {
+  background: #fff;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+}
+
+.react-aria-ListBox {
+  max-height: 220px;
+  overflow: auto;
+  padding: 4px;
+  outline: none;
+}
+
+.react-aria-ListBoxItem {
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.react-aria-ListBoxItem[data-focused] {
+  background: #e4e4e7;
+}
+
+.react-aria-CalendarGrid {
+  border-collapse: collapse;
+}
+
+.react-aria-CalendarCell {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.react-aria-CalendarCell[data-focused] {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+.react-aria-CalendarCell[data-selected] {
+  background: #2563eb;
+  color: #fff;
+}

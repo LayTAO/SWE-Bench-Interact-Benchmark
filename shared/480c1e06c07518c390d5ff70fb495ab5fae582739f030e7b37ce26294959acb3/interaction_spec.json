@@ -1,0 +1,31 @@
+{
+  "environment_gate": [
+    "datetime range inputs are rendered"
+  ],
+  "expected_fixed": {
+    "start_model": "unchanged",
+    "start_value": "unchanged"
+  },
+  "instance_id": "element-plus__element-plus-24006",
+  "issue_derived_path": [
+    "render a datetime range",
+    "focus the end-date input",
+    "type an intermediate end-date value",
+    "observe start input and bound model"
+  ],
+  "observation_channels": [
+    "start input value",
+    "end input value",
+    "bound Date value",
+    "page-error stream"
+  ],
+  "observed_buggy": {
+    "start_value": "moves back one month"
+  },
+  "schema_version": "1.0",
+  "states": [
+    "initial-range",
+    "typing-end-intermediate",
+    "stable-start"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "f69fe293675a6f71f4663a734891e1b2952722f3",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "install_command": "export COREPACK_HOME=/corepack; corepack enable && corepack prepare pnpm@10.13.1 --activate && pnpm config set store-dir /pnpm/store && pnpm install --frozen-lockfile",
+  "instance_id": "unovue__reka-ui-2261",
+  "package_manager": "pnpm@10.13.1",
+  "repo_url": "https://github.com/unovue/reka-ui.git",
+  "repository": "unovue/reka-ui",
+  "runtime": "public.ecr.aws/docker/library/node:22-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

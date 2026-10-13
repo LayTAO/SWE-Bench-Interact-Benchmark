@@ -1,0 +1,27 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "listbox_visible_after_textbox_click == false",
+      "on_open_count == 0"
+    ]
+  },
+  "environment_gate": [
+    "The exact source component loads without a page error.",
+    "The MultiSelect textbox has plausible dimensions."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "listbox_visible_after_textbox_click": true,
+    "on_open_count": 1,
+    "option_count": 3
+  },
+  "instance_id": "sage__carbon-6841",
+  "predicate_id": "multiselect_textbox_click_does_not_open",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The visible textbox receives the click and becomes the active element."
+  ]
+}

@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/carbon-design-system__carbon-17903"
+version = "0.2.0-candidate"
+description = "模态框内溢出菜单点击外部未关闭"
+
+[metadata]
+instance_id = "carbon-design-system__carbon-17903"
+repository = "carbon-design-system/carbon"
+base_commit = "ff57b2cbfb073c67981edbddeea8f66e9460e646"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ca2c11fa608c5dbb4accfe59ba5bc1736174db104b5943a656e3a9b9f2bb8450"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:959d3a63d4c6dd8204bcc34af3a76926b253745203fc2f175355106a3c10a451"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

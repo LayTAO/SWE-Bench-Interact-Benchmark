@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "<wa-tree> > with \"client-only\" rendering > keyboard navigation > when focus is inside a tree item instead of on it > should not throw when Enter is pressed",
+    "<wa-tree> > with \"client-only\" rendering > keyboard navigation > when focus is inside a tree item instead of on it > should not throw when Space is pressed",
+    "<wa-tree> > with \"client-only\" rendering > keyboard navigation > when focus is inside a tree item instead of on it > should let the focused element handle Enter"
+  ],
+  "PASS_TO_PASS": [
+    "<wa-tree> > with \"client-only\" rendering > keyboard navigation > when ArrowDown is pressed > should move the focus to the next tree item"
+  ],
+  "base_commit": "b2f63906a701c4463f66c6ef557eb0a06fb0f36c",
+  "instance_id": "shoelace-style__webawesome-2673",
+  "schema_version": "4.0"
+}

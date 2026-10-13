@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-9215"
+version = "0.2.0-candidate"
+description = "Combobox closes when attempting to interact with the Section Headers"
+
+[metadata]
+instance_id = "adobe__react-spectrum-9215"
+repository = "adobe/react-spectrum"
+base_commit = "4c91299dab6579252a9d21029b9ba35c9763ad07"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c64cac9214478b016d300a872179d08afea0b2ccadd4fe5faccdcc5625e6ee0c"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:1dfe0b4cecb9b1f5336aee1a5bd7424f7219fa3b62fbbcbda1563115ec9d4bbc"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

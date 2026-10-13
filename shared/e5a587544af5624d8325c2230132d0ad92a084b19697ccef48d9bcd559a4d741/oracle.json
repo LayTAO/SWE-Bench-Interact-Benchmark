@@ -1,0 +1,19 @@
+{
+  "bug_predicate": {
+    "active_segment_after_second_zero": "not minute"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "active_segment_after_second_zero": "minute"
+  },
+  "instance_id": "unovue__reka-ui-2580",
+  "rendering_gate": [
+    "TimeField segments have unique plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Focus remains in hour after the first zero."
+  ]
+}

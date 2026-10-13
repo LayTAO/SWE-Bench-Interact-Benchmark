@@ -1,0 +1,201 @@
+diff --git a/packages/@react-aria/overlays/test/useOverlay.test.js b/packages/@react-aria/overlays/test/useOverlay.test.js
+index 2f686f0..7535d05 100644
+--- a/packages/@react-aria/overlays/test/useOverlay.test.js
++++ b/packages/@react-aria/overlays/test/useOverlay.test.js
+@@ -128,15 +128,4 @@ describe('useOverlay', function () {
+     fireEvent.keyDown(el, {key: 'Escape'});
+     expect(onClose).toHaveBeenCalledTimes(1);
+   });
+-
+-  describe('firefox bug', () => {
+-    installPointerEvent();
+-    it('should prevent default on pointer down on the underlay', function () {
+-      let underlayRef = React.createRef();
+-      render(<Example isOpen isDismissable underlayProps={{ref: underlayRef}} />);
+-      let isPrevented = fireEvent.pointerDown(underlayRef.current, {button: 0, pointerId: 1});
+-      fireEvent.pointerUp(document.body);
+-      expect(isPrevented).toBeFalsy(); // meaning the event had preventDefault called
+-    });
+-  });
+ });
+diff --git a/packages/@react-spectrum/combobox/test/ComboBox.test.js b/packages/@react-spectrum/combobox/test/ComboBox.test.js
+index 245127d..3d7ee5a 100644
+--- a/packages/@react-spectrum/combobox/test/ComboBox.test.js
++++ b/packages/@react-spectrum/combobox/test/ComboBox.test.js
+@@ -4362,7 +4362,8 @@ describe('ComboBox', function () {
+         let dismissButtons = within(tray).getAllByRole('button');
+         switch (Method) {
+           case 'clicking outside tray':
+-            await user.click(document.body);
++            fireEvent.mouseDown(document.body, {button: 0});
++            fireEvent.mouseUp(document.body, {button: 0});
+             break;
+           case 'dismiss button':
+             // TODO: not entirely sure why using user.click here breaks the test... It seems to cause the selectedKey
+@@ -5268,9 +5269,9 @@ describe('ComboBox', function () {
+ 
+       if (parseInt(React.version, 10) >= 19) {
+         it('resets to defaultSelectedKey when submitting form action', async () => {
+-          function Test(props) {        
++          function Test(props) {
+             const [value, formAction] = React.useActionState(() => '2', '1');
+-            
++
+             return (
+               <Provider theme={theme}>
+                 <form action={formAction}>
+@@ -5280,11 +5281,11 @@ describe('ComboBox', function () {
+               </Provider>
+             );
+           }
+-    
++
+           let {getByTestId, getByRole, rerender} = render(<Test />);
+           let input = getByRole('combobox');
+           expect(input).toHaveValue('One');
+-    
++
+           let button = getByTestId('submit');
+           // For some reason, user.click() causes act warnings related to suspense...
+           await act(() => button.click());
+@@ -5604,7 +5605,7 @@ describe('ComboBox', function () {
+         it('resets to defaultSelectedKey when submitting form action', async () => {
+           function Test(props) {
+             const [value, formAction] = React.useActionState(() => '2', '1');
+-            
++
+             return (
+               <Provider theme={theme}>
+                 <form action={formAction}>
+@@ -5614,11 +5615,11 @@ describe('ComboBox', function () {
+               </Provider>
+             );
+           }
+-    
++
+           let {getByTestId, rerender} = render(<Test />);
+           let input = document.querySelector('input[name=combobox]');
+           expect(input).toHaveValue('One');
+-    
++
+           let button = getByTestId('submit');
+           await act(async () => await user.click(button));
+           expect(input).toHaveValue('Two');
+diff --git a/packages/@react-spectrum/menu/test/MenuTrigger.test.js b/packages/@react-spectrum/menu/test/MenuTrigger.test.js
+index 2ce5eab..80f6d9c 100644
+--- a/packages/@react-spectrum/menu/test/MenuTrigger.test.js
++++ b/packages/@react-spectrum/menu/test/MenuTrigger.test.js
+@@ -154,7 +154,7 @@ describe('MenuTrigger', function () {
+   it.each`
+     Name             | Component      | props
+     ${'MenuTrigger'} | ${MenuTrigger} | ${{onOpenChange, isOpen: true}}
+-  `('$Name supports a controlled open state ', async function ({Component, props}) {
++  `('$Name supports a controlled open state ', function ({Component, props}) {
+     let tree = renderComponent(Component, props);
+     act(() => {jest.runAllTimers();});
+     expect(onOpenChange).toBeCalledTimes(0);
+@@ -163,7 +163,8 @@ describe('MenuTrigger', function () {
+     expect(menu).toBeInTheDocument();
+ 
+     let triggerButton = tree.getByText('Menu Button');
+-    await user.click(triggerButton);
++    fireEvent.mouseDown(triggerButton, {button: 0});
++    fireEvent.mouseUp(triggerButton, {button: 0});
+     act(() => {jest.runAllTimers();});
+ 
+     expect(menu).toBeInTheDocument();
+diff --git a/packages/@react-spectrum/s2/test/Combobox.test.tsx b/packages/@react-spectrum/s2/test/Combobox.test.tsx
+index fe3beaa..c6d188c 100644
+--- a/packages/@react-spectrum/s2/test/Combobox.test.tsx
++++ b/packages/@react-spectrum/s2/test/Combobox.test.tsx
+@@ -11,7 +11,7 @@
+  */
+ 
+ jest.mock('@react-aria/live-announcer');
+-import {act, fireEvent, pointerMap, render, setupIntersectionObserverMock, within} from '@react-spectrum/test-utils-internal';
++import {act, pointerMap, render, setupIntersectionObserverMock, waitFor, within} from '@react-spectrum/test-utils-internal';
+ import {announce} from '@react-aria/live-announcer';
+ import {Button, ComboBox, ComboBoxItem, Content, ContextualHelp, Dialog, DialogTrigger, Heading, Text} from '../src';
+ import React from 'react';
+@@ -214,6 +214,7 @@ describe('Combobox', () => {
+   });
+ 
+   it('should close the combobox when clicking outside the combobox on a dialog backdrop', async () => {
++    let user = userEvent.setup({delay: null, pointerMap});
+     let tree = render(
+       <DialogTrigger>
+         <Button>Open</Button>
+@@ -247,20 +248,10 @@ describe('Combobox', () => {
+       jest.runAllTimers();
+     });
+     let backdrop = document.querySelector('[style*="--visual-viewport-height"]');
+-    // can't use userEvent here for some reason
+-    fireEvent.mouseDown(backdrop!, {button: 0});
+-    fireEvent.mouseUp(backdrop!, {button: 0});
+-    act(() => {
+-      jest.runAllTimers();
+-    });
+-    expect(comboboxTester.listbox).toBeNull();
++    await user.click(backdrop!);
+ 
+-
+-    fireEvent.mouseDown(backdrop!, {button: 0});
+-    fireEvent.mouseUp(backdrop!, {button: 0});
+-    act(() => {
+-      jest.runAllTimers();
+-    });
++    await waitFor(() => expect(comboboxTester.listbox).toBeNull());
++    await user.click(backdrop!);
+     expect(dialogTester.dialog).toBeNull();
+   });
+ });
+diff --git a/packages/react-aria-components/test/Popover.test.js b/packages/react-aria-components/test/Popover.test.js
+index 957468b..2d8e288 100644
+--- a/packages/react-aria-components/test/Popover.test.js
++++ b/packages/react-aria-components/test/Popover.test.js
+@@ -10,7 +10,7 @@
+  * governing permissions and limitations under the License.
+  */
+ 
+-import {act, pointerMap, render} from '@react-spectrum/test-utils-internal';
++import {act, fireEvent, pointerMap, render} from '@react-spectrum/test-utils-internal';
+ import {Button, Dialog, DialogTrigger, OverlayArrow, Popover, Pressable} from '../';
+ import React, {useRef} from 'react';
+ import {UNSAFE_PortalProvider} from '@react-aria/overlays';
+@@ -102,7 +102,7 @@ describe('Popover', () => {
+     expect(dialog).toHaveAttribute('data-custom', 'true');
+   });
+ 
+-  it('should support being used standalone', async () => {
++  it('should support being used standalone', () => {
+     let triggerRef = React.createRef();
+     let onOpenChange = jest.fn();
+     let {getByRole} = render(<>
+@@ -115,12 +115,14 @@ describe('Popover', () => {
+     let dialog = getByRole('dialog');
+     expect(dialog).toHaveTextContent('A popover');
+ 
+-    await user.click(document.body);
++    // userEvent seems to trigger a double close event
++    fireEvent.mouseDown(document.body, {button: 0});
++    fireEvent.mouseUp(document.body, {button: 0});
+     expect(onOpenChange).toHaveBeenCalledTimes(1);
+     expect(onOpenChange).toHaveBeenCalledWith(false);
+   });
+ 
+-  it('isOpen and defaultOpen should override state from context', async () => {
++  it('isOpen and defaultOpen should override state from context', () => {
+     let onOpenChange = jest.fn();
+     let {getByRole} = render(<>
+       <DialogTrigger>
+@@ -134,7 +136,9 @@ describe('Popover', () => {
+     let dialog = getByRole('dialog');
+     expect(dialog).toHaveTextContent('A popover');
+ 
+-    await user.click(document.body);
++    // userEvent seems to trigger a double close event
++    fireEvent.mouseDown(document.body, {button: 0});
++    fireEvent.mouseUp(document.body, {button: 0});
+     expect(onOpenChange).toHaveBeenCalledTimes(1);
+     expect(onOpenChange).toHaveBeenCalledWith(false);
+   });

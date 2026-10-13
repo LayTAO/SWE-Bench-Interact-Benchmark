@@ -1,0 +1,40 @@
+{
+  "FAIL_TO_PASS": {
+    "Select cannot select a disabled option with arrow keys": "Select can not select a disabled option via the arrow keys",
+    "Select filtering allows Space to be used as part of filter text": "Select filtering allows <Space> to be used as part of filter text",
+    "Select filtering arrow keys skip an option filtered out between current and next": "Select filtering pressing arrow keys selects next visible item when option between current and next is filtered out",
+    "Select filtering clicking disabled option does not cause select to change state": "Select filtering clicking disabled option does not cause select to change state",
+    "Select filtering does not change selected option after navigating with arrow keys": "Select filtering filtering options does not change selected option in dropdown after navigating with arrow keys",
+    "Select filtering filtering options does not change selected option in dropdown": "Select filtering filtering options does not change selected option in dropdown",
+    "Select filtering no available options sets ariaActiveDescendant to empty string": "Select filtering filtering to no available options sets ariaActiveDescendent to empty string",
+    "Select filtering only a disabled item then Escape closes without changing value or selectedIndex": "Select filtering filtering to only disabled item, then pressing <Esc> closes popup and does not change value or selectedIndex",
+    "Select filtering only a disabled item then Tab closes without changing value or selectedIndex": "Select filtering filtering to only disabled item, then pressing <Tab> closes popup and does not change value or selectedIndex",
+    "Select filtering out the selected item then clicking the active option changes value and closes": "Select filtering filtering out current selected item and then clicking active option changes value and closes popup",
+    "Select forced blank can arrow down to the first available option": "Select after forcing Select to be blank, user can arrow down to first available option in dropdown",
+    "Select navigation sets ariaActiveDescendant to the active option": "Select while navigating dropdown, ariaActiveDescendant is set to active option",
+    "Select opens on the correct selected element after cancelling the previous selection": "Select filtering opening popup shows correct selected element after cancelling previous selection",
+    "Select opens on the correct selected element after filtering and committing without changing selection": "Select filtering opening popup shows correct selected element after filtering and committing but not changing selected option",
+    "Select placeholder is not selected by typeahead": "Select placeholder selecting option via typing will not select placeholder",
+    "Select should NOT emit a change event while open via arrow down key": "Select should NOT emit a 'change' event while open via arrow down key",
+    "Select should NOT emit a change event while open via arrow up key": "Select should NOT emit a 'change' event while open via arrow up key",
+    "Select should NOT emit a change event while open via end key": "Select should NOT emit a 'change' event while open via end key",
+    "Select should NOT emit an input event while open via arrow down key": "Select should NOT emit an 'input' event while open via arrow down key",
+    "Select should NOT emit an input event while open via arrow up key": "Select should NOT emit an 'input' event while open via arrow up key",
+    "Select should NOT emit an input event while open via end key": "Select should NOT emit an 'input' event while open via end key",
+    "Select typing a character while open without filtering does not change value": "Select selecting option via typing character while dropdown is open with no filter does not change value"
+  },
+  "PASS_TO_PASS": {
+    "Select Enter opens the dropdown when filtering is disabled": "Select opening and closing dropdown with filterMode = none pressing <Enter> opens dropdown",
+    "Select Escape after dropdown navigation preserves the original selected option": "Select pressing Esc after navigating to new option in dropdown maintains original selected option",
+    "Select Space opens the dropdown when filtering is disabled": "Select opening and closing dropdown with filterMode = none pressing <Space> opens dropdown",
+    "Select exports its custom-element tag": "Select should export its tag",
+    "Select filter input is hidden in the default filter mode": "Select filter input is not visible with default filterMode",
+    "Select filtering matches characters within option strings": "Select filtering matches any character in option strings",
+    "Select filtering matches diacritic characters": "Select filtering matches diacritic characters in option strings",
+    "Select filtering with no match displays the no-items element": "Select filtering entering filter text with no match results in \"no items found\" element",
+    "Select respects a value set before connection completes": "Select should respect value set before connect is completed",
+    "Select sets classes for collapsible, open, disabled, and position states": "Select should set classes based on collapsible, open, disabled, and position"
+  },
+  "schema_version": 1,
+  "source": "Accepted evaluator selection mapped to native Karma onSpecComplete fullName"
+}

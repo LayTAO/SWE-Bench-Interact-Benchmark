@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "Tooltip should not override child properties for excludeFromTabOrder"
+  ],
+  "PASS_TO_PASS": [
+    "Tooltip shows on hover"
+  ],
+  "base_commit": "863ac427ea3332ae7cd99ccaf2ad1c92a03c6545",
+  "instance_id": "adobe__react-spectrum-8556",
+  "schema_version": "4.0"
+}

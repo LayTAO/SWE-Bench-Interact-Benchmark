@@ -1,0 +1,478 @@
+diff --git a/dev/react/src/tests/animate-presence-rapid-switch.tsx b/dev/react/src/tests/animate-presence-rapid-switch.tsx
+deleted file mode 100644
+index e25e4c59..00000000
+--- a/dev/react/src/tests/animate-presence-rapid-switch.tsx
++++ /dev/null
+@@ -1,101 +0,0 @@
+-import { AnimatePresence, motion } from "framer-motion"
+-import { useEffect, useMemo, useState } from "react"
+-
+-/**
+- * Reproduction for #3141: AnimatePresence mode="wait" gets stuck
+- * when state changes cause rapid key alternation.
+- *
+- * Exact reproduction from the issue: loading/loaded pattern where
+- * useEffect immediately flips loading to false, plus mode state
+- * changes that cause re-renders during exit.
+- */
+-export const App = () => {
+-    const [selected, setSelected] = useState({
+-        key: 0,
+-        loading: true,
+-    })
+-    const [mode1, setMode1] = useState(false)
+-    const [mode2, setMode2] = useState(false)
+-    const [mode3, setMode3] = useState(false)
+-
+-    useEffect(() => {
+-        if (selected.loading === true) {
+-            setSelected((prev) => ({ ...prev, loading: false }))
+-        }
+-    }, [selected])
+-
+-    useEffect(() => {
+-        if (selected.loading === false) {
+-            setMode1((prev) => !prev)
+-            setMode2((prev) => !prev)
+-            setMode3((prev) => !prev)
+-        }
+-    }, [selected])
+-
+-    useEffect(() => {
+-        // Rapidly cycle through keys on mount
+-        setSelected((prev) => ({ key: prev.key + 1, loading: true }))
+-        setSelected((prev) => ({ key: prev.key + 1, loading: true }))
+-        setSelected((prev) => ({ key: prev.key + 1, loading: true }))
+-        setSelected((prev) => ({ key: prev.key + 1, loading: true }))
+-    }, [])
+-
+-    const content = useMemo(() => {
+-        if (selected.loading === true) {
+-            const key = "loading-" + selected.key
+-            return {
+-                element: <div>loading</div>,
+-                key,
+-            }
+-        }
+-
+-        const key = "document-" + selected.key
+-        return {
+-            element: (
+-                <div style={{ display: "flex", flexDirection: "column" }}>
+-                    loaded
+-                    {"mode1" + mode1}
+-                    {"mode2" + mode2}
+-                    {"mode3" + mode3}
+-                </div>
+-            ),
+-            key,
+-        }
+-    }, [selected, mode1, mode2, mode3])
+-
+-    const content2 = useMemo(() => {
+-        return (
+-            <AnimatePresence mode="wait">
+-                <motion.div
+-                    key={content.key}
+-                    id="content"
+-                    initial={{ opacity: 0 }}
+-                    animate={{ opacity: 1 }}
+-                    exit={{ opacity: 0 }}
+-                    transition={{ ease: [0.6, 0.6, 0, 1], duration: 0.05 }}
+-                >
+-                    <span id="render-key">{"render: " + content.key}</span>
+-                    {content.element}
+-                </motion.div>
+-            </AnimatePresence>
+-        )
+-    }, [content.element, content.key])
+-
+-    return (
+-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+-            <span id="current-key">{content.key}</span>
+-            <button
+-                id="change"
+-                onClick={() => {
+-                    setSelected((prev) => ({
+-                        key: prev.key + 1,
+-                        loading: true,
+-                    }))
+-                }}
+-            >
+-                Change
+-            </button>
+-            {content2}
+-        </div>
+-    )
+-}
+diff --git a/dev/react/src/tests/layout-anchor.tsx b/dev/react/src/tests/layout-anchor.tsx
+new file mode 100644
+index 00000000..9d0a3bd9
+--- /dev/null
++++ b/dev/react/src/tests/layout-anchor.tsx
+@@ -0,0 +1,94 @@
++import { motion } from "framer-motion"
++import React, { useState } from "react"
++
++/**
++ * Test for layoutAnchor prop.
++ *
++ * Parent uses flexbox centering. When the parent expands via layout animation,
++ * a child with layoutAnchor={{ x: 0.5, y: 0.5 }} should stay visually centered
++ * rather than drifting toward the top-left.
++ *
++ * Uses different durations for parent (10s) and child (20s) to desynchronize
++ * their animation progress, making drift visible without layoutAnchor.
++ */
++export function App() {
++    const [expanded, setExpanded] = useState(false)
++
++    return (
++        <>
++            <motion.div
++                id="parent"
++                layout
++                onClick={() => setExpanded(!expanded)}
++                style={{
++                    display: "flex",
++                    alignItems: "center",
++                    justifyContent: "center",
++                    width: expanded ? 400 : 200,
++                    height: expanded ? 400 : 200,
++                    background: "rgba(0,0,0,0.1)",
++                    position: "absolute",
++                    top: 0,
++                    left: 0,
++                }}
++                transition={{
++                    type: "tween",
++                    ease: "linear",
++                    duration: 10,
++                }}
++            >
++                <motion.div
++                    id="child-anchored"
++                    layout
++                    layoutAnchor={{ x: 0.5, y: 0.5 }}
++                    style={{
++                        width: 50,
++                        height: 50,
++                        background: "green",
++                    }}
++                    transition={{
++                        type: "tween",
++                        ease: "linear",
++                        duration: 20,
++                    }}
++                />
++            </motion.div>
++
++            <motion.div
++                id="parent-no-anchor"
++                layout
++                style={{
++                    display: "flex",
++                    alignItems: "center",
++                    justifyContent: "center",
++                    width: expanded ? 400 : 200,
++                    height: expanded ? 400 : 200,
++                    background: "rgba(0,0,0,0.1)",
++                    position: "absolute",
++                    top: 0,
++                    left: 500,
++                }}
++                transition={{
++                    type: "tween",
++                    ease: "linear",
++                    duration: 10,
++                }}
++            >
++                <motion.div
++                    id="child-no-anchor"
++                    layout
++                    style={{
++                        width: 50,
++                        height: 50,
++                        background: "red",
++                    }}
++                    transition={{
++                        type: "tween",
++                        ease: "linear",
++                        duration: 20,
++                    }}
++                />
++            </motion.div>
++        </>
++    )
++}
+diff --git a/packages/framer-motion/cypress/integration/animate-presence-rapid-switch.ts b/packages/framer-motion/cypress/integration/animate-presence-rapid-switch.ts
+deleted file mode 100644
+index 2c3eb914..00000000
+--- a/packages/framer-motion/cypress/integration/animate-presence-rapid-switch.ts
++++ /dev/null
+@@ -1,14 +0,0 @@
+-describe("AnimatePresence: rapid key switching in mode='wait'", () => {
+-    it("Does not get stuck after rapid key changes on mount", () => {
+-        cy.visit("?test=animate-presence-rapid-switch")
+-
+-        // The component rapidly cycles keys on mount. AnimatePresence
+-        // must eventually settle on a "document-" key (not stuck on
+-        // "loading-"). Use should("contain.text") because Cypress 4.x
+-        // doesn't re-query replaced DOM elements in invoke() chains.
+-        cy.get("#render-key", { timeout: 15000 }).should(
+-            "contain.text",
+-            "document-"
+-        )
+-    })
+-})
+diff --git a/packages/framer-motion/cypress/integration/layout-anchor.ts b/packages/framer-motion/cypress/integration/layout-anchor.ts
+new file mode 100644
+index 00000000..07f8b3f8
+--- /dev/null
++++ b/packages/framer-motion/cypress/integration/layout-anchor.ts
+@@ -0,0 +1,46 @@
++describe("layoutAnchor: centered child stays centered during parent resize", () => {
++    it("Child with layoutAnchor={x:0.5,y:0.5} stays centered mid-animation", () => {
++        cy.visit("?test=layout-anchor")
++            .wait(50)
++            .get("#parent")
++            .trigger("click")
++            // Wait 5 seconds (50% through 10s linear animation)
++            .wait(5000)
++            .get("#parent")
++            .then(([$parent]: any) => {
++                const parentRect = $parent.getBoundingClientRect()
++                const parentCenterX = parentRect.left + parentRect.width / 2
++                const parentCenterY = parentRect.top + parentRect.height / 2
++
++                const child = $parent.querySelector("#child-anchored")
++                const childRect = child.getBoundingClientRect()
++                const childCenterX = childRect.left + childRect.width / 2
++                const childCenterY = childRect.top + childRect.height / 2
++
++                // With layoutAnchor={x:0.5,y:0.5}, child should stay centered
++                expect(childCenterX).to.be.closeTo(parentCenterX, 15)
++                expect(childCenterY).to.be.closeTo(parentCenterY, 15)
++            })
++    })
++
++    it("Child without layoutAnchor drifts from center mid-animation", () => {
++        cy.visit("?test=layout-anchor")
++            .wait(50)
++            .get("#parent")
++            .trigger("click")
++            .wait(5000)
++            .get("#parent-no-anchor")
++            .then(([$parent]: any) => {
++                const parentRect = $parent.getBoundingClientRect()
++                const parentCenterX = parentRect.left + parentRect.width / 2
++
++                const child = $parent.querySelector("#child-no-anchor")
++                const childRect = child.getBoundingClientRect()
++                const childCenterX = childRect.left + childRect.width / 2
++
++                // Without layoutAnchor, the child should drift away from center
++                const drift = Math.abs(childCenterX - parentCenterX)
++                expect(drift).to.be.greaterThan(15)
++            })
++    })
++})
+diff --git a/packages/motion-dom/src/projection/geometry/__tests__/delta-calc.test.ts b/packages/motion-dom/src/projection/geometry/__tests__/delta-calc.test.ts
+index 3aaf66c1..1de0fd26 100644
+--- a/packages/motion-dom/src/projection/geometry/__tests__/delta-calc.test.ts
++++ b/packages/motion-dom/src/projection/geometry/__tests__/delta-calc.test.ts
+@@ -1,4 +1,4 @@
+-import { isNear, calcAxisDelta, calcRelativeBox, calcRelativePosition } from "../delta-calc"
++import { isNear, calcAxisDelta, calcRelativeBox, calcRelativePosition, calcRelativeAxisPosition, calcRelativeAxis } from "../delta-calc"
+ import { applyAxisDelta } from "../delta-apply"
+ import { createBox, createDelta } from "../models"
+ 
+@@ -58,42 +58,162 @@ describe("calcAxisDelta", () => {
+ })
+ 
+ describe("calcRelativeBox", () => {
+-    const target = createBox()
++    test("Resolves relative box from parent.min (default anchor=0)", () => {
++        const target = createBox()
+ 
+-    calcRelativeBox(
+-        target,
+-        { x: { min: 100, max: 150 }, y: { min: -100, max: 0 } },
+-        { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } }
+-    )
++        calcRelativeBox(
++            target,
++            { x: { min: 100, max: 150 }, y: { min: -100, max: 0 } },
++            { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } }
++        )
+ 
+-    expect(target).toEqual({
+-        x: { min: 600, max: 650 },
+-        y: { min: 0, max: 100 },
++        expect(target).toEqual({
++            x: { min: 600, max: 650 },
++            y: { min: 0, max: 100 },
++        })
++    })
++
++    test("Resolves relative box with anchor={x:0.5,y:0.5}", () => {
++        const target = createBox()
++        // Parent: x=[500,800] (center=650), y=[100,200] (center=150)
++        // Relative: x=[0,50], y=[0,100]
++        // With center anchor: x=[650+0, 650+50]=[650,700], y=[150+0, 150+100]=[150,250]
++        calcRelativeBox(
++            target,
++            { x: { min: 0, max: 50 }, y: { min: 0, max: 100 } },
++            { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } },
++            { x: 0.5, y: 0.5 }
++        )
++
++        expect(target).toEqual({
++            x: { min: 650, max: 700 },
++            y: { min: 150, max: 250 },
++        })
+     })
+ })
+ 
+ describe("calcRelativePosition", () => {
+-    const target = createBox()
++    test("Calculates relative position from parent.min (default anchor=0)", () => {
++        const target = createBox()
++
++        calcRelativePosition(
++            target,
++            { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } },
++            { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } }
++        )
++
++        expect(target).toEqual({
++            x: { min: 100, max: 150 },
++            y: { min: 100, max: 200 },
++        })
++
++        calcRelativePosition(
++            target,
++            { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } },
++            { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } }
++        )
++
++        expect(target).toEqual({
++            x: { min: 0, max: 50 },
++            y: { min: 0, max: 100 },
++        })
++    })
++
++    test("With anchor=0.5, centered child produces offset ~0", () => {
++        const target = createBox()
++        // Parent: x=[100,400] (length=300, center=250)
++        // Child: x=[200,300] (length=100, centered within parent)
++        // Relative to center: 200 - 250 = -50
++        calcRelativePosition(
++            target,
++            { x: { min: 200, max: 300 }, y: { min: 150, max: 250 } },
++            { x: { min: 100, max: 400 }, y: { min: 100, max: 300 } },
++            { x: 0.5, y: 0.5 }
++        )
++
++        expect(target).toEqual({
++            x: { min: -50, max: 50 },
++            y: { min: -50, max: 50 },
++        })
++    })
++
++    test("Roundtrip: calcRelativePosition then calcRelativeBox returns original box", () => {
++        const child = { x: { min: 200, max: 300 }, y: { min: 150, max: 250 } }
++        const parent = { x: { min: 100, max: 400 }, y: { min: 100, max: 300 } }
++        const anchor = { x: 0.5, y: 0.5 }
++
++        const relative = createBox()
++        calcRelativePosition(relative, child, parent, anchor)
++
++        const reconstructed = createBox()
++        calcRelativeBox(reconstructed, relative, parent, anchor)
++
++        expect(reconstructed.x.min).toBeCloseTo(child.x.min)
++        expect(reconstructed.x.max).toBeCloseTo(child.x.max)
++        expect(reconstructed.y.min).toBeCloseTo(child.y.min)
++        expect(reconstructed.y.max).toBeCloseTo(child.y.max)
++    })
++
++    test("Roundtrip with anchor=0 also works (backward compatible)", () => {
++        const child = { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } }
++        const parent = { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } }
++
++        const relative = createBox()
++        calcRelativePosition(relative, child, parent)
++
++        const reconstructed = createBox()
++        calcRelativeBox(reconstructed, relative, parent)
++
++        expect(reconstructed).toEqual({
++            x: { min: child.x.min, max: child.x.max },
++            y: { min: child.y.min, max: child.y.max },
++        })
++    })
++})
++
++describe("calcRelativeAxisPosition with anchor", () => {
++    test("anchor=0 is identical to default (parent.min)", () => {
++        const target1 = { min: 0, max: 0 }
++        const target2 = { min: 0, max: 0 }
++        const layout = { min: 200, max: 300 }
++        const parent = { min: 100, max: 500 }
++
++        calcRelativeAxisPosition(target1, layout, parent, 0)
++        calcRelativeAxisPosition(target2, layout, parent)
++
++        expect(target1).toEqual(target2)
++    })
++
++    test("anchor=1 measures from parent.max", () => {
++        const target = { min: 0, max: 0 }
++        // Parent: [100,500] (length=400), anchor=1 → anchorPoint=500
++        // Layout: [200,300] → relative.min = 200 - 500 = -300
++        calcRelativeAxisPosition(target, { min: 200, max: 300 }, { min: 100, max: 500 }, 1)
++
++        expect(target).toEqual({ min: -300, max: -200 })
++    })
++})
++
++describe("calcRelativeAxis with anchor", () => {
++    test("anchor=0 is identical to default (parent.min)", () => {
++        const target1 = { min: 0, max: 0 }
++        const target2 = { min: 0, max: 0 }
++        const relative = { min: 100, max: 150 }
++        const parent = { min: 500, max: 800 }
+ 
+-    calcRelativePosition(
+-        target,
+-        { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } },
+-        { x: { min: 500, max: 800 }, y: { min: 100, max: 200 } }
+-    )
++        calcRelativeAxis(target1, relative, parent, 0)
++        calcRelativeAxis(target2, relative, parent)
+ 
+-    expect(target).toEqual({
+-        x: { min: 100, max: 150 },
+-        y: { min: 100, max: 200 },
++        expect(target1).toEqual(target2)
+     })
+ 
+-    calcRelativePosition(
+-        target,
+-        { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } },
+-        { x: { min: 600, max: 650 }, y: { min: 200, max: 300 } }
+-    )
++    test("anchor=0.5 resolves from parent center", () => {
++        const target = { min: 0, max: 0 }
++        // Parent: [500,800] (length=300, center=650)
++        // Relative: [-25, 25] (length=50, centered)
++        // Result: [650-25, 650+25] = [625, 675]
++        calcRelativeAxis(target, { min: -25, max: 25 }, { min: 500, max: 800 }, 0.5)
+ 
+-    expect(target).toEqual({
+-        x: { min: 0, max: 50 },
+-        y: { min: 0, max: 100 },
++        expect(target).toEqual({ min: 625, max: 675 })
+     })
+ })

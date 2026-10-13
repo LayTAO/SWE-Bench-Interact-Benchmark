@@ -1,0 +1,43 @@
+{
+  "expected_fixed_state": {
+    "bug_predicate": false
+  },
+  "instance_id": "shopify__polaris-react-7097",
+  "observation_channels": [
+    "DOM state",
+    "ARIA/focus state",
+    "geometry",
+    "scroll/event state",
+    "page and console errors"
+  ],
+  "observed_buggy_state": {
+    "bug_predicate": true
+  },
+  "preconditions": [
+    "The exact Base or Fixed subject state is the only state input changed between runs."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue report and the legacy Buggy-side interaction description",
+  "states": [
+    {
+      "actions": [
+        "Load the frozen reproduction."
+      ],
+      "checkpoints": [
+        "The target component renders with bounded geometry and no startup error."
+      ],
+      "name": "initial"
+    },
+    {
+      "actions": [
+        "Open a parent Popover configured to ignore clicks in child overlays.",
+        "Click the action rendered in a second portal-based child Popover.",
+        "Inspect the parent panel, its trigger aria-expanded state, close callback count, and both overlay rectangles."
+      ],
+      "checkpoints": [
+        "The issue-derived observation is recorded after the complete action sequence."
+      ],
+      "name": "triggered"
+    }
+  ]
+}

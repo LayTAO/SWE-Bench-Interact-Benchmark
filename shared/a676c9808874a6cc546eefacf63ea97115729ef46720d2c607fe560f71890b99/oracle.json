@@ -1,0 +1,17 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "Focusing the issue-reported persistent Notification field closes the non-modal dialog only in Buggy.",
+    "fixed_observed": false,
+    "name": "persistent_element_closes_unfocused_nonmodal_dialog"
+  },
+  "expected": {
+    "buggy": {
+      "dialog_visible_after_persistent_focus": false
+    },
+    "fixed": {
+      "dialog_visible_after_persistent_focus": true
+    }
+  },
+  "schema_version": "1.0"
+}

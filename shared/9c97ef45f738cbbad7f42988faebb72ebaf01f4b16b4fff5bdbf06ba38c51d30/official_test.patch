@@ -1,0 +1,729 @@
+diff --git a/examples/dialog-nested-mounted/index.tsx b/examples/dialog-nested-mounted/index.tsx
+deleted file mode 100644
+index b396ca1908189504d934fde3e11ee9f41457b2dd..0000000000000000000000000000000000000000
+--- a/examples/dialog-nested-mounted/index.tsx
++++ /dev/null
+@@ -1,39 +0,0 @@
+-import { useState } from "react";
+-import * as Ariakit from "@ariakit/react";
+-import { ConfirmDialog } from "../dialog-nested/confirm-dialog.js";
+-import "./style.css";
+-
+-export default function Example() {
+-  const dialog = Ariakit.useDialogStore();
+-  const mounted = dialog.useState("mounted");
+-  const [nestedOpen, setNestedOpen] = useState(false);
+-  return (
+-    <>
+-      <Ariakit.Button onClick={dialog.show} className="button">
+-        Open dialog
+-      </Ariakit.Button>
+-      {mounted && (
+-        <Ariakit.Dialog store={dialog} className="dialog">
+-          <Ariakit.DialogHeading className="heading">
+-            Dialog
+-          </Ariakit.DialogHeading>
+-          <Ariakit.DialogDismiss className="button">
+-            Close
+-          </Ariakit.DialogDismiss>
+-          <Ariakit.Button
+-            className="button"
+-            onClick={() => setNestedOpen(true)}
+-          >
+-            Open nested dialog
+-          </Ariakit.Button>
+-          {!!nestedOpen && (
+-            <ConfirmDialog
+-              open={nestedOpen}
+-              onClose={() => setNestedOpen(false)}
+-            />
+-          )}
+-        </Ariakit.Dialog>
+-      )}
+-    </>
+-  );
+-}
+diff --git a/examples/dialog-nested-mounted/test.ts b/examples/dialog-nested-mounted/test.ts
+deleted file mode 100644
+index 5ed06a1c650842a1650013c86eadec56d63db7bb..0000000000000000000000000000000000000000
+--- a/examples/dialog-nested-mounted/test.ts
++++ /dev/null
+@@ -1,32 +0,0 @@
+-import { click, getByRole, press, queryByRole } from "@ariakit/test";
+-
+-const getButton = (name: string) => getByRole("button", { name });
+-
+-const getDialog = () =>
+-  queryByRole("dialog", {
+-    hidden: true,
+-    name: (name, element) =>
+-      name === "Dialog" || element.getAttribute("aria-hidden") === "true",
+-  });
+-
+-const getNestedDialog = () =>
+-  queryByRole("dialog", { hidden: true, name: "Confirm" });
+-
+-test("show dialog", async () => {
+-  expect(getDialog()).not.toBeInTheDocument();
+-  await click(getButton("Open dialog"));
+-  expect(getDialog()).toBeVisible();
+-  expect(getButton("Close")).toHaveFocus();
+-});
+-
+-test("show nested dialog", async () => {
+-  await click(getButton("Open dialog"));
+-  expect(getNestedDialog()).not.toBeInTheDocument();
+-  await click(getButton("Open nested dialog"));
+-  expect(getDialog()).toBeVisible();
+-  expect(getNestedDialog()).toBeVisible();
+-  await press.Enter();
+-  expect(getNestedDialog()).not.toBeInTheDocument();
+-  expect(getDialog()).toBeVisible();
+-  expect(getButton("Open nested dialog")).toHaveFocus();
+-});
+diff --git a/examples/dialog-nested-multiple/dialog.tsx b/examples/dialog-nested-multiple/dialog.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..207a8c6decca1968a77589ed4f0223d7f1add037
+--- /dev/null
++++ b/examples/dialog-nested-multiple/dialog.tsx
+@@ -0,0 +1,37 @@
++import * as React from "react";
++import * as Ariakit from "@ariakit/react";
++
++export interface DialogProps extends Omit<Ariakit.DialogProps, "store"> {
++  open?: boolean;
++  onClose?: () => void;
++  unmount?: boolean;
++}
++
++export function Dialog({ open, onClose, unmount, ...props }: DialogProps) {
++  const dialog = Ariakit.useDialogStore({
++    open,
++    setOpen: (open) => !open && onClose?.(),
++  });
++  const mounted = dialog.useState((state) => (unmount ? state.mounted : true));
++  if (!mounted) return null;
++  return (
++    <Ariakit.Dialog
++      backdrop={<div className="backdrop" />}
++      className="dialog"
++      {...props}
++      store={dialog}
++    />
++  );
++}
++
++export function DialogHeading(props: React.ComponentPropsWithoutRef<"h1">) {
++  return <Ariakit.DialogHeading className="heading" {...props} />;
++}
++
++export function DialogDismiss(props: React.ComponentPropsWithoutRef<"button">) {
++  return <Ariakit.DialogDismiss className="button" {...props} />;
++}
++
++export function Button(props: React.ComponentPropsWithoutRef<"button">) {
++  return <Ariakit.Button className="button" {...props} />;
++}
+diff --git a/examples/dialog-nested-multiple/index.tsx b/examples/dialog-nested-multiple/index.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..dd30d4cf6ad25cfe053961e16d8dd0b5be64435c
+--- /dev/null
++++ b/examples/dialog-nested-multiple/index.tsx
+@@ -0,0 +1,350 @@
++import "./style.css";
++import { useId, useState } from "react";
++import { Button, Dialog, DialogDismiss, DialogHeading } from "./dialog.jsx";
++
++export default function Example() {
++  const [open, setOpen] = useState(false);
++
++  const [nested, setNested] = useState(false);
++  const [nestedNested, setNestedNested] = useState(false);
++
++  const [nestedUnmount, setNestedUnmount] = useState(false);
++  const [nestedUnmountNested, setNestedUnmountNested] = useState(false);
++
++  const [nestedNoPortal, setNestedNoPortal] = useState(false);
++  const [nestedNoPortalNested, setNestedNoPortalNested] = useState(false);
++
++  const [nestedNoPortalPortal, setNestedNoPortalPortal] = useState(false);
++  const [nestedNoPortalPortalNested, setNestedNoPortalPortalNested] =
++    useState(false);
++
++  const [nestedNoBackdrop, setNestedNoBackdrop] = useState(false);
++  const [nestedNoBackdropNested, setNestedNoBackdropNested] = useState(false);
++
++  const [sibling, setSibling] = useState(false);
++  const [siblingSibling, setSiblingSibling] = useState(false);
++
++  const [siblingUnmount, setSiblingUnmount] = useState(false);
++  const [siblingUnmountSibling, setSiblingUnmountSibling] = useState(false);
++
++  const [siblingNoPortal, setSiblingNoPortal] = useState(false);
++  const [siblingNoPortalSibling, setSiblingNoPortalSibling] = useState(false);
++
++  const [siblingNoPortalPortal, setSiblingNoPortalPortal] = useState(false);
++  const [siblingNoPortalPortalSibling, setSiblingNoPortalPortalSibling] =
++    useState(false);
++
++  const [siblingNoBackdrop, setSiblingNoBackdrop] = useState(false);
++  const [siblingNoBackdropSibling, setSiblingNoBackdropSibling] =
++    useState(false);
++
++  const siblindId = useId();
++  const siblingSiblingId = useId();
++  const siblingNoPortalId = useId();
++  const siblingNoPortalSiblingId = useId();
++  const siblingNoPortalPortalId = useId();
++  const siblingNoPortalPortalSiblingId = useId();
++  const siblingNoBackdropId = useId();
++  const siblingNoBackdropSiblingId = useId();
++
++  return (
++    <>
++      <Button onClick={() => setOpen(true)}>Open dialog</Button>
++
++      <Dialog
++        open={open}
++        onClose={() => setOpen(false)}
++        unmount
++        getPersistentElements={() => [
++          document.getElementById(siblindId)!,
++          document.getElementById(siblingSiblingId)!,
++          document.getElementById(siblingNoPortalId)!,
++          document.getElementById(siblingNoPortalSiblingId)!,
++          document.getElementById(siblingNoPortalPortalId)!,
++          document.getElementById(siblingNoPortalPortalSiblingId)!,
++          document.getElementById(siblingNoBackdropId)!,
++          document.getElementById(siblingNoBackdropSiblingId)!,
++        ]}
++      >
++        <DialogHeading>Dialog</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++
++        {/* Nested buttons */}
++        <Button onClick={() => setNested(true)}>nested</Button>
++
++        <Button onClick={() => setNestedUnmount(true)}>nested unmount</Button>
++
++        <Button onClick={() => setNestedNoPortal(true)}>
++          nested no portal
++        </Button>
++
++        <Button onClick={() => setNestedNoPortalPortal(true)}>
++          nested no portal portal
++        </Button>
++
++        <Button onClick={() => setNestedNoBackdrop(true)}>
++          nested no backdrop
++        </Button>
++
++        {/* Sibling buttons */}
++        <Button onClick={() => setSibling(true)}>sibling</Button>
++
++        <Button onClick={() => setSiblingUnmount(true)}>sibling unmount</Button>
++
++        <Button onClick={() => setSiblingNoPortal(true)}>
++          sibling no portal
++        </Button>
++
++        <Button onClick={() => setSiblingNoPortalPortal(true)}>
++          sibling no portal portal
++        </Button>
++
++        <Button onClick={() => setSiblingNoBackdrop(true)}>
++          sibling no backdrop
++        </Button>
++
++        {/* Nested default */}
++        <Dialog open={nested} onClose={() => setNested(false)}>
++          <DialogHeading>nested</DialogHeading>
++          <DialogDismiss>Close</DialogDismiss>
++
++          <Button onClick={() => setNestedNested(true)}>nested nested</Button>
++
++          <Dialog open={nestedNested} onClose={() => setNestedNested(false)}>
++            <DialogHeading>nested nested</DialogHeading>
++            <DialogDismiss>Close</DialogDismiss>
++          </Dialog>
++        </Dialog>
++
++        {/* Nested unmount */}
++        <Dialog
++          open={nestedUnmount}
++          onClose={() => setNestedUnmount(false)}
++          unmount
++        >
++          <DialogHeading>nested unmount</DialogHeading>
++          <DialogDismiss>Close</DialogDismiss>
++
++          <Button onClick={() => setNestedUnmountNested(true)}>
++            nested unmount nested
++          </Button>
++
++          <Dialog
++            open={nestedUnmountNested}
++            onClose={() => setNestedUnmountNested(false)}
++            unmount
++          >
++            <DialogHeading>nested unmount nested</DialogHeading>
++            <DialogDismiss>Close</DialogDismiss>
++          </Dialog>
++        </Dialog>
++
++        {/* Nested no portal */}
++        <Dialog
++          open={nestedNoPortal}
++          onClose={() => setNestedNoPortal(false)}
++          portal={false}
++        >
++          <DialogHeading>nested no portal</DialogHeading>
++          <DialogDismiss>Close</DialogDismiss>
++
++          <Button onClick={() => setNestedNoPortalNested(true)}>
++            nested no portal nested
++          </Button>
++
++          <Dialog
++            open={nestedNoPortalNested}
++            onClose={() => setNestedNoPortalNested(false)}
++            portal={false}
++          >
++            <DialogHeading>nested no portal nested</DialogHeading>
++            <DialogDismiss>Close</DialogDismiss>
++          </Dialog>
++        </Dialog>
++
++        {/* Nested no backdrop */}
++        <Dialog
++          open={nestedNoBackdrop}
++          onClose={() => setNestedNoBackdrop(false)}
++          backdrop={false}
++        >
++          <DialogHeading>nested no backdrop</DialogHeading>
++          <DialogDismiss>Close</DialogDismiss>
++
++          <Button onClick={() => setNestedNoBackdropNested(true)}>
++            nested no backdrop nested
++          </Button>
++
++          <Dialog
++            open={nestedNoBackdropNested}
++            onClose={() => setNestedNoBackdropNested(false)}
++            backdrop={false}
++          >
++            <DialogHeading>nested no backdrop nested</DialogHeading>
++            <DialogDismiss>Close</DialogDismiss>
++          </Dialog>
++        </Dialog>
++
++        {/* Nested no portal portal */}
++        <Dialog
++          open={nestedNoPortalPortal}
++          onClose={() => setNestedNoPortalPortal(false)}
++          portal={false}
++        >
++          <DialogHeading>nested no portal portal</DialogHeading>
++          <DialogDismiss>Close</DialogDismiss>
++
++          <Button onClick={() => setNestedNoPortalPortalNested(true)}>
++            nested no portal portal nested
++          </Button>
++
++          <Dialog
++            open={nestedNoPortalPortalNested}
++            onClose={() => setNestedNoPortalPortalNested(false)}
++          >
++            <DialogHeading>nested no portal portal nested</DialogHeading>
++            <DialogDismiss>Close</DialogDismiss>
++          </Dialog>
++        </Dialog>
++      </Dialog>
++
++      {/* Sibling */}
++      <Dialog
++        id={siblindId}
++        open={sibling}
++        style={{ zIndex: 100 }}
++        onClose={() => setSibling(false)}
++        getPersistentElements={() => [
++          document.getElementById(siblingSiblingId)!,
++        ]}
++      >
++        <DialogHeading>sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++        <Button onClick={() => setSiblingSibling(true)}>sibling sibling</Button>
++      </Dialog>
++
++      {/* SiblingSibling */}
++      <Dialog
++        id={siblingSiblingId}
++        open={siblingSibling}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingSibling(false)}
++      >
++        <DialogHeading>sibling sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++      </Dialog>
++
++      {/* Sibling unmount */}
++      <Dialog
++        open={siblingUnmount}
++        onClose={() => setSiblingUnmount(false)}
++        unmount
++      >
++        <DialogHeading>sibling unmount</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++        <Button onClick={() => setSiblingUnmountSibling(true)}>
++          sibling unmount sibling
++        </Button>
++      </Dialog>
++
++      {/* Sibling unmount sibling */}
++      <Dialog
++        open={siblingUnmountSibling}
++        onClose={() => setSiblingUnmountSibling(false)}
++        unmount
++      >
++        <DialogHeading>sibling unmount sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++      </Dialog>
++
++      {/* Sibling no portal */}
++      <Dialog
++        id={siblingNoPortalId}
++        open={siblingNoPortal}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoPortal(false)}
++        portal={false}
++        getPersistentElements={() => [
++          document.getElementById(siblingNoPortalSiblingId)!,
++        ]}
++      >
++        <DialogHeading>sibling no portal</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++        <Button onClick={() => setSiblingNoPortalSibling(true)}>
++          sibling no portal sibling
++        </Button>
++      </Dialog>
++
++      {/* Sibling no portal sibling */}
++      <Dialog
++        id={siblingNoPortalSiblingId}
++        open={siblingNoPortalSibling}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoPortalSibling(false)}
++        portal={false}
++      >
++        <DialogHeading>sibling no portal sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++      </Dialog>
++
++      {/* Sibling no portal portal */}
++      <Dialog
++        id={siblingNoPortalPortalId}
++        open={siblingNoPortalPortal}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoPortalPortal(false)}
++        portal={false}
++        getPersistentElements={() => [
++          document.getElementById(siblingNoPortalPortalSiblingId)!,
++        ]}
++      >
++        <DialogHeading>sibling no portal portal</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++        <Button onClick={() => setSiblingNoPortalPortalSibling(true)}>
++          sibling no portal portal sibling
++        </Button>
++      </Dialog>
++
++      {/* Sibling no portal portal sibling */}
++      <Dialog
++        id={siblingNoPortalPortalSiblingId}
++        open={siblingNoPortalPortalSibling}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoPortalPortalSibling(false)}
++      >
++        <DialogHeading>sibling no portal portal sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++      </Dialog>
++
++      {/* Sibling no backdrop */}
++      <Dialog
++        id={siblingNoBackdropId}
++        open={siblingNoBackdrop}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoBackdrop(false)}
++        backdrop={false}
++        getPersistentElements={() => [
++          document.getElementById(siblingNoBackdropSiblingId)!,
++        ]}
++      >
++        <DialogHeading>sibling no backdrop</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++        <Button onClick={() => setSiblingNoBackdropSibling(true)}>
++          sibling no backdrop sibling
++        </Button>
++      </Dialog>
++
++      {/* Sibling no backdrop sibling */}
++      <Dialog
++        id={siblingNoBackdropSiblingId}
++        open={siblingNoBackdropSibling}
++        style={{ zIndex: 100 }}
++        onClose={() => setSiblingNoBackdropSibling(false)}
++        backdrop={false}
++      >
++        <DialogHeading>sibling no backdrop sibling</DialogHeading>
++        <DialogDismiss>Close</DialogDismiss>
++      </Dialog>
++    </>
++  );
++}
+diff --git a/examples/dialog-nested-mounted/style.css b/examples/dialog-nested-multiple/style.css
+similarity index 100%
+rename from examples/dialog-nested-mounted/style.css
+rename to examples/dialog-nested-multiple/style.css
+diff --git a/examples/dialog-nested-multiple/test.ts b/examples/dialog-nested-multiple/test.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..6f7eb900ad5fe2ffce9a351d0bca2a11033808f1
+--- /dev/null
++++ b/examples/dialog-nested-multiple/test.ts
+@@ -0,0 +1,237 @@
++import { click, getByRole, press, queryByRole } from "@ariakit/test";
++
++const getButton = (name: string) => getByRole("button", { name });
++
++function getDialog(name: string) {
++  return queryByRole("dialog", {
++    hidden: true,
++    name: (accessibleName, element) => {
++      if (accessibleName) return accessibleName === name;
++      const labelledBy = element.getAttribute("aria-labelledby");
++      if (!labelledBy) return false;
++      const label = document.getElementById(labelledBy);
++      if (!label) return false;
++      return label.textContent === name;
++    },
++  });
++}
++
++function getBackdrop(name: string) {
++  const dialog = getDialog(name);
++  const selector = `[data-backdrop="${dialog?.id}"]`;
++  return document.querySelector<HTMLElement>(selector);
++}
++
++function expectModalStyle(toHaveStyle: boolean) {
++  const { documentElement, body } = document;
++  const prop = toHaveStyle ? "itself" : "not";
++  expect(documentElement)[prop].toHaveStyle("--scrollbar-width: 1024px");
++  expect(body)[prop].toHaveStyle("overflow: hidden");
++  expect(body)[prop].toHaveStyle("padding-right: 1024px");
++}
++
++function expectAccessibleDialog(name: string, toBeAccessible: boolean) {
++  if (toBeAccessible) {
++    expect(getDialog(name)).toBeVisible();
++  } else {
++    expect(queryByRole("dialog", { name })).not.toBeInTheDocument();
++  }
++}
++
++test("show dialog and hide with escape", async () => {
++  expect(getDialog("Dialog")).not.toBeInTheDocument();
++  expectModalStyle(false);
++  await click(getButton("Open dialog"));
++  expect(getDialog("Dialog")).toBeVisible();
++  expect(getButton("Close")).toHaveFocus();
++  expectModalStyle(true);
++  await press.Escape();
++  expect(getDialog("Dialog")).not.toBeInTheDocument();
++  expect(getButton("Open dialog")).toHaveFocus();
++  expectModalStyle(false);
++});
++
++test.each(["nested", "sibling"])(
++  "show %s dialog and hide with escape",
++  async (name) => {
++    await click(getButton("Open dialog"));
++    await click(getButton(name));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(name, true);
++    expectModalStyle(true);
++    await click(getButton(`${name} ${name}`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getDialog(name)).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(name, false);
++    expectAccessibleDialog(`${name} ${name}`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} ${name}`)).not.toBeVisible();
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton(`${name} ${name}`)).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(name, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(name)).not.toBeVisible();
++    expect(getButton(name)).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog("Dialog")).not.toBeInTheDocument();
++    expect(getButton("Open dialog")).toHaveFocus();
++    expectModalStyle(false);
++  }
++);
++
++test.each(["nested", "sibling"])(
++  "show %s unmount dialog and hide with escape",
++  async (name) => {
++    await click(getButton("Open dialog"));
++    await click(getButton(`${name} unmount`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(`${name} unmount`, true);
++    expectModalStyle(true);
++    await click(getButton(`${name} unmount ${name}`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getDialog(`${name} unmount`)).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(`${name} unmount`, false);
++    expectAccessibleDialog(`${name} unmount ${name}`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} unmount ${name}`)).not.toBeInTheDocument();
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton(`${name} unmount ${name}`)).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(`${name} unmount`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} unmount`)).not.toBeInTheDocument();
++    expect(getButton(`${name} unmount`)).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog("Dialog")).not.toBeInTheDocument();
++    expect(getButton("Open dialog")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectModalStyle(false);
++  }
++);
++
++test.each(["nested", "sibling"])(
++  "show %s no portal dialog and hide with escape",
++  async (name) => {
++    await click(getButton("Open dialog"));
++    await click(getButton(`${name} no portal`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    await press.ShiftTab();
++    await press.ShiftTab();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal`, true);
++    expectModalStyle(true);
++    await click(getButton(`${name} no portal ${name}`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getDialog(`${name} no portal`)).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    await press.ShiftTab();
++    await press.ShiftTab();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal`, true);
++    expectAccessibleDialog(`${name} no portal ${name}`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} no portal ${name}`)).not.toBeVisible();
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton(`${name} no portal ${name}`)).toHaveFocus();
++    expect(getBackdrop(`${name} no portal ${name}`)).not.toBeVisible();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} no portal`)).not.toBeVisible();
++    expect(getButton(`${name} no portal`)).toHaveFocus();
++    expect(getBackdrop(`${name} no portal`)).not.toBeVisible();
++    expectAccessibleDialog("Dialog", true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog("Dialog")).not.toBeInTheDocument();
++    expect(getButton("Open dialog")).toHaveFocus();
++    expectModalStyle(false);
++  }
++);
++
++test.each(["nested", "sibling"])(
++  "show %s no portal portal dialog and hide with escape",
++  async (name) => {
++    await click(getButton("Open dialog"));
++    await click(getButton(`${name} no portal portal`));
++    expect(getButton("Close")).toHaveFocus();
++    await press.ShiftTab();
++    await press.ShiftTab();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal portal`, true);
++    expectModalStyle(true);
++    await click(getButton(`${name} no portal portal ${name}`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getDialog(`${name} no portal portal`)).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal portal`, true);
++    expectAccessibleDialog(`${name} no portal portal ${name}`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} no portal portal ${name}`)).not.toBeVisible();
++    expect(getButton(`${name} no portal portal ${name}`)).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectAccessibleDialog(`${name} no portal portal`, true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog(`${name} no portal portal`)).not.toBeVisible();
++    expect(getButton(`${name} no portal portal`)).toHaveFocus();
++    expectAccessibleDialog("Dialog", true);
++    expectModalStyle(true);
++    await press.Escape();
++    expect(getDialog("Dialog")).not.toBeInTheDocument();
++    expect(getButton("Open dialog")).toHaveFocus();
++    expectModalStyle(false);
++  }
++);
++
++test.each(["nested", "sibling"])(
++  "show %s no backdrop dialog and hide by clicking outside",
++  async (name) => {
++    await click(getButton("Open dialog"));
++    await click(getButton(`${name} no backdrop`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(`${name} no backdrop`, true);
++    expectModalStyle(true);
++    await click(getButton(`${name} no backdrop ${name}`));
++    expect(getDialog("Dialog")).toBeVisible();
++    expect(getDialog(`${name} no backdrop`)).toBeVisible();
++    expect(getButton("Close")).toHaveFocus();
++    expectAccessibleDialog("Dialog", false);
++    expectAccessibleDialog(`${name} no backdrop`, false);
++    expectAccessibleDialog(`${name} no backdrop ${name}`, true);
++    expectModalStyle(true);
++    await click(document.body);
++    expect(getDialog("Dialog")).not.toBeInTheDocument();
++    expect(getButton("Open dialog")).toHaveFocus();
++    expect(expectAccessibleDialog(`${name} no backdrop ${name}`, false));
++    expect(expectAccessibleDialog(`${name} no backdrop`, false));
++    expectModalStyle(false);
++  }
++);

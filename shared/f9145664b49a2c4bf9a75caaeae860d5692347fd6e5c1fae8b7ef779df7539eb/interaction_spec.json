@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "打开受控面板",
+    "更新 open=false",
+    "检查 panel 状态"
+  ],
+  "expected_fixed": "controlled keepMounted panel 在 open=false 后正确关闭。",
+  "instance_id": "mui__base-ui-4553",
+  "issue_derived_path": [
+    "打开受控面板",
+    "更新 open=false",
+    "检查 panel 状态"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "panel 保持打开，未响应受控关闭。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

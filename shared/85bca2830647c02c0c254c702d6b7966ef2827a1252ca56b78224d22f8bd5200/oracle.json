@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "selected_time": "one or more non-zero fields"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "selected_time": {
+      "hour": 0,
+      "millisecond": 0,
+      "minute": 0,
+      "second": 0
+    }
+  },
+  "instance_id": "unovue__reka-ui-2599",
+  "rendering_gate": [
+    "Calendar cells have unique plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Clearing, opening, and selecting emits a non-null model."
+  ]
+}

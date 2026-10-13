@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "add filter with keyboard then press tab",
+    "add filter with mouse and select an option",
+    "add filter with mouse then click outside",
+    "add more filters",
+    "hide menu by clicking on dialog",
+    "remove filters"
+  ],
+  "PASS_TO_PASS": [
+    "hide both menu and dialog by clicking outside dialog",
+    "hide menu and dialog with esc",
+    "no filters"
+  ],
+  "base_commit": "84ec907de4ebe841871cac2b9d2279f6446db606",
+  "instance_id": "ariakit__ariakit-2450",
+  "schema_version": "4.0"
+}

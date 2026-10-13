@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-8291"
+version = "0.2.0-candidate"
+description = "[RAC] Tooltip is misaligned when using a CSS scale transition animation on [data-entering]"
+
+[metadata]
+instance_id = "adobe__react-spectrum-8291"
+repository = "adobe/react-spectrum"
+base_commit = "155e361c6e2910c0b087ccba7cc61541fb50b0a7"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:54a9535c13b9ffb83b38c5ad9c35f8fa22dd67aa1874ad31b4f2831bd4019c61"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3b3c1a0f5bf2664989f7e79d3a0d1e0a690f3c0da57aac5748a60a4d4f71a35a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 16384
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

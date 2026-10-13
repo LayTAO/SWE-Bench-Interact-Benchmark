@@ -1,0 +1,11 @@
+{
+  "base_commit": "eaf727ce9d4cdc520e8b1db1eb504c5dc0891eb9",
+  "base_image": "local Node 24.14.1 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "mui__base-ui-5239",
+  "package_manager": "pnpm@11.5.2",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "VITEST_ENV=chromium PLAYWRIGHT_BROWSERS_PATH=<pinned-browser-cache> pnpm exec vitest run --config packages/react/vitest.config.mts packages/react/src/navigation-menu/trigger/NavigationMenuTrigger.test.tsx --reporter=json --outputFile=<isolated-output> --browser chromium"
+}

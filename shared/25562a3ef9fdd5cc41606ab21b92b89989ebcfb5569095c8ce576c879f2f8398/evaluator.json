@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "ContextMenu nested in Dialog dismisses only the context menu when clicking inside dialog outside menu",
+    "DropdownMenu nested in Dialog dismisses only the menu when clicking inside dialog outside menu",
+    "Select nested in Dialog dismisses only the select when clicking inside dialog outside select"
+  ],
+  "PASS_TO_PASS": [
+    "ContextMenu opens the root menu with a long touch interaction",
+    "ContextMenu closes open submenus and reopens the root menu when right-clicking the trigger",
+    "ContextMenu opens a submenu with keyboard and focuses its first item",
+    "ContextMenu scopes typeahead behavior to the active menu",
+    "DropdownMenu closes when an external overlay stops later mouse events",
+    "Popover keeps the popover open when an external overlay stops later mouse events",
+    "non-modal Popover nested in Dialog dismisses both layers when clicking outside both",
+    "modal Popover nested in Dialog dismisses only the Popover when clicking outside it",
+    "Select inside a form submits and reacts to changes",
+    "Select with no value displays its placeholder"
+  ],
+  "base_commit": "73f489df31458a3c8ab6cc3789da54b21a63387e",
+  "instance_id": "radix-ui__primitives-3971",
+  "schema_version": "4.0"
+}

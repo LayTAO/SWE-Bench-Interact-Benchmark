@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/floating-ui__floating-ui-3207"
+version = "0.2.0-candidate"
+description = "Chrome blocked aria-hidden error when using virtualItemRef"
+
+[metadata]
+instance_id = "floating-ui__floating-ui-3207"
+repository = "floating-ui/floating-ui"
+base_commit = "ba53ee87e2fb6d0addd99fa8d60b78b85660f847"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:37ffe1afe092d373e7627a1db40d4fb39f56f3b68f6c7e66f08eb85cd9c6f4d3"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:47fe3fc4b3d003e51103ce846ce90faa8e34208c8fd9ec1b2628dbb4427a0ae0"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,22 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "trigger_valid == true",
+      "bug_observed == true"
+    ]
+  },
+  "environment_gate": [
+    "The app and exact subject artifact load without a page crash.",
+    "The target has plausible bounded structure."
+  ],
+  "expected": {
+    "bug_observed": false
+  },
+  "instance_id": "unovue__reka-ui-2505",
+  "predicate_id": "issue_unovue_reka_ui_2505_bug_predicate",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "All declared actions complete and the issue-derived observation is available."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "actions": [
+    "打开 combobox",
+    "键盘导航嵌套菜单",
+    "检查 aria-hidden"
+  ],
+  "expected_fixed": "虚拟嵌套菜单导航时 root combobox 保持可用且不被 aria-hidden。",
+  "instance_id": "floating-ui__floating-ui-3207",
+  "issue_derived_path": [
+    "打开 combobox",
+    "键盘导航嵌套菜单",
+    "检查 aria-hidden"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "accessibility attributes",
+    "focus or scroll events",
+    "page-error stream"
+  ],
+  "observed_buggy": "root combobox 被错误设置 aria-hidden。",
+  "preconditions": [
+    "independent minimal app imports the candidate source",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

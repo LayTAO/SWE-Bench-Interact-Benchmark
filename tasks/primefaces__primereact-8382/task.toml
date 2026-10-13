@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/primefaces__primereact-8382"
+version = "0.2.0-candidate"
+description = "InputNumber rounds quarter-step values to one decimal place"
+
+[metadata]
+instance_id = "primefaces__primereact-8382"
+repository = "primefaces/primereact"
+base_commit = "f237f286f2968b79f08c3b7450f74d2295bb8cdf"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:33f3c25716afb57b5c390d813391eabe4c24e74fd80f34d36dae593b60ba1a52"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:142aa483fde69ca32f25f97dccbf1d304585ccb1223975d43ffcea3e59add630"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

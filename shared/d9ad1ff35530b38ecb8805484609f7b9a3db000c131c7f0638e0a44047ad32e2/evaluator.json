@@ -1,0 +1,26 @@
+{
+  "FAIL_TO_PASS": [
+    "Calendar should not modify selection when trying to select an unavailable date by keyboard"
+  ],
+  "PASS_TO_PASS": [
+    "Calendar should render with custom classes",
+    "Calendar should render with default classes",
+    "Calendar should support DOM props",
+    "Calendar should support custom CalendarGridHeader",
+    "Calendar should support disabled state",
+    "Calendar should support focus ring",
+    "Calendar should support hover",
+    "Calendar should support invalid state",
+    "Calendar should support multi-month calendars",
+    "Calendar should support press state",
+    "Calendar should support render props",
+    "Calendar should support selected state",
+    "Calendar should support setting \"null\" for method setValue",
+    "Calendar should support slot",
+    "Calendar should support unavailable state",
+    "Calendar should support weekdayStyle"
+  ],
+  "base_commit": "99d073a7ab4f780adbf1c72e0138190a97915271",
+  "instance_id": "adobe__react-spectrum-5692",
+  "schema_version": "4.0"
+}

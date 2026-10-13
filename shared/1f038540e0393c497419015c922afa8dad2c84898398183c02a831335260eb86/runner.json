@@ -1,0 +1,13 @@
+{
+  "base_commit": "8eab22fae4d49392ab095a03140d9a1b02c1fa1e",
+  "base_image": "public.ecr.aws/docker/library/node:16-bullseye",
+  "formal_browser": "Chromium 99.0.4759.0 pinned by the repository browser toolchain",
+  "install_command": "yarn install --frozen-lockfile --non-interactive",
+  "instance_id": "angular__components-25077",
+  "package_manager": "Yarn 1.22.17",
+  "repo_url": "https://github.com/angular/components.git",
+  "repository": "angular/components",
+  "runtime": "Node.js 16.20.2",
+  "schema_version": "3.0",
+  "test_command": "yarn -s bazel test //src/cdk/scrolling:unit_tests_chromium --test_output=all"
+}

@@ -1,0 +1,18 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "The Issue-derived Browse vegetables action changes the selection incorrectly: Buggy leaves the Vegetables tab unselected while Fixed selects it and shows its panel.",
+    "fixed_observed": false,
+    "name": "cross_link_fails_to_update_active_tab"
+  },
+  "expected": {
+    "buggy": {
+      "vegetables_tab_selected": false
+    },
+    "fixed": {
+      "vegetables_panel_visible": true,
+      "vegetables_tab_selected": true
+    }
+  },
+  "schema_version": "1.0"
+}

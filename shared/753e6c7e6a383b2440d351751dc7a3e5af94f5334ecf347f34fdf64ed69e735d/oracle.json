@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "modal_text_visible == false",
+      "page_errors > 0"
+    ]
+  },
+  "environment_gate": [
+    "The exact Material UI Modal and Portal source renders the switch control."
+  ],
+  "expected": {
+    "bug_observed": true,
+    "modal_text_visible": false,
+    "page_errors > 0": true
+  },
+  "instance_id": "mui__material-ui-13962",
+  "predicate_id": "modal_container_switch_keeps_content_without_page_error",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The Run container switch button is activated through a semantic role locator."
+  ]
+}

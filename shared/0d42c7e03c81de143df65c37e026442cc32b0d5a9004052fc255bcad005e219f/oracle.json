@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "fixed_state": "false"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "active_element": "input",
+    "collection_items": "contains Apple and not raw a"
+  },
+  "instance_id": "unovue__reka-ui-2259",
+  "rendering_gate": [
+    "Card, input, and distinct options have plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Input contains a and Apple is selectable before the observed selection."
+  ]
+}

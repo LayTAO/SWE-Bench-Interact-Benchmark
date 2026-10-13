@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/mui__material-ui-47203"
+version = "0.2.0-candidate"
+description = "[autocomplete] When `disableCloseOnSelect={true}`, scroll resets to top on option selection when popup is reopened by clicking the input"
+
+[metadata]
+instance_id = "mui__material-ui-47203"
+repository = "mui/material-ui"
+base_commit = "3b84cd251606c66148197ef54a869f99b6662ac8"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:88d82862448f83e1150c503d8213941ad400349acf526cc53e89e480c46e2cdd"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f5c0c6c09988e803c910567622b67e1e74d72df84f2963790abcde136d2d397c"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

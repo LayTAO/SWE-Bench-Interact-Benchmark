@@ -1,0 +1,32 @@
+{
+  "actions": [
+    "打开弹层",
+    "点击内容外部",
+    "检查焦点陷阱"
+  ],
+  "expected_fixed": "closeOnOutsideClick=false 时点击外部不会停用 focus trap。",
+  "instance_id": "melt-ui__melt-ui-1084",
+  "issue_derived_path": [
+    "打开弹层",
+    "点击内容外部",
+    "检查焦点陷阱"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "accessibility attributes",
+    "focus or scroll events",
+    "page-error stream"
+  ],
+  "observed_buggy": "点击外部会错误停用 focus trap。",
+  "preconditions": [
+    "independent minimal app imports the candidate source",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

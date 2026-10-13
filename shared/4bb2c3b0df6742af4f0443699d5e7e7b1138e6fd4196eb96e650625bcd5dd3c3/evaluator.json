@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "given default NavigationMenu menu triggers should close menu when clicking top-level link with hover disabled"
+  ],
+  "PASS_TO_PASS": [
+    "given default NavigationMenu should pass axe accessibility tests",
+    "given default NavigationMenu after clicking on button to open menu should pass axe accessibility tests",
+    "given default NavigationMenu after clicking on button to open menu after pressing tab should focus on the first item in menu",
+    "given default NavigationMenu after clicking on button to open menu after pressing down key should focus on the first item in menu",
+    "given default NavigationMenu after clicking on button to open menu after pressing down key should focus on the last item in menu",
+    "given default NavigationMenu menu triggers should open menu on click by default",
+    "given default NavigationMenu menu triggers should open menu on hover by default",
+    "given default NavigationMenu menu triggers should not trigger content on click",
+    "given default NavigationMenu menu triggers should not trigger content on hover"
+  ],
+  "base_commit": "edb0789c60fe08a7632664acc7f9a702a1aae4f5",
+  "instance_id": "unovue__reka-ui-2383",
+  "schema_version": "4.0"
+}

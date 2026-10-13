@@ -1,0 +1,32 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "swipe_open_started == true",
+      "swipe_interrupted == true",
+      "drawer_present_after_outside_press == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Drawer.SwipeArea /> re-enables outside press dismissal after a context menu interrupts swipe-open",
+      "<Drawer.SwipeArea /> re-enables outside press dismissal after an interrupted swipe-open gesture"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "中断手势后 outside press 仍关闭 Drawer。"
+  },
+  "instance_id": "mui__base-ui-4471",
+  "predicate_id": "drawer_outside_press_reenabled_after_interrupted_swipe",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "开始打开手势",
+    "中断手势或触发 context menu",
+    "点击 Drawer 外部"
+  ]
+}

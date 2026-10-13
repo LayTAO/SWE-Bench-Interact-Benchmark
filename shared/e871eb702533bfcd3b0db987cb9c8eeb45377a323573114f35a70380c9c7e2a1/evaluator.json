@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "activates the tab selected by setSelectedId after the popover opens",
+    "activates the tab selected by setSelectedId after the popover toggles"
+  ],
+  "PASS_TO_PASS": [
+    "default selected tab",
+    "do not select with focus (e.g., screen reader focus)",
+    "select with keyboard",
+    "select with mouse"
+  ],
+  "base_commit": "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888",
+  "instance_id": "ariakit__ariakit-6346",
+  "schema_version": "4.0"
+}

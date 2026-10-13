@@ -1,0 +1,12 @@
+{
+  "base_commit": "863ac427ea3332ae7cd99ccaf2ad1c92a03c6545",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-8556",
+  "package_manager": "yarn@4.9.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/react-aria-components/test/Tooltip.test.js --runInBand --json --outputFile=$INTERACT_RAW_RESULT"
+}

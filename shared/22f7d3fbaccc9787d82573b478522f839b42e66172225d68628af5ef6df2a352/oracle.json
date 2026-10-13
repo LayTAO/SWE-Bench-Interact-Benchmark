@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "trigger_valid == true",
+      "listbox_visible_after_overlay_click == true"
+    ]
+  },
+  "environment_gate": [
+    "The app and exact subject package load without page errors.",
+    "The dialog, ComboBox, listbox, overlay, and modal have plausible bounded geometry."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "listbox_visible_after_overlay_click": false
+  },
+  "instance_id": "adobe__react-spectrum-5338",
+  "predicate_id": "combobox_remains_open_after_modal_overlay_click",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The listbox is visible before the click.",
+    "The click point is inside the overlay and outside the modal and popover."
+  ]
+}

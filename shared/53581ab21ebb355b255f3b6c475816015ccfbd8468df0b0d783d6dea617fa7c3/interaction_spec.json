@@ -1,0 +1,22 @@
+{
+  "environment_gate": [
+    "the exact Select source renders a visible combobox"
+  ],
+  "instance_id": "mui__material-ui-45301",
+  "issue_derived_path": [
+    "press the Select trigger while holding the pointer",
+    "move outside the listbox",
+    "release and inspect listbox visibility"
+  ],
+  "observation_channels": [
+    "semantic combobox/listbox visibility",
+    "pointer transition",
+    "action error"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "pointer-down-open",
+    "outside-release"
+  ]
+}

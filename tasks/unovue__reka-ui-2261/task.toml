@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/unovue__reka-ui-2261"
+version = "0.2.0-candidate"
+description = "RangeCalendarCellTrigger contains an incorrect ARIA selection attribute"
+
+[metadata]
+instance_id = "unovue__reka-ui-2261"
+repository = "unovue/reka-ui"
+base_commit = "f69fe293675a6f71f4663a734891e1b2952722f3"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:df5649e379e976530554aa7af5c44cb43ef32722516ad8a3137a58eb59c44187"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f069c5da327998608f9ddb6091c0ab9e2e2eaedcc32145bb0ae47f1ece69f336"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

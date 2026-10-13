@@ -1,0 +1,28 @@
+{
+  "bug_predicate": {
+    "placeholders": "first placeholder is not '*' or second placeholder is not empty"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "environment_valid": true,
+    "placeholders": [
+      "*",
+      "",
+      "*",
+      "*",
+      "*"
+    ],
+    "rendering_valid": true,
+    "trigger_valid": true
+  },
+  "instance_id": "unovue__reka-ui-2375",
+  "rendering_gate": [
+    "Exactly five visible PinInput positions render."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Typing a character advances focus to the next position."
+  ]
+}

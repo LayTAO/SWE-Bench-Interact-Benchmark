@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "select_item_actionable == true",
+      "selection_committed == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Select.Item /> should select an unhighlighted item with the mouse"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "Accordion.Panel 内 Select.Item 点击可提交选择。"
+  },
+  "instance_id": "mui__base-ui-4663",
+  "predicate_id": "mui_select_item_clickable_inside_accordion_panel",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "展开 Accordion",
+    "打开 Select",
+    "点击选项"
+  ]
+}

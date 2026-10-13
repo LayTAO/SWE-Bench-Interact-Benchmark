@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-8871"
+version = "0.2.0-candidate"
+description = "ContextualHelpTrigger menu items must report selection state"
+
+[metadata]
+instance_id = "adobe__react-spectrum-8871"
+repository = "adobe/react-spectrum"
+base_commit = "307b71c61074c33fae6e9eb79d3d29b9c83150a0"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3a2b3ebf428168ac238b7752c8d3310e766af2090299936f5c13940c9a9f1dcf"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:4e5e3706a3a9c12f8d3909de687dffe5d28dcfa677d676c744c556a44f1368e4"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,157 @@
+diff --git a/site/src/sandbox/4825-dialog-combobox/index.react.tsx b/site/src/sandbox/4825-dialog-combobox/index.react.tsx
+new file mode 100644
+index 0000000000..c944eed220
+--- /dev/null
++++ b/site/src/sandbox/4825-dialog-combobox/index.react.tsx
+@@ -0,0 +1,69 @@
++import * as Ariakit from "@ariakit/react";
++import { useMemo, useState, startTransition } from "react";
++
++const allItems = [
++  "Apple",
++  "Banana",
++  "Blueberry",
++  "Cherry",
++  "Cranberry",
++  "Grape",
++  "Grapefruit",
++  "Lemon",
++  "Mango",
++  "Orange",
++  "Papaya",
++  "Peach",
++  "Pineapple",
++  "Raspberry",
++  "Strawberry",
++  "Watermelon",
++];
++
++export default function Example() {
++  const [open, setOpen] = useState(true);
++  const [searchValue, setSearchValue] = useState("");
++  const matches = useMemo(() => {
++    if (!searchValue) return allItems;
++    return allItems.filter((item) =>
++      item.toLowerCase().includes(searchValue.toLowerCase().trim()),
++    );
++  }, [searchValue]);
++
++  const dialog = Ariakit.useDialogStore({ open, setOpen });
++
++  return (
++    <>
++      <Ariakit.Button onClick={() => setOpen(true)}>
++        Open Command Menu
++      </Ariakit.Button>
++      <Ariakit.Dialog store={dialog} unmountOnHide>
++        <Ariakit.ComboboxProvider
++          disclosure={dialog}
++          focusLoop={false}
++          includesBaseElement={false}
++          resetValueOnHide
++          setValue={(value) => {
++            startTransition(() => {
++              setSearchValue(value);
++            });
++          }}
++        >
++          <Ariakit.Combobox
++            autoSelect="always"
++            placeholder="Search for fruits..."
++            style={{ width: 50 }}
++          />
++          <Ariakit.ComboboxList>
++            {matches.map((item) => (
++              <Ariakit.ComboboxItem key={item} value={item}>
++                {item}
++              </Ariakit.ComboboxItem>
++            ))}
++            {!matches.length && <div>No results found</div>}
++          </Ariakit.ComboboxList>
++        </Ariakit.ComboboxProvider>
++      </Ariakit.Dialog>
++    </>
++  );
++}
+diff --git a/site/src/sandbox/4825-dialog-combobox/preview.astro b/site/src/sandbox/4825-dialog-combobox/preview.astro
+new file mode 100644
+index 0000000000..f479d53745
+--- /dev/null
++++ b/site/src/sandbox/4825-dialog-combobox/preview.astro
+@@ -0,0 +1,14 @@
++---
++import PreviewFramework from "#app/components/preview-framework.astro";
++import ReactExample from "./index.react.tsx";
++
++import sourceReact from "./index.react.tsx?source";
++
++export const source = {
++  react: sourceReact,
++};
++---
++
++<PreviewFramework>
++  <ReactExample client:load slot="react" />
++</PreviewFramework>
+diff --git a/site/src/sandbox/4825-dialog-combobox/preview.mdx b/site/src/sandbox/4825-dialog-combobox/preview.mdx
+new file mode 100644
+index 0000000000..eccffc4292
+--- /dev/null
++++ b/site/src/sandbox/4825-dialog-combobox/preview.mdx
+@@ -0,0 +1,9 @@
++---
++title: "4825"
++frameworks:
++  - react
++---
++
++import Preview from "./preview.astro";
++
++<Preview />
+diff --git a/site/src/sandbox/4825-dialog-combobox/test-browser.ts b/site/src/sandbox/4825-dialog-combobox/test-browser.ts
+new file mode 100644
+index 0000000000..0e8734ebb9
+--- /dev/null
++++ b/site/src/sandbox/4825-dialog-combobox/test-browser.ts
+@@ -0,0 +1,41 @@
++import { withFramework } from "#app/test-utils/preview.ts";
++
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("combobox input preserves scroll position when results change", async ({
++    page,
++    q,
++  }) => {
++    const combobox = q.combobox();
++    await test.expect(combobox).toBeFocused();
++
++    // Type padding spaces followed by "b" to overflow and match multiple items.
++    // "b" matches Banana and Blueberry. Adding "a" will change results to just
++    // Banana, triggering the async autoSelect effect which causes the virtual
++    // focus dance that resets scrollLeft.
++    await page.keyboard.type("                  b", { delay: 20 });
++
++    // Verify items are rendered
++    await test.expect(q.option("Banana")).toBeVisible();
++    await test.expect(q.option("Blueberry")).toBeVisible();
++
++    await test.expect
++      .poll(() =>
++        combobox.evaluate((el) => (el as HTMLInputElement).scrollLeft),
++      )
++      .toBeGreaterThan(0);
++
++    // Type "a" to change results from [Banana, Blueberry] to [Banana] only.
++    // This triggers an async item change (via startTransition), which fires the
++    // autoSelect effect and the virtual focus dance.
++    await page.keyboard.type("a", { delay: 20 });
++
++    await test.expect(q.option("Blueberry")).toBeHidden();
++
++    // scrollLeft should be preserved (not reset to 0)
++    await test.expect
++      .poll(() =>
++        combobox.evaluate((el) => (el as HTMLInputElement).scrollLeft),
++      )
++      .toBeGreaterThan(0);
++  });
++});

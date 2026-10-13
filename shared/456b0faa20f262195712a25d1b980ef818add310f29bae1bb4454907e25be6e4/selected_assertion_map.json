@@ -1,0 +1,54 @@
+{
+  "ContextMenu closes open submenus and reopens the root menu when right-clicking the trigger": {
+    "fullTitle": "ContextMenu given submenu user when using pointer should close open submenus and reopen the root menu when right clicking trigger",
+    "spec": "ContextMenu"
+  },
+  "ContextMenu nested in Dialog dismisses only the context menu when clicking inside dialog outside menu": {
+    "fullTitle": "ContextMenu nested in Dialog dismisses only the context menu when clicking inside dialog outside menu",
+    "spec": "ContextMenu"
+  },
+  "ContextMenu opens a submenu with keyboard and focuses its first item": {
+    "fullTitle": "ContextMenu given submenu user When using keyboard should open submenu and focus first item when pressing right arrow, enter or space key",
+    "spec": "ContextMenu"
+  },
+  "ContextMenu opens the root menu with a long touch interaction": {
+    "fullTitle": "ContextMenu given submenu user when using pointer should open the root menu with a long touch interaction",
+    "spec": "ContextMenu"
+  },
+  "ContextMenu scopes typeahead behavior to the active menu": {
+    "fullTitle": "ContextMenu given submenu user When using keyboard should scope typeahead behaviour to the active menu",
+    "spec": "ContextMenu"
+  },
+  "DropdownMenu closes when an external overlay stops later mouse events": {
+    "fullTitle": "DropdownMenu extension overlay interactions should close when an external overlay stops later mouse events",
+    "spec": "DropdownMenu"
+  },
+  "DropdownMenu nested in Dialog dismisses only the menu when clicking inside dialog outside menu": {
+    "fullTitle": "DropdownMenu nested in Dialog dismisses only the menu when clicking inside dialog outside menu",
+    "spec": "DropdownMenu"
+  },
+  "Popover keeps the popover open when an external overlay stops later mouse events": {
+    "fullTitle": "Popover keeps the popover open when an external overlay stops later mouse events",
+    "spec": "Popover"
+  },
+  "Select inside a form submits and reacts to changes": {
+    "fullTitle": "Select given a select inside a form should submit and react to changes",
+    "spec": "Select"
+  },
+  "Select nested in Dialog dismisses only the select when clicking inside dialog outside select": {
+    "fullTitle": "Select nested in Dialog dismisses only the select when clicking inside dialog outside select",
+    "spec": "Select"
+  },
+  "Select with no value displays its placeholder": {
+    "fullTitle": "Select given a select with no value should display the placeholder",
+    "spec": "Select"
+  },
+  "modal Popover nested in Dialog dismisses only the Popover when clicking outside it": {
+    "fullTitle": "modal popover nested in dialog dismisses only the popover when clicking outside the popover",
+    "spec": "Popover"
+  },
+  "non-modal Popover nested in Dialog dismisses both layers when clicking outside both": {
+    "fullTitle": "non-modal popover nested in dialog dismisses both the popover and the dialog when clicking outside both layers",
+    "spec": "Popover"
+  }
+}

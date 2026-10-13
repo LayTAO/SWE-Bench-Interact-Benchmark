@@ -1,0 +1,32 @@
+diff --git a/packages/ariakit/src/combobox/__examples__/combobox-cancel/index.tsx b/packages/ariakit/src/combobox/__examples__/combobox-cancel/index.tsx
+index 07e21387..293d1728 100644
+--- a/packages/ariakit/src/combobox/__examples__/combobox-cancel/index.tsx
++++ b/packages/ariakit/src/combobox/__examples__/combobox-cancel/index.tsx
+@@ -26,6 +26,7 @@ export default function Example() {
+         <div className="combobox-wrapper">
+           <Combobox
+             state={combobox}
++            autoSelect
+             placeholder="e.g., Apple"
+             className="combobox"
+           />
+diff --git a/packages/ariakit/src/combobox/__examples__/combobox-cancel/test.tsx b/packages/ariakit/src/combobox/__examples__/combobox-cancel/test.tsx
+index a83482e1..b5010a06 100644
+--- a/packages/ariakit/src/combobox/__examples__/combobox-cancel/test.tsx
++++ b/packages/ariakit/src/combobox/__examples__/combobox-cancel/test.tsx
+@@ -72,3 +72,15 @@ test("clear input with keyboard after typing", async () => {
+   expect(getCombobox()).toHaveFocus();
+   expect(getPopover()).toBeVisible();
+ });
++
++test("https://github.com/ariakit/ariakit/issues/1652", async () => {
++  render(<Example />);
++  await press.Tab();
++  await type("a");
++  await press.Tab();
++  await press.Enter();
++  expect(getOption("Apple")).not.toHaveFocus();
++  await type("a");
++  await click(getCancelButton());
++  expect(getOption("Apple")).not.toHaveFocus();
++});

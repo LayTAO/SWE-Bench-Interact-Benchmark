@@ -1,0 +1,159 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/number-field/root/NumberFieldRoot.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <NumberField /> typing behavior (parseable changes) accepts exponent separators while typing (scientific notation)
+- <NumberField /> typing behavior (parseable changes) accepts multi-character currency symbols while typing (e.g. pt-BR BRL)
+- <NumberField /> typing behavior (parseable changes) accepts multi-character unit symbols while typing (e.g. km/h)
+- <NumberField /> typing behavior (parseable changes) ignores bidi/format control characters in the value (e.g. RTL exponent signs)
+- <NumberField /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <NumberField /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <NumberField /> Base UI component API prop forwarding forwards custom props to the default element
+- <NumberField /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <NumberField /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <NumberField /> Base UI component API prop: className should apply the className when passed as a string
+- <NumberField /> Base UI component API prop: render renders a customized root element with a function
+- <NumberField /> Base UI component API prop: render renders a customized root element with an element
+- <NumberField /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <NumberField /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <NumberField /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <NumberField /> Base UI component API prop: render should pass the ref to the custom component
+- <NumberField /> Base UI component API ref attaches the ref
+- <NumberField /> Field Field.Description
+- <NumberField /> Field Field.Label
+- <NumberField /> Field [data-dirty]
+- <NumberField /> Field [data-filled]
+- <NumberField /> Field [data-filled] adds [data-filled] attribute when filled
+- <NumberField /> Field [data-filled] has [data-filled] attribute when already filled
+- <NumberField /> Field [data-touched]
+- <NumberField /> Field adds [data-focused] attribute on every focus
+- <NumberField /> Field disables the input when disabled=true
+- <NumberField /> Field does not disable the input when disabled=false
+- <NumberField /> Field is validated with clamped value when validationMode=onBlur
+- <NumberField /> Field is validated with latest value when validationMode=onBlur
+- <NumberField /> Field prevents Form/Field submission when the value does not match the step
+- <NumberField /> Field prop: validate
+- <NumberField /> Field prop: validationMode onBlur
+- <NumberField /> Field prop: validationMode onChange
+- <NumberField /> Field prop: validationMode onSubmit
+- <NumberField /> Field prop: validationMode revalidates when the controlled value changes externally
+- <NumberField /> Field revalidates an external change after a blur that normalizes back to the current value
+- <NumberField /> Form clears external errors on change
+- <NumberField /> Form focuses the input when the field receives an error from Form
+- <NumberField /> Form ignores hidden-input autofill when 'disabled' 'inside Field'
+- <NumberField /> Form ignores hidden-input autofill when 'disabled' 'outside Field'
+- <NumberField /> Form ignores hidden-input autofill when 'readOnly' 'inside Field'
+- <NumberField /> Form ignores hidden-input autofill when 'readOnly' 'outside Field'
+- <NumberField /> Form revalidates immediately after form submission errors using increment button
+- <NumberField /> Form should handle browser autofill
+- <NumberField /> Form should include the input value in the form submission
+- <NumberField /> Form should not include formatting in the submitted value
+- <NumberField /> Form submits to an external form when `form` is provided
+- <NumberField /> Form triggers native HTML validation on submit
+- <NumberField /> Form validates the parsed number when handling browser autofill
+- <NumberField /> blocks submission when step mismatch occurs
+- <NumberField /> blocks submission when step mismatch occurs with default step
+- <NumberField /> does not block submission when step="any"
+- <NumberField /> does not prevent native caret movement for Home/End without min/max
+- <NumberField /> does not swallow non-printing keys it does not handle
+- <NumberField /> integration: exotic inputs and IME accepts Persian digit keyboard input
+- <NumberField /> integration: exotic inputs and IME allows composition key events (IME) without preventing default
+- <NumberField /> integration: exotic inputs and IME collapses extra dots from mixed-locale inputs
+- <NumberField /> integration: exotic inputs and IME ignores percent and permille symbols when not formatted as percent
+- <NumberField /> integration: exotic inputs and IME parses Persian digits and separators via change events
+- <NumberField /> integration: exotic inputs and IME parses Persian digits with Arabic group/decimal separators
+- <NumberField /> integration: exotic inputs and IME parses fullwidth digits and punctuation
+- <NumberField /> integration: exotic inputs and IME parses percent and permille signs in exotic forms when formatted as percent
+- <NumberField /> integration: exotic inputs and IME parses trailing unicode minus
+- <NumberField /> integration: exotic inputs and IME treats parentheses negatives as invalid input
+- <NumberField /> pasting at the caret does not paste into a readOnly field
+- <NumberField /> pasting at the caret ignores a paste that does not parse to a number
+- <NumberField /> pasting at the caret inserts pasted text at the caret instead of replacing the whole value
+- <NumberField /> pasting at the caret keeps the caret just after the pasted text
+- <NumberField /> pasting at the caret replaces the selected range when pasting over a selection
+- <NumberField /> pasting should allow pasting a valid number
+- <NumberField /> pasting should not allow pasting an invalid number
+- <NumberField /> prop: allowOutOfRange allows range overflow validation when true
+- <NumberField /> prop: allowOutOfRange allows typing a negative value via keyboard when min is 0
+- <NumberField /> prop: allowOutOfRange clamps to range when false
+- <NumberField /> prop: allowOutOfRange still clamps step interactions when true
+- <NumberField /> prop: allowWheelScrub calls onValueChange and onValueCommitted on wheel
+- <NumberField /> prop: allowWheelScrub does not scrub on wheel when disabled
+- <NumberField /> prop: allowWheelScrub does not scrub on wheel when readOnly
+- <NumberField /> prop: allowWheelScrub does not scrub on wheel when the input is not focused
+- <NumberField /> prop: allowWheelScrub does not scrub on wheel while pinch-zooming (ctrlKey)
+- <NumberField /> prop: allowWheelScrub should allow the user to scrub the input value with the mouse wheel
+- <NumberField /> prop: allowWheelScrub should not allow the user to scrub the input value with the mouse wheel if `allowWheelScrub` is `false`
+- <NumberField /> prop: allowWheelScrub syncs the visible input value when using the mouse wheel after pasting
+- <NumberField /> prop: allowWheelScrub uses largeStep when shift is held during wheel
+- <NumberField /> prop: defaultValue should accept a number value
+- <NumberField /> prop: defaultValue should accept an `undefined` value
+- <NumberField /> prop: disabled should disable the input
+- <NumberField /> prop: format reflects controlled value changes in the textbox
+- <NumberField /> prop: format reformats the visible text when the format prop changes at the same value
+- <NumberField /> prop: format should format the value using the provided options
+- <NumberField /> prop: inputMode should set the inputMode to numeric
+- <NumberField /> prop: largeStep should decrement the value by the default `largeStep` prop of 10 while holding the shift key
+- <NumberField /> prop: largeStep should increment the value by the default `largeStep` prop of 10 while holding the shift key
+- <NumberField /> prop: largeStep should not use the `largeStep` prop if no longer holding the shift key
+- <NumberField /> prop: largeStep should use explicit `largeStep` value if provided while holding the shift key
+- <NumberField /> prop: locale should handle locales using space as the thousands separator
+- <NumberField /> prop: locale should set the locale of the input
+- <NumberField /> prop: locale should use the default locale if no locale is provided
+- <NumberField /> prop: max allows the value to go below the `max` prop
+- <NumberField /> prop: max prevents the value from going above the `max` prop
+- <NumberField /> prop: min allows the value to go above the `min` prop
+- <NumberField /> prop: min prevents the raw value from going below the `min` prop
+- <NumberField /> prop: name marks the hidden input readOnly when the field is readOnly
+- <NumberField /> prop: name should set the name attribute on the hidden input
+- <NumberField /> prop: onValueChange includes the reason for decrement button presses
+- <NumberField /> prop: onValueChange includes the reason for increment button presses
+- <NumberField /> prop: onValueChange includes the reason for keyboard increments
+- <NumberField /> prop: onValueChange includes the reason for parseable typing
+- <NumberField /> prop: onValueChange includes the reason for wheel scrubbing
+- <NumberField /> prop: onValueChange includes the reason when clearing the value
+- <NumberField /> prop: onValueChange should be called when the value changes
+- <NumberField /> prop: onValueChange should be called with `null` when empty and transitioning from a number
+- <NumberField /> prop: onValueChange should be called with a number when transitioning from `null`
+- <NumberField /> prop: onValueCommitted does not commit a canceled clear on blur
+- <NumberField /> prop: onValueCommitted does not commit a canceled keyboard change
+- <NumberField /> prop: onValueCommitted does not fire on keyboard steps that do not change the value
+- <NumberField /> prop: onValueCommitted does not fire when blurring an untouched empty field
+- <NumberField /> prop: onValueCommitted fires null on blur when input is cleared
+- <NumberField /> prop: onValueCommitted fires on blur with committed numeric value
+- <NumberField /> prop: onValueCommitted fires on keyboard interactions (ArrowUp/Down/Home/End)
+- <NumberField /> prop: onValueCommitted fires once per press-release even after mouseleave/mouseenter during a hold
+- <NumberField /> prop: onValueCommitted fires when using increment/decrement buttons
+- <NumberField /> prop: onValueCommitted includes the correct reason for increment and decrement button presses
+- <NumberField /> prop: onValueCommitted reports and displays the clamped value on blur, not the raw input
+- <NumberField /> prop: onValueCommitted reports and displays the min-clamped value on blur, not the raw input
+- <NumberField /> prop: readOnly does not render aria-readonly on stepper buttons
+- <NumberField /> prop: readOnly keeps focus state in sync on a readOnly field
+- <NumberField /> prop: readOnly should mark the input as readOnly
+- <NumberField /> prop: required should mark the input as required
+- <NumberField /> prop: smallStep should decrement the value by the default `smallStep` prop of 0.1 while holding the alt key
+- <NumberField /> prop: smallStep should increment the value by the default `smallStep` prop of 0.1 while holding the alt key
+- <NumberField /> prop: smallStep should not use the `smallStep` prop if no longer holding the alt key
+- <NumberField /> prop: smallStep should use explicit `smallStep` value if provided while holding the alt key
+- <NumberField /> prop: step defaults to 1
+- <NumberField /> prop: step should decrement the value by the `step` prop
+- <NumberField /> prop: step should increment the value by the `step` prop
+- <NumberField /> prop: step should snap when decrementing to the nearest multiple of the `step` prop
+- <NumberField /> prop: step should snap when incrementing to the nearest multiple of the `step` prop
+- <NumberField /> prop: value should accept a `null` value
+- <NumberField /> prop: value should accept a number value that can change over time
+- <NumberField /> prop: value should accept an `undefined` value
+- <NumberField /> prop: value should be `null` when the input is empty but not trimmed
+- <NumberField /> should allow navigation keys and not prevent their default behavior
+- <NumberField /> typing behavior (parseable changes) accepts currency symbol while typing and parses numeric value
+- <NumberField /> typing behavior (parseable changes) accepts grouping while typing and parses progressively
+- <NumberField /> typing behavior (parseable changes) allows backspace to remove trailing currency symbol that follows a locale literal
+- <NumberField /> typing behavior (parseable changes) allows deleting trailing currency symbols with locale literals
+- <NumberField /> typing behavior (parseable changes) allows typing a decimal while replacing a selection
+- <NumberField /> typing behavior (parseable changes) does not commit on blur for invalid input
+- <NumberField /> typing behavior (parseable changes) does not fire onValueChange for non-numeric composition/partial input
+- <NumberField /> typing behavior (parseable changes) fires onValueChange for each parseable change while typing
+- <NumberField /> typing behavior (parseable changes) handles sign and decimal partials vs. parseable numbers
+- <NumberField /> typing behavior (parseable changes) parses an interleaved percent sign while typing (1%2 -> 12%)
+- <NumberField /> typing behavior (parseable changes) parses percent while typing and commits canonical percent value
+- <NumberField /> typing behavior (parseable changes) respects locale decimal separator while typing (de-DE)

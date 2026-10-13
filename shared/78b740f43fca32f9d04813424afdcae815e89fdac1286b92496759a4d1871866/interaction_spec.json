@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "聚焦输入框",
+    "键入或删除数值",
+    "检查格式化值"
+  ],
+  "expected_fixed": "多字符货币符号不会阻塞输入编辑。",
+  "instance_id": "mui__base-ui-5107",
+  "issue_derived_path": [
+    "聚焦输入框",
+    "键入或删除数值",
+    "检查格式化值"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "多字符货币符号导致输入无法正常编辑。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

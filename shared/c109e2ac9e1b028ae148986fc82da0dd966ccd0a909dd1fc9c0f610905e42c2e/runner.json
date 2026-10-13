@@ -1,0 +1,13 @@
+{
+  "base_commit": "b2f63906a701c4463f66c6ef557eb0a06fb0f36c",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "build_command": "npm run build",
+  "install_command": "npm ci --ignore-scripts --no-audit --no-fund",
+  "instance_id": "shoelace-style__webawesome-2673",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/shoelace-style/webawesome.git",
+  "repository": "shoelace-style/webawesome",
+  "runtime": "Node.js 22; npm lockfile; Chromium Web Test Runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

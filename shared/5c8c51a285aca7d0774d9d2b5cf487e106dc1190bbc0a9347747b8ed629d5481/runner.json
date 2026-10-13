@@ -1,0 +1,14 @@
+{
+  "base_commit": "155e361c6e2910c0b087ccba7cc61541fb50b0a7",
+  "base_image": "node:22",
+  "buggy_commit": "155e361c6e2910c0b087ccba7cc61541fb50b0a7",
+  "build_command": "",
+  "install_command": "corepack yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-8291",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 22",
+  "schema_version": "4.0",
+  "test_command": "corepack yarn jest packages/@react-aria/overlays/test/calculatePosition.test.ts --runInBand"
+}

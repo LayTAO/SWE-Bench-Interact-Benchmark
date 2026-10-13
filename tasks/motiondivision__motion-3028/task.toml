@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/motiondivision__motion-3028"
+version = "0.2.0-candidate"
+description = "[BUG] Layout animations: bouncing occurs when duration is set, and the child size changes"
+
+[metadata]
+instance_id = "motiondivision__motion-3028"
+repository = "motiondivision/motion"
+base_commit = "947bc6b692d471cfca0320b163f0015527b0177f"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f25f08e40ecb5d7c5cebd87d206c7618bb1279bcb26a36931506627f85bc49ec"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:827a72d8e4dfc768ae0ded43fc7e621ff653ed2cf4c5c38097cd31ace21a47f8"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

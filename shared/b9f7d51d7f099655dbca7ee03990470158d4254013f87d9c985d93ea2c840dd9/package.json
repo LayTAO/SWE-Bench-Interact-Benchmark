@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "playwright": "1.58.2"
+  },
+  "name": "interactrepair-radix-4014-private-tooling",
+  "private": true,
+  "type": "module"
+}

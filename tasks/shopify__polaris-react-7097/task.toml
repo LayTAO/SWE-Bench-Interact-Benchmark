@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/shopify__polaris-react-7097"
+version = "0.2.0-candidate"
+description = "[Popover] unintentionally closes parent overlays when `onClick` event propogates"
+
+[metadata]
+instance_id = "shopify__polaris-react-7097"
+repository = "Shopify/polaris-react"
+base_commit = "8e16d15d1249591e9e854ae294ec8ce8ab3e3594"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:02385a5cee8f80661bf9d5cc63abc4831af0ceb0899625418d466325b03f8768"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ff5ae9e55835ff0bf638f4dc51f0f23ee3d793568dd0d8615d75d44e352f6eb0"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

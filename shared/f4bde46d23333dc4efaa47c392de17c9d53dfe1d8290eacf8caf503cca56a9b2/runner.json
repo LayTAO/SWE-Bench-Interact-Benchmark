@@ -1,0 +1,14 @@
+{
+  "base_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b",
+  "base_image": "node:20",
+  "buggy_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b",
+  "build_command": "",
+  "install_command": "corepack yarn install --immutable",
+  "instance_id": "carbon-design-system__carbon-17119",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/carbon-design-system/carbon.git",
+  "repository": "carbon-design-system/carbon",
+  "runtime": "Node.js 20",
+  "schema_version": "4.0",
+  "test_command": "corepack yarn workspace typescript-config-carbon build && corepack yarn workspace @carbon/icons build && if [[ -d packages/icon-helpers ]]; then corepack yarn workspace @carbon/icon-helpers build; fi && corepack yarn workspace @carbon/icons-react build && corepack yarn workspaces foreach --recursive --topological --from @carbon/react --exclude @carbon/react run build && corepack yarn test packages/react/src/components/ComboBox/ComboBox-test.js --runInBand"
+}

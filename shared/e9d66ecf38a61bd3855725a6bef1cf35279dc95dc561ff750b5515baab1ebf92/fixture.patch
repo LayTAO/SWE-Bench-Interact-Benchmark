@@ -1,0 +1,142 @@
+diff --git a/src/dev-app/BUILD.bazel b/src/dev-app/BUILD.bazel
+--- a/src/dev-app/BUILD.bazel
++++ b/src/dev-app/BUILD.bazel
+@@ -180,7 +180,47 @@ http_server(
+     deps = [
+         ":bundles",
+     ],
+ )
++
++ng_project(
++    name = "interactrepair-32661-app",
++    srcs = ["interactrepair-32661-main.ts"],
++    deps = [
++        "//:node_modules/@angular/core",
++        "//:node_modules/@angular/platform-browser",
++        "//src/dev-app/sidenav",
++    ],
++)
++
++esbuild(
++    name = "interactrepair-32661-bundles",
++    srcs = ["//src:build-tsconfig"],
++    bundle = True,
++    config = ":interactrepair-32661-esbuild.config.mjs",
++    entry_points = [":interactrepair-32661-main.js"],
++    platform = "browser",
++    sourcemap = "linked",
++    sources_content = True,
++    target = "es2016",
++    tsconfig = ":interactrepair-32661-tsconfig.json",
++    deps = [
++        ":interactrepair-32661-app",
++        "//src/dev-app/sidenav",
++    ],
++)
++
++filegroup(
++    name = "interactrepair-32661-static",
++    srcs = ["interactrepair-32661-index.html"],
++)
++
++http_server(
++    name = "interactrepair-32661-devserver",
++    srcs = [":interactrepair-32661-static"],
++    additional_root_paths = ["_main/"],
++    tags = ["manual"],
++    deps = [":interactrepair-32661-bundles"],
++)
+ 
+ # Target that builds a static web package of the dev-app. The web package can be
+ # deployed on static hosting services (such as firebase).
+diff --git a/src/dev-app/interactrepair-32661-index.html b/src/dev-app/interactrepair-32661-index.html
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-32661-index.html
+@@ -0,0 +1,13 @@
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1" />
++    <title>Angular components 32661 minimal reproduction</title>
++    <link rel="icon" href="data:," />
++  </head>
++  <body>
++    <interactrepair-32661-repro>Loading reproduction...</interactrepair-32661-repro>
++    <script src="interactrepair-32661-bundles/interactrepair-32661-main.js" type="module"></script>
++  </body>
++</html>
+diff --git a/src/dev-app/interactrepair-32661-esbuild.config.mjs b/src/dev-app/interactrepair-32661-esbuild.config.mjs
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-32661-esbuild.config.mjs
+@@ -0,0 +1,9 @@
++export default {
++  alias: {
++    '@angular/cdk': './src/cdk',
++    '@angular/material': './src/material',
++  },
++  conditions: ['ng-linked', 'module'],
++  resolveExtensions: ['.js'],
++  tsconfig: import.meta.dirname + '/interactrepair-32661-tsconfig.json',
++};
+diff --git a/src/dev-app/interactrepair-32661-main.ts b/src/dev-app/interactrepair-32661-main.ts
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-32661-main.ts
+@@ -0,0 +1,8 @@
++import {provideZonelessChangeDetection} from '@angular/core';
++import {bootstrapApplication} from '@angular/platform-browser';
++
++import {InteractRepair32661Repro} from './sidenav/interactrepair-32661-repro';
++
++bootstrapApplication(InteractRepair32661Repro, {
++  providers: [provideZonelessChangeDetection()],
++});
+diff --git a/src/dev-app/sidenav/interactrepair-32661-repro.ts b/src/dev-app/sidenav/interactrepair-32661-repro.ts
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/sidenav/interactrepair-32661-repro.ts
+@@ -0,0 +1,27 @@
++import {ChangeDetectionStrategy, Component} from '@angular/core';
++import {MatSidenavModule} from '../../material/sidenav/sidenav-module';
++
++@Component({
++  selector: 'interactrepair-32661-repro',
++  standalone: true,
++  imports: [MatSidenavModule],
++  changeDetection: ChangeDetectionStrategy.OnPush,
++  template: `
++    <main id="interactrepair-focus-trap-fixture">
++      <h1>Side drawer focus-trap reproduction</h1>
++      <p>A closed over-mode sibling must not make the open side drawer trap focus.</p>
++      <mat-sidenav-container style="display:block;height:260px;border:1px solid #444">
++        <mat-sidenav opened mode="side">
++          <button id="interactrepair-inside-button" type="button">Button inside side drawer</button>
++        </mat-sidenav>
++        <mat-sidenav mode="over" position="end">
++          Closed over drawer
++        </mat-sidenav>
++        <mat-sidenav-content>
++          <button id="interactrepair-outside-button" type="button">Button in page content</button>
++        </mat-sidenav-content>
++      </mat-sidenav-container>
++    </main>
++  `,
++})
++export class InteractRepair32661Repro {}
+diff --git a/src/dev-app/interactrepair-32661-tsconfig.json b/src/dev-app/interactrepair-32661-tsconfig.json
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-32661-tsconfig.json
+@@ -0,0 +1,9 @@
++{
++  "compilerOptions": {
++    "baseUrl": "../../../../..",
++    "paths": {
++      "@angular/cdk/*": ["src/cdk/*"],
++      "@angular/material/*": ["src/material/*"]
++    }
++  }
++}

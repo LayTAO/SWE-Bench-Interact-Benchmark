@@ -1,0 +1,24 @@
+{
+  "FAIL_TO_PASS": [
+    "ContextMenu given submenu user when using pointer should close open submenus and reopen the root menu when right clicking trigger"
+  ],
+  "PASS_TO_PASS": [
+    "ContextMenu given submenu user when using pointer should open submenu and not focus first item when moving pointer over trigger",
+    "ContextMenu given submenu user when using pointer should not close when moving pointer to submenu and back to parent trigger",
+    "ContextMenu given submenu user when using pointer should close submenu when moving pointer away but remain open when moving towards",
+    "ContextMenu given submenu user when using pointer should close open submenu when moving pointer to any item in parent menu",
+    "ContextMenu given submenu user when using pointer should close unassociated submenus when moving pointer back to the root trigger",
+    "ContextMenu given submenu user when using pointer should close all menus when clicking item in any menu, or clicking outside",
+    "ContextMenu given submenu user When using keyboard should not open submenu when moving focus to trigger",
+    "ContextMenu given submenu user When using keyboard should open submenu and focus first item when pressing right arrow, enter or space key",
+    "ContextMenu given submenu user When using keyboard should close only the focused submenu when pressing left arrow key",
+    "ContextMenu given submenu user When using keyboard should focus first item when pressing right arrow key after opening submenu with mouse",
+    "ContextMenu given submenu user When using keyboard should close all menus when pressing escape, enter or space key on any item",
+    "ContextMenu given submenu user When using keyboard should scope typeahead behaviour to the active menu",
+    "ContextMenu given submenu user When using pointer in RTL should close submenu when pointer moves away but remain open when moving towards",
+    "ContextMenu given submenu user When using keyboard in RTL should open submenu and focus first item when pressing left arrow key but close when pressing right arrow key"
+  ],
+  "base_commit": "ddde23eaf8d143340f2bd61cc3212e29ba17bef9",
+  "instance_id": "radix-ui__primitives-1287",
+  "schema_version": "4.0"
+}

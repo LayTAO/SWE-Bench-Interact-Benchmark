@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@ariakit/react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@vitejs/plugin-react": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "test": "playwright test"
+  },
+  "type": "module"
+}

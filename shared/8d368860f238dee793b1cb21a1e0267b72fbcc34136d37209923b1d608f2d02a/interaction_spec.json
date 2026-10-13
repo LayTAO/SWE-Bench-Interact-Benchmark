@@ -1,0 +1,40 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Scroll the shell to 430.",
+    "Click Click to upload.",
+    "Read scrollTop, geometry and focus."
+  ],
+  "checkpoints": [
+    "Upload remains visible before click.",
+    "Hidden accessibility button is outside the shell viewport.",
+    "Buggy jumps the ancestor by more than 100px; Fixed does not."
+  ],
+  "expected_fixed_state": {
+    "active_label": "DropZone",
+    "bug_observed": false,
+    "scroll_delta_max": 1
+  },
+  "instance_id": "adobe__react-spectrum-10092",
+  "observation_channels": [
+    "scrollTop",
+    "DOM geometry",
+    "focus",
+    "ARIA label",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "active_label": "DropZone",
+    "bug_observed": true,
+    "scroll_delta_min": 100
+  },
+  "preconditions": [
+    "The DropZone upload button is visible inside a positioned scrollable ancestor."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The shell is scrolled so the visually hidden DropZone button is above the viewport while upload remains visible.",
+    "The user clicks FileTrigger upload.",
+    "Scroll delta and active DropZone button are observed."
+  ]
+}

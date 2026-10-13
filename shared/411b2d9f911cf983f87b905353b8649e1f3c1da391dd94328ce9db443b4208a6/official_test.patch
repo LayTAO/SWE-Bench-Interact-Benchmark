@@ -1,0 +1,23 @@
+diff --git a/packages/react-aria-components/test/DropZone.test.js b/packages/react-aria-components/test/DropZone.test.js
+index 875db5ba8b8..427fe21dd83 100644
+--- a/packages/react-aria-components/test/DropZone.test.js
++++ b/packages/react-aria-components/test/DropZone.test.js
+@@ -420,6 +420,18 @@ describe('DropZone', () => {
+         await user.click(button);
+         expect(document.activeElement).toBe(button);
+       });
++
++      it('should support custom styles on the visually hidden drop button wrapper', () => {
++        let {getByRole} = render(
++          <DropZone dropButtonStyle={{position: 'fixed', top: 0, left: 0}} />
++        );
++
++        expect(getByRole('button').parentElement).toHaveStyle({
++          position: 'fixed',
++          top: '0px',
++          left: '0px'
++        });
++      });
+     });
+ 
+     describe('via keyboard', function () {

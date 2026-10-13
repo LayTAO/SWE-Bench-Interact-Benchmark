@@ -1,0 +1,28 @@
+{
+  "FAIL_TO_PASS": [
+    " MultiSelect.vue option group validation should handle empty group data correctly",
+    " MultiSelect.vue option group validation should handle mixed data (groups and regular options) correctly",
+    " MultiSelect.vue option group validation should handle mixed data with empty groups correctly",
+    " MultiSelect.vue option group validation should handle optionGroupLabel set with non-grouped data correctly",
+    " MultiSelect.vue option group validation should not treat options as groups when optionGroupLabel is not set",
+    " MultiSelect.vue option group validation should reproduce the original bug scenario"
+  ],
+  "PASS_TO_PASS": [
+    " MultiSelect.vue custom icons should have custom checkbox icons",
+    " MultiSelect.vue custom icons should have custom chip remove icon",
+    " MultiSelect.vue custom icons should have custom dropdown icon",
+    " MultiSelect.vue custom icons should have custom filter icon",
+    " MultiSelect.vue grouped should show emit the filter event when filter text is entered",
+    " MultiSelect.vue grouped should show group labels",
+    " MultiSelect.vue grouped should show relevant group labels for filtered items",
+    " MultiSelect.vue option group validation should correctly identify actual group data",
+    " MultiSelect.vue should chip work",
+    " MultiSelect.vue should exist",
+    " MultiSelect.vue should select an item",
+    " MultiSelect.vue should select multiple item",
+    " PrimeVue.vue should exist"
+  ],
+  "base_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b",
+  "instance_id": "primefaces__primevue-8100",
+  "schema_version": "4.0"
+}

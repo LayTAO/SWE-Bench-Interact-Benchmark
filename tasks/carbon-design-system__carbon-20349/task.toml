@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/carbon-design-system__carbon-20349"
+version = "0.2.0-candidate"
+description = "[Bug]: Menu overlay positioning issue - content appears behind other elements"
+
+[metadata]
+instance_id = "carbon-design-system__carbon-20349"
+repository = "carbon-design-system/carbon"
+base_commit = "f7f4794017bd2fd915a6fda1572b28bb147b5e37"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ef9874b0661aae8d5e984e81787826b29a18230865339b7fe044578c8ece23bf"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c9b5b36abf956de356cbd4ec9844313983a0e6fe98c2db58949c3305e51dab3a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

@@ -1,0 +1,7 @@
+Provenance: exact upstream PR #4948 browser-test projection, executed with the repository Vitest runner and Chromium Playwright provider.
+Repository test file: packages/react/src/combobox/root/ComboboxRoot.test.tsx
+Environment: Chromium, workers=1, retries=0, no-file-parallelism.
+Selected assertions (F2P followed by P2P):
+- <Combobox.Root /> prop: grid moves the input caret on ArrowLeft when no item is highlighted in grid mode
+- <Combobox.Root /> prop: grid moves the input caret on ArrowRight when no item is highlighted in grid mode
+- <Combobox.Root /> prop: grid keeps grid navigation when autoHighlight surfaces an item before typing arrow keys

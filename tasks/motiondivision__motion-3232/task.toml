@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/motiondivision__motion-3232"
+version = "0.2.0-candidate"
+description = "[BUG] CSS calc() with division transitions incorrectly to zero"
+
+[metadata]
+instance_id = "motiondivision__motion-3232"
+repository = "motiondivision/motion"
+base_commit = "fa398ade6d882d488e8db9b22e25aff71672b6a3"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5b9084f787af9529ff2daba4a83f4acbc1b80b7c5739af7676ca68896629e4f0"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:fdd29a7620c5991a9579ff664bc86ce59213cbc308d1193fa4438b679c06c258"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

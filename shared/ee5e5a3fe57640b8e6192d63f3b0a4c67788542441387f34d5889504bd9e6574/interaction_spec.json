@@ -1,0 +1,75 @@
+{
+  "expected_fixed_state": {
+    "initially_visible": true,
+    "menu_open_after_scroll": true,
+    "scroll_triggered": true
+  },
+  "instance_id": "vuetifyjs__vuetify-22850",
+  "observation_channels": [
+    "overlay visibility",
+    "listbox visibility",
+    "scroll event and scroll offset",
+    "input/list geometry",
+    "page errors",
+    "console errors"
+  ],
+  "observed_buggy_state": {
+    "initially_visible": true,
+    "menu_open_after_scroll": false,
+    "scroll_triggered": true
+  },
+  "preconditions": [
+    "The exact Vuetify 3 subject state is mounted read-only.",
+    "A VAutocomplete has 200 items, a bounded menu, and menu transition disabled.",
+    "The menu content is tall enough to use the repository virtual-scroll path."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #22850 report: open the dropdown, then scroll by mouse wheel while menu transition is disabled",
+  "states": [
+    {
+      "actions": [
+        "Load the source-backed minimal app."
+      ],
+      "checkpoints": [
+        "The source component and field have valid geometry and the page has no errors."
+      ],
+      "name": "ready"
+    },
+    {
+      "actions": [
+        "Click the VAutocomplete input."
+      ],
+      "checkpoints": [
+        "The listbox is visible and the overlay has plausible geometry."
+      ],
+      "name": "opened"
+    },
+    {
+      "actions": [
+        "Move the pointer over the visible list and verify its scrollable geometry."
+      ],
+      "checkpoints": [
+        "The target has client height, scroll height, and a visible virtualized list."
+      ],
+      "name": "scrollable"
+    },
+    {
+      "actions": [
+        "Use the mouse wheel over the list until a scroll event and positive scroll offset are observed."
+      ],
+      "checkpoints": [
+        "The required user interaction occurred rather than only a script-side mutation."
+      ],
+      "name": "scrolled"
+    },
+    {
+      "actions": [
+        "Observe the overlay after scrolling."
+      ],
+      "checkpoints": [
+        "Fixed keeps the menu open; Buggy closes the menu."
+      ],
+      "name": "result"
+    }
+  ]
+}

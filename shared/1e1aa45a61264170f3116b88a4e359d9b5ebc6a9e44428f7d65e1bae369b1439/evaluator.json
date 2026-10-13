@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "MenuTrigger sub dialogs unavailable item shows selection state for available ContextualHelpTrigger items"
+  ],
+  "PASS_TO_PASS": [
+    "MenuTrigger MenuTrigger supports a controlled open state"
+  ],
+  "base_commit": "307b71c61074c33fae6e9eb79d3d29b9c83150a0",
+  "instance_id": "adobe__react-spectrum-8871",
+  "schema_version": "4.0"
+}

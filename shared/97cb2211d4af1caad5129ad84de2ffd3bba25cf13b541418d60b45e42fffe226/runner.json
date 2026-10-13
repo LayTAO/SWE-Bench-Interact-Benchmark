@@ -1,0 +1,12 @@
+{
+  "base_commit": "b03cee20bf9aa04a9f70ec2f7a1dc7251fa8938a",
+  "base_image": "public.ecr.aws/docker/library/node:20-bookworm",
+  "install_command": "npm ci --cache /npm-cache --prefer-offline --no-audit --no-fund",
+  "instance_id": "sage__carbon-6841",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/Sage/carbon.git",
+  "repository": "Sage/carbon",
+  "runtime": "public.ecr.aws/docker/library/node:20-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

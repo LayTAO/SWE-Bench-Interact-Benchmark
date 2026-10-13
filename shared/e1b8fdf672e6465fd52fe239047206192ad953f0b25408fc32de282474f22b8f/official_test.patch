@@ -1,0 +1,143 @@
+diff --git a/packages/core/src/Combobox/Combobox.test.ts b/packages/core/src/Combobox/Combobox.test.ts
+index cea2607d..62dfbd49 100644
+--- a/packages/core/src/Combobox/Combobox.test.ts
++++ b/packages/core/src/Combobox/Combobox.test.ts
+@@ -6,6 +6,7 @@ import { nextTick } from 'vue'
+ import { handleSubmit, sleep } from '@/test'
+ import Combobox from './story/_Combobox.vue'
+ import ComboboxObject from './story/_ComboboxObject.vue'
++import ComboboxTagsInput from './story/_ComboboxTagsInput.vue'
+ 
+ describe('given default Combobox', () => {
+   let wrapper: VueWrapper<InstanceType<typeof Combobox>>
+@@ -403,3 +404,57 @@ describe('given combobox in a form', async () => {
+     })
+   })
+ })
++
++describe('given Combobox with TagsInput and addOnBlur', () => {
++  let wrapper: VueWrapper<InstanceType<typeof ComboboxTagsInput>>
++  let input: DOMWrapper<HTMLInputElement>
++
++  beforeEach(() => {
++    document.body.innerHTML = ''
++    wrapper = mount(ComboboxTagsInput, {
++      props: { addOnBlur: true },
++      attachTo: document.body,
++    })
++    input = wrapper.find('input')
++  })
++
++  it('should select the combobox item instead of adding raw input text as tag', async () => {
++    // Focus input and type "a" to filter
++    input.element.focus()
++    await input.setValue('a')
++    await nextTick()
++
++    // Simulate the blur that happens when clicking an option (jsdom doesn't do this automatically)
++    const option = wrapper.find('[role=option]')
++    expect(option.text()).toContain('Apple')
++
++    // In a real browser: mousedown on option → input blurs → click fires
++    await input.trigger('blur', { relatedTarget: option.element })
++    await option.trigger('click')
++    await nextTick()
++
++    // "Apple" should be added as tag, NOT the raw text "a"
++    const tags = wrapper.findAll('[data-reka-collection-item]')
++    const tagTexts = tags.map(t => t.text())
++    expect(tagTexts).toContain('Apple')
++    expect(tagTexts).not.toContain('a')
++  })
++
++  it('should refocus input after selecting in multiple mode', async () => {
++    // Focus input and open dropdown
++    input.element.focus()
++    await input.setValue('a')
++    await nextTick()
++
++    const option = wrapper.find('[role=option]')
++
++    // In a real browser, mousedown on option blurs the input.
++    // Simulate this: blur the input, then click the option.
++    input.element.blur()
++    await option.trigger('click')
++    await nextTick()
++
++    // Input should be refocused so subsequent blur can trigger addOnBlur
++    expect(document.activeElement).toBe(input.element)
++  })
++})
+diff --git a/packages/core/src/Combobox/story/_ComboboxTagsInput.vue b/packages/core/src/Combobox/story/_ComboboxTagsInput.vue
+new file mode 100644
+index 00000000..a940877b
+--- /dev/null
++++ b/packages/core/src/Combobox/story/_ComboboxTagsInput.vue
+@@ -0,0 +1,67 @@
++<script setup lang="ts">
++import { computed, ref } from 'vue'
++import { useFilter } from '@/shared'
++import { TagsInputInput, TagsInputItem, TagsInputItemText, TagsInputRoot } from '@/TagsInput'
++import { ComboboxAnchor, ComboboxContent, ComboboxGroup, ComboboxInput, ComboboxItem, ComboboxRoot, ComboboxViewport } from '..'
++
++const props = withDefaults(defineProps<{
++  addOnBlur?: boolean
++}>(), {
++  addOnBlur: false,
++})
++
++const { contains } = useFilter({ sensitivity: 'base' })
++
++const query = ref('')
++const values = ref<string[]>([])
++const options = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']
++
++const filteredOptions = computed(() => options.filter(option => contains(option, query.value) && !values.value.includes(option)))
++</script>
++
++<template>
++  <ComboboxRoot
++    v-model="values"
++    multiple
++  >
++    <ComboboxAnchor>
++      <TagsInputRoot
++        v-slot="{ modelValue: tags }"
++        v-model="values"
++        :add-on-blur="props.addOnBlur"
++        delimiter=""
++      >
++        <TagsInputItem
++          v-for="(item, index) in tags"
++          :key="index"
++          :value="item"
++        >
++          <TagsInputItemText />
++        </TagsInputItem>
++
++        <ComboboxInput
++          v-model="query"
++          as-child
++        >
++          <TagsInputInput
++            placeholder="Fruits..."
++            @keydown.enter.prevent
++          />
++        </ComboboxInput>
++      </TagsInputRoot>
++    </ComboboxAnchor>
++    <ComboboxContent>
++      <ComboboxViewport>
++        <ComboboxGroup>
++          <ComboboxItem
++            v-for="(option, index) in filteredOptions"
++            :key="index"
++            :value="option"
++          >
++            <span>{{ option }}</span>
++          </ComboboxItem>
++        </ComboboxGroup>
++      </ComboboxViewport>
++    </ComboboxContent>
++  </ComboboxRoot>
++</template>

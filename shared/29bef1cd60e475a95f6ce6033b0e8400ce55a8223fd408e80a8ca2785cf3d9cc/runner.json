@@ -1,0 +1,14 @@
+{
+  "base_commit": "d3df6924e3892d6ebded7000efdaf3fce1f8f7ae",
+  "base_image": "public.ecr.aws/docker/library/node:22-bookworm",
+  "buggy_commit": "d3df6924e3892d6ebded7000efdaf3fce1f8f7ae",
+  "build_command": "",
+  "install_command": "corepack pnpm install --frozen-lockfile",
+  "instance_id": "unovue__reka-ui-2660",
+  "package_manager": "pnpm 10.13.1",
+  "repo_url": "https://github.com/unovue/reka-ui.git",
+  "repository": "unovue/reka-ui",
+  "runtime": "Node.js 22; repository-locked Vitest; jsdom",
+  "schema_version": "4.0",
+  "test_command": "pnpm --filter reka-ui exec vitest run src/Dialog/Dialog.test.ts --reporter=json"
+}

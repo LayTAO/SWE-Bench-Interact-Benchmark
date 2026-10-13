@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "should not clear selection when beingselected is prevented"
+  ],
+  "PASS_TO_PASS": [
+    "should render"
+  ],
+  "base_commit": "f4aeceacca48b74cdd67bbd85f78e1da5459cda5",
+  "instance_id": "carbon-design-system__carbon-21872",
+  "schema_version": "4.0"
+}

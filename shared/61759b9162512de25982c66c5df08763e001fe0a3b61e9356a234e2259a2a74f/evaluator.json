@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "handles maximumDays > a11y > should pass axe accessibility tests when closed"
+  ],
+  "PASS_TO_PASS": [
+    "should pass axe accessibility tests"
+  ],
+  "base_commit": "f69fe293675a6f71f4663a734891e1b2952722f3",
+  "instance_id": "unovue__reka-ui-2261",
+  "schema_version": "4.0"
+}

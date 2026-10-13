@@ -1,0 +1,31 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "third_party_overlay_active == true",
+      "dialog_lock_handoff_completed == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Dialog.Root /> external scroll lock handoff when a third-party overlay is still unlocking 'Ariakit, via <html> overflow longhands' keeps the page locked until it takes over, and unlocks on close",
+      "<Dialog.Root /> external scroll lock handoff when a third-party overlay is still unlocking 'silk-hq, via the <body> overflow shor…' keeps the page locked until it takes over, and unlocks on close"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "scroll lock handoff 不会错误解锁或遗留页面锁定。"
+  },
+  "instance_id": "mui__base-ui-4640",
+  "predicate_id": "mui_dialog_scroll_lock_handoff_preserves_page_lock",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "打开第三方 overlay",
+    "打开 Dialog",
+    "关闭并检查页面锁定"
+  ]
+}

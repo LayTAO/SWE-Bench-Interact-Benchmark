@@ -1,0 +1,11 @@
+{
+  "base_commit": "08e9ba68ab42b306d4fcc5d7ba998e7b936bc23c",
+  "base_image": "pending",
+  "install_command": "frozen lockfile install with repository package manager",
+  "instance_id": "mui__base-ui-4947",
+  "package_manager": "pnpm@10.32.1",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "official test selection from the PR test projection"
+}

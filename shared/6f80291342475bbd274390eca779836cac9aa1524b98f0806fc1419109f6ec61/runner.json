@@ -1,0 +1,12 @@
+{
+  "base_commit": "f847cd08b59ec7aa42b5f8bdd6b456738b9497ed",
+  "base_image": "public.ecr.aws/docker/library/node:16-bullseye",
+  "install_command": "export YARN_CACHE_FOLDER=/yarn-cache; yarn --version && yarn install --frozen-lockfile --non-interactive --ignore-engines --ignore-scripts",
+  "instance_id": "adobe__react-spectrum-2181",
+  "package_manager": "image-provided-yarn-classic",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "public.ecr.aws/docker/library/node:16-bullseye; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

@@ -1,0 +1,57 @@
+{
+  "expected_fixed_state": {
+    "listbox_visible": true,
+    "on_open_count": 1,
+    "option_count": 3
+  },
+  "instance_id": "sage__carbon-6841",
+  "observation_channels": [
+    "focus",
+    "listbox visibility",
+    "option count",
+    "onOpen event count",
+    "textbox geometry",
+    "page errors"
+  ],
+  "observed_buggy_state": {
+    "listbox_visible": false,
+    "on_open_count": 0,
+    "option_count": 0
+  },
+  "preconditions": [
+    "The exact Sage Carbon subject state is mounted read-only.",
+    "A three-option MultiSelect is visible with the placeholder Please select.",
+    "The listbox is initially closed and onOpen has not fired."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #6841 report",
+  "states": [
+    {
+      "actions": [
+        "Load the source-backed minimal app."
+      ],
+      "checkpoints": [
+        "The textbox has a plausible visible rectangle."
+      ],
+      "name": "ready"
+    },
+    {
+      "actions": [
+        "Click the visible text-entry area rather than the arrow."
+      ],
+      "checkpoints": [
+        "The textbox receives focus and the interaction completes."
+      ],
+      "name": "textbox_clicked"
+    },
+    {
+      "actions": [
+        "Observe the listbox and onOpen callback."
+      ],
+      "checkpoints": [
+        "The listbox is visible with three options and onOpen fired exactly once."
+      ],
+      "name": "open_result"
+    }
+  ]
+}

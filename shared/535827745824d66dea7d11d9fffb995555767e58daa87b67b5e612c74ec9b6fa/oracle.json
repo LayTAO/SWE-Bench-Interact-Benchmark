@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "named_assertion": "Should not hide modal when keyboard is false",
+    "outcome": "fail"
+  },
+  "environment_gate": [
+    "Karma connects to ChromeHeadless",
+    "the test suite discovers the named assertion"
+  ],
+  "expected": {
+    "named_assertion": "Should not hide modal when keyboard is false",
+    "outcome": "pass"
+  },
+  "instance_id": "react-bootstrap__react-bootstrap-6514",
+  "schema_version": "1.0",
+  "subject_only_difference": true,
+  "trigger_gate": [
+    "the test opens the Modal before pressing Escape"
+  ]
+}

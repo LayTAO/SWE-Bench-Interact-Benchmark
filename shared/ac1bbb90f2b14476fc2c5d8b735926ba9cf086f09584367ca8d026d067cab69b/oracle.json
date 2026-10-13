@@ -1,0 +1,42 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "child_click_fired == true",
+      "ancestor_click_count == 0"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<Checkbox.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called",
+      "<Checkbox.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button",
+      "<Checkbox.Root /> prop: onClick propagates a single click event to ancestors per user click",
+      "<Checkbox.Root /> prop: onClick propagates a single click event to ancestors with a native button",
+      "<Radio.Root /> prop: onClick does not propagate a click to ancestors when selecting with arrow keys",
+      "<Radio.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called",
+      "<Radio.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button",
+      "<Radio.Root /> prop: onClick propagates a single click event to ancestors per user click",
+      "<Radio.Root /> prop: onClick propagates a single click event to ancestors with a native button",
+      "<Switch.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called",
+      "<Switch.Root /> prop: onClick does not propagate to ancestors when stopPropagation() is called with a native button",
+      "<Switch.Root /> prop: onClick propagates a single click event to ancestors per user click",
+      "<Switch.Root /> prop: onClick propagates a single click event to ancestors with a native button"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "stopPropagation 会阻止祖先收到 Checkbox 点击事件。"
+  },
+  "instance_id": "mui__base-ui-5175",
+  "predicate_id": "mui_checkbox_onclick_stop_propagation_is_honored",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "点击控件",
+    "调用 stopPropagation",
+    "检查祖先 click 计数"
+  ]
+}

@@ -1,0 +1,1 @@
+:root{font-family:system-ui,sans-serif;color:#17202a;background:#fff}body{margin:0;padding:32px}main{max-width:760px;margin:auto}h1{font-size:24px;margin:0 0 24px}button{margin:8px;padding:8px 12px} [role=tablist]{display:flex;gap:4px} [role=tab]{border:1px solid #aaa;background:#eee} [role=tab][data-focused]{outline:3px solid #2684ff}

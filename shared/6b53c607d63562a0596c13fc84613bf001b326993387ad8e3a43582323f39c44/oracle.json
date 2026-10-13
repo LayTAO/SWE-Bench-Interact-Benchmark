@@ -1,0 +1,31 @@
+{
+  "bug_predicate": {
+    "all": [
+      "cases.length == 3",
+      "cases.every(environment_valid && rendering_valid && trigger_valid)",
+      "cases.some(bug_observed == true)"
+    ]
+  },
+  "environment_gate": [
+    "independent page imports candidate source",
+    "three real Playwright tests execute with zero retries",
+    "no page errors"
+  ],
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    },
+    "fixed_state": "Automatically adjusted endpoints remain on enabled dates."
+  },
+  "instance_id": "element-plus__element-plus-24075",
+  "predicate_id": "element_date_picker_disabled_range_converges_without_disabled_dates",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "date input is edited through the browser",
+    "model update event observed",
+    "edited endpoint matches typed date"
+  ]
+}

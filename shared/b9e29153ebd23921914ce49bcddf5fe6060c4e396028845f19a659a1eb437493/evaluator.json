@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "<Collapsible.Panel /> prop: keepMounted hides the panel after external controlled close when true and no animations are applied"
+  ],
+  "PASS_TO_PASS": [
+    "<Collapsible.Panel /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX",
+    "<Collapsible.Panel /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function",
+    "<Collapsible.Panel /> Base UI component API prop forwarding forwards custom props to the default element",
+    "<Collapsible.Panel /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component",
+    "<Collapsible.Panel /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function",
+    "<Collapsible.Panel /> Base UI component API prop: className should apply the className when passed as a string",
+    "<Collapsible.Panel /> Base UI component API prop: render renders a customized root element with a function",
+    "<Collapsible.Panel /> Base UI component API prop: render renders a customized root element with an element",
+    "<Collapsible.Panel /> Base UI component API prop: render should merge the rendering element className with the custom component className",
+    "<Collapsible.Panel /> Base UI component API prop: render should merge the rendering element ref with the custom component ref",
+    "<Collapsible.Panel /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className",
+    "<Collapsible.Panel /> Base UI component API prop: render should pass the ref to the custom component",
+    "<Collapsible.Panel /> Base UI component API ref attaches the ref",
+    "<Collapsible.Panel /> prop: hiddenUntilFound uses `hidden=\"until-found\" to hide panel when true",
+    "<Collapsible.Panel /> prop: keepMounted does not unmount the panel when true"
+  ],
+  "base_commit": "78f5bba616d1d2df883d8668309336644afd3dc5",
+  "instance_id": "mui__base-ui-4553",
+  "schema_version": "4.0"
+}

@@ -1,0 +1,102 @@
+diff --git a/packages/core/src/Menu/Menu.test.ts b/packages/core/src/Menu/Menu.test.ts
+index fd978289e271d0b7249808728a14e2bbdfd80c7d..ae9801819f09926eed3d46b94d95b00bde44c031 100644
+--- a/packages/core/src/Menu/Menu.test.ts
++++ b/packages/core/src/Menu/Menu.test.ts
+@@ -5,6 +5,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
+ import { axe } from 'vitest-axe'
+ import { nextTick } from 'vue'
+ import Menu from './story/_Menu.vue'
++import MenuWithSubmenu from './story/_MenuWithSubmenu.vue'
+ 
+ describe('given a default Menu', () => {
+   globalThis.ResizeObserver = class ResizeObserver {
+@@ -60,3 +61,34 @@ describe('given a default Menu', () => {
+     })
+   })
+ })
++
++describe('given a Menu with submenu', () => {
++  globalThis.ResizeObserver = class ResizeObserver {
++    observe() {}
++    unobserve() {}
++    disconnect() {}
++  }
++  beforeEach(() => {
++    document.body.innerHTML = ''
++    mount(MenuWithSubmenu, {
++      attachTo: document.body,
++    })
++  })
++
++  it('should highlight sub trigger on pointermove', async () => {
++    const allItems = await findAllByRole(document.body, 'menuitem')
++    const subTrigger = allItems.find(el => el.getAttribute('aria-haspopup') === 'menu')!
++    expect(subTrigger).toBeTruthy()
++
++    // Simulate pointermove (mouse) on the sub trigger
++    // jsdom doesn't support PointerEvent, so we use MouseEvent with pointerType
++    const pointerMoveEvent = new MouseEvent('pointermove', {
++      bubbles: true,
++    })
++    Object.defineProperty(pointerMoveEvent, 'pointerType', { value: 'mouse' })
++    subTrigger.dispatchEvent(pointerMoveEvent)
++    await nextTick()
++
++    expect(subTrigger.hasAttribute('data-highlighted')).toBe(true)
++  })
++})
+diff --git a/packages/core/src/Menu/story/_MenuWithSubmenu.vue b/packages/core/src/Menu/story/_MenuWithSubmenu.vue
+new file mode 100644
+index 0000000000000000000000000000000000000000..476f52ad8a050e4bf0cca9c008140f12623ab342
+--- /dev/null
++++ b/packages/core/src/Menu/story/_MenuWithSubmenu.vue
+@@ -0,0 +1,49 @@
++<script setup lang="ts">
++import {
++  MenuAnchor,
++  MenuContent,
++  MenuItem,
++  MenuPortal,
++  MenuRoot,
++  MenuSub,
++  MenuSubContent,
++  MenuSubTrigger,
++} from '..'
++</script>
++
++<template>
++  <MenuRoot
++    :open="true"
++    :modal="false"
++  >
++    <MenuAnchor :style="{ display: 'inline-block' }" />
++    <MenuPortal disabled>
++      <MenuContent
++        align="start"
++        @close-auto-focus.prevent
++      >
++        <MenuItem>
++          Item 1
++        </MenuItem>
++        <MenuSub>
++          <MenuSubTrigger>
++            Sub Trigger
++          </MenuSubTrigger>
++          <MenuPortal disabled>
++            <MenuSubContent>
++              <MenuItem>
++                Sub Item 1
++              </MenuItem>
++              <MenuItem>
++                Sub Item 2
++              </MenuItem>
++            </MenuSubContent>
++          </MenuPortal>
++        </MenuSub>
++        <MenuItem>
++          Item 2
++        </MenuItem>
++      </MenuContent>
++    </MenuPortal>
++  </MenuRoot>
++</template>

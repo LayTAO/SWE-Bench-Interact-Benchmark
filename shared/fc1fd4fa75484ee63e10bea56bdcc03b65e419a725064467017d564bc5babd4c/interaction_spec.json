@@ -1,0 +1,41 @@
+{
+  "actions": [
+    "Load the page and wait for the semantic oracle-ready marker.",
+    "Locate the portaled input by test id.",
+    "Dispatch cancelable Space and Enter keydown events.",
+    "Read event results and page errors."
+  ],
+  "checkpoints": [
+    "The menu and portaled input are visible.",
+    "Both key events are dispatched to the input.",
+    "The final event results are recorded."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "enter_default_prevented": false,
+    "space_default_prevented": false
+  },
+  "instance_id": "radix-ui__primitives-3232",
+  "observation_channels": [
+    "DOM",
+    "keyboard event",
+    "defaultPrevented",
+    "dispatchEvent",
+    "console"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "enter_default_prevented": true,
+    "space_default_prevented": true
+  },
+  "preconditions": [
+    "The exact DropdownMenu source renders open.",
+    "The portaled input and menu are visible without page errors."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The menu is open with a portaled input.",
+    "Cancelable Space and Enter keydown events are dispatched to that input.",
+    "The default-prevented and dispatch results are observed."
+  ]
+}

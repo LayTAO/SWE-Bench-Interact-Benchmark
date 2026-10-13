@@ -1,0 +1,41 @@
+{
+  "expected_fixed_state": {
+    "disabled": "both attributes present",
+    "enabled_again": "both attributes absent"
+  },
+  "instance_id": "unovue__reka-ui-2644",
+  "observation_channels": [
+    "DOM attributes",
+    "option geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "dom_attributes": "stale after a reactive change"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A reactive enabled ListboxItem is visible."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2644 interaction",
+  "states": [
+    {
+      "actions": [
+        "Toggle disabled to true."
+      ],
+      "checkpoints": [
+        "Record data-disabled and disabled attributes."
+      ],
+      "name": "disable"
+    },
+    {
+      "actions": [
+        "Toggle disabled back to false."
+      ],
+      "checkpoints": [
+        "Record both attributes again."
+      ],
+      "name": "enable"
+    }
+  ]
+}

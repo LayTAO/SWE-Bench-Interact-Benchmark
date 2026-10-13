@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "narrow_truncated == true",
+      "narrow_tabindex != 0"
+    ]
+  },
+  "environment_gate": [
+    "narrow and wide geometry are non-zero and Tooltip component loaded"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "fixed_narrow_tabindex": 0,
+    "fixed_tooltip_visible_after_focus": true,
+    "fixed_wide_tabindex": null
+  },
+  "instance_id": "patternfly__patternfly-react-11384",
+  "predicate_id": "truncated_content_is_keyboard_focusable",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "focus was reached through the keyboard navigation path"
+  ]
+}

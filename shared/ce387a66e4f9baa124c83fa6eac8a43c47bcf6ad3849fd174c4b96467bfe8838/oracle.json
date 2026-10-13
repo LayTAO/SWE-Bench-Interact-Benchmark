@@ -1,0 +1,23 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "hovered == true",
+      "notification_present_after_auto_close == false"
+    ]
+  },
+  "environment_gate": [
+    "notification DOM and hover state are observable"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_notification_present_after_auto_close": false,
+    "fixed_notification_present_after_auto_close": true
+  },
+  "instance_id": "mantinedev__mantine-9046",
+  "predicate_id": "notification_closes_while_hovered",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "notification was shown, hovered, and timer advanced beyond autoClose"
+  ]
+}

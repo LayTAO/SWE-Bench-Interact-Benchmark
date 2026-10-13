@@ -1,0 +1,14 @@
+{
+  "base_commit": "80ef0d833d85f3897cfbab2b00291bf85f42e46a",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "buggy_commit": "80ef0d833d85f3897cfbab2b00291bf85f42e46a",
+  "build_command": "",
+  "install_command": "node .yarn/releases/yarn-4.2.2.cjs install --immutable",
+  "instance_id": "adobe__react-spectrum-9748",
+  "package_manager": "yarn@4.2.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "",
+  "schema_version": "4.0",
+  "test_command": "node .yarn/releases/yarn-4.2.2.cjs jest packages/@react-aria/overlays/test/useOverlay.test.js packages/@react-spectrum/combobox/test/ComboBox.test.js packages/@react-spectrum/menu/test/MenuTrigger.test.js packages/@react-spectrum/s2/test/Combobox.test.tsx packages/react-aria-components/test/Popover.test.js --runInBand"
+}

@@ -1,0 +1,50 @@
+{
+  "expected_fixed_state": {
+    "listbox_visible": false
+  },
+  "instance_id": "adobe__react-spectrum-5338",
+  "observation_channels": [
+    "DOM visibility",
+    "ARIA dialog/listbox roles",
+    "overlay/modal/popover geometry",
+    "page and console errors"
+  ],
+  "observed_buggy_state": {
+    "listbox_visible": true
+  },
+  "preconditions": [
+    "The exact @react-aria/combobox subject artifact is mounted through the frozen adapter.",
+    "The ComboBox is inside a dismissible Dialog and no option is selected."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #5338 report",
+  "states": [
+    {
+      "actions": [
+        "Load the minimal app and open the dialog."
+      ],
+      "checkpoints": [
+        "The dialog is visible and has plausible bounded geometry."
+      ],
+      "name": "dialog_ready"
+    },
+    {
+      "actions": [
+        "Open the ComboBox."
+      ],
+      "checkpoints": [
+        "The listbox is visible with six options."
+      ],
+      "name": "combobox_open"
+    },
+    {
+      "actions": [
+        "Click the ModalOverlay outside the modal and ComboBox popover."
+      ],
+      "checkpoints": [
+        "The final listbox visibility is recorded."
+      ],
+      "name": "overlay_click"
+    }
+  ]
+}

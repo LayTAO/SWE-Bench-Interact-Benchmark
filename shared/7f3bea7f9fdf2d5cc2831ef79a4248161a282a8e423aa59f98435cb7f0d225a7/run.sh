@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPRO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+: "${SUBJECT_DIR:?SUBJECT_DIR must point to a writable exact upstream checkout with dependencies installed}"
+: "${OUTPUT_DIR:?OUTPUT_DIR is required}"
+REPRO_VARIANT="${REPRO_VARIANT:-buggy}"
+ENGINE="${CONTAINER_ENGINE:-$(command -v docker >/dev/null 2>&1 && echo docker || echo docker)}"
+ORACLE_DIR="$OUTPUT_DIR/oracle"
+TOOLING_DIR="$OUTPUT_DIR/tooling"
+RESULTS_DIR="$OUTPUT_DIR/results"
+STATE_CACHE_DIR="${STATE_CACHE:-$OUTPUT_DIR/state-cache}"
+mkdir -p "$ORACLE_DIR" "$TOOLING_DIR" "$RESULTS_DIR" "$STATE_CACHE_DIR"
+cp -R "$REPRO_ROOT/app/." "$ORACLE_DIR/"
+cp "$REPRO_ROOT/tooling/package.json" "$REPRO_ROOT/tooling/capture.mjs" "$REPRO_ROOT/tooling/legacy-react.mjs" "$TOOLING_DIR/"
+if [[ -n "${TOOLING_CACHE:-}" && -d "${TOOLING_CACHE}/node_modules" ]]; then cp -a "${TOOLING_CACHE}/node_modules" "$TOOLING_DIR/"; fi
+# The runtime app and its Vite config resolve Babel plugins here.
+test -d "$TOOLING_DIR/node_modules"
+if [[ ! -e "$ORACLE_DIR/node_modules" ]]; then
+  ln -s "$TOOLING_DIR/node_modules" "$ORACLE_DIR/node_modules"
+fi
+"$ENGINE" run --rm --ipc=host --ulimit nofile=65536:1048576 \
+  -e REPRO_VARIANT="$REPRO_VARIANT" \
+  -v "$SUBJECT_DIR:/subject" -v "$ORACLE_DIR:/oracle" \
+  -v "$TOOLING_DIR:/tooling" -v "$RESULTS_DIR:/results" \
+  -v "$STATE_CACHE_DIR:/state-cache" \
+  -v "$SCRIPT_DIR/container.sh:/runner/container.sh:ro" \
+  mcr.microsoft.com/playwright:v1.58.2-noble bash /runner/container.sh

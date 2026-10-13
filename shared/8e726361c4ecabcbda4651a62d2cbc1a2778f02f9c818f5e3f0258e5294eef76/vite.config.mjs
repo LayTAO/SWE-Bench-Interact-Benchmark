@@ -1,0 +1,12 @@
+import react from '@vitejs/plugin-react';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const subject = process.env.SUBJECT_DIR;
+export default { root: path.dirname(fileURLToPath(import.meta.url)), plugins: [react()], resolve: { dedupe: ['react','react-dom'], alias: [
+  { find: 'react', replacement: subject + '/node_modules/react' }, { find: 'react-dom', replacement: subject + '/node_modules/react-dom' },
+  { find: /^@ariakit\/react-core\/(.*)$/, replacement: subject + '/packages/ariakit-react-core/src/$1' },
+  { find: /^@ariakit\/core\/(.*)$/, replacement: subject + '/packages/ariakit-core/src/$1' },
+  { find: '@ariakit/react', replacement: subject + '/packages/ariakit-react/src/index.ts' },
+  { find: '@ariakit/react-core', replacement: subject + '/packages/ariakit-react-core/src/index.ts' },
+  { find: '@ariakit/core', replacement: subject + '/packages/ariakit-core/src/index.ts' },
+]}, preview: { host: '127.0.0.1', port: 4173, strictPort: true }, build: { outDir: 'dist', emptyOutDir: true } };

@@ -1,0 +1,127 @@
+{
+  "canonical_repro/app/entry.js": {
+    "mode": 420,
+    "sha256": "22c57e122ef38b8d609dfe1748e1d911eac02f4cd9ca9853cfb6dd7fb38b44c3",
+    "source": "shared/22c57e122ef38b8d609dfe1748e1d911eac02f4cd9ca9853cfb6dd7fb38b44c3/entry.js"
+  },
+  "canonical_repro/app/entry.jsx": {
+    "mode": 420,
+    "sha256": "22c57e122ef38b8d609dfe1748e1d911eac02f4cd9ca9853cfb6dd7fb38b44c3",
+    "source": "shared/22c57e122ef38b8d609dfe1748e1d911eac02f4cd9ca9853cfb6dd7fb38b44c3/entry.js"
+  },
+  "canonical_repro/app/index.html": {
+    "mode": 420,
+    "sha256": "7387cf12039ff2ddd2788ee0f80a6bf65cfba2c36a01a2b1d5b9b6345277f244",
+    "source": "shared/7387cf12039ff2ddd2788ee0f80a6bf65cfba2c36a01a2b1d5b9b6345277f244/index.html"
+  },
+  "canonical_repro/app/package.json": {
+    "mode": 420,
+    "sha256": "04323f2d8316436ed712737c7adadb8c075dc51cbcbbd3957a922029908df486",
+    "source": "shared/04323f2d8316436ed712737c7adadb8c075dc51cbcbbd3957a922029908df486/package.json"
+  },
+  "canonical_repro/app/vite.config.mjs": {
+    "mode": 420,
+    "sha256": "bd63722f20ad9ded28ad21401f0ea1a6d04a4720074f4b82033fdd7994aff1e4",
+    "source": "shared/bd63722f20ad9ded28ad21401f0ea1a6d04a4720074f4b82033fdd7994aff1e4/vite.config.mjs"
+  },
+  "canonical_repro/interaction_spec.json": {
+    "mode": 420,
+    "sha256": "fc1fd4fa75484ee63e10bea56bdcc03b65e419a725064467017d564bc5babd4c",
+    "source": "shared/fc1fd4fa75484ee63e10bea56bdcc03b65e419a725064467017d564bc5babd4c/interaction_spec.json"
+  },
+  "canonical_repro/oracle/oracle.json": {
+    "mode": 420,
+    "sha256": "3bd4e35c3cb5273b9fe58b5ec3f2d0716e7f80a211a4ab6bc7064a0dc5a8a0a4",
+    "source": "shared/3bd4e35c3cb5273b9fe58b5ec3f2d0716e7f80a211a4ab6bc7064a0dc5a8a0a4/oracle.json"
+  },
+  "canonical_repro/playwright/scenario.spec.ts": {
+    "mode": 420,
+    "sha256": "35dd0cb1539b8768440a9f547c4705130086efc76ff071044030600fa27738a6",
+    "source": "shared/35dd0cb1539b8768440a9f547c4705130086efc76ff071044030600fa27738a6/scenario.spec.ts"
+  },
+  "canonical_repro/scripts/container.sh": {
+    "mode": 493,
+    "sha256": "563a4c8fddac8244edc9ff48719177dc2647728424d15f9dbc6d3882aff9379a",
+    "source": "shared/563a4c8fddac8244edc9ff48719177dc2647728424d15f9dbc6d3882aff9379a/container.sh"
+  },
+  "canonical_repro/scripts/run.sh": {
+    "mode": 493,
+    "sha256": "40b5dfc6ceb225efed73ae023a35232e7dca908eba3eeee730a9bd4a797e3016",
+    "source": "shared/40b5dfc6ceb225efed73ae023a35232e7dca908eba3eeee730a9bd4a797e3016/run.sh"
+  },
+  "canonical_repro/scripts/validate.sh": {
+    "mode": 493,
+    "sha256": "38db305ec37e5d7baf8382f14c1e8bb92d934127d69162e3d19f176af5bf4579",
+    "source": "shared/38db305ec37e5d7baf8382f14c1e8bb92d934127d69162e3d19f176af5bf4579/validate.sh"
+  },
+  "canonical_repro/tooling/capture.mjs": {
+    "mode": 420,
+    "sha256": "f841838674cfc640c1bb4014c15ad698ac138671a1499f311b31a219f79ad582",
+    "source": "shared/f841838674cfc640c1bb4014c15ad698ac138671a1499f311b31a219f79ad582/capture.mjs"
+  },
+  "canonical_repro/tooling/legacy-react.mjs": {
+    "mode": 420,
+    "sha256": "fedcee120c6bc68c0cafb6558bf24e2fb7473bc4a32bec2832020873e056cb90",
+    "source": "shared/fedcee120c6bc68c0cafb6558bf24e2fb7473bc4a32bec2832020873e056cb90/legacy-react.mjs"
+  },
+  "canonical_repro/tooling/package.json": {
+    "mode": 420,
+    "sha256": "9d5cde72ae634097eb19e2615b03a01922137eb6cc4fd776b146b53477b54a11",
+    "source": "shared/9d5cde72ae634097eb19e2615b03a01922137eb6cc4fd776b146b53477b54a11/package.json"
+  },
+  "test.sh": {
+    "mode": 493,
+    "sha256": "fe06e48388b4bdcb1bfd136a7a81464e428f29d84af9e6d64ad1b2d8cf65d0c5",
+    "source": "shared/fe06e48388b4bdcb1bfd136a7a81464e428f29d84af9e6d64ad1b2d8cf65d0c5/test.sh"
+  },
+  "verifier/check_patch.cjs": {
+    "mode": 493,
+    "sha256": "f8665550a0262873df925a24e67be954023285d8d31330c8f0048e3bbbfaa25f",
+    "source": "shared/f8665550a0262873df925a24e67be954023285d8d31330c8f0048e3bbbfaa25f/check_patch.cjs"
+  },
+  "verifier/evaluator.json": {
+    "mode": 420,
+    "sha256": "d005c0ef9002e037e3793e932bad7045b5ef496900e05547b3cf05a9a677ff02",
+    "source": "shared/d005c0ef9002e037e3793e932bad7045b5ef496900e05547b3cf05a9a677ff02/evaluator.json"
+  },
+  "verifier/harness/run.sh": {
+    "mode": 493,
+    "sha256": "c36a3841e9e5e6e26b8b41de2d83f4ca10423205e8eded0baf50073f93368fc0",
+    "source": "shared/c36a3841e9e5e6e26b8b41de2d83f4ca10423205e8eded0baf50073f93368fc0/run.sh"
+  },
+  "verifier/inprocess-engine.sh": {
+    "mode": 493,
+    "sha256": "f1b82f5b47e13eb1e7840075aded88d4b8f2f16f9d27c153ba5f61c4affffb39",
+    "source": "shared/f1b82f5b47e13eb1e7840075aded88d4b8f2f16f9d27c153ba5f61c4affffb39/inprocess-engine.sh"
+  },
+  "verifier/official_test.patch": {
+    "mode": 420,
+    "sha256": "d8d564880213adef1c7ef60f8dd7546b1c5bd2c6bfe41418deb0b44782f7e940",
+    "source": "shared/d8d564880213adef1c7ef60f8dd7546b1c5bd2c6bfe41418deb0b44782f7e940/official_test.patch"
+  },
+  "verifier/run_build.sh": {
+    "mode": 493,
+    "sha256": "3da407a36c8ee307232da91e46abe7be10f2fad15d652b3725317c2e31a85de5",
+    "source": "shared/3da407a36c8ee307232da91e46abe7be10f2fad15d652b3725317c2e31a85de5/run_build.sh"
+  },
+  "verifier/run_canonical.sh": {
+    "mode": 493,
+    "sha256": "d279646af57d3d04151190e0ddd53cd8d6d9a4c684b2331abcbe2f32a44b44d9",
+    "source": "shared/d279646af57d3d04151190e0ddd53cd8d6d9a4c684b2331abcbe2f32a44b44d9/run_canonical.sh"
+  },
+  "verifier/run_official.sh": {
+    "mode": 493,
+    "sha256": "f16e075637ee097e3785ea3ce66dba0321c7befd31eeeceb67c3ffc3b28f4abc",
+    "source": "shared/f16e075637ee097e3785ea3ce66dba0321c7befd31eeeceb67c3ffc3b28f4abc/run_official.sh"
+  },
+  "verifier/runner.json": {
+    "mode": 420,
+    "sha256": "7348d64be39a0c63824d897db1bac8dad8a4e8191760f844c894d29bbf71e826",
+    "source": "shared/7348d64be39a0c63824d897db1bac8dad8a4e8191760f844c894d29bbf71e826/runner.json"
+  },
+  "verifier/summarize_official.cjs": {
+    "mode": 493,
+    "sha256": "904a94ef989e51bcd301c1510ff9226666921a9c71aae6453782122f28da6af0",
+    "source": "shared/904a94ef989e51bcd301c1510ff9226666921a9c71aae6453782122f28da6af0/summarize_official.cjs"
+  }
+}

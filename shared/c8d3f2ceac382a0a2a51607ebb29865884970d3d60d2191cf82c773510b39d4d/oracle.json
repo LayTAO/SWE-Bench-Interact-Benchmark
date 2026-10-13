@@ -1,0 +1,21 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After option hover and a second click on the input, the input's focus state remains lost only in Buggy.",
+    "fixed_observed": false,
+    "name": "autocomplete_input_focus_recovery"
+  },
+  "expected": {
+    "buggy": {
+      "aria_activedescendant": "non-empty",
+      "focused_option": "Rename symbol",
+      "input_data_focused": false
+    },
+    "fixed": {
+      "aria_activedescendant": null,
+      "focused_option": null,
+      "input_data_focused": true
+    }
+  },
+  "schema_version": "1.0"
+}

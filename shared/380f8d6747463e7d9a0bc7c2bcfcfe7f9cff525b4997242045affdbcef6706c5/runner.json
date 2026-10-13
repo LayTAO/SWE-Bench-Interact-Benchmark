@@ -1,0 +1,16 @@
+{
+  "base_commit": "8e16d15d1249591e9e854ae294ec8ce8ab3e3594",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "chromium": {
+    "executable": "/ms-playwright/chromium-1208/chrome-linux64/chrome",
+    "version": "145.0.7632.6"
+  },
+  "install_command": "npm install --global yarn@1.22.22 && yarn install --frozen-lockfile --ignore-engines && yarn workspace @shopify/polaris-tokens build && yarn workspace @shopify/polaris-icons build",
+  "instance_id": "shopify__polaris-react-7097",
+  "package_manager": "yarn1",
+  "repo_url": "https://github.com/Shopify/polaris-react.git",
+  "repository": "Shopify/polaris-react",
+  "runtime": "Node.js 16.20.2",
+  "schema_version": "3.0",
+  "test_command": "yarn jest polaris-react/src/components/Popover/components/PopoverOverlay/tests/PopoverOverlay.test.tsx --runInBand --json --outputFile=\"$RESULTS_DIR/runner.raw.json\""
+}

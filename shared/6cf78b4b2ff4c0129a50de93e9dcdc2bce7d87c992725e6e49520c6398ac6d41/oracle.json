@@ -1,0 +1,33 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "currency_symbol_is_multicharacter == true",
+      "edited_value_committed == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<NumberField /> typing behavior (parseable changes) accepts exponent separators while typing (scientific notation)",
+      "<NumberField /> typing behavior (parseable changes) accepts multi-character currency symbols while typing (e.g. pt-BR BRL)",
+      "<NumberField /> typing behavior (parseable changes) accepts multi-character unit symbols while typing (e.g. km/h)",
+      "<NumberField /> typing behavior (parseable changes) ignores bidi/format control characters in the value (e.g. RTL exponent signs)"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "多字符货币符号不会阻塞输入编辑。"
+  },
+  "instance_id": "mui__base-ui-5107",
+  "predicate_id": "mui_number_field_allows_editing_with_multichar_currency_symbol",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "聚焦输入框",
+    "键入或删除数值",
+    "检查格式化值"
+  ]
+}

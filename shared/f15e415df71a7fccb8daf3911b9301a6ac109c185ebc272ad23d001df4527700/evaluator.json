@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "Calendar should not become focused just by setting the focused date"
+  ],
+  "PASS_TO_PASS": [
+    "Calendar should align the initial value at the end",
+    "Calendar should align the initial value at the start",
+    "Calendar should align the initial value in the center",
+    "Calendar should not modify selection when trying to select an unavailable date by keyboard",
+    "Calendar should render with custom classes"
+  ],
+  "base_commit": "2ff5b8198b376084c1eb5ef08e0b14233934e899",
+  "instance_id": "adobe__react-spectrum-9427",
+  "schema_version": "4.0"
+}

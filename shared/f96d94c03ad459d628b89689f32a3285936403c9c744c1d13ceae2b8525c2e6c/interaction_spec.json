@@ -1,0 +1,76 @@
+{
+  "expected_fixed_state": {
+    "aria_expanded": "false",
+    "listbox_visible": false,
+    "selection_event_count": 0
+  },
+  "instance_id": "adobe__react-spectrum-2181",
+  "observation_channels": [
+    "input value",
+    "selection event history",
+    "ARIA expanded state",
+    "listbox visibility and option count",
+    "initial and filtered geometry",
+    "input and trigger geometry",
+    "page errors"
+  ],
+  "observed_buggy_state": {
+    "input_value": "the item underneath the stale-menu coordinate",
+    "menu_transition": "the full collection is restored between pointer down and pointer up",
+    "selection_event_count": "greater than zero"
+  },
+  "preconditions": [
+    "The exact React Spectrum subject state is mounted read-only.",
+    "The ComboBox contains the nine engineering-major items from the Issue sample.",
+    "No item is selected and loadingState is present."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2181 report and code sample",
+  "states": [
+    {
+      "actions": [
+        "Load the ComboBox through the repository-native Parcel and CSS transform pipeline."
+      ],
+      "checkpoints": [
+        "The input and trigger are compact, adjacent, aligned controls and the listbox is aligned below them."
+      ],
+      "name": "native_layout_ready"
+    },
+    {
+      "actions": [
+        "Open the ComboBox with its trigger button."
+      ],
+      "checkpoints": [
+        "The listbox is visible with nine options and its rectangle is recorded."
+      ],
+      "name": "unfiltered_open"
+    },
+    {
+      "actions": [
+        "Type Nuclear without selecting it."
+      ],
+      "checkpoints": [
+        "Exactly one option remains and the listbox height shrinks."
+      ],
+      "name": "filtered_open"
+    },
+    {
+      "actions": [
+        "Press the pointer below the filtered listbox but inside the old listbox rectangle."
+      ],
+      "checkpoints": [
+        "The input clears and the pointer release has not occurred yet."
+      ],
+      "name": "outside_pointer_down"
+    },
+    {
+      "actions": [
+        "Release the pointer at the same coordinates."
+      ],
+      "checkpoints": [
+        "The menu is closed and selection events, input value, and ARIA state are recorded."
+      ],
+      "name": "outside_pointer_up"
+    }
+  ]
+}

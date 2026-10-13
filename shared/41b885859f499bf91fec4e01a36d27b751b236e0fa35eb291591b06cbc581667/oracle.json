@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "filter_selection_completed == true",
+      "caller_array_identity_changed_in_place == true"
+    ]
+  },
+  "environment_gate": [
+    "caller array and filter-change payload are observable"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_external_array": "directly mutated",
+    "fixed_clear_payload": [],
+    "fixed_external_array": "event-synchronized copy"
+  },
+  "instance_id": "element-plus__element-plus-24564",
+  "predicate_id": "table_filter_mutates_caller_value",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "header filter selection and clear actions completed"
+  ]
+}

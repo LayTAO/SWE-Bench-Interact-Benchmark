@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "Combobox > should close the combobox when clicking outside the combobox on a dialog backdrop"
+  ],
+  "PASS_TO_PASS": [
+    "Combobox > should support contextual help",
+    "ComboBox > should close on scroll",
+    "ComboBox > should not close on input scrolling for cursor placement",
+    "ComboBox > provides slots"
+  ],
+  "base_commit": "1a2b8f860ef2cee6aa579aa6b5e7032ca3be1cb1",
+  "instance_id": "adobe__react-spectrum-5338",
+  "schema_version": "4.0"
+}

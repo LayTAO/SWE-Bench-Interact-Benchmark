@@ -1,0 +1,25 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/select/item/SelectItem.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <Select.Item /> should select an unhighlighted item with the mouse
+- <Select.Item /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <Select.Item /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <Select.Item /> Base UI component API prop forwarding forwards custom props to the default element
+- <Select.Item /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <Select.Item /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <Select.Item /> Base UI component API prop: className should apply the className when passed as a string
+- <Select.Item /> Base UI component API prop: render renders a customized root element with a function
+- <Select.Item /> Base UI component API prop: render renders a customized root element with an element
+- <Select.Item /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <Select.Item /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <Select.Item /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <Select.Item /> Base UI component API prop: render should pass the ref to the custom component
+- <Select.Item /> Base UI component API ref attaches the ref
+- <Select.Item /> should allow pointer click after a typeahead sequence that ends with Space
+- <Select.Item /> should call onClick exactly once for a regular click
+- <Select.Item /> should focus disabled items
+- <Select.Item /> should focus the selected item upon opening the popup
+- <Select.Item /> should ignore an unhighlighted item with a generic virtual click
+- <Select.Item /> should not select disabled item
+- <Select.Item /> should select the item and close popup when clicked

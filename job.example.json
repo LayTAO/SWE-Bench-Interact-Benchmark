@@ -1,0 +1,21 @@
+{
+  "agents": [
+    {
+      "model_name": "SET_YOUR_MODEL",
+      "name": "codex"
+    }
+  ],
+  "datasets": [
+    {
+      "path": "./prepared/tasks"
+    }
+  ],
+  "environment": {
+    "force_build": false,
+    "type": "docker"
+  },
+  "job_name": "interactbench",
+  "jobs_dir": "./jobs",
+  "n_attempts": 1,
+  "n_concurrent_trials": 1
+}

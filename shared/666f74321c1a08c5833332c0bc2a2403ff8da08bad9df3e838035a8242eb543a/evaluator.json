@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "show nested no backdrop dialog and hide by clicking outside",
+    "show nested no portal dialog and hide with escape",
+    "show nested no portal portal dialog and hide with escape",
+    "show sibling no backdrop dialog and hide by clicking outside",
+    "show sibling no portal dialog and hide with escape",
+    "show sibling no portal portal dialog and hide with escape"
+  ],
+  "PASS_TO_PASS": [
+    "show dialog and hide with escape",
+    "show nested dialog and hide with escape",
+    "show nested unmount dialog and hide with escape"
+  ],
+  "base_commit": "d2c01cdbe4c6f79ca60ec8698b972c9e583dbb59",
+  "instance_id": "ariakit__ariakit-2501",
+  "schema_version": "4.0"
+}

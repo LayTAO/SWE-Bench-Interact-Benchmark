@@ -1,0 +1,43 @@
+{
+  "expected_fixed_state": {
+    "after_composition": "model update emitted",
+    "during_composition": "options remain and no model update"
+  },
+  "instance_id": "unovue__reka-ui-2540",
+  "observation_channels": [
+    "visible options",
+    "listbox data-empty",
+    "model update events",
+    "input and option geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "during_composition": "filter or model update occurs"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "Autocomplete options and its input are visible."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2540 interaction",
+  "states": [
+    {
+      "actions": [
+        "Dispatch compositionstart and a composing input event."
+      ],
+      "checkpoints": [
+        "Record option visibility, empty state, and model updates."
+      ],
+      "name": "composition"
+    },
+    {
+      "actions": [
+        "Dispatch compositionend."
+      ],
+      "checkpoints": [
+        "Record model updates after composition."
+      ],
+      "name": "composition_end"
+    }
+  ]
+}

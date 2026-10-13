@@ -1,0 +1,32 @@
+{
+  "environment_gate": [
+    "table filter panel renders"
+  ],
+  "expected_fixed": {
+    "external_array": "updated through event without in-place mutation",
+    "payload": "exact expected value"
+  },
+  "instance_id": "element-plus__element-plus-24564",
+  "issue_derived_path": [
+    "render a filtered table",
+    "open the header filter",
+    "select a value",
+    "observe caller array and filter-change payload",
+    "clear the filter"
+  ],
+  "observation_channels": [
+    "caller-owned filtered-value identity",
+    "filter-change payload",
+    "filter list DOM"
+  ],
+  "observed_buggy": {
+    "external_array": "mutated or not synchronized"
+  },
+  "schema_version": "1.0",
+  "states": [
+    "unfiltered",
+    "panel-open",
+    "selected",
+    "cleared"
+  ]
+}

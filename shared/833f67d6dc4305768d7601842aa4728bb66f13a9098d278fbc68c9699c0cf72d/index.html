@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>IR-M-032 Chromium reproduction</title>
+    <style>
+      body {
+        background: #eef2f6;
+        font: var(--sl-text-new-body-md, 16px/1.5 sans-serif);
+        margin: 0;
+      }
+
+      dialog {
+        border: 0;
+        border-radius: 12px;
+        box-shadow: 0 18px 50px rgb(0 0 0 / 30%);
+        box-sizing: border-box;
+        inline-size: 560px;
+        min-block-size: 350px;
+        padding: 32px;
+      }
+
+      dialog::backdrop {
+        background: rgb(15 23 42 / 48%);
+      }
+
+      h1 {
+        font: 700 24px/1.25 sans-serif;
+        margin: 0 0 8px;
+      }
+
+      p {
+        color: #475569;
+        margin: 0 0 24px;
+      }
+
+      sl-select {
+        inline-size: 360px;
+      }
+
+      sl-select::part(listbox) {
+        --sl-popover-max-block-size: 190px;
+      }
+
+      #status {
+        color: #334155;
+        font: 13px/1.4 monospace;
+        margin-block-start: 210px;
+      }
+    </style>
+  </head>
+  <body>
+    <dialog id="modal">
+      <h1>Select inside a modal dialog</h1>
+      <p>Open the select, then use the native listbox scrollbar.</p>
+      <sl-select id="subject" aria-label="Scrollable choices" placeholder="Choose an option"></sl-select>
+      <div id="status">The dialog and select are ready.</div>
+    </dialog>
+    <script src="/scoped-registry-shim.js"></script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

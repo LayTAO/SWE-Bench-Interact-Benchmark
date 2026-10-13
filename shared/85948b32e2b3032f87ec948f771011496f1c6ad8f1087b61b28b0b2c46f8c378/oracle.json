@@ -1,0 +1,19 @@
+{
+  "bug_predicate": {
+    "active_segment_after_one": "not minute"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "active_segment_after_one": "minute"
+  },
+  "instance_id": "unovue__reka-ui-2567",
+  "rendering_gate": [
+    "TimeField segments have unique plausible geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The previous-zero sequence completes."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "environment_gate": [
+    "the exact TimePicker source renders both range inputs"
+  ],
+  "instance_id": "element-plus__element-plus-22878",
+  "issue_derived_path": [
+    "focus the end-time field",
+    "hover the active end-hour option and cancel",
+    "enter 07:40:00",
+    "move focus outside",
+    "inspect displayed and model end time"
+  ],
+  "observation_channels": [
+    "semantic range inputs",
+    "displayed end value",
+    "model-end output",
+    "page-error stream"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial-range",
+    "cancelled-panel",
+    "manual-end-entry",
+    "blurred"
+  ]
+}

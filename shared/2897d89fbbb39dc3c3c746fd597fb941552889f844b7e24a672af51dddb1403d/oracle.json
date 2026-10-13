@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "or": {
+      "hash": "",
+      "link_clicks": 0
+    },
+    "page_error_contains": "Cannot read properties of undefined (reading 'disabled')"
+  },
+  "environment_gate": [
+    "wa-tree is connected",
+    "the embedded link is visible",
+    "no browser launch or navigation failure"
+  ],
+  "expected": {
+    "console_errors": [],
+    "hash": "#node-1",
+    "link_clicks": 1,
+    "page_errors": [],
+    "tree_selection": 0
+  },
+  "instance_id": "shoelace-style__webawesome-2673",
+  "rendering_gate": [
+    "tree and link have non-zero geometry"
+  ],
+  "schema_version": "1.0",
+  "subject_only_difference": true,
+  "trigger_gate": [
+    "the embedded link receives focus before Enter"
+  ]
+}

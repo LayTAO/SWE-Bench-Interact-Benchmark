@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "Tooltip > shows on hover when button has isPending"
+  ],
+  "PASS_TO_PASS": [
+    "Tooltip > shows on hover",
+    "Tooltip > shows on focus",
+    "Tooltip > should hide tooltip on scroll",
+    "Tooltip > should support custom Focusable trigger on hover"
+  ],
+  "base_commit": "6aee49af22267e1dfae14c7c2b3d39397a720e9a",
+  "instance_id": "adobe__react-spectrum-9460",
+  "schema_version": "4.0"
+}

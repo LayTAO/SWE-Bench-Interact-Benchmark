@@ -1,0 +1,12 @@
+diff --git a/packages/react-aria-components/test/Tabs.test.js b/packages/react-aria-components/test/Tabs.test.js
+index c0d9be9188b..e455dc6c867 100644
+--- a/packages/react-aria-components/test/Tabs.test.js
++++ b/packages/react-aria-components/test/Tabs.test.js
+@@ -141,6 +141,7 @@ describe('Tabs', () => {
+     await user.tab();
+     expect(document.activeElement).toBe(tab);
+     expect(tab).toHaveAttribute('data-focus-visible', 'true');
++    expect(tab).toHaveAttribute('data-focused', 'true');
+     expect(tab).toHaveClass('focus');
+ 
+     await user.tab();

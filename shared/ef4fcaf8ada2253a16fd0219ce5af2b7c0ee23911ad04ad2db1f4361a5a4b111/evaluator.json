@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "given a Menu with submenu should highlight sub trigger on pointermove"
+  ],
+  "PASS_TO_PASS": [
+    "given a default Menu after focusing on item after selecting the item should emit select",
+    "given a default Menu after focusing on item should have highlighted state",
+    "given a default Menu should have all the groups",
+    "given a default Menu should pass axe accessibility tests",
+    "given a default Menu should render item in group"
+  ],
+  "base_commit": "883bb71d5c1928711ed2cd652dc093155d5260a8",
+  "instance_id": "unovue__reka-ui-2505",
+  "schema_version": "4.0"
+}

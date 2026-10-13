@@ -1,0 +1,34 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): src/tests/dialog/Dialog.spec.ts, src/tests/popover/Popover.spec.ts
+Environment: jsdom, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+-  Dialog Doesn't deactivate focus trap on outside click provided `closeOnOutsideClick` false
+-  Popover (Default) Doesn't deactivate focus trap on outside click provided `closeOnOutsideClick` false
+-  Dialog Applies custom ids when provided
+-  Dialog Attaches portal el to the portal target if prop provided
+-  Dialog Closes on pointerup if the previous pointerdown occurred outside the dialog
+-  Dialog Closes when Escape is hit
+-  Dialog Closes when closer is clicked
+-  Dialog Closes when overlay is clicked
+-  Dialog Does not portal if `null` is passed as portal prop
+-  Dialog Doesn't close on pointerup if the previous pointerdown didn't occur inside the dialog
+-  Dialog Doesn't close when clicking content
+-  Dialog Focuses first focusable item upon opening
+-  Dialog No accessibility violations
+-  Dialog Opens when trigger is clicked
+-  Dialog Portalled el attaches dialog to body
+-  Dialog Prevents closing on outside click if `defaultPrevented` in `onOutsideClick` callback
+-  Dialog Respects the `closeFocus` prop
+-  Dialog Respects the `closeOnOutsideClick` prop
+-  Dialog Respects the `openFocus` prop
+-  Dialog Tabbing on last item focuses first item
+-  Dialog When closeOnOutsideClick is false, clicking floating closer closes dialog
+-  Popover (Default) Closes on escape
+-  Popover (Default) Closes when click outside content
+-  Popover (Default) Custom ids are applied when provided
+-  Popover (Default) No accessibility violations
+-  Popover (Default) Opens on click
+-  Popover (Default) Respects `closeFocus` prop
+-  Popover (Default) Respects `openFocus` prop
+-  Popover (Default) Toggles open state on trigger click
+-  Popover (Default) doesnt close when preventDefault called in `onOutsideClick`

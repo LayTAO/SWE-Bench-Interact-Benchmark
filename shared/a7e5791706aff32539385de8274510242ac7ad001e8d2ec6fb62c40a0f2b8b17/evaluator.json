@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "Tabs should support focus ring"
+  ],
+  "PASS_TO_PASS": [
+    "Tabs should render tabs with default classes"
+  ],
+  "base_commit": "34924436f5b76b44b8adbb0a4fdb64c1c15de99f",
+  "instance_id": "adobe__react-spectrum-5973",
+  "schema_version": "4.0"
+}

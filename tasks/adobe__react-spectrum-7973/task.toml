@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-7973"
+version = "0.2.0-candidate"
+description = "FocusScope breaks when transitionend is never called"
+
+[metadata]
+instance_id = "adobe__react-spectrum-7973"
+repository = "adobe/react-spectrum"
+base_commit = "b0118e99853f9785e930fbc3e01f47ce5c43ff79"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e1a7ca5dd059414fe9a3f47b8c7728f5b84b9f22aecb6ebd817e1e94f4601b98"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:db7ceef515d7492d53485e8a5f0cc559c3dddd3e73b859c4a5e36bbc9e27ac90"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 16384
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

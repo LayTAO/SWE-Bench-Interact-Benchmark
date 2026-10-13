@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/ariakit__ariakit-6310"
+version = "0.2.0-candidate"
+description = "Reopened portaled Popover doesn't receive focus when a hidden element comes first in its content"
+
+[metadata]
+instance_id = "ariakit__ariakit-6310"
+repository = "ariakit/ariakit"
+base_commit = "be8ee165b1ec6a197be0e4247a4359547f95b267"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:08db95f76fc8623ddc22c66ade9c7a446620202b0b2cd3ed1959992ca01a051e"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2f124214b12f5d78060d4dfc8e26574d7921d044f37311def49ae4bfd4612dbf"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

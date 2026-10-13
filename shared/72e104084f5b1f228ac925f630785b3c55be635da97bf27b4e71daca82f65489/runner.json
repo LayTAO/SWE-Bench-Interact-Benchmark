@@ -1,0 +1,11 @@
+{
+  "base_commit": "d5a03c8f1ae4e91d1cb02c0ea34daf2f7c0ed21d",
+  "base_image": "local Node 24.14.1 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "mui__base-ui-5175",
+  "package_manager": "pnpm@11.5.2",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "VITEST_ENV=chromium PLAYWRIGHT_BROWSERS_PATH=<pinned-browser-cache> pnpm exec vitest run --config packages/react/vitest.config.mts packages/react/src/checkbox/root/CheckboxRoot.test.tsx packages/react/src/radio/root/RadioRoot.test.tsx packages/react/src/switch/root/SwitchRoot.test.tsx --reporter=json --outputFile=<isolated-output> --browser chromium"
+}

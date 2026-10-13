@@ -1,0 +1,17 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After the Issue-derived Control+C and Meta+C actions, the focused Apple option and controlled value are not preserved in Buggy; Fixed preserves them.",
+    "fixed_observed": false,
+    "name": "modifier_shortcut_loses_combobox_item_focus"
+  },
+  "expected": {
+    "buggy": {
+      "shortcuts_preserve_option_focus": false
+    },
+    "fixed": {
+      "shortcuts_preserve_option_focus": true
+    }
+  },
+  "schema_version": "1.0"
+}

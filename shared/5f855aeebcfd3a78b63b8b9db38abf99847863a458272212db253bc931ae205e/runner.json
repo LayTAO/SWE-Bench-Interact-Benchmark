@@ -1,0 +1,11 @@
+{
+  "base_commit": "bd6ba738da4c3427b2b3fc716ac7730aab8254fb",
+  "base_image": "local Node 18.15.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "melt-ui__melt-ui-945",
+  "package_manager": "pnpm@8.6.3",
+  "repo_url": "https://github.com/melt-ui/melt-ui.git",
+  "repository": "melt-ui/melt-ui",
+  "schema_version": "4.0",
+  "test_command": "pnpm exec vitest run --config vite.config.ts src/tests/tooltip/Tooltip.spec.ts --reporter=json --outputFile=<isolated-output>"
+}

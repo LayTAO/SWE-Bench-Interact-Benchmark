@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "展开 Accordion",
+    "打开 Select",
+    "点击选项"
+  ],
+  "expected_fixed": "Accordion.Panel 内 Select.Item 点击可提交选择。",
+  "instance_id": "mui__base-ui-4663",
+  "issue_derived_path": [
+    "展开 Accordion",
+    "打开 Select",
+    "点击选项"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "Select.Item 点击无法提交选择。",
+  "preconditions": [
+    "exact upstream component test renders successfully",
+    "the target trigger is actionable",
+    "browser and test subject load without page errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

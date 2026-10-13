@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/melt-ui__melt-ui-1084"
+version = "0.2.0-candidate"
+description = "[Dialog] Focus trap breaks when closeOnOutsideClick is false and clicking outside content"
+
+[metadata]
+instance_id = "melt-ui__melt-ui-1084"
+repository = "melt-ui/melt-ui"
+base_commit = "e682f497894ddd528ea427f2eaaa9014a01934b6"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:b861d1f1f8c0656004f9f820f5c1c278183e124d1a215eddcd4c14132e15bf47"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:caa6e3edb4ec28157f650ee9b061497161ec45a69502117da2d84bed7381d08a"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

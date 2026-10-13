@@ -1,0 +1,29 @@
+{
+  "bug_predicate": {
+    "all": [
+      "cases.length == 2",
+      "cases.every(environment_valid && rendering_valid && trigger_valid)",
+      "cases.some(bug_observed == true)"
+    ]
+  },
+  "environment_gate": [
+    "independent page renders from candidate source",
+    "Playwright executes actual tests with zero retries",
+    "page_errors is empty"
+  ],
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    },
+    "fixed_state": "Dialog and Popover retain their focus trap after an outside click with closeOnOutsideClick=false."
+  },
+  "instance_id": "melt-ui__melt-ui-1084",
+  "predicate_id": "melt_focus_trap_remains_active_when_outside_click_does_not_close",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "scenario.spec.cjs verifies the issue interaction before observing the symptom"
+  ]
+}

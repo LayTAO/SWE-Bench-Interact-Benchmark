@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "keeps focus in the combobox between IME composition sessions"
+  ],
+  "PASS_TO_PASS": [
+    "auto select with inline autocomplete on arrow down",
+    "auto select with inline autocomplete on typing",
+    "auto select with inline autocomplete on typing + clearing",
+    "autocomplete on focus on hover",
+    "blur input after autocomplete",
+    "composition text",
+    "text selection with shift+arrow keys and replacement"
+  ],
+  "base_commit": "1b7eb8ace9921b524ef5187052e744a261ebf163",
+  "instance_id": "ariakit__ariakit-6663",
+  "schema_version": "4.0"
+}

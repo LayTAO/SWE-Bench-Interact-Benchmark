@@ -1,0 +1,22 @@
+{
+  "bug_predicate": {
+    "active_after_reopen": "not email-input"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "active_after_reopen": "email-input",
+    "environment_valid": true,
+    "rendering_valid": true,
+    "trigger_valid": true
+  },
+  "instance_id": "unovue__reka-ui-2506",
+  "rendering_gate": [
+    "Dialog and email input are visible."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Open, Escape, and reopen complete without action errors."
+  ]
+}

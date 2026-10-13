@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "Directives.vue stops repeating when mouseup propagation is stopped"
+  ],
+  "PASS_TO_PASS": [
+    "single click",
+    "click and hold on"
+  ],
+  "base_commit": "a4a6a1143235af4dba9bc88121f24e287757ef22",
+  "instance_id": "element-plus__element-plus-19051",
+  "schema_version": "4.0"
+}

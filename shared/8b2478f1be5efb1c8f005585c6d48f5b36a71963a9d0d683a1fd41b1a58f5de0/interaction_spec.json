@@ -1,0 +1,40 @@
+{
+  "expected_fixed_state": {
+    "active_segment": "minute"
+  },
+  "instance_id": "unovue__reka-ui-2580",
+  "observation_channels": [
+    "active segment after each key",
+    "segment geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "active_segment": "not minute"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A 12-hour TimeField is visible."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2580 interaction",
+  "states": [
+    {
+      "actions": [
+        "Focus the hour segment and type zero."
+      ],
+      "checkpoints": [
+        "Focus remains in hour."
+      ],
+      "name": "first_zero"
+    },
+    {
+      "actions": [
+        "Type zero again."
+      ],
+      "checkpoints": [
+        "Record the active segment."
+      ],
+      "name": "second_zero"
+    }
+  ]
+}

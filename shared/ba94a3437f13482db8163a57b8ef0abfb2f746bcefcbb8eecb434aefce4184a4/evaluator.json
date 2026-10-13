@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "useComboBoxState tests collection won't update the returned collection if the combobox is closed (controlled items)",
+    "useComboBoxState tests collection won't update the returned collection if the combobox is closed (uncontrolled items)"
+  ],
+  "PASS_TO_PASS": [
+    "useComboBoxState tests collection support defaultSelectedKey",
+    "useComboBoxState tests collection support selectedKey",
+    "useComboBoxState tests collection supports default no selection",
+    "useComboBoxState tests open state onOpenChange should return the reason that open was called",
+    "useComboBoxState tests open state onOpenChange should return the reason that toggle was called when opening",
+    "useComboBoxState tests open state should be closed by default",
+    "useComboBoxState tests values can be controlled",
+    "useComboBoxState tests values can have a default value",
+    "useComboBoxState tests values does not change selection on close",
+    "useComboBoxState tests values fires an event when the value is changed and updates if uncontrolled",
+    "useComboBoxState tests values starts blank if no (default) value"
+  ],
+  "base_commit": "f847cd08b59ec7aa42b5f8bdd6b456738b9497ed",
+  "instance_id": "adobe__react-spectrum-2181",
+  "schema_version": "4.0"
+}

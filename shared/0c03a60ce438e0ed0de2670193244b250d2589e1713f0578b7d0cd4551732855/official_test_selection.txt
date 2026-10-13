@@ -1,0 +1,148 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/dialog/root/DialogRoot.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <Dialog.Root /> external scroll lock handoff when a third-party overlay is still unlocking 'Ariakit, via <html> overflow longhands' keeps the page locked until it takes over, and unlocks on close
+- <Dialog.Root /> external scroll lock handoff when a third-party overlay is still unlocking 'silk-hq, via the <body> overflow shor…' keeps the page locked until it takes over, and unlocks on close
+- <Dialog.Root /> Popup conformance ARIA attributes allows a custom `id` prop
+- <Dialog.Root /> Popup conformance ARIA attributes has the `aria-controls` attribute on the trigger
+- <Dialog.Root /> Popup conformance ARIA attributes has the `aria-expanded` attribute on the trigger when open
+- <Dialog.Root /> Popup conformance ARIA attributes has the `aria-haspopup` attribute on the trigger
+- <Dialog.Root /> Popup conformance ARIA attributes has the dialog role on the popup
+- <Dialog.Root /> Popup conformance animations removes the popup when there is no exit animation defined
+- <Dialog.Root /> Popup conformance controlled mode opens the popup with the `open` prop
+- <Dialog.Root /> Popup conformance uncontrolled mode opens the popup when clicking on the trigger
+- <Dialog.Root /> does not leak a non-modal popup field into an unrelated dialog return focus
+- <Dialog.Root /> external scroll lock handoff locks immediately when an external <body> lock cannot affect the page
+- <Dialog.Root /> external scroll lock handoff when a third-party overlay is still unlocking 'react-remove-scroll, via an attribute…' keeps the page locked until it takes over, and unlocks on close
+- <Dialog.Root /> keeps focus trapped when dialog content contains a non-scrollable scroll area
+- <Dialog.Root /> keeps trigger ownership when another trigger mounts while open
+- <Dialog.Root /> returns focus into the dialog when a close confirmation opened by an outside press closes
+- <Dialog.Root /> returns focus to the menu trigger when a detached dialog trigger unmounts
+- <Dialog.Root /> touch outside press closes a non-modal dialog without a backdrop
+- <Dialog.Root /> touch outside press closes a trap-focus dialog without a backdrop
+- <Dialog.Root /> touch outside press does not close when another touch is still active on touchend
+- <Dialog.Root /> touch outside press does not close when two touches are lifted simultaneously on touchend
+- <Dialog.Root /> when using 'contained triggers' ARIA attributes
+- <Dialog.Root /> when using 'contained triggers' dismisses non-nested dialogs one by one
+- <Dialog.Root /> when using 'contained triggers' does not dismiss previous modal dialog when clicking new modal dialog
+- <Dialog.Root /> when using 'contained triggers' nested popups should not close the parent menu when Escape is pressed in a nested dialog
+- <Dialog.Root /> when using 'contained triggers' nested popups should not dismiss the dialog when dismissing outside a nested modal menu
+- <Dialog.Root /> when using 'contained triggers' nested popups should not dismiss the dialog when dismissing outside a nested select popup
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops closing via intentional outside press with user backdrop (modal=true): works when portaled into a shadow DOM
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops closing via outside press: works for a modal dialog when clicking outside the shadow root
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops closing via outside press: works when clicking another element inside the same shadow root
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops closing via outside press: works when clicking outside the shadow root
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops uses intentional outside press with internal backdrop (modal=true): closes on click, not on mousedown
+- <Dialog.Root /> when using 'contained triggers' outside press event with backdrops uses intentional outside press with user backdrop (mouse): closes on click, not on mousedown
+- <Dialog.Root /> when using 'contained triggers' pointerdown removal dismisses on first outside click after NumberField scrub interaction (pointer lock path)
+- <Dialog.Root /> when using 'contained triggers' pointerdown removal moves focus to the popup when a focused child is removed on pointerdown and outside press still dismisses
+- <Dialog.Root /> when using 'contained triggers' prop: actionsRef unmounts the dialog when the `unmount` method is called
+- <Dialog.Root /> when using 'contained triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=false
+- <Dialog.Root /> when using 'contained triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=undefined
+- <Dialog.Root /> when using 'contained triggers' prop: disablePointerDismissal does not close the dialog when clicking outside if disablePointerDismissal=true
+- <Dialog.Root /> when using 'contained triggers' prop: modal does not make other interactive elements on the page inert when a non-modal dialog is open
+- <Dialog.Root /> when using 'contained triggers' prop: modal makes other interactive elements on the page inert when a modal dialog is open
+- <Dialog.Root /> when using 'contained triggers' prop: modal should not render an internal backdrop when `false`
+- <Dialog.Root /> when using 'contained triggers' prop: modal should render an internal backdrop when `true`
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange calls onOpenChange with the new open state
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange calls onOpenChange with the reason for change when clicked on trigger and close button
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange calls onOpenChange with the reason for change when pressed Esc while the dialog is open
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks backdrop while the modal dialog is open
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks outside while the non-modal dialog is open
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange cancel() prevents opening while uncontrolled
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange clicks on user backdrop detects clicks on user backdrop
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange clicks on user backdrop does not change open state on non-main button clicks
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange does not emit internal openchange when an Escape close is canceled
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChange emits a single internal openchange when closing on Escape
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete does not get called on mount when not open
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete does not get called on open when dismissed during the enter animation
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete is called on close when the exit animation finishes
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete is called on close when there is no exit animation defined
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete is called on open when the enter animation finishes
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete is called on open when there is no enter animation defined
+- <Dialog.Root /> when using 'contained triggers' prop: onOpenChangeComplete waits for a restarted enter animation to finish
+- <Dialog.Root /> when using 'contained triggers' rewires dismiss interactions after closing and reopening
+- <Dialog.Root /> when using 'contained triggers' waits for the exit transition to finish before unmounting
+- <Dialog.Root /> when using 'detached triggers' ARIA attributes
+- <Dialog.Root /> when using 'detached triggers' dismisses non-nested dialogs one by one
+- <Dialog.Root /> when using 'detached triggers' does not dismiss previous modal dialog when clicking new modal dialog
+- <Dialog.Root /> when using 'detached triggers' nested popups should not close the parent menu when Escape is pressed in a nested dialog
+- <Dialog.Root /> when using 'detached triggers' nested popups should not dismiss the dialog when dismissing outside a nested modal menu
+- <Dialog.Root /> when using 'detached triggers' nested popups should not dismiss the dialog when dismissing outside a nested select popup
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops closing via intentional outside press with user backdrop (modal=true): works when portaled into a shadow DOM
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops closing via outside press: works for a modal dialog when clicking outside the shadow root
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops closing via outside press: works when clicking another element inside the same shadow root
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops closing via outside press: works when clicking outside the shadow root
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops uses intentional outside press with internal backdrop (modal=true): closes on click, not on mousedown
+- <Dialog.Root /> when using 'detached triggers' outside press event with backdrops uses intentional outside press with user backdrop (mouse): closes on click, not on mousedown
+- <Dialog.Root /> when using 'detached triggers' pointerdown removal dismisses on first outside click after NumberField scrub interaction (pointer lock path)
+- <Dialog.Root /> when using 'detached triggers' pointerdown removal moves focus to the popup when a focused child is removed on pointerdown and outside press still dismisses
+- <Dialog.Root /> when using 'detached triggers' prop: actionsRef unmounts the dialog when the `unmount` method is called
+- <Dialog.Root /> when using 'detached triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=false
+- <Dialog.Root /> when using 'detached triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=undefined
+- <Dialog.Root /> when using 'detached triggers' prop: disablePointerDismissal does not close the dialog when clicking outside if disablePointerDismissal=true
+- <Dialog.Root /> when using 'detached triggers' prop: modal does not make other interactive elements on the page inert when a non-modal dialog is open
+- <Dialog.Root /> when using 'detached triggers' prop: modal makes other interactive elements on the page inert when a modal dialog is open
+- <Dialog.Root /> when using 'detached triggers' prop: modal should not render an internal backdrop when `false`
+- <Dialog.Root /> when using 'detached triggers' prop: modal should render an internal backdrop when `true`
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange calls onOpenChange with the new open state
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when clicked on trigger and close button
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when pressed Esc while the dialog is open
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks backdrop while the modal dialog is open
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks outside while the non-modal dialog is open
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange cancel() prevents opening while uncontrolled
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange clicks on user backdrop detects clicks on user backdrop
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange clicks on user backdrop does not change open state on non-main button clicks
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange does not emit internal openchange when an Escape close is canceled
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChange emits a single internal openchange when closing on Escape
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete does not get called on mount when not open
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete does not get called on open when dismissed during the enter animation
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete is called on close when the exit animation finishes
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete is called on close when there is no exit animation defined
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete is called on open when the enter animation finishes
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete is called on open when there is no enter animation defined
+- <Dialog.Root /> when using 'detached triggers' prop: onOpenChangeComplete waits for a restarted enter animation to finish
+- <Dialog.Root /> when using 'detached triggers' rewires dismiss interactions after closing and reopening
+- <Dialog.Root /> when using 'detached triggers' waits for the exit transition to finish before unmounting
+- <Dialog.Root /> when using 'multiple detached triggers' ARIA attributes
+- <Dialog.Root /> when using 'multiple detached triggers' dismisses non-nested dialogs one by one
+- <Dialog.Root /> when using 'multiple detached triggers' does not dismiss previous modal dialog when clicking new modal dialog
+- <Dialog.Root /> when using 'multiple detached triggers' nested popups should not close the parent menu when Escape is pressed in a nested dialog
+- <Dialog.Root /> when using 'multiple detached triggers' nested popups should not dismiss the dialog when dismissing outside a nested modal menu
+- <Dialog.Root /> when using 'multiple detached triggers' nested popups should not dismiss the dialog when dismissing outside a nested select popup
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops closing via intentional outside press with user backdrop (modal=true): works when portaled into a shadow DOM
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops closing via outside press: works for a modal dialog when clicking outside the shadow root
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops closing via outside press: works when clicking another element inside the same shadow root
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops closing via outside press: works when clicking outside the shadow root
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops uses intentional outside press with internal backdrop (modal=true): closes on click, not on mousedown
+- <Dialog.Root /> when using 'multiple detached triggers' outside press event with backdrops uses intentional outside press with user backdrop (mouse): closes on click, not on mousedown
+- <Dialog.Root /> when using 'multiple detached triggers' pointerdown removal dismisses on first outside click after NumberField scrub interaction (pointer lock path)
+- <Dialog.Root /> when using 'multiple detached triggers' pointerdown removal moves focus to the popup when a focused child is removed on pointerdown and outside press still dismisses
+- <Dialog.Root /> when using 'multiple detached triggers' prop: actionsRef unmounts the dialog when the `unmount` method is called
+- <Dialog.Root /> when using 'multiple detached triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=false
+- <Dialog.Root /> when using 'multiple detached triggers' prop: disablePointerDismissal closes the dialog when clicking outside if disablePointerDismissal=undefined
+- <Dialog.Root /> when using 'multiple detached triggers' prop: disablePointerDismissal does not close the dialog when clicking outside if disablePointerDismissal=true
+- <Dialog.Root /> when using 'multiple detached triggers' prop: modal does not make other interactive elements on the page inert when a non-modal dialog is open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: modal makes other interactive elements on the page inert when a modal dialog is open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: modal should not render an internal backdrop when `false`
+- <Dialog.Root /> when using 'multiple detached triggers' prop: modal should render an internal backdrop when `true`
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange calls onOpenChange with the new open state
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when clicked on trigger and close button
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when pressed Esc while the dialog is open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks backdrop while the modal dialog is open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange calls onOpenChange with the reason for change when user clicks outside while the non-modal dialog is open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange cancel() prevents opening while uncontrolled
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange clicks on user backdrop detects clicks on user backdrop
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange clicks on user backdrop does not change open state on non-main button clicks
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange does not emit internal openchange when an Escape close is canceled
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChange emits a single internal openchange when closing on Escape
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete does not get called on mount when not open
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete does not get called on open when dismissed during the enter animation
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete is called on close when the exit animation finishes
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete is called on close when there is no exit animation defined
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete is called on open when the enter animation finishes
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete is called on open when there is no enter animation defined
+- <Dialog.Root /> when using 'multiple detached triggers' prop: onOpenChangeComplete waits for a restarted enter animation to finish
+- <Dialog.Root /> when using 'multiple detached triggers' rewires dismiss interactions after closing and reopening
+- <Dialog.Root /> when using 'multiple detached triggers' waits for the exit transition to finish before unmounting

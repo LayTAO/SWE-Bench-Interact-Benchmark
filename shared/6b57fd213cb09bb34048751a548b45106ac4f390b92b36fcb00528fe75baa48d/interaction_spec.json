@@ -1,0 +1,39 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Open the Grocery select.",
+    "Click Browse vegetables.",
+    "Read tab selection and panel state."
+  ],
+  "checkpoints": [
+    "Fruits is selected initially.",
+    "The cross-link action occurs.",
+    "Vegetables becomes the selected tab and panel in Fixed."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "vegetables_panel_visible": true,
+    "vegetables_tab_selected": true
+  },
+  "instance_id": "ariakit__ariakit-6346",
+  "observation_channels": [
+    "DOM",
+    "ARIA selected/tabindex",
+    "visible panel",
+    "focus",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "vegetables_tab_selected": false
+  },
+  "preconditions": [
+    "The Grocery Select popover contains Fruits and Vegetables tabs."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The popover opens with Fruits selected.",
+    "The user activates Browse vegetables.",
+    "The selected tab, visible panel, tabindex and focus are observed."
+  ]
+}

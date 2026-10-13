@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/mui__material-ui-45301"
+version = "0.2.0-candidate"
+description = "[Select] Pointer Cancellation (WCAG 2.5.2) failure"
+
+[metadata]
+instance_id = "mui__material-ui-45301"
+repository = "mui/material-ui"
+base_commit = "a71da577d99d67680c6654e0ea2ebe20eed633a4"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7d64066cb176c49f24e96462e883e117aa7b50c73449c9b5b4c85f4c5bb4e825"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a91e65c6453ea09fb2827b028659023057aa9fce603011425d143b97281cda5d"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

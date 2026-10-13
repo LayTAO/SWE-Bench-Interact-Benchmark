@@ -1,0 +1,14 @@
+{
+  "base_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "buggy_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b",
+  "build_command": "",
+  "install_command": "npm install --global pnpm@8.7.0 && pnpm install --frozen-lockfile --store-dir /pnpm-store --network-concurrency=4",
+  "instance_id": "heroui-inc__heroui-3276",
+  "package_manager": "pnpm 8.7.0",
+  "repo_url": "https://github.com/heroui-inc/heroui.git",
+  "repository": "heroui-inc/heroui",
+  "runtime": "Node.js 20.18.0",
+  "schema_version": "4.0",
+  "test_command": "pnpm exec jest packages/components/select/__tests__/select.test.tsx --runInBand --json --outputFile=\"$RESULTS_DIR/$MODE.raw.json\""
+}

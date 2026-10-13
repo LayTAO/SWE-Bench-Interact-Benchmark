@@ -1,0 +1,24 @@
+{
+  "FAIL_TO_PASS": [
+    "given a modal Dialog (#2677) should respect disableOutsidePointerEvents=false on the content",
+    "given a modal Dialog (#2677) should still lock body pointer-events when explicitly true"
+  ],
+  "PASS_TO_PASS": [
+    "given a Dialog with content nested inside the overlay when pressing down on a control inside the content should keep the dialog open",
+    "given a Dialog with content nested inside the overlay when pressing down on a control inside the content should not prevent the default pointerdown action",
+    "given a default Dialog after clicking the trigger should focus the close button",
+    "given a default Dialog after clicking the trigger should open the content",
+    "given a default Dialog after clicking the trigger when aria-describedby is set to undefined should not warn to the console",
+    "given a default Dialog after clicking the trigger when clicking the overlay should close the content",
+    "given a default Dialog after clicking the trigger when clicking the overlay should focus trigger",
+    "given a default Dialog after clicking the trigger when no description has been provided should warn to the console",
+    "given a default Dialog after clicking the trigger when no title has been provided should warn to the console",
+    "given a default Dialog after clicking the trigger when pressing escape should close the content",
+    "given a default Dialog after clicking the trigger when pressing escape should focus trigger",
+    "given a default Dialog should pass axe accessibility tests",
+    "given a modal Dialog (#2677) should lock body pointer-events by default"
+  ],
+  "base_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8",
+  "instance_id": "unovue__reka-ui-2677",
+  "schema_version": "4.0"
+}

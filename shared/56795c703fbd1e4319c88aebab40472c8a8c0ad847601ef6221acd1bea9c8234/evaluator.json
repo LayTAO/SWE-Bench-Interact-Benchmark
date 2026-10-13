@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "should render the clear button with tabindex=\"-1\"",
+    "should clear the input on blur",
+    "should clear input on Escape",
+    "should clear selections on Escape",
+    "should clear selections on Escape"
+  ],
+  "PASS_TO_PASS": [
+    "should render"
+  ],
+  "base_commit": "f5a7fd697b193da17d127d5726388b6ef2a5e449",
+  "instance_id": "carbon-design-system__carbon-21508",
+  "schema_version": "4.0"
+}

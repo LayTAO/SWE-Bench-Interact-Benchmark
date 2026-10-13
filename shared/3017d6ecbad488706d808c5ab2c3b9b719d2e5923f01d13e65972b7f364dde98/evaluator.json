@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "runAfterTransition clears out detached elements from transitionsByElement"
+  ],
+  "PASS_TO_PASS": [
+    "runAfterTransition calls callback immediately when no transition is running",
+    "runAfterTransition calls multiple queued callbacks after transition ends",
+    "runAfterTransition defers callback until transition end when a transition is running"
+  ],
+  "base_commit": "b0118e99853f9785e930fbc3e01f47ce5c43ff79",
+  "instance_id": "adobe__react-spectrum-7973",
+  "schema_version": "4.0"
+}

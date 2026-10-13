@@ -1,0 +1,41 @@
+{
+  "expected_fixed_state": {
+    "dialog_present_after_escape": true
+  },
+  "instance_id": "react-bootstrap__react-bootstrap-6514",
+  "observation_channels": [
+    "dialog presence",
+    "Escape key event",
+    "onHide state transition",
+    "ChromeHeadless page/test result"
+  ],
+  "observed_buggy_state": {
+    "dialog_present_after_escape": false
+  },
+  "preconditions": [
+    "The exact subject checkout is prepared.",
+    "A Modal is rendered with keyboard=false."
+  ],
+  "schema_version": "1.0",
+  "source": "exact PR browser regression test for Issue #6514",
+  "states": [
+    {
+      "actions": [
+        "Render the test component and click Button."
+      ],
+      "checkpoints": [
+        "A dialog is present."
+      ],
+      "name": "modal_open"
+    },
+    {
+      "actions": [
+        "Dispatch keyDown Escape to the dialog."
+      ],
+      "checkpoints": [
+        "After the test wait, the dialog remains present."
+      ],
+      "name": "escape_pressed"
+    }
+  ]
+}

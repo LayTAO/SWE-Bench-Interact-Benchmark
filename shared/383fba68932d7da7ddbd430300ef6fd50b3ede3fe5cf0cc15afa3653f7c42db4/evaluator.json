@@ -1,0 +1,41 @@
+{
+  "FAIL_TO_PASS": [
+    "given ListboxItem with reactive `disabled` prop should update DOM attributes when `disabled` toggles without highlight/selection change"
+  ],
+  "PASS_TO_PASS": [
+    "given Listbox in a form after selecting option and clicking submit button should trigger submit once",
+    "given Listbox in a form after selecting other option and click submit button again should trigger submit once",
+    "given Listbox in a form should have hidden input field",
+    "given default Listbox should pass axe accessibility tests",
+    "given default Listbox when focus on content after pressing `Enter` after selecting other item and press `Enter` should select the third item",
+    "given default Listbox when focus on content after pressing `Enter` should deselect after pressing `Enter`",
+    "given default Listbox when focus on content after pressing `Enter` should emit `update:modelValue` event",
+    "given default Listbox when focus on content after pressing `Enter` should select the highlighted item",
+    "given default Listbox when focus on content should emit `highlight` event",
+    "given default Listbox when focus on content should have highlighted state on first item",
+    "given default Listbox when focus on content should highlight and select item when clicked",
+    "given default Listbox when focus on content should pass the focus to the first item",
+    "given default Listbox when selection behavior `replace` should not toggle off the selected value",
+    "given default Listbox when selection behavior `replace` should select and replace another item",
+    "given default Listbox when typing letter should highlight text starting with B",
+    "given horizontal Listbox should pass axe accessibility tests",
+    "given horizontal Listbox when focus on content after pressing `Enter` after selecting other item and press `Enter` should select the third item",
+    "given horizontal Listbox when focus on content after pressing `Enter` should deselect after pressing `Enter`",
+    "given horizontal Listbox when focus on content after pressing `Enter` should emit `update:modelValue` event",
+    "given horizontal Listbox when focus on content after pressing `Enter` should select the highlighted item",
+    "given horizontal Listbox when focus on content should emit `highlight` event",
+    "given horizontal Listbox when focus on content should have highlighted state on first item",
+    "given horizontal Listbox when focus on content should highlight and select item when clicked",
+    "given horizontal Listbox when focus on content should pass the focus to the first item",
+    "given multiple `true` Listbox should emit `update:modelValue` event",
+    "given multiple `true` Listbox should select multiple items",
+    "given multiple `true` Listbox when selection behavior `replace` should emit `update:modelValue` event",
+    "given multiple `true` Listbox when selection behavior `replace` should not toggle off the selected value",
+    "given multiple `true` Listbox when selection behavior `replace` should select and replace another item",
+    "given multiple `true` Listbox when selection behavior `replace` when keypress Shift + ArrowDown should select more items",
+    "given multiple `true` Listbox when selection behavior `replace` when keypress Shift + ArrowDown should select the next item"
+  ],
+  "base_commit": "333707d0a2d68a1554c4cf4d96e41ffe30f1a070",
+  "instance_id": "unovue__reka-ui-2644",
+  "schema_version": "4.0"
+}

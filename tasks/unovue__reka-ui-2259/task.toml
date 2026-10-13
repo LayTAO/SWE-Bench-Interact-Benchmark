@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/unovue__reka-ui-2259"
+version = "0.2.0-candidate"
+description = "[Bug]: Combobox tags input with add-on-blur adds input instead of selection"
+
+[metadata]
+instance_id = "unovue__reka-ui-2259"
+repository = "unovue/reka-ui"
+base_commit = "1c36b3c1845242b6a395be026fdfbf78b193f4cd"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3078a9d83e397aa835fcb360104f2b82ebd456f99f32972953e56fc41f5cce9b"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:4870915a459920854c4b83e3f00c85cc5f35bae940f4ec005f632e2794256eec"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

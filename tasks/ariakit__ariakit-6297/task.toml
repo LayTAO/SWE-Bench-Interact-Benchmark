@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/ariakit__ariakit-6297"
+version = "0.2.0-candidate"
+description = "ComboboxItem steals focus and overwrites the combobox value on Ctrl/Cmd shortcuts when virtual focus is disabled"
+
+[metadata]
+instance_id = "ariakit__ariakit-6297"
+repository = "ariakit/ariakit"
+base_commit = "953dfa92d50a277578c0b0aad960dd612142b705"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:adee355a36314f775a2ffa1aca5c095be84882c82eb72ae9695b1b4cc87da0a5"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d6bb8a2caa22ddd5859b467ba418d1f1e744e5bc3269c48eb5a3905529b5ac00"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

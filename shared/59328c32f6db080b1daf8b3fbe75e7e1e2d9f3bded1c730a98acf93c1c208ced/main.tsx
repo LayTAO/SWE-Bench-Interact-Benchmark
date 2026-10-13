@@ -1,0 +1,2 @@
+import React,{useState}from'react';import ReactDOM from'react-dom/client';import{NumberField}from'@base-ui/react/number-field';
+function App(){const[last,setLast]=useState('none');return <main><h1>Multi-character currency editing</h1><NumberField.Root defaultValue={1234.56} locale="pt-BR" format={{style:'currency',currency:'BRL'}} onValueChange={value=>setLast(String(value))}><NumberField.Input aria-label="Amount"/></NumberField.Root><output data-testid="last-value">{last}</output></main>}ReactDOM.createRoot(document.getElementById('root')!).render(<App/>);

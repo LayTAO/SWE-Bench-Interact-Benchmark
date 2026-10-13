@@ -1,0 +1,45 @@
+{
+  "expected_fixed_state": {
+    "placeholders": [
+      "*",
+      "",
+      "*",
+      "*",
+      "*"
+    ]
+  },
+  "instance_id": "unovue__reka-ui-2375",
+  "observation_channels": [
+    "input values",
+    "placeholder attributes",
+    "active input",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "placeholders": [
+      "",
+      "",
+      "*",
+      "*",
+      "*"
+    ]
+  },
+  "preconditions": [
+    "Five empty PinInput positions are visible.",
+    "The PinInput placeholder is '*'."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2375 interaction",
+  "states": [
+    {
+      "actions": [
+        "Focus the first position.",
+        "Type 'a'."
+      ],
+      "checkpoints": [
+        "The first position contains a value and focus advances to the second position."
+      ],
+      "name": "enter_first_value"
+    }
+  ]
+}

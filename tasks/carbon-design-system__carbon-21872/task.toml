@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/carbon-design-system__carbon-21872"
+version = "0.2.0-candidate"
+description = "[Bug]: cds-dropdown and cds-combo-box - calling event.preventDefault() on cds-dropdown-beingselected and cds-combo-box-beingselected does not prevent value change"
+
+[metadata]
+instance_id = "carbon-design-system__carbon-21872"
+repository = "carbon-design-system/carbon"
+base_commit = "f4aeceacca48b74cdd67bbd85f78e1da5459cda5"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:42c5c36e82adb025bdb2e0261156c005f5aeef1a34f977efe44839c40613fc8c"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2ded52d9b22c489a7ade41a274882302f6b1027f38426baaad0abb73741727f0"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

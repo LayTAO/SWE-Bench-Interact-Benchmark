@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "react": "18.3.1",
+    "react-aria": "3.0.0-nightly-4c91299da-251217",
+    "react-aria-components": "3.0.0-nightly-4c91299da-251217",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.7.2",
+    "vite": "6.0.3"
+  },
+  "name": "adobe-react-spectrum-9215-repro",
+  "overrides": {
+    "react-aria": "3.0.0-nightly-4c91299da-251217",
+    "react-aria-components": "3.0.0-nightly-4c91299da-251217"
+  },
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test:e2e": "playwright test"
+  },
+  "type": "module"
+}

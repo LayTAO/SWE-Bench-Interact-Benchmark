@@ -1,0 +1,57 @@
+{
+  "expected_fixed_state": {
+    "aria_expanded": "true",
+    "menu_item_count": 3,
+    "menu_visible": true
+  },
+  "instance_id": "tailwindlabs__headlessui-3749",
+  "observation_channels": [
+    "click event count",
+    "ARIA expanded state",
+    "menu visibility",
+    "menu item count and geometry",
+    "control geometry",
+    "page errors"
+  ],
+  "observed_buggy_state": {
+    "aria_expanded": "false",
+    "menu_item_count": 0,
+    "menu_visible": false
+  },
+  "preconditions": [
+    "The exact @headlessui/react subject state is mounted read-only.",
+    "The MenuButton DOM node is held by a forwarded React ref.",
+    "The menu is initially closed and contains three items."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #3749 report and code sample",
+  "states": [
+    {
+      "actions": [
+        "Load the source-backed minimal app."
+      ],
+      "checkpoints": [
+        "The native programmatic button and MenuButton are visible and aligned."
+      ],
+      "name": "ready"
+    },
+    {
+      "actions": [
+        "Click the outer button, which calls buttonRef.current.click()."
+      ],
+      "checkpoints": [
+        "The outer handler runs exactly once."
+      ],
+      "name": "programmatic_click"
+    },
+    {
+      "actions": [
+        "Observe MenuButton and MenuItems state."
+      ],
+      "checkpoints": [
+        "aria-expanded is true and three visible menu items exist."
+      ],
+      "name": "menu_result"
+    }
+  ]
+}

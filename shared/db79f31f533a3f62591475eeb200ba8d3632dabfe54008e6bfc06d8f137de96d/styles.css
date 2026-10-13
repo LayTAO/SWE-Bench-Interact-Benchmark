@@ -1,0 +1,5 @@
+body { font-family: sans-serif; margin: 24px; min-height: 520px }
+main { display: grid; gap: 14px; max-width: 520px }
+.segments { display: flex; gap: 3px; border: 1px solid #777; padding: 10px; width: max-content }
+.segment { min-width: 2ch; padding: 4px; text-align: center }
+output { font-family: monospace }

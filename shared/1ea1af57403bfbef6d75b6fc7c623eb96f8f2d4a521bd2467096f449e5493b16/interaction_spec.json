@@ -1,0 +1,34 @@
+{
+  "actions": [
+    "输入起止时间",
+    "调整月份",
+    "检查 min/maxDate 与 disabledDate"
+  ],
+  "expected_fixed": "月份调整后的 min/maxDate 收敛到可用日期。",
+  "instance_id": "element-plus__element-plus-24075",
+  "issue_derived_path": [
+    "输入起止时间",
+    "调整月份",
+    "检查 min/maxDate 与 disabledDate"
+  ],
+  "observation_channels": [
+    "DOM state",
+    "ARIA/data attributes",
+    "event and gesture state",
+    "popup geometry",
+    "named assertion outcome",
+    "page-error stream"
+  ],
+  "observed_buggy": "月份调整会产生 disabledDate 或越界日期。",
+  "preconditions": [
+    "independent minimal Vue page imports candidate source",
+    "date inputs are visible",
+    "page loads without errors"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "interaction-triggered",
+    "defect-checkpoint"
+  ]
+}

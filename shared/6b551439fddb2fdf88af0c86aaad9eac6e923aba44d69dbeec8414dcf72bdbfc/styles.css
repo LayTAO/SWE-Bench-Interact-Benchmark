@@ -1,0 +1,9 @@
+:root { font-family: system-ui, sans-serif; color: #172033; background: #eef2f7; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+.page { min-height: 100vh; padding: 40px; background: linear-gradient(#fff, #eef2f7); }
+h1 { margin: 0 0 8px; font-size: 28px; }
+.instructions { max-width: 680px; margin: 0 0 32px; color: #526077; line-height: 1.5; }
+.stage { position: relative; min-height: 360px; padding: 24px; background: white; border: 1px solid #ccd2dc; }
+.controls { display: flex; gap: 16px; align-items: center; }
+button { margin: 6px; }

@@ -1,0 +1,12 @@
+{
+  "base_commit": "953dfa92d50a277578c0b0aad960dd612142b705",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && corepack prepare pnpm@11.8.0 --activate && pnpm install --frozen-lockfile",
+  "instance_id": "ariakit__ariakit-6297",
+  "package_manager": "pnpm@11.8.0",
+  "repo_url": "https://github.com/ariakit/ariakit.git",
+  "repository": "ariakit/ariakit",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "pnpm test-react app/src/sandbox/combobox-6297/test.ts examples/combobox-inline-autocomplete/test.ts --run --reporter=json"
+}

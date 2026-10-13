@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "useOverlayPosition > should position the overlay relative to the trigger at top"
+  ],
+  "PASS_TO_PASS": [
+    "calculatePosition > placement = bottom > no viewport offset > Should calculate the correct position",
+    "useOverlayPosition > should position the overlay relative to the trigger",
+    "useOverlayPosition > should update the position on window resize",
+    "useOverlayPosition with positioned container > should position the overlay relative to the trigger"
+  ],
+  "base_commit": "05346a6a6f16f2e853ef01bed9149381eebedf26",
+  "instance_id": "adobe__react-spectrum-7960",
+  "schema_version": "4.0"
+}

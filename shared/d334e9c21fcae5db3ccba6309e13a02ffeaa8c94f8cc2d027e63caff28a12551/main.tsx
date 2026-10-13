@@ -1,0 +1,2 @@
+import React,{useState}from'react';import ReactDOM from'react-dom/client';import{Slider}from'@base-ui/react/slider';import'./styles.css';
+function App(){const[last,setLast]=useState('none');return <main><h1>Fractional slider</h1><Slider.Root defaultValue={0.2} min={0} max={1} step={0.1} onValueChange={value=>setLast(String(value))}><Slider.Control><Slider.Track><Slider.Indicator/><Slider.Thumb/></Slider.Track></Slider.Control></Slider.Root><output data-testid="last-value">{last}</output></main>}ReactDOM.createRoot(document.getElementById('root')!).render(<App/>);

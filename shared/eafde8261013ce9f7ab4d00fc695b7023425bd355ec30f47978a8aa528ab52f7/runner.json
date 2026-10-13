@@ -1,0 +1,16 @@
+{
+  "base_commit": "3b84cd251606c66148197ef54a869f99b6662ac8",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "chromium": {
+    "executable": "/ms-playwright/chromium-1208/chrome-linux64/chrome",
+    "version": "145.0.7632.6"
+  },
+  "install_command": "corepack enable && corepack prepare pnpm@10.32.1 --activate && pnpm install --frozen-lockfile && pnpm exec playwright install chromium",
+  "instance_id": "mui__material-ui-47203",
+  "package_manager": "pnpm 10.32.1",
+  "repo_url": "https://github.com/mui/material-ui.git",
+  "repository": "mui/material-ui",
+  "runtime": "Node.js 24.15.0",
+  "schema_version": "3.0",
+  "test_command": "TEST_SCOPE=browser pnpm test:browser run packages/mui-material/src/Autocomplete/Autocomplete.test.js --maxWorkers=1 --reporter=json"
+}

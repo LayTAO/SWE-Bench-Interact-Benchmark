@@ -1,0 +1,34 @@
+{
+  "FAIL_TO_PASS": [
+    "keys from focusable descendants does not activate a ToolbarLink from Space typed into a portaled focusable descendant",
+    "keys from focusable descendants does not activate a tab from Space/Enter typed into a portaled focusable descendant",
+    "keys from focusable descendants does not intercept Space/Enter typed into a portaled focusable descendant",
+    "keys from focusable descendants does not select an item from Space/Enter typed into a portaled focusable descendant"
+  ],
+  "PASS_TO_PASS": [
+    "Select ref stability keeps a stable composed ref on Content",
+    "Select ref stability keeps a stable composed ref on Item",
+    "Select ref stability keeps a stable composed ref on ItemText",
+    "clearing an optional value (#2706) allows a `Select.Item` with an empty string value to be rendered",
+    "clearing an optional value (#2706) lets the user reset a previously selected value back to the placeholder",
+    "clearing an optional value (#2706) marks the empty value item as selected when the value is empty",
+    "clearing an optional value (#2706) renders a single empty native option when a clear item is provided",
+    "clearing an optional value (#2706) shows the placeholder (not the item text) when the empty value item is selected",
+    "closing on window blur should close the menu and any open submenus when the window loses focus",
+    "given a Select in a form that is reset controlled should restore its initial `value` when the form is reset",
+    "given a Select in a form that is reset external form association should restore its `defaultValue` when reset from an external form",
+    "given a Select in a form that is reset external form association should restore its initial `value` when reset from an external form",
+    "given a Select in a form that is reset uncontrolled should restore its `defaultValue` when the form is reset",
+    "given a Select in a form that is reset uncontrolled should restore the placeholder when reset with no initial value",
+    "given a default Toolbar Click event should be called just once",
+    "keys from focusable descendants still activates the ToolbarLink via Space when the link itself is focused",
+    "keys from focusable descendants still activates the tab via Space/Enter when the trigger itself is focused",
+    "keys from focusable descendants still selects the item via Enter when the item itself is focused",
+    "keys from focusable descendants still selects the item via Space/Enter when the item itself is focused",
+    "ref stability keeps a stable composed ref on the SubTrigger",
+    "ref stability keeps a stable composed ref on the Trigger"
+  ],
+  "base_commit": "1fa9b449bec168233b8cd7ab2ff2ddebebc454e5",
+  "instance_id": "radix-ui__primitives-3232",
+  "schema_version": "4.0"
+}

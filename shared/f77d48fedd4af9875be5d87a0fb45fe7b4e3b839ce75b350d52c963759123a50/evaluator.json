@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "normalizes reversed range dates entered via input on blur"
+  ],
+  "PASS_TO_PASS": [
+    "should allow selecting dates after typing end date first"
+  ],
+  "base_commit": "2e2526447a2ebd9e6e7bffd6ea1ff22c19a57586",
+  "instance_id": "chakra-ui__zag-3186",
+  "schema_version": "4.0"
+}

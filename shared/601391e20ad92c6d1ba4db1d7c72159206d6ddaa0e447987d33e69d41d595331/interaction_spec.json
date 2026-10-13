@@ -1,0 +1,42 @@
+{
+  "expected_fixed_state": {
+    "active_element": "input",
+    "collection_items": "Apple without raw a"
+  },
+  "instance_id": "unovue__reka-ui-2259",
+  "observation_channels": [
+    "collection item text",
+    "document.activeElement",
+    "input and option geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "committed_or_focus_state": "does not match expected"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A tags Combobox with addOnBlur is visible."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2259 interaction",
+  "states": [
+    {
+      "actions": [
+        "Type a into the Combobox input."
+      ],
+      "checkpoints": [
+        "The Apple option is visible."
+      ],
+      "name": "matching_input"
+    },
+    {
+      "actions": [
+        "Click the Apple option."
+      ],
+      "checkpoints": [
+        "Record collection items and active element."
+      ],
+      "name": "option_selection"
+    }
+  ]
+}

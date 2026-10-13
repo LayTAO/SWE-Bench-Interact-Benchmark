@@ -1,0 +1,33 @@
+{
+  "environment_gate": [
+    "date-picker range route and two inputs render"
+  ],
+  "expected_fixed": {
+    "end": "06/20/2024",
+    "start": "06/10/2024"
+  },
+  "instance_id": "chakra-ui__zag-3186",
+  "issue_derived_path": [
+    "open the Zag range date-picker page",
+    "type a later start date",
+    "type an earlier end date",
+    "blur through Tab",
+    "read both inputs and selected machine value"
+  ],
+  "observation_channels": [
+    "semantic input values",
+    "machine range array",
+    "focus/blur events",
+    "page errors"
+  ],
+  "observed_buggy": {
+    "end": "06/10/2024",
+    "start": "06/20/2024"
+  },
+  "schema_version": "1.0",
+  "states": [
+    "empty-range",
+    "reversed-input",
+    "blurred-normalized"
+  ]
+}

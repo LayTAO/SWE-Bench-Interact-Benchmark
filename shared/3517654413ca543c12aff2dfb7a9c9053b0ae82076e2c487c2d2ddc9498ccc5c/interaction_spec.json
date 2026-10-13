@@ -1,0 +1,41 @@
+{
+  "expected_fixed_state": {
+    "active_segment": "minute"
+  },
+  "instance_id": "unovue__reka-ui-2567",
+  "observation_channels": [
+    "active segment",
+    "minute text",
+    "segment geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "active_segment": "a segment after minute"
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A TimeField with hour, minute, second, and day-period segments is visible."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2567 interaction",
+  "states": [
+    {
+      "actions": [
+        "Focus minute, type zero, and press Tab."
+      ],
+      "checkpoints": [
+        "The zero-valued minute state is established."
+      ],
+      "name": "previous_zero"
+    },
+    {
+      "actions": [
+        "Return to minute and type one."
+      ],
+      "checkpoints": [
+        "Record the active segment before completion."
+      ],
+      "name": "edit_again"
+    }
+  ]
+}

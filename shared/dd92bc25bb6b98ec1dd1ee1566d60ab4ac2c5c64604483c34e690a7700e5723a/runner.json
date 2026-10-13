@@ -1,0 +1,12 @@
+{
+  "base_commit": "b4d916339554f64967ff7c1154b171f319bef28d",
+  "base_image": "public.ecr.aws/docker/library/node:16-bullseye",
+  "install_command": "npm ci --cache /npm-cache --prefer-offline --no-audit --no-fund",
+  "instance_id": "ariakit__ariakit-1652",
+  "package_manager": "npm",
+  "repo_url": "https://github.com/ariakit/ariakit.git",
+  "repository": "ariakit/ariakit",
+  "runtime": "public.ecr.aws/docker/library/node:16-bullseye; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

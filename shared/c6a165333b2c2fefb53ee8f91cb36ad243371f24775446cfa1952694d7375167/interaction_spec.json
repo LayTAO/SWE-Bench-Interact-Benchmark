@@ -1,0 +1,41 @@
+{
+  "expected_fixed_state": {
+    "active_element": "email-input"
+  },
+  "instance_id": "unovue__reka-ui-2506",
+  "observation_channels": [
+    "active element",
+    "dialog visibility",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "active_element": "dialog"
+  },
+  "preconditions": [
+    "The Dialog trigger is visible.",
+    "The Dialog contains an email input and a SelectTrigger."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2506 interaction",
+  "states": [
+    {
+      "actions": [
+        "Click Open."
+      ],
+      "checkpoints": [
+        "The email input is visible and should receive initial focus."
+      ],
+      "name": "first_open"
+    },
+    {
+      "actions": [
+        "Press Escape to close the Dialog.",
+        "Click Open again."
+      ],
+      "checkpoints": [
+        "The email input is visible again."
+      ],
+      "name": "reopen"
+    }
+  ]
+}

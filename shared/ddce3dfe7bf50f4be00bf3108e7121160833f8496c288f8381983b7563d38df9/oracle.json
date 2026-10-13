@@ -1,0 +1,26 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "value_after_first_increment != 0.25"
+    ]
+  },
+  "environment_gate": [
+    "input value is numeric and control is interactive"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_first_value": "0.3",
+    "fixed_values": [
+      "0.25",
+      "0.50",
+      "0.75"
+    ]
+  },
+  "instance_id": "primefaces__primereact-8382",
+  "predicate_id": "input_number_quarter_step_is_exact",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "increment was activated three times through user input"
+  ]
+}

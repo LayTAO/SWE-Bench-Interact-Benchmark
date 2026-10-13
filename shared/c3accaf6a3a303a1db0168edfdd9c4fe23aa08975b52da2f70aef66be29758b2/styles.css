@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, sans-serif;
+  color: #172033;
+  background: #f6f7fb;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.page {
+  width: min(760px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.instructions {
+  margin: 0 0 16px;
+  color: #475569;
+}
+
+.scroll-shell {
+  position: relative;
+  height: 400px;
+  overflow-y: auto;
+  border: 2px solid #5066c7;
+  border-radius: 8px;
+  background: white;
+  scroll-behavior: auto;
+}
+
+.scroll-content {
+  position: relative;
+  min-height: 1400px;
+  padding: 0 20px 20px;
+}
+
+.top-filler {
+  height: 340px;
+  background: linear-gradient(#dbeafe, #eff6ff);
+}
+
+.drop-zone {
+  min-height: 430px;
+  margin: 16px 0;
+  padding: 20px;
+  border: 2px dashed #7b8bd8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.drop-inner-filler {
+  height: 220px;
+  margin: -4px -4px 16px;
+  padding: 8px;
+  background: #e0f2fe;
+}
+
+.drop-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #475569;
+}
+
+.upload-button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: white;
+  background: #3157c9;
+  cursor: pointer;
+}
+
+.bottom-filler {
+  height: 600px;
+  background: #fef3c7;
+}

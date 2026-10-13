@@ -1,0 +1,43 @@
+{
+  "expected_fixed_state": {
+    "body_pointer_events": "none",
+    "dialog_visible": true
+  },
+  "instance_id": "unovue__reka-ui-2674",
+  "observation_channels": [
+    "body pointer-events",
+    "Dialog and menu visibility",
+    "overlay geometry",
+    "console and page errors"
+  ],
+  "observed_buggy_state": {
+    "body_pointer_events": "not none",
+    "dialog_visible": true
+  },
+  "preconditions": [
+    "The exact subject source is mounted read-only.",
+    "A DropdownMenu is nested in a modal Dialog."
+  ],
+  "schema_version": "1.0",
+  "source": "sanitized Issue #2674 interaction",
+  "states": [
+    {
+      "actions": [
+        "Open the Dialog and nested menu."
+      ],
+      "checkpoints": [
+        "The Dialog and menu are visible and body pointer-events is none."
+      ],
+      "name": "nested_open"
+    },
+    {
+      "actions": [
+        "Press Escape once."
+      ],
+      "checkpoints": [
+        "The menu closes while the Dialog remains open; record body pointer-events."
+      ],
+      "name": "menu_closed"
+    }
+  ]
+}

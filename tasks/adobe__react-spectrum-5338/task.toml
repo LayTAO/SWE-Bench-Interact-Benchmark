@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/adobe__react-spectrum-5338"
+version = "0.2.0-candidate"
+description = "Can't click ModalOverlay to close an open Combobox"
+
+[metadata]
+instance_id = "adobe__react-spectrum-5338"
+repository = "adobe/react-spectrum"
+base_commit = "1a2b8f860ef2cee6aa579aa6b5e7032ca3be1cb1"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5b08da649dd969d0f73d9a51d61ec962018d9d8d8f5ea6ed116bc01a272338d5"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:871c56b5b89c0c377ed773b0d1163d13ac61d354555fe91ff6946156eec50f15"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 16384
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

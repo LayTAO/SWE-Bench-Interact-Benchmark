@@ -1,0 +1,6 @@
+import * as Ariakit from '@ariakit/react';
+import React, { startTransition, useMemo, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+const items=['Apple','Banana','Blueberry','Cherry','Cranberry','Grape','Grapefruit','Lemon','Mango','Orange','Papaya','Peach','Pineapple','Raspberry','Strawberry','Watermelon'];
+function App(){const[search,setSearch]=useState('');const matches=useMemo(()=>search?items.filter(item=>item.toLowerCase().includes(search.toLowerCase().trim())):items,[search]);const dialog=Ariakit.useDialogStore({defaultOpen:true});return <main><h1>Async combobox results</h1><Ariakit.Dialog store={dialog} aria-label="Command menu"><Ariakit.ComboboxProvider disclosure={dialog} focusLoop={false} includesBaseElement={false} resetValueOnHide setValue={value=>startTransition(()=>setSearch(value))}><Ariakit.Combobox autoSelect="always" aria-label="Fruit search" placeholder="Search for fruits" style={{width:50}}/><Ariakit.ComboboxList>{matches.map(item=><Ariakit.ComboboxItem key={item} value={item}>{item}</Ariakit.ComboboxItem>)}</Ariakit.ComboboxList></Ariakit.ComboboxProvider></Ariakit.Dialog></main>}
+ReactDOM.createRoot(document.getElementById('root')!).render(<App/>);

@@ -1,0 +1,210 @@
+diff --git a/app/src/sandbox/popover-6310/index.react.tsx b/app/src/sandbox/popover-6310/index.react.tsx
+new file mode 100644
+index 0000000000..c1ee354ba5
+--- /dev/null
++++ b/app/src/sandbox/popover-6310/index.react.tsx
+@@ -0,0 +1,32 @@
++import * as Ariakit from "@ariakit/react";
++import { useRef } from "react";
++
++// See https://github.com/ariakit/ariakit/issues/6310
++//
++// Reproduces a portaled popover whose content starts with a non-focusable
++// element (the common custom file upload pattern: a `display: none`
++// `<input type="file">` followed by a visible "Choose file" button).
++// To see the bug:
++//   1. Click "Attachments": the popover opens and "Choose file" is focused
++//      (correct).
++//   2. Click "Attachments" again to close the popover. Closing moves focus to
++//      the disclosure, which makes the portal disable focus inside it, leaving
++//      "Choose file" with tabindex="-1".
++//   3. Click "Attachments" once more to reopen the popover.
++// Before the fix, reopening leaves focus on the disclosure: autofocus finds no
++// tabbable element (the button is still tabindex="-1") and the focusable
++// fallback resolves to the hidden file input, so focusing it is a no-op.
++export default function Example() {
++  const fileInputRef = useRef<HTMLInputElement>(null);
++  return (
++    <Ariakit.PopoverProvider>
++      <Ariakit.PopoverDisclosure>Attachments</Ariakit.PopoverDisclosure>
++      <Ariakit.Popover portal aria-label="Attachments">
++        <input ref={fileInputRef} type="file" style={{ display: "none" }} />
++        <button type="button" onClick={() => fileInputRef.current?.click()}>
++          Choose file
++        </button>
++      </Ariakit.Popover>
++    </Ariakit.PopoverProvider>
++  );
++}
+diff --git a/app/src/sandbox/popover-6310/test-browser.ts b/app/src/sandbox/popover-6310/test-browser.ts
+new file mode 100644
+index 0000000000..370afb9ef1
+--- /dev/null
++++ b/app/src/sandbox/popover-6310/test-browser.ts
+@@ -0,0 +1,35 @@
++// See https://github.com/ariakit/ariakit/issues/6310
++import { withFramework } from "#app/test-utils/preview.ts";
++
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("reopened portaled popover focuses the first focusable element when a hidden element comes first", async ({
++    q,
++  }) => {
++    // First open: focus correctly lands on the visible button, skipping the
++    // hidden file input that comes before it in the DOM.
++    await q.button("Attachments").click();
++    await test.expect(q.dialog("Attachments")).toBeVisible();
++    await test.expect(q.button("Choose file")).toBeFocused();
++
++    // Closing via the disclosure moves focus out of the portal, which disables
++    // focus inside it and leaves "Choose file" with tabindex="-1". The slow
++    // click reproduces a real click's gap between mousedown (focus leaves the
++    // portal) and mouseup (the popover closes), so the disable runs while the
++    // popover is still visible, like the manual reproduction.
++    await q.button("Attachments").click({ delay: 200 });
++    await test.expect(q.dialog("Attachments")).not.toBeVisible();
++    await test.expect(q.button("Attachments")).toBeFocused();
++    // Guard the bug precondition: the reopen only exercises the broken fallback
++    // when no element inside is tabbable, so confirm the disable actually ran.
++    await test
++      .expect(q.button("Choose file", { includeHidden: true }))
++      .toHaveAttribute("tabindex", "-1");
++
++    // Reopening must move focus to the visible button again, exactly like the
++    // first open did. Before the fix, focus stayed on the disclosure because the
++    // focusable fallback resolved to the hidden file input.
++    await q.button("Attachments").click();
++    await test.expect(q.dialog("Attachments")).toBeVisible();
++    await test.expect(q.button("Choose file")).toBeFocused();
++  });
++});
+diff --git a/app/src/sandbox/popover-6310/test.ts b/app/src/sandbox/popover-6310/test.ts
+new file mode 100644
+index 0000000000..b1030688d4
+--- /dev/null
++++ b/app/src/sandbox/popover-6310/test.ts
+@@ -0,0 +1,30 @@
++// See https://github.com/ariakit/ariakit/issues/6310
++import { click, q } from "@ariakit/test";
++import { expect, test } from "vitest";
++
++test("reopened portaled popover focuses the first focusable element when a hidden element comes first", async () => {
++  // First open: focus lands on the visible button, skipping the hidden file
++  // input that comes before it in the DOM.
++  await click(q.button.ensure("Attachments"));
++  expect(q.dialog("Attachments")).toBeVisible();
++  expect(q.button("Choose file")).toHaveFocus();
++
++  // Closing via the disclosure moves focus out of the portal, which disables
++  // focus inside it and leaves "Choose file" with tabindex="-1". The click
++  // helper's dwell between mousedown and mouseup lets the disable run while the
++  // popover is still visible, like a real click's gap.
++  await click(q.button.ensure("Attachments"));
++  // Wait for the close to settle: focus returns to the disclosure once the
++  // popover hides.
++  await expect.poll(q.button.lazy("Attachments")).toHaveFocus();
++  // Guard the bug precondition: the reopen only exercises the broken fallback
++  // when no element inside is tabbable, so confirm the disable actually ran.
++  expect(q.button.hidden("Choose file")).toHaveAttribute("tabindex", "-1");
++
++  // Reopening must move focus to the visible button again. Before the fix, focus
++  // stayed on the disclosure because the focusable fallback resolved to the
++  // hidden file input and focusing it is a no-op.
++  await click(q.button.ensure("Attachments"));
++  expect(q.dialog("Attachments")).toBeVisible();
++  expect(q.button("Choose file")).toHaveFocus();
++});
+diff --git a/packages/ariakit-utils/src/focus.test.ts b/packages/ariakit-utils/src/focus.test.ts
+index ff269d58c0..11e171943c 100644
+--- a/packages/ariakit-utils/src/focus.test.ts
++++ b/packages/ariakit-utils/src/focus.test.ts
+@@ -1,7 +1,9 @@
+ import { afterEach, expect, test } from "vitest";
+ import {
++  getAllTabbableIn,
+   getClosestFocusable,
+   getFirstTabbableIn,
++  getLastTabbableIn,
+   isTabbable,
+ } from "./focus.ts";
+ 
+@@ -133,11 +135,79 @@ test("getFirstTabbableIn falls back to the first focusable candidate", () => {
+   setVisible(negative);
+ 
+   // No tabbable elements: without the fallback we get null; with the
+-  // fallback we get the first element matching the focusable selector.
++  // fallback we get the first focusable element.
+   expect(getFirstTabbableIn(container)).toBe(null);
+   expect(getFirstTabbableIn(container, false, true)).toBe(negative);
+ });
+ 
++test("getFirstTabbableIn fallback skips non-focusable candidates", () => {
++  const container = document.createElement("div");
++  container.innerHTML = `
++    <button id="hidden" tabindex="-1">Hidden</button>
++    <button id="visible" tabindex="-1">Visible</button>
++  `;
++  document.body.append(container);
++
++  const hidden = container.querySelector("#hidden");
++  const visible = container.querySelector("#visible");
++  if (!hidden || !visible) {
++    throw new Error("Expected elements");
++  }
++
++  setNotVisible(hidden);
++  setVisible(visible);
++
++  // No tabbable elements (both are tabindex="-1"). The fallback must skip the
++  // non-focusable hidden button and return the first focusable one, not just
++  // the first selector match.
++  expect(getFirstTabbableIn(container, false, true)).toBe(visible);
++});
++
++test("getAllTabbableIn fallback returns only focusable candidates", () => {
++  const container = document.createElement("div");
++  container.innerHTML = `
++    <button id="hidden" tabindex="-1">Hidden</button>
++    <button id="visible" tabindex="-1">Visible</button>
++  `;
++  document.body.append(container);
++
++  const hidden = container.querySelector("#hidden");
++  const visible = container.querySelector("#visible");
++  if (!hidden || !visible) {
++    throw new Error("Expected elements");
++  }
++
++  setNotVisible(hidden);
++  setVisible(visible);
++
++  // No tabbable elements (both are tabindex="-1"). The fallback must drop the
++  // non-focusable hidden button instead of returning every selector match.
++  expect(getAllTabbableIn(container, false, true)).toEqual([visible]);
++});
++
++test("getLastTabbableIn fallback returns the last focusable candidate", () => {
++  const container = document.createElement("div");
++  container.innerHTML = `
++    <button id="visible" tabindex="-1">Visible</button>
++    <button id="hidden" tabindex="-1">Hidden</button>
++  `;
++  document.body.append(container);
++
++  const visible = container.querySelector("#visible");
++  const hidden = container.querySelector("#hidden");
++  if (!visible || !hidden) {
++    throw new Error("Expected elements");
++  }
++
++  setVisible(visible);
++  setNotVisible(hidden);
++
++  // No tabbable elements (both are tabindex="-1"). The fallback must skip the
++  // trailing non-focusable hidden button and return the last focusable one,
++  // not just the last selector match.
++  expect(getLastTabbableIn(container, false, true)).toBe(visible);
++});
++
+ test("getFirstTabbableIn returns null for empty containers", () => {
+   const container = document.createElement("div");
+   document.body.append(container);

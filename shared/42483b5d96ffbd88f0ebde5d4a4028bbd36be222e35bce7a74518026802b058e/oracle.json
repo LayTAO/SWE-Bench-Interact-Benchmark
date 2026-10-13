@@ -1,0 +1,32 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "initially_visible == true",
+      "menu_open_after_scroll == false"
+    ]
+  },
+  "environment_gate": [
+    "The exact source component loads without a page error.",
+    "The browser reaches the source-backed app and listbox."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "initially_visible": true,
+    "menu_open_after_scroll": true,
+    "scroll_triggered": true
+  },
+  "instance_id": "vuetifyjs__vuetify-22850",
+  "predicate_id": "autocomplete_menu_closes_after_mouse_wheel_scroll",
+  "rendering_gate": [
+    "The input, overlay, and scroll target have plausible non-zero dimensions.",
+    "The list has more scrollable content than its viewport."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The click opens the listbox.",
+    "Mouse-wheel input produces a scroll event and positive scroll offset before the predicate is checked."
+  ]
+}

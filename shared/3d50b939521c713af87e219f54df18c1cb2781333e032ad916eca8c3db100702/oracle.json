@@ -1,0 +1,23 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "mouse_released == true",
+      "callback_count_after_release > callback_count_at_release"
+    ]
+  },
+  "environment_gate": [
+    "target and callback counter are present"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_callback_count_after_release": "greater than callback_count_at_release",
+    "fixed_callback_count_after_release": "equals callback_count_at_release"
+  },
+  "instance_id": "element-plus__element-plus-19051",
+  "predicate_id": "repeat_click_stops_after_mouseup",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "mousedown, propagation-stopping mouseup, and bounded timer observation all completed"
+  ]
+}

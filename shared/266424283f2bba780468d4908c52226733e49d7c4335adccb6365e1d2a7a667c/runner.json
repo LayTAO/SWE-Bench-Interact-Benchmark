@@ -1,0 +1,12 @@
+{
+  "base_commit": "7c29d28ac9ec1cbd5684069f949b00c95dd34fa4",
+  "base_image": "public.ecr.aws/docker/library/node:10-buster-slim",
+  "install_command": "export YARN_CACHE_FOLDER=/yarn-cache; yarn --version && yarn install --frozen-lockfile --non-interactive",
+  "instance_id": "mui__material-ui-13962",
+  "package_manager": "image-provided-yarn-classic",
+  "repo_url": "https://github.com/mui/material-ui.git",
+  "repository": "mui/material-ui",
+  "runtime": "public.ecr.aws/docker/library/node:10-buster-slim; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

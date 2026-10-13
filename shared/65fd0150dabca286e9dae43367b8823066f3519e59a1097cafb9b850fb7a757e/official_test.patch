@@ -1,0 +1,635 @@
+diff --git a/examples/dialog-menu/test.ts b/examples/dialog-menu/test.ts
+index 6c359ac4f2b48ecb2479b74d9f08fe82dcd5d135..951421d27dbb1fb42c3130a080d5fbe816caac1e 100644
+--- a/examples/dialog-menu/test.ts
++++ b/examples/dialog-menu/test.ts
+@@ -58,7 +58,7 @@ test("hide menu by clicking on dialog", async () => {
+   await click(getDialog()!);
+   expect(getDialog()).toBeVisible();
+   expect(getMenu()).not.toBeInTheDocument();
+-  expect(getMenuButton()).toHaveFocus();
++  expect(getDialog()).toHaveFocus();
+ });
+ 
+ test("hide both menu and dialog by clicking outside dialog", async () => {
+diff --git a/examples/menu-dialog-animated/test-chrome.ts b/examples/menu-dialog-animated/test-chrome.ts
+index 82bcea99ebdfd825791f7c3d96a1212c09af4432..3559562fbf6cc994b2184fc773bbf39285f0f027 100644
+--- a/examples/menu-dialog-animated/test-chrome.ts
++++ b/examples/menu-dialog-animated/test-chrome.ts
+@@ -133,8 +133,8 @@ test("repeatedly showing/hiding manage lists dialog", async ({ page }) => {
+   await page.keyboard.press("Tab");
+   await page.keyboard.press("Tab");
+   await page.keyboard.press("Tab");
+-  await expect(getButton(page, "Manage lists")).toBeFocused();
+   await repeat(async () => {
++    await expect(getButton(page, "Manage lists")).toBeFocused();
+     await page.keyboard.press("Enter");
+     await expect(getDialog(page, "Manage lists")).toBeVisible();
+     await expect(
+@@ -153,8 +153,8 @@ test("repeatedly showing/hiding information dialog", async ({ page }) => {
+   await page.keyboard.press("Tab");
+   await page.keyboard.press("Tab");
+   await page.keyboard.press("Tab");
+-  await expect(getButton(page, "More information")).toBeFocused();
+   await repeat(async () => {
++    await expect(getButton(page, "More information")).toBeFocused();
+     await page.keyboard.press("Enter");
+     await expect(getDialog(page, "More information")).toBeVisible();
+     await expect(
+diff --git a/examples/select-menu-default-open/all-filters.ts b/examples/select-menu-default-open/all-filters.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..8f32114e2c79afe47546e557f92b7800ee9bef0b
+--- /dev/null
++++ b/examples/select-menu-default-open/all-filters.ts
+@@ -0,0 +1,14 @@
++export const allFilters = [
++  {
++    label: "Status",
++    values: ["Draft", "Published", "Archived"],
++  },
++  {
++    label: "Language",
++    values: ["English", "French", "German"],
++  },
++  {
++    label: "Author",
++    values: ["John Doe", "Jane Doe"],
++  },
++];
+diff --git a/examples/select-menu-default-open/filter-menu.tsx b/examples/select-menu-default-open/filter-menu.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..a3b99b6db36ee3784916290b6190ae781a533cb9
+--- /dev/null
++++ b/examples/select-menu-default-open/filter-menu.tsx
+@@ -0,0 +1,68 @@
++import { forwardRef } from "react";
++import type { ReactNode } from "react";
++import * as Ariakit from "@ariakit/react";
++
++interface FilterMenuProps extends Omit<Ariakit.MenuButtonProps, "store"> {
++  label: ReactNode;
++  children?: ReactNode;
++  defaultValues?: Ariakit.MenuStoreProps["defaultValues"];
++  values?: Ariakit.MenuStoreProps["values"];
++  onValuesChange?: Ariakit.MenuStoreProps["setValues"];
++}
++
++export const FilterMenu = forwardRef<HTMLButtonElement, FilterMenuProps>(
++  function FilterMenu(
++    { label, defaultValues, values, onValuesChange, ...props },
++    ref
++  ) {
++    const menu = Ariakit.useMenuStore({
++      defaultValues,
++      values,
++      setValues: onValuesChange,
++    });
++    return (
++      <>
++        <Ariakit.MenuButton
++          ref={ref}
++          className="button secondary"
++          {...props}
++          store={menu}
++        >
++          {label}
++          <Ariakit.MenuButtonArrow />
++        </Ariakit.MenuButton>
++        <Ariakit.Menu store={menu} gutter={4} className="menu">
++          {props.children}
++        </Ariakit.Menu>
++      </>
++    );
++  }
++);
++
++interface FilterMenuItemCheckboxProps extends Ariakit.MenuItemCheckboxProps {
++  children?: ReactNode;
++}
++
++export const FilterMenuItemCheckbox = forwardRef<
++  HTMLDivElement,
++  FilterMenuItemCheckboxProps
++>(function FilterMenuItemCheckbox(props, ref) {
++  return (
++    <Ariakit.MenuItemCheckbox ref={ref} className="menu-item" {...props}>
++      <Ariakit.MenuItemCheck /> {props.children ?? props.value}
++    </Ariakit.MenuItemCheckbox>
++  );
++});
++
++export const FilterMenuItem = forwardRef<HTMLDivElement, Ariakit.MenuItemProps>(
++  function FilterMenuItem(props, ref) {
++    return <Ariakit.MenuItem ref={ref} className="menu-item" {...props} />;
++  }
++);
++
++export const FilterMenuSeparator = forwardRef<
++  HTMLHRElement,
++  Ariakit.MenuSeparatorProps
++>(function FilterMenuSeparator(props, ref) {
++  return <Ariakit.MenuSeparator ref={ref} className="separator" {...props} />;
++});
+diff --git a/examples/select-menu-default-open/filter-select.tsx b/examples/select-menu-default-open/filter-select.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..5e1535cd8964e6985fb5530c8dfd18c70f609150
+--- /dev/null
++++ b/examples/select-menu-default-open/filter-select.tsx
+@@ -0,0 +1,100 @@
++import * as React from "react";
++import * as Ariakit from "@ariakit/react";
++
++interface FilterSelectProps
++  extends Omit<Ariakit.SelectProps, "store" | "onChange"> {
++  label: string;
++  defaultValue?: Ariakit.SelectStoreProps["defaultValue"];
++  value?: Ariakit.SelectStoreProps["value"];
++  onChange?: Ariakit.SelectStoreProps["setValue"];
++  defaultOpen?: Ariakit.SelectStoreProps["defaultOpen"];
++  open?: Ariakit.SelectStoreProps["open"];
++  onToggle?: Ariakit.SelectStoreProps["setOpen"];
++  onRemove?: () => void;
++}
++
++export const FilterSelect = React.forwardRef<
++  HTMLButtonElement,
++  FilterSelectProps
++>(function FilterSelect(
++  {
++    label,
++    defaultValue,
++    value,
++    onChange,
++    defaultOpen,
++    open,
++    onToggle,
++    onRemove,
++    children,
++    ...props
++  },
++  ref
++) {
++  const labelId = React.useId();
++  const select = Ariakit.useSelectStore({
++    defaultValue,
++    value,
++    setValue: onChange,
++    defaultOpen,
++    open,
++    setOpen(open) {
++      onToggle?.(open);
++      if (!open && !select.getState().value) {
++        onRemove?.();
++      }
++    },
++  });
++  const selectValue = select.useState("value");
++  return (
++    <div className="filter">
++      <Ariakit.Select
++        ref={ref}
++        className="select"
++        {...props}
++        store={select}
++        aria-labelledby={labelId}
++      >
++        <div>
++          <span id={labelId} aria-hidden>
++            {label}:{" "}
++          </span>
++          {selectValue || "Choose one"}
++        </div>
++      </Ariakit.Select>
++      <Ariakit.SelectPopover
++        store={select}
++        aria-labelledby={labelId}
++        gutter={4}
++        className="popover"
++      >
++        {children}
++      </Ariakit.SelectPopover>
++      {onRemove && (
++        <Ariakit.Button
++          className="select"
++          aria-label={`Remove ${label} filter`}
++          onClick={() => onRemove()}
++        >
++          &times;
++        </Ariakit.Button>
++      )}
++    </div>
++  );
++});
++
++interface FilterSelectItemProps extends Ariakit.SelectItemProps {
++  children?: React.ReactNode;
++}
++
++export const FilterSelectItem = React.forwardRef<
++  HTMLDivElement,
++  FilterSelectItemProps
++>(function FilterSelectItem(props, ref) {
++  return (
++    <Ariakit.SelectItem ref={ref} className="select-item" {...props}>
++      <Ariakit.SelectItemCheck />
++      {props.children ?? props.value}
++    </Ariakit.SelectItem>
++  );
++});
+diff --git a/examples/select-menu-default-open/index.tsx b/examples/select-menu-default-open/index.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..62a303e02555db4bdf1c3f67d2392121c735c4ad
+--- /dev/null
++++ b/examples/select-menu-default-open/index.tsx
+@@ -0,0 +1,75 @@
++import "./style.css";
++import { useMemo, useState } from "react";
++import { allFilters } from "./all-filters.js";
++import {
++  FilterMenu,
++  FilterMenuItem,
++  FilterMenuItemCheckbox,
++  FilterMenuSeparator,
++} from "./filter-menu.jsx";
++import { FilterSelect, FilterSelectItem } from "./filter-select.jsx";
++
++type Filters = Record<string, string | undefined>;
++
++export default function Example() {
++  const [filters, setFilters] = useState<Filters>({});
++  const visibleFilters = useMemo(() => Object.keys(filters), [filters]);
++  const menuValues = useMemo(() => ({ visibleFilters }), [visibleFilters]);
++
++  return (
++    <div className="wrapper">
++      <div className="search-wrapper">
++        <input type="text" placeholder="Search" className="input" />
++        <FilterMenu
++          label={`Filters (${visibleFilters.length})`}
++          values={menuValues}
++          onValuesChange={(values: typeof menuValues) => {
++            setFilters((filters) =>
++              Object.fromEntries(
++                values.visibleFilters.map((label) => [label, filters[label]])
++              )
++            );
++          }}
++        >
++          {allFilters.map((filter) => (
++            <FilterMenuItemCheckbox
++              name="visibleFilters"
++              key={filter.label}
++              value={filter.label}
++            />
++          ))}
++          <FilterMenuSeparator />
++          <FilterMenuItem onClick={() => setFilters({})}>
++            Clear all
++          </FilterMenuItem>
++        </FilterMenu>
++      </div>
++      <div className="filters">
++        {visibleFilters.map((label) => (
++          <FilterSelect
++            key={label}
++            label={label}
++            defaultValue=""
++            defaultOpen={!filters[label]}
++            value={filters[label]}
++            onChange={(value: string) => {
++              setFilters((filters) => ({ ...filters, [label]: value }));
++            }}
++            onRemove={() => {
++              setFilters((filters) => {
++                const { [label]: _, ...rest } = filters;
++                return rest;
++              });
++            }}
++          >
++            {allFilters
++              .find((f) => f.label === label)
++              ?.values.map((value) => (
++                <FilterSelectItem key={value} value={value} />
++              ))}
++          </FilterSelect>
++        ))}
++      </div>
++    </div>
++  );
++}
+diff --git a/examples/select-menu-default-open/style.css b/examples/select-menu-default-open/style.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..6921494b15c9e699ea6386114f50e337bd34b915
+--- /dev/null
++++ b/examples/select-menu-default-open/style.css
+@@ -0,0 +1,98 @@
++@import url("../menu/style.css");
++@import url("../select/style.css");
++
++.wrapper {
++  @apply
++    w-full
++    max-w-2xl
++  ;
++}
++
++.search-wrapper {
++  @apply
++    flex
++    gap-2
++    items-center
++  ;
++}
++
++.input {
++  @apply
++    w-full
++    h-10
++    px-4
++    text-base
++    rounded-md
++    border-none
++    placeholder-black/60
++    dark:placeholder-white/[46%]
++    text-black
++    dark:text-white
++    bg-gray-150/40
++    dark:bg-gray-850
++    hover:bg-gray-150
++    dark:hover:bg-gray-900
++    shadow-input
++    dark:shadow-input-dark
++    focus-visible:outline-blue-600
++  ;
++}
++
++.button {
++  @apply
++    rounded-md
++    aria-expanded:bg-black/10
++    aria-expanded:dark:bg-white/10
++    [font-variant-numeric:tabular-nums]
++  ;
++}
++
++.filters {
++  @apply
++    flex
++    flex-wrap
++    gap-2
++    min-h-[theme(spacing.8)]
++  ;
++}
++
++.filter {
++  @apply
++    flex
++  ;
++}
++
++.select {
++  @apply
++    text-sm
++    h-8
++    px-3
++    w-auto
++    first-of-type:rounded-r-none
++    last-of-type:rounded-l-none
++    last-of-type:border-l
++    last-of-type:border-l-gray-250
++    last-of-type:dark:border-l-gray-550
++  ;
++}
++
++.popover {
++  @apply
++    min-w-[var(--popover-anchor-width)]
++  ;
++}
++
++.select-item {
++  @apply
++    text-sm
++    pr-7
++    [&>*]:flex-none
++  ;
++}
++
++.menu-item {
++  @apply
++    pr-7
++    [&:not([aria-checked])]:pl-7
++  ;
++}
+diff --git a/examples/select-menu-default-open/test.ts b/examples/select-menu-default-open/test.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..b87c976731fa56eaf8a32be43c3a707757e9fed1
+--- /dev/null
++++ b/examples/select-menu-default-open/test.ts
+@@ -0,0 +1,117 @@
++import { click, getByRole, press, queryByRole, type } from "@ariakit/test";
++
++const getButton = (name: string) => getByRole("button", { name });
++const getSelect = (name: string) => queryByRole("combobox", { name });
++const getListbox = (name: string) => queryByRole("listbox", { name });
++const getOption = (name: string) => getByRole("option", { name });
++const getMenu = () => queryByRole("menu");
++const getMenuItem = (name: string) => getByRole("menuitem", { name });
++const getMenuItemCheckbox = (name: string) =>
++  getByRole("menuitemcheckbox", { name });
++
++test("no filters", () => {
++  expect(getButton("Filters (0)")).toBeVisible();
++});
++
++test("add filter with mouse then click outside", async () => {
++  await click(getButton("Filters (0)"));
++  expect(getSelect("Language:")).not.toBeInTheDocument();
++  expect(getListbox("Language:")).not.toBeInTheDocument();
++  await click(getMenuItemCheckbox("Language"));
++  expect(getMenu()).not.toBeInTheDocument();
++  expect(getButton("Filters (1)")).toBeVisible();
++  expect(getSelect("Language:")).toBeVisible();
++  expect(getSelect("Language:")).toHaveAttribute("aria-expanded", "true");
++  expect(getListbox("Language:")).toBeInTheDocument();
++  expect(getListbox("Language:")).toHaveFocus();
++  expect(getSelect("Language:")).toHaveTextContent("Language: Choose one");
++  await click(document.body);
++  expect(getButton("Filters (0)")).toBeVisible();
++  expect(getSelect("Language:")).not.toBeInTheDocument();
++  expect(getListbox("Language:")).not.toBeInTheDocument();
++});
++
++test("add filter with keyboard then press tab", async () => {
++  await press.Tab();
++  await press.Tab();
++  expect(getButton("Filters (0)")).toHaveFocus();
++  await press.ArrowDown();
++  await press.Space();
++  expect(getMenu()).not.toBeInTheDocument();
++  expect(getButton("Filters (1)")).toBeVisible();
++  expect(getSelect("Status:")).toBeVisible();
++  expect(getSelect("Status:")).toHaveAttribute("aria-expanded", "true");
++  expect(getListbox("Status:")).toBeInTheDocument();
++  expect(getListbox("Status:")).toHaveFocus();
++  expect(getSelect("Status:")).toHaveTextContent("Status: Choose one");
++  await press.ShiftTab();
++  await press.ShiftTab();
++  expect(getButton("Filters (0)")).toBeVisible();
++  expect(getSelect("Status:")).not.toBeInTheDocument();
++  expect(getListbox("Status:")).not.toBeInTheDocument();
++});
++
++test("add filter with mouse and select an option", async () => {
++  await click(getButton("Filters (0)"));
++  await click(getMenuItemCheckbox("Language"));
++  await click(getOption("French"));
++  expect(getButton("Filters (1)")).toBeVisible();
++  expect(getListbox("Language:")).not.toBeInTheDocument();
++  expect(getSelect("Language:")).toBeVisible();
++  expect(getSelect("Language:")).toHaveFocus();
++  expect(getSelect("Language:")).toHaveAttribute("aria-expanded", "false");
++  expect(getSelect("Language:")).toHaveTextContent("Language: French");
++});
++
++test("add more filters", async () => {
++  await click(getButton("Filters (0)"));
++  await click(getMenuItemCheckbox("Language"));
++  await click(getOption("French"));
++  await press.ShiftTab();
++  expect(getButton("Filters (1)")).toHaveFocus();
++  await press.ArrowUp();
++  await press.ArrowUp();
++  await press.Space();
++  expect(getButton("Filters (2)")).toBeVisible();
++  expect(getSelect("Author:")).toBeVisible();
++  expect(getListbox("Author:")).toBeInTheDocument();
++  expect(getListbox("Author:")).toHaveFocus();
++  expect(getSelect("Author:")).toHaveTextContent("Author: Choose one");
++  await type("ja");
++  expect(getOption("Jane Doe")).toHaveFocus();
++  await press.Enter();
++  expect(getSelect("Author:")).toHaveFocus();
++  expect(getSelect("Author:")).toHaveTextContent("Author: Jane Doe");
++  await type("j");
++  expect(getSelect("Author:")).toHaveTextContent("Author: John Doe");
++});
++
++test("remove filters", async () => {
++  await press.Tab();
++  await press.Tab();
++  expect(getButton("Filters (0)")).toHaveFocus();
++  await press.Enter();
++  await press.Enter();
++  expect(getButton("Filters (1)")).toBeVisible();
++  await press.ArrowDown();
++  await press.Enter();
++  expect(getSelect("Status:")).toHaveFocus();
++  expect(getSelect("Status:")).toHaveTextContent("Status: Draft");
++  await press.ShiftTab();
++  await press.ArrowDown();
++  await press.ArrowDown();
++  await press.Space();
++  expect(getButton("Filters (2)")).toBeVisible();
++  await press.ArrowUp();
++  await press.Space();
++  expect(getSelect("Language:")).toHaveFocus();
++  expect(getSelect("Language:")).toHaveTextContent("Language: German");
++  await press.Tab();
++  expect(getButton("Remove Language filter")).toHaveFocus();
++  await press.Enter();
++  expect(getSelect("Language:")).not.toBeInTheDocument();
++  await click(getButton("Filters (1)"));
++  await click(getMenuItem("Clear all"));
++  expect(getMenu()).not.toBeInTheDocument();
++  expect(getButton("Filters (0)")).toHaveFocus();
++});
+diff --git a/packages/ariakit-test/src/hover.ts b/packages/ariakit-test/src/hover.ts
+index 310e4e0d3a0c3f40e5602c48b782a970dd74db3d..996771bd9b5cbb075d03e39c544f4b56470f51d2 100644
+--- a/packages/ariakit-test/src/hover.ts
++++ b/packages/ariakit-test/src/hover.ts
+@@ -1,3 +1,4 @@
++import { isVisible } from "@ariakit/core/utils/dom";
+ import { queuedMicrotasks } from "./__utils.js";
+ import { fireEvent } from "./fire-event.js";
+ import { sleep } from "./sleep.js";
+@@ -11,12 +12,14 @@ function isPointerEventsEnabled(element: Element) {
+ }
+ 
+ export async function hover(element: Element, options?: MouseEventInit) {
++  if (!isVisible(element)) return;
++
+   const document = element.ownerDocument as DocumentWithLastHovered;
+   const { lastHovered } = document;
+   const { disabled } = element as HTMLButtonElement;
+   const pointerEventsEnabled = isPointerEventsEnabled(element);
+ 
+-  if (lastHovered && lastHovered !== element) {
++  if (lastHovered && lastHovered !== element && isVisible(lastHovered)) {
+     fireEvent.pointerMove(lastHovered, options);
+     fireEvent.mouseMove(lastHovered, options);
+ 
+diff --git a/packages/ariakit-test/src/mouse-down.ts b/packages/ariakit-test/src/mouse-down.ts
+index 416f660ed0f3a42a09bb37af21973ac031df5fde..89ebe203c5305159da5040b651990a5b60f57af4 100644
+--- a/packages/ariakit-test/src/mouse-down.ts
++++ b/packages/ariakit-test/src/mouse-down.ts
+@@ -1,12 +1,14 @@
+ import "./mock-get-client-rects.js";
+ 
+-import { getDocument } from "@ariakit/core/utils/dom";
++import { getDocument, isVisible } from "@ariakit/core/utils/dom";
+ import { getClosestFocusable, isFocusable } from "@ariakit/core/utils/focus";
+ import { blur } from "./blur.js";
+ import { fireEvent } from "./fire-event.js";
+ import { focus } from "./focus.js";
+ 
+ export function mouseDown(element: Element, options?: MouseEventInit) {
++  if (!isVisible(element)) return;
++
+   const { disabled } = element as HTMLButtonElement;
+ 
+   let defaultAllowed = fireEvent.pointerDown(element, options);
+diff --git a/packages/ariakit-test/src/mouse-up.ts b/packages/ariakit-test/src/mouse-up.ts
+index 26e215c0d320302fb5a1c524a1207c872053b742..69eb533f191bcd6d224beb210bc35eecf391afad 100644
+--- a/packages/ariakit-test/src/mouse-up.ts
++++ b/packages/ariakit-test/src/mouse-up.ts
+@@ -1,6 +1,9 @@
++import { isVisible } from "@ariakit/core/utils/dom";
+ import { fireEvent } from "./fire-event.js";
+ 
+ export function mouseUp(element: Element, options?: MouseEventInit) {
++  if (!isVisible(element)) return;
++
+   const { disabled } = element as HTMLButtonElement;
+ 
+   fireEvent.pointerUp(element, options);
+diff --git a/packages/ariakit-test/src/select.ts b/packages/ariakit-test/src/select.ts
+index bbd78e5627d960d556a9e9ac049b00225bbb37f2..5fe8b57206f0b8e0b96c0db42547962322a28078 100644
+--- a/packages/ariakit-test/src/select.ts
++++ b/packages/ariakit-test/src/select.ts
+@@ -1,3 +1,4 @@
++import { isVisible } from "@ariakit/core/utils/dom";
+ import { fireEvent } from "./fire-event.js";
+ import { hover } from "./hover.js";
+ import { mouseDown } from "./mouse-down.js";
+@@ -9,6 +10,8 @@ export async function select(
+   element: Element = document.body,
+   options?: MouseEventInit
+ ) {
++  if (!isVisible(element)) return;
++
+   const document = element.ownerDocument;
+ 
+   await hover(element, options);
+diff --git a/playwright.config.ts b/playwright.config.ts
+index 5de85363da2cd8bf798540afc32be2e53ea0a987..7a5af2f45c07adcbf24cf509f67121a58864a642 100644
+--- a/playwright.config.ts
++++ b/playwright.config.ts
+@@ -62,7 +62,7 @@ export default defineConfig({
+     {
+       name: "vo",
+       testMatch: [/\/test[^\/]*\-vo/],
+-      retries: CI ? 2 : 0,
++      retries: CI ? 3 : 0,
+       timeout: 5 * 60 * 1000, // 5 minutes
+       use: {
+         ...devices["Desktop Safari"],

@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "should sort items by default on render",
+    "should return items to original order after deselection"
+  ],
+  "PASS_TO_PASS": [
+    "should render"
+  ],
+  "base_commit": "e8153093a0673f7da2feb381eb6ab07074f47e2e",
+  "instance_id": "carbon-design-system__carbon-22016",
+  "schema_version": "4.0"
+}

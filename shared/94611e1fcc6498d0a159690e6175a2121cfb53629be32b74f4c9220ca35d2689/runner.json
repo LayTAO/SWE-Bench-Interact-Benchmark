@@ -1,0 +1,12 @@
+{
+  "base_commit": "34924436f5b76b44b8adbb0a4fdb64c1c15de99f",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable --ignore-engines --ignore-scripts",
+  "instance_id": "adobe__react-spectrum-5973",
+  "package_manager": "yarn@4.9.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/react-aria-components/test/Tabs.test.js --runInBand --json --outputFile=$INTERACT_RAW_RESULT"
+}

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@playwright/test": "1.58.2"
+  },
+  "name": "interactrepair-adobe-react-spectrum-2181-tooling",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0"
+}

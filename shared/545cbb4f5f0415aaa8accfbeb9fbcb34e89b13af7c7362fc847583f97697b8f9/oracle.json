@@ -1,0 +1,29 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "target_error_count > 0"
+    ]
+  },
+  "environment_gate": [
+    "The story loads without a pre-interaction target error.",
+    "The calendar has at least 28 visible date cells."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "target_error_count": 0
+  },
+  "instance_id": "unovue__reka-ui-1618",
+  "predicate_id": "same_date_reselection_throws_calendar_error",
+  "rendering_gate": [
+    "Calendar is at least 200 by 180 CSS pixels.",
+    "Every visible cell has a unique center.",
+    "At least five rows exist and adjacent row centers are at least 20 pixels apart."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The date target exists, the first selection completes, and the same date is selected again."
+  ]
+}

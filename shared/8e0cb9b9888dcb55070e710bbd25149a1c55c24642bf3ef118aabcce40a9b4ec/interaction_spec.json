@@ -1,0 +1,23 @@
+{
+  "environment_gate": [
+    "#oracle-ready is attached",
+    "the switch button and modal content are rendered"
+  ],
+  "instance_id": "mui__material-ui-13962",
+  "issue_derived_path": [
+    "Open the Modal",
+    "activate Run container switch",
+    "inspect semantic modal content and page errors"
+  ],
+  "observation_channels": [
+    "visible semantic text",
+    "page error stream",
+    "action error"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "container-switch-triggered",
+    "modal-observed"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "base_commit": "1e718e9771aea4c4cecebb43731fc014b5bba71d",
+  "base_image": "local Node 22.18.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "mui__base-ui-4547",
+  "package_manager": "pnpm@10.33.0",
+  "repo_url": "https://github.com/mui/base-ui.git",
+  "repository": "mui/base-ui",
+  "schema_version": "4.0",
+  "test_command": "VITEST_ENV=chromium PLAYWRIGHT_BROWSERS_PATH=<pinned-browser-cache> pnpm exec vitest run --config packages/react/vitest.config.mts packages/react/src/slider/root/SliderRoot.test.tsx packages/react/src/slider/utils/roundValueToStep.test.ts --reporter=json --outputFile=<isolated-output> --browser chromium"
+}

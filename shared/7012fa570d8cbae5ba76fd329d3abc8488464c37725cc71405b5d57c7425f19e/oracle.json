@@ -1,0 +1,27 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "menu_visible == false",
+      "aria_expanded != true"
+    ]
+  },
+  "environment_gate": [
+    "The exact source component loads without a page error.",
+    "Both native controls have visible non-overlapping rectangles."
+  ],
+  "expected": {
+    "aria_expanded": "true",
+    "bug_observed": false,
+    "menu_item_count": 3,
+    "menu_visible": true
+  },
+  "instance_id": "tailwindlabs__headlessui-3749",
+  "predicate_id": "forwarded_ref_click_does_not_open_menu",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The wrapper's programmatic click handler runs exactly once."
+  ]
+}

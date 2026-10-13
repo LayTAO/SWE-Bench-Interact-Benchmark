@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "playwright": "1.58.2"
+  },
+  "name": "nimble-2022-canonical-tooling",
+  "private": true
+}

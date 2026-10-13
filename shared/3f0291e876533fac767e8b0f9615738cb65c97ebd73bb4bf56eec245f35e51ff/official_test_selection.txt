@@ -1,0 +1,28 @@
+Provenance: exact upstream PR test projection, executed with the repository test runner.
+Repository test file(s): packages/react/src/drawer/swipe-area/DrawerSwipeArea.test.tsx
+Environment: Chromium, workers=1, retries=0.
+Selected assertions (F2P followed by P2P):
+- <Drawer.SwipeArea /> re-enables outside press dismissal after a context menu interrupts swipe-open
+- <Drawer.SwipeArea /> re-enables outside press dismissal after an interrupted swipe-open gesture
+- <Drawer.SwipeArea /> Base UI component API prop forwarding forwards custom props to the customized element defined using JSX
+- <Drawer.SwipeArea /> Base UI component API prop forwarding forwards custom props to the customized element defined with a function
+- <Drawer.SwipeArea /> Base UI component API prop forwarding forwards custom props to the default element
+- <Drawer.SwipeArea /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the component
+- <Drawer.SwipeArea /> Base UI component API prop forwarding forwards the custom `style` attribute defined on the render function
+- <Drawer.SwipeArea /> Base UI component API prop: className should apply the className when passed as a string
+- <Drawer.SwipeArea /> Base UI component API prop: render renders a customized root element with a function
+- <Drawer.SwipeArea /> Base UI component API prop: render renders a customized root element with an element
+- <Drawer.SwipeArea /> Base UI component API prop: render should merge the rendering element className with the custom component className
+- <Drawer.SwipeArea /> Base UI component API prop: render should merge the rendering element ref with the custom component ref
+- <Drawer.SwipeArea /> Base UI component API prop: render should merge the rendering element resolved className with the custom component className
+- <Drawer.SwipeArea /> Base UI component API prop: render should pass the ref to the custom component
+- <Drawer.SwipeArea /> Base UI component API ref attaches the ref
+- <Drawer.SwipeArea /> applies data-swiping during an active swipe gesture
+- <Drawer.SwipeArea /> does not open the drawer when disabled
+- <Drawer.SwipeArea /> does not open when the swipe direction never locks to the open direction
+- <Drawer.SwipeArea /> opens the drawer when swiped in the open direction
+- <Drawer.SwipeArea /> opens the drawer when swiped with touch events
+- <Drawer.SwipeArea /> prevents default pointer down for non-touch swipes
+- <Drawer.SwipeArea /> re-enables outside press dismissal after opening by swipe
+- <Drawer.SwipeArea /> respects custom swipeDirection
+- <Drawer.SwipeArea /> uses a size-based swipe threshold by default

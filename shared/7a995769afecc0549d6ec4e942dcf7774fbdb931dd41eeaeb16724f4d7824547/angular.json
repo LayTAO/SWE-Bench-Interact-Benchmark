@@ -1,0 +1,45 @@
+{
+  "$schema": "/subject/node_modules/@angular/cli/lib/config/schema.json",
+  "newProjectRoot": "projects",
+  "projects": {
+    "oracle": {
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "namedChunks": true,
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "assets": [],
+            "browser": "src/main.ts",
+            "index": "src/index.html",
+            "namedChunks": true,
+            "optimization": false,
+            "outputPath": {
+              "base": "/state-cache/dist",
+              "browser": "browser"
+            },
+            "polyfills": [
+              "zone.js"
+            ],
+            "sourceMap": true,
+            "styles": [
+              "src/styles.less"
+            ],
+            "tsConfig": "tsconfig.app.json"
+          }
+        }
+      },
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src"
+    }
+  },
+  "version": 1
+}

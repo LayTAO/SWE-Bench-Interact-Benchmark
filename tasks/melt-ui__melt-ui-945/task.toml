@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/melt-ui__melt-ui-945"
+version = "0.2.0-candidate"
+description = "Tooltips stays open after scrolling away from trigger"
+
+[metadata]
+instance_id = "melt-ui__melt-ui-945"
+repository = "melt-ui/melt-ui"
+base_commit = "bd6ba738da4c3427b2b3fc716ac7730aab8254fb"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d09dc0692da3bee42f0f414d8cc7c5068da1b3cd37ba2b6414a0f4c414138966"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:da85671d91bd38545a7521222d25431a76ee6df1f3d9e295264487948022eb63"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

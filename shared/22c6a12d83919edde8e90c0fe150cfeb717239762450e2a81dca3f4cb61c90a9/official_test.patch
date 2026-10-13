@@ -1,0 +1,366 @@
+diff --git a/packages/web-components/src/components/menu-button/__tests__/__snapshots__/menu-button-test.snap.js b/packages/web-components/src/components/menu-button/__tests__/__snapshots__/menu-button-test.snap.js
+index 61f010dd4fef92c26a334d819cf3a87e0d2910be..5ab5fdde8718ba4037ef75cf57bf61bca946df7b 100644
+--- a/packages/web-components/src/components/menu-button/__tests__/__snapshots__/menu-button-test.snap.js
++++ b/packages/web-components/src/components/menu-button/__tests__/__snapshots__/menu-button-test.snap.js
+@@ -6,12 +6,13 @@ snapshots['cds-menu-button should render and match snapshot'] =
+   kind="primary"
+   label="Actions"
+   menu-alignment="bottom"
++  menu-background-token="layer"
+   size="lg"
+   tab-index="0"
+ >
+   <cds-menu
+     size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
++    style=""
+   >
+     <cds-menu-item
+       label="First action"
+@@ -44,12 +45,13 @@ snapshots[
+   kind="primary"
+   label="Test"
+   menu-alignment="bottom"
++  menu-background-token="layer"
+   size="lg"
+   tab-index="0"
+ >
+   <cds-menu
+     size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
++    style=""
+   >
+     <cds-menu-item
+       label="First action"
+@@ -78,12 +80,13 @@ snapshots[
+   kind="primary"
+   label="Nested"
+   menu-alignment="bottom"
++  menu-background-token="layer"
+   size="lg"
+   tab-index="0"
+ >
+   <cds-menu
+     size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
++    style=""
+   >
+     <cds-menu-item
+       aria-expanded="true"
+@@ -121,110 +124,3 @@ snapshots['cds-menu-button should support xs size'] = `<cds-button
+ </slot>
+ `;
+ /* end snapshot cds-menu-button should support xs size */
+-snapshots['cds-menu-button should render and match snapshot'] =
+-  `<cds-menu-button
+-  kind="primary"
+-  label="Actions"
+-  menu-alignment="bottom"
+-  menu-background-token="layer"
+-  size="lg"
+-  tab-index="0"
+->
+-  <cds-menu
+-    size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
+-  >
+-    <cds-menu-item
+-      label="First action"
+-      role="menuitem"
+-      tabindex="0"
+-    >
+-    </cds-menu-item>
+-    <cds-menu-item
+-      label="Second action"
+-      role="menuitem"
+-      tabindex="0"
+-    >
+-    </cds-menu-item>
+-    <cds-menu-item
+-      aria-disabled="true"
+-      disabled=""
+-      label="Third action"
+-      role="menuitem"
+-      tabindex="-1"
+-    >
+-    </cds-menu-item>
+-  </cds-menu>
+-</cds-menu-button>
+-`;
+-/* end snapshot cds-menu-button should render and match snapshot */
+-
+-snapshots[
+-  'cds-menu-button Children/slots and special menu content Snapshot variants should render with divider and danger and match snapshot'
+-] = `<cds-menu-button
+-  kind="primary"
+-  label="Test"
+-  menu-alignment="bottom"
+-  menu-background-token="layer"
+-  size="lg"
+-  tab-index="0"
+->
+-  <cds-menu
+-    size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
+-  >
+-    <cds-menu-item
+-      label="First action"
+-      role="menuitem"
+-      tabindex="0"
+-    >
+-    </cds-menu-item>
+-    <cds-menu-item-divider role="separator">
+-    </cds-menu-item-divider>
+-    <cds-menu-item
+-      class="cds--menu-item--danger"
+-      kind="danger"
+-      label="Danger"
+-      role="menuitem"
+-      tabindex="0"
+-    >
+-    </cds-menu-item>
+-  </cds-menu>
+-</cds-menu-button>
+-`;
+-/* end snapshot cds-menu-button Children/slots and special menu content Snapshot variants should render with divider and danger and match snapshot */
+-
+-snapshots[
+-  'cds-menu-button Children/slots and special menu content Snapshot variants should render with nested menu and match snapshot'
+-] = `<cds-menu-button
+-  kind="primary"
+-  label="Nested"
+-  menu-alignment="bottom"
+-  menu-background-token="layer"
+-  size="lg"
+-  tab-index="0"
+->
+-  <cds-menu
+-    size="lg"
+-    style="inset-inline-start: 8px; inset-inline-end: initial; inset-block-start: 8px;"
+-  >
+-    <cds-menu-item
+-      aria-expanded="true"
+-      aria-haspopup="true"
+-      label="Export as"
+-      role="menuitem"
+-      tabindex="0"
+-    >
+-      <cds-menu-item-group slot="submenu">
+-        <cds-menu-item
+-          label="PDF"
+-          role="menuitem"
+-          tabindex="0"
+-        >
+-        </cds-menu-item>
+-      </cds-menu-item-group>
+-    </cds-menu-item>
+-  </cds-menu>
+-</cds-menu-button>
+-`;
+-/* end snapshot cds-menu-button Children/slots and special menu content Snapshot variants should render with nested menu and match snapshot */
+diff --git a/packages/web-components/src/components/menu-button/__tests__/menu-button-test.js b/packages/web-components/src/components/menu-button/__tests__/menu-button-test.js
+index cdba6c817a5c87598d1f7548d51570bc7c6f93c4..30da890bac486ed0b98bd2c968bbb4c4f1c71ef8 100644
+--- a/packages/web-components/src/components/menu-button/__tests__/menu-button-test.js
++++ b/packages/web-components/src/components/menu-button/__tests__/menu-button-test.js
+@@ -280,6 +280,58 @@ describe('cds-menu-button', function () {
+     });
+   });
+ 
++  describe('internal close helpers', () => {
++    it('should close the menu and optionally restore focus', async () => {
++      const el = await fixture(menuButton);
++      const originalFocusTrigger = el._focusTrigger;
++      let focused = false;
++
++      el._focusTrigger = () => {
++        focused = true;
++      };
++
++      el._open = true;
++      el._closeMenu({ restoreFocus: true });
++      expect(el._open).to.be.false;
++      expect(focused).to.be.true;
++
++      focused = false;
++      el._open = true;
++      el._closeMenu({ restoreFocus: false });
++      expect(el._open).to.be.false;
++      expect(focused).to.be.false;
++
++      el._focusTrigger = originalFocusTrigger;
++    });
++
++    it('should respect menu closed events', async () => {
++      const el = await fixture(menuButton);
++      const menu = el.querySelector('cds-menu');
++
++      const closeCalls = [];
++      const originalCloseMenu = el._closeMenu;
++      el._closeMenu = (options) => {
++        closeCalls.push(options);
++      };
++
++      el._open = true;
++      el._handleMenuClosed({
++        target: menu,
++        detail: { triggerEventType: 'click' },
++      });
++      expect(closeCalls[0]).to.deep.equal({ restoreFocus: true });
++
++      el._open = true;
++      el._handleMenuClosed({
++        target: menu,
++        detail: { triggerEventType: 'focusout' },
++      });
++      expect(closeCalls[1]).to.deep.equal({ restoreFocus: false });
++
++      el._closeMenu = originalCloseMenu;
++    });
++  });
++
+   // Note: Focus management in WC is limited by Shadow DOM, so this suite covers basic trigger behavior only
+   describe('Keyboard and focus interaction', () => {
+     it('should receive focus and open with Space/Enter', async () => {
+diff --git a/packages/web-components/src/components/menu/__tests__/menu-item-test.js b/packages/web-components/src/components/menu/__tests__/menu-item-test.js
+index f8ea240b216aa738dbdc2c154bf339a77583238d..f4b3ef46adbac2a66913c2aabf3119ad15f11f16 100644
+--- a/packages/web-components/src/components/menu/__tests__/menu-item-test.js
++++ b/packages/web-components/src/components/menu/__tests__/menu-item-test.js
+@@ -191,6 +191,22 @@ describe('cds-menu-item', () => {
+       // Restore original method
+       el._handleClick = originalHandleClick;
+     });
++
++    it('should dispatch a close request when activated without a submenu', async () => {
++      const el = await fixture(
++        html`<cds-menu-item label="Test Item"></cds-menu-item>`
++      );
++
++      const events = [];
++      el.addEventListener('cds-menu-close-root-request', (event) => {
++        events.push(event);
++      });
++
++      el.dispatchEvent(new MouseEvent('click', { bubbles: true }));
++
++      expect(events.length).to.equal(1);
++      expect(events[0].detail.triggerEvent).to.be.instanceOf(MouseEvent);
++    });
+   });
+ 
+   describe('submenu positioning', () => {
+diff --git a/packages/web-components/src/components/menu/__tests__/menu-test.js b/packages/web-components/src/components/menu/__tests__/menu-test.js
+index be25ceaac9d9d5b5b339385a7ec2eac91b40e31f..aeb1d15dbb7b8be0b0d2ff27fe95c0829cc50dfb 100644
+--- a/packages/web-components/src/components/menu/__tests__/menu-test.js
++++ b/packages/web-components/src/components/menu/__tests__/menu-test.js
+@@ -111,4 +111,111 @@ describe('cds-menu', () => {
+       expect(el.position[1]).to.be.at.most(nearMaxY);
+     });
+   });
++
++  describe('closing behavior', () => {
++    it('should dispatch a close event when focus leaves the root menu', async () => {
++      const el = await fixture(html`<cds-menu open></cds-menu>`);
++      const outside = document.createElement('button');
++      document.body.appendChild(outside);
++
++      const closeEvents = [];
++      el.addEventListener('cds-menu-closed', (event) => {
++        closeEvents.push(event);
++      });
++
++      el.dispatchEvent(
++        new FocusEvent('focusout', {
++          bubbles: true,
++          relatedTarget: outside,
++        })
++      );
++      await el.updateComplete;
++
++      expect(closeEvents.length).to.be.at.least(1);
++      expect(
++        closeEvents[closeEvents.length - 1].detail.triggerEventType
++      ).to.equal('focusout');
++      outside.remove();
++    });
++
++    it('should respond to root close requests from menu items', async () => {
++      const el = await fixture(html`
++        <cds-menu open>
++          <cds-menu-item label="Item 1"></cds-menu-item>
++        </cds-menu>
++      `);
++      const closeEvents = [];
++      el.addEventListener('cds-menu-closed', (event) => {
++        closeEvents.push(event);
++      });
++
++      const triggerEvent = new MouseEvent('click', {
++        bubbles: true,
++        composed: true,
++      });
++      el.dispatchEvent(
++        new CustomEvent('cds-menu-close-root-request', {
++          bubbles: true,
++          composed: true,
++          detail: { triggerEvent },
++        })
++      );
++      await el.updateComplete;
++
++      expect(closeEvents.length).to.be.at.least(1);
++      expect(
++        closeEvents[closeEvents.length - 1].detail.triggerEventType
++      ).to.equal('click');
++    });
++  });
++
++  describe('internal close helpers', () => {
++    it('should include trigger metadata when dispatching a close event', async () => {
++      const el = await fixture(html`<cds-menu open></cds-menu>`);
++      const closeEvents = [];
++      el.addEventListener('cds-menu-closed', (event) =>
++        closeEvents.push(event)
++      );
++
++      const triggerEvent = new KeyboardEvent('keydown', { key: 'Escape' });
++      el.dispatchCloseEvent(triggerEvent);
++
++      expect(closeEvents.length).to.be.greaterThan(0);
++      expect(
++        closeEvents[closeEvents.length - 1].detail.triggerEventType
++      ).to.equal('keydown');
++    });
++
++    it('should delegate root close requests to dispatchCloseEvent', async () => {
++      const el = await fixture(html`<cds-menu open></cds-menu>`);
++      const triggerEvent = new MouseEvent('click');
++      const handled = [];
++      const originalDispatch = el.dispatchCloseEvent;
++      el.dispatchCloseEvent = (event) => {
++        handled.push(event);
++      };
++
++      el._handleRootCloseRequest(
++        new CustomEvent('cds-menu-close-root-request', {
++          detail: { triggerEvent },
++        })
++      );
++
++      expect(handled[0]).to.equal(triggerEvent);
++      el.dispatchCloseEvent = originalDispatch;
++    });
++
++    it('should clear inline styles when handleClose is invoked', async () => {
++      const el = await fixture(html`<cds-menu open></cds-menu>`);
++      el.style.insetInlineStart = '10px';
++      el.style.insetInlineEnd = '4px';
++      el.style.insetBlockStart = '6px';
++
++      el._handleClose();
++
++      expect(el.style.insetInlineStart).to.equal('');
++      expect(el.style.insetInlineEnd).to.equal('');
++      expect(el.style.insetBlockStart).to.equal('');
++    });
++  });
+ });

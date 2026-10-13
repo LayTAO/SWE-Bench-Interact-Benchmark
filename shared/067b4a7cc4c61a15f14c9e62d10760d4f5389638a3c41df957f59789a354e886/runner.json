@@ -1,0 +1,14 @@
+{
+  "base_commit": "ddde23eaf8d143340f2bd61cc3212e29ba17bef9",
+  "base_image": "mcr.microsoft.com/playwright:v1.58.2-noble",
+  "buggy_commit": "ddde23eaf8d143340f2bd61cc3212e29ba17bef9",
+  "build_command": "",
+  "install_command": "yarn install --immutable && yarn cypress install",
+  "instance_id": "radix-ui__primitives-1287",
+  "package_manager": "Yarn Berry",
+  "repo_url": "https://github.com/radix-ui/primitives.git",
+  "repository": "radix-ui/primitives",
+  "runtime": "Node.js 16.20.2",
+  "schema_version": "4.0",
+  "test_command": "yarn storybook & yarn cypress run --browser electron --spec cypress/integration/ContextMenu.spec.ts --reporter json"
+}

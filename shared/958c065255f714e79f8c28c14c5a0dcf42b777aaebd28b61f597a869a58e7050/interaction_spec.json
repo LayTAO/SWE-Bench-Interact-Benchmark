@@ -1,0 +1,33 @@
+{
+  "actions": [
+    "render the Combobox grid fixture",
+    "focus the input without an active item",
+    "press ArrowLeft or ArrowRight and inspect the selection/caret"
+  ],
+  "expected_fixed": "没有 item 被 highlight 时，左右方向键正确移动输入框 caret；autoHighlight 后仍保持 grid navigation。",
+  "instance_id": "mui__base-ui-4947",
+  "issue_derived_path": [
+    "在 grid layout 的 Combobox 中保持输入框获得焦点",
+    "按 ArrowLeft 或 ArrowRight",
+    "观察输入 caret 位置与 grid navigation 状态"
+  ],
+  "observation_channels": [
+    "DOM input selection",
+    "keyboard interaction state",
+    "grid navigation state",
+    "named assertion outcome",
+    "page-error and test-import stream"
+  ],
+  "observed_buggy": "没有 item 被 highlight 时，ArrowLeft/ArrowRight 的输入框 caret 位置错误；autoHighlight 的 grid navigation 断言仍通过。",
+  "preconditions": [
+    "exact upstream ComboboxRoot browser test renders successfully",
+    "Chromium starts without page or test-import errors",
+    "the selected named assertions are discovered"
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "initial",
+    "grid-input-focused",
+    "arrow-key-observed"
+  ]
+}

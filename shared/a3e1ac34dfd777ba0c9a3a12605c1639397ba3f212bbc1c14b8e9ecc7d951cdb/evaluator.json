@@ -1,0 +1,21 @@
+{
+  "FAIL_TO_PASS": [
+    "should close the menu and optionally restore focus",
+    "should respect menu closed events",
+    "should dispatch a close request when activated without a submenu",
+    "should dispatch a close event when focus leaves the root menu",
+    "should respond to root close requests from menu items",
+    "should include trigger metadata when dispatching a close event",
+    "should delegate root close requests to dispatchCloseEvent",
+    "should clear inline styles when handleClose is invoked",
+    "should render and match snapshot",
+    "Children/slots and special menu content Snapshot variants should render with divider and danger and match snapshot",
+    "Children/slots and special menu content Snapshot variants should render with nested menu and match snapshot"
+  ],
+  "PASS_TO_PASS": [
+    "should support xs size"
+  ],
+  "base_commit": "f7f4794017bd2fd915a6fda1572b28bb147b5e37",
+  "instance_id": "carbon-design-system__carbon-20349",
+  "schema_version": "4.0"
+}

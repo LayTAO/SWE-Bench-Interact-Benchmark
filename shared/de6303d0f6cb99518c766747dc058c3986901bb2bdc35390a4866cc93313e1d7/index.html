@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>IR-M-028 filterable select reproduction</title>
+    <style>
+      body { font-family: sans-serif; padding: 32px; }
+      nimble-select { width: 320px; }
+      #after { margin-left: 24px; }
+      #oracle { margin-top: 28px; padding: 16px; background: #eef3f8; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Filterable select value after Tab and reopen</h1>
+    <nimble-select id="target" filter-mode="standard">
+      <nimble-list-option value="alpha" selected>Alpha</nimble-list-option>
+      <nimble-list-option value="bravo">Bravo</nimble-list-option>
+      <nimble-list-option value="charlie">Charlie</nimble-list-option>
+    </nimble-select>
+    <button id="after" type="button">After select</button>
+    <pre id="oracle">waiting</pre>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

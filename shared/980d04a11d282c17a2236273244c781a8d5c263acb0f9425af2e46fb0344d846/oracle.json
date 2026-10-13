@@ -1,0 +1,22 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After selecting June 16 and pressing ArrowLeft then Enter on unavailable June 15, Buggy selects June 14 while Fixed keeps June 16 selected.",
+    "fixed_observed": false,
+    "name": "calendar_unavailable_keyboard_selection"
+  },
+  "expected": {
+    "buggy": {
+      "attempted_date": "15",
+      "final_selected": "14",
+      "initial_selected": "16"
+    },
+    "fixed": {
+      "attempted_date": "15",
+      "final_selected": "16",
+      "initial_selected": "16"
+    }
+  },
+  "instance_id": "adobe__react-spectrum-5692",
+  "schema_version": "1.0"
+}

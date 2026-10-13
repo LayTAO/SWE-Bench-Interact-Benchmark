@@ -1,0 +1,21 @@
+{
+  "FAIL_TO_PASS": [
+    "datePicker should select and deselect a date"
+  ],
+  "PASS_TO_PASS": [
+    "datePicker decrements segment on arrow down",
+    "datePicker focuses first segment on label click",
+    "datePicker focuses segments on click",
+    "datePicker increments segment on arrow up",
+    "datePicker navigates segments using the arrow keys",
+    "datePicker navigates the segments using tab",
+    "datePicker populates segment with value - `CalendarDateTime`",
+    "datePicker populates segment with value - `CalendarDate`",
+    "datePicker populates segment with value - `ZonedDateTime`",
+    "datePicker prevents interaction and picker to be opened when `disabled` is `true`",
+    "should pass axe accessibility tests"
+  ],
+  "base_commit": "47b3dfadd12590d737b4f68736a314e6133cd49e",
+  "instance_id": "unovue__reka-ui-1618",
+  "schema_version": "4.0"
+}

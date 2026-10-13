@@ -1,0 +1,23 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "end_input_intermediate == true",
+      "start_after_input != start_before_input"
+    ]
+  },
+  "environment_gate": [
+    "both range inputs and bound model are observable"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_start_after_input": "differs from start_before_input",
+    "fixed_start_after_input": "equals start_before_input"
+  },
+  "instance_id": "element-plus__element-plus-24006",
+  "predicate_id": "datetime_range_start_corrupts_during_end_input",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "end-date input received the intermediate sequence without committing a final range"
+  ]
+}

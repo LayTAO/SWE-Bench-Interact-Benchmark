@@ -1,0 +1,27 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "rendering_valid == true",
+      "trigger_valid == true",
+      "final_status == closed",
+      "page_errors.length == 0"
+    ]
+  },
+  "environment_gate": [
+    "Status and Block Escape controls are visible.",
+    "The exact source layer has plausible non-zero bounds and no page error before the trigger."
+  ],
+  "expected": {
+    "bug_observed": false,
+    "final_status": "open-blocked",
+    "page_errors": []
+  },
+  "instance_id": "radix-ui__primitives-4014",
+  "predicate_id": "dismissable_layer_uses_stale_escape_handler",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The initial status is open-unblocked.",
+    "The Block Escape button click changes status to open-blocked before Escape is pressed."
+  ]
+}

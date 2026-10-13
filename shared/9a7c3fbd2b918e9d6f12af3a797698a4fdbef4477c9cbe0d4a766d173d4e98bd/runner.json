@@ -1,0 +1,12 @@
+{
+  "base_commit": "307b71c61074c33fae6e9eb79d3d29b9c83150a0",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "corepack enable && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-8871",
+  "package_manager": "yarn@4.9.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "Node.js 24; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "yarn test packages/@react-spectrum/menu/test/MenuTrigger.test.js --runInBand --json --outputFile=$INTERACT_RAW_RESULT"
+}

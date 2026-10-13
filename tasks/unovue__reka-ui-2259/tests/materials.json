@@ -1,0 +1,127 @@
+{
+  "canonical_repro/app/index.html": {
+    "mode": 420,
+    "sha256": "91f8f4ea3105d9023df7f0beccd004fdd7c143400b2401b5f95e32f093f89392",
+    "source": "shared/91f8f4ea3105d9023df7f0beccd004fdd7c143400b2401b5f95e32f093f89392/index.html"
+  },
+  "canonical_repro/app/package.json": {
+    "mode": 420,
+    "sha256": "3470dee7bef2702eccfaef6e021e008e62880f0ab2627f138fb2e94a3a8846b3",
+    "source": "shared/3470dee7bef2702eccfaef6e021e008e62880f0ab2627f138fb2e94a3a8846b3/package.json"
+  },
+  "canonical_repro/app/src/App.vue": {
+    "mode": 420,
+    "sha256": "0b8351a56654df685beab388d51545316e5fddadb9d962210f5f89476f3129be",
+    "source": "shared/0b8351a56654df685beab388d51545316e5fddadb9d962210f5f89476f3129be/App.vue"
+  },
+  "canonical_repro/app/src/main.ts": {
+    "mode": 420,
+    "sha256": "e6989f43be872be95a6bcf4185151038b63e88fc2ff7b4a776b654b909804598",
+    "source": "shared/e6989f43be872be95a6bcf4185151038b63e88fc2ff7b4a776b654b909804598/main.ts"
+  },
+  "canonical_repro/app/src/styles.css": {
+    "mode": 420,
+    "sha256": "ff07438ae8ace94f7f5aef672dd56236bc30454961aff9e7c1f0fae02c855bcc",
+    "source": "shared/ff07438ae8ace94f7f5aef672dd56236bc30454961aff9e7c1f0fae02c855bcc/styles.css"
+  },
+  "canonical_repro/app/vite.config.mjs": {
+    "mode": 420,
+    "sha256": "fe4038011680ddb834577e1e260b250fd986a276c5c8a0cb6d7b256f3eea9610",
+    "source": "shared/fe4038011680ddb834577e1e260b250fd986a276c5c8a0cb6d7b256f3eea9610/vite.config.mjs"
+  },
+  "canonical_repro/interaction_spec.json": {
+    "mode": 420,
+    "sha256": "601391e20ad92c6d1ba4db1d7c72159206d6ddaa0e447987d33e69d41d595331",
+    "source": "shared/601391e20ad92c6d1ba4db1d7c72159206d6ddaa0e447987d33e69d41d595331/interaction_spec.json"
+  },
+  "canonical_repro/oracle/oracle.json": {
+    "mode": 420,
+    "sha256": "0d42c7e03c81de143df65c37e026442cc32b0d5a9004052fc255bcad005e219f",
+    "source": "shared/0d42c7e03c81de143df65c37e026442cc32b0d5a9004052fc255bcad005e219f/oracle.json"
+  },
+  "canonical_repro/playwright/playwright.config.ts": {
+    "mode": 420,
+    "sha256": "7b67b3e69647db4aa49cad8acf8dfe2c31e1de8d524e0076c8c8dd42fbe49df9",
+    "source": "shared/7b67b3e69647db4aa49cad8acf8dfe2c31e1de8d524e0076c8c8dd42fbe49df9/playwright.config.ts"
+  },
+  "canonical_repro/playwright/scenario.spec.ts": {
+    "mode": 420,
+    "sha256": "68d125b033c95424db8dec7a1763b85765a47814388967ae0aa55e9456959a68",
+    "source": "shared/68d125b033c95424db8dec7a1763b85765a47814388967ae0aa55e9456959a68/scenario.spec.ts"
+  },
+  "canonical_repro/scripts/container.sh": {
+    "mode": 493,
+    "sha256": "30391230e076adf1dc881fa64a473baff0f4a015c0f583da565ffb2db2d512b1",
+    "source": "shared/30391230e076adf1dc881fa64a473baff0f4a015c0f583da565ffb2db2d512b1/container.sh"
+  },
+  "canonical_repro/scripts/validate.sh": {
+    "mode": 493,
+    "sha256": "0e24b11c06bdb2164813678ac4da601c7a5205da8f26a5b0c6c9115d833452f5",
+    "source": "shared/0e24b11c06bdb2164813678ac4da601c7a5205da8f26a5b0c6c9115d833452f5/validate.sh"
+  },
+  "canonical_repro/tooling/package-lock.json": {
+    "mode": 420,
+    "sha256": "d0d65d97f693646e2d825f980b203a5c97acc520cc626c138d19ff9e86a8af11",
+    "source": "shared/d0d65d97f693646e2d825f980b203a5c97acc520cc626c138d19ff9e86a8af11/package-lock.json"
+  },
+  "canonical_repro/tooling/package.json": {
+    "mode": 420,
+    "sha256": "9d5cde72ae634097eb19e2615b03a01922137eb6cc4fd776b146b53477b54a11",
+    "source": "shared/9d5cde72ae634097eb19e2615b03a01922137eb6cc4fd776b146b53477b54a11/package.json"
+  },
+  "test.sh": {
+    "mode": 493,
+    "sha256": "06dd4ba1ab03230be81534228d7a96f86bd0e56ec2ae0b9972834aa57bae9ca3",
+    "source": "shared/06dd4ba1ab03230be81534228d7a96f86bd0e56ec2ae0b9972834aa57bae9ca3/test.sh"
+  },
+  "verifier/check_patch.cjs": {
+    "mode": 493,
+    "sha256": "f8665550a0262873df925a24e67be954023285d8d31330c8f0048e3bbbfaa25f",
+    "source": "shared/f8665550a0262873df925a24e67be954023285d8d31330c8f0048e3bbbfaa25f/check_patch.cjs"
+  },
+  "verifier/evaluator.json": {
+    "mode": 420,
+    "sha256": "be01cd4d52c96432a51ccfda9389c1f52d333c8ecfcb098efa390bc3592bcc5b",
+    "source": "shared/be01cd4d52c96432a51ccfda9389c1f52d333c8ecfcb098efa390bc3592bcc5b/evaluator.json"
+  },
+  "verifier/harness/run.sh": {
+    "mode": 493,
+    "sha256": "480892202c7934e15472886aa0633ad28a8cf21c8e1a475c3fc569008d38022c",
+    "source": "shared/480892202c7934e15472886aa0633ad28a8cf21c8e1a475c3fc569008d38022c/run.sh"
+  },
+  "verifier/inprocess-engine.sh": {
+    "mode": 493,
+    "sha256": "07759727094ede3458c60a34dfb3719168e0225686ff428a14625d077043ccf3",
+    "source": "shared/07759727094ede3458c60a34dfb3719168e0225686ff428a14625d077043ccf3/inprocess-engine.sh"
+  },
+  "verifier/official_test.patch": {
+    "mode": 420,
+    "sha256": "e1b8fdf672e6465fd52fe239047206192ad953f0b25408fc32de282474f22b8f",
+    "source": "shared/e1b8fdf672e6465fd52fe239047206192ad953f0b25408fc32de282474f22b8f/official_test.patch"
+  },
+  "verifier/run_build.sh": {
+    "mode": 493,
+    "sha256": "3da407a36c8ee307232da91e46abe7be10f2fad15d652b3725317c2e31a85de5",
+    "source": "shared/3da407a36c8ee307232da91e46abe7be10f2fad15d652b3725317c2e31a85de5/run_build.sh"
+  },
+  "verifier/run_canonical.sh": {
+    "mode": 493,
+    "sha256": "ab29bd56920c677b4fed6ab8666dc5c903b34128838aae0b834c7c6204becc87",
+    "source": "shared/ab29bd56920c677b4fed6ab8666dc5c903b34128838aae0b834c7c6204becc87/run_canonical.sh"
+  },
+  "verifier/run_official.sh": {
+    "mode": 493,
+    "sha256": "e92dae44bc15782fd6bd1f80385db1d4679cee57f8ed42a0594c6c402c61137e",
+    "source": "shared/e92dae44bc15782fd6bd1f80385db1d4679cee57f8ed42a0594c6c402c61137e/run_official.sh"
+  },
+  "verifier/runner.json": {
+    "mode": 420,
+    "sha256": "7dce6dd287f35f74c8d58ce8ccdd99954a26e593758e4d5d46db03db68e462fb",
+    "source": "shared/7dce6dd287f35f74c8d58ce8ccdd99954a26e593758e4d5d46db03db68e462fb/runner.json"
+  },
+  "verifier/summarize_official.cjs": {
+    "mode": 493,
+    "sha256": "00ca2bc93dc1b5f250904460da43da57d216a02c87f86a023306879f796aa3f1",
+    "source": "shared/00ca2bc93dc1b5f250904460da43da57d216a02c87f86a023306879f796aa3f1/summarize_official.cjs"
+  }
+}

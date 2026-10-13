@@ -1,0 +1,18 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After clicking the first tab, Buggy lacks data-focused while Fixed exposes data-focused=true.",
+    "fixed_observed": false,
+    "name": "adobe__react-spectrum-5973"
+  },
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    }
+  },
+  "instance_id": "adobe__react-spectrum-5973",
+  "schema_version": "1.0"
+}

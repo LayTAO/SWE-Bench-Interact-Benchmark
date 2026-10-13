@@ -1,0 +1,11 @@
+{
+  "base_commit": "ba53ee87e2fb6d0addd99fa8d60b78b85660f847",
+  "base_image": "local Node 22.18.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "floating-ui__floating-ui-3207",
+  "package_manager": "pnpm@9.6.0",
+  "repo_url": "https://github.com/floating-ui/floating-ui.git",
+  "repository": "floating-ui/floating-ui",
+  "schema_version": "4.0",
+  "test_command": "pnpm exec vitest run --config vite.config.mts test/unit/FloatingFocusManager.test.tsx --reporter=json --outputFile=<isolated-output>"
+}

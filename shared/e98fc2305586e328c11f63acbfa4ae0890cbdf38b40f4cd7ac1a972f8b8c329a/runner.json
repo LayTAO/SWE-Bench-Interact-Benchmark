@@ -1,0 +1,14 @@
+{
+  "base_commit": "73f489df31458a3c8ab6cc3789da54b21a63387e",
+  "base_image": "mcr.microsoft.com/playwright:v1.52.0-jammy",
+  "buggy_commit": "73f489df31458a3c8ab6cc3789da54b21a63387e",
+  "build_command": "",
+  "install_command": "corepack enable; corepack prepare pnpm@11.5.0 --activate; pnpm install --frozen-lockfile",
+  "instance_id": "radix-ui__primitives-3971",
+  "package_manager": "pnpm@11.5.0",
+  "repo_url": "https://github.com/radix-ui/primitives.git",
+  "repository": "radix-ui/primitives",
+  "runtime": "",
+  "schema_version": "4.0",
+  "test_command": "pnpm dev; pnpm exec cypress run --browser Chromium --spec cypress/e2e/ContextMenu.cy.ts,cypress/e2e/DropdownMenu.cy.ts,cypress/e2e/Popover.cy.ts,cypress/e2e/Select.cy.ts"
+}

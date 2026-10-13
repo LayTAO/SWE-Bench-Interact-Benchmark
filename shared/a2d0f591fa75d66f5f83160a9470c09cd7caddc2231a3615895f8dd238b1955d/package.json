@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@ariakit/react": "workspace:source",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "@vitejs/plugin-react": "4.7.0",
+    "typescript": "5.8.3",
+    "vite": "5.4.21"
+  },
+  "name": "ariakit-6310-repro",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

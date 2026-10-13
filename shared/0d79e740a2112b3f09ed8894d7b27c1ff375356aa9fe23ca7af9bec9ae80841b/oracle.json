@@ -1,0 +1,18 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "The excluded Button has tabindex=0 in Buggy and tabindex=-1 in Fixed; the normal Button remains tabindex=0.",
+    "fixed_observed": false,
+    "name": "adobe__react-spectrum-8556"
+  },
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    }
+  },
+  "instance_id": "adobe__react-spectrum-8556",
+  "schema_version": "1.0"
+}

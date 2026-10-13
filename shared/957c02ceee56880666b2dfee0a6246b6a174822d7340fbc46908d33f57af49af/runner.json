@@ -1,0 +1,12 @@
+{
+  "base_commit": "925b746d92d72f9c9cf3fa3434843d049d630680",
+  "base_image": "node:22",
+  "install_command": "corepack yarn install --immutable",
+  "instance_id": "carbon-design-system__carbon-20771",
+  "package_manager": "yarn4",
+  "repo_url": "https://github.com/carbon-design-system/carbon.git",
+  "repository": "carbon-design-system/carbon",
+  "runtime": "Node.js 22",
+  "schema_version": "3.0",
+  "test_command": "corepack yarn workspace typescript-config-carbon build && corepack yarn workspace @carbon/icons build && if [[ -d packages/icon-helpers ]]; then corepack yarn workspace @carbon/icon-helpers build; fi && corepack yarn workspace @carbon/icons-react build && corepack yarn workspaces foreach --recursive --topological --from @carbon/react --exclude @carbon/react run build && corepack yarn test packages/react/src/components/Dropdown/__tests__/Dropdown-test.js --runInBand"
+}

@@ -1,0 +1,11 @@
+{
+  "base_commit": "04f5bbc23b11dc09214596b5f014cee1db6f09a8",
+  "base_image": "local Node 22.18.0 environment",
+  "install_command": "pnpm install --frozen-lockfile --ignore-scripts",
+  "instance_id": "element-plus__element-plus-24075",
+  "package_manager": "pnpm@11.0.9",
+  "repo_url": "https://github.com/element-plus/element-plus.git",
+  "repository": "element-plus/element-plus",
+  "schema_version": "4.0",
+  "test_command": "pnpm exec vitest run --config vitest.config.mts packages/components/date-picker-panel/__tests__/date-picker-panel.test.tsx --reporter=json --outputFile=<isolated-output>"
+}

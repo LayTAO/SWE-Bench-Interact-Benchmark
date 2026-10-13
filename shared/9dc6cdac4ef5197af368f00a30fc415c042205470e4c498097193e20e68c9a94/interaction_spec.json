@@ -1,0 +1,31 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Click the available Hello menu item."
+  ],
+  "checkpoints": [
+    "After selecting Hello, Buggy remains aria-checked=false; Fixed reports aria-checked=true."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false
+  },
+  "instance_id": "adobe__react-spectrum-8871",
+  "observation_channels": [
+    "DOM attributes",
+    "focus",
+    "ARIA state",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true
+  },
+  "preconditions": [
+    "The minimal component is rendered with the Issue-derived state."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The exact Buggy or Fixed subject is loaded.",
+    "The Issue-derived interaction is performed.",
+    "The stable DOM/focus/ARIA oracle is read."
+  ]
+}

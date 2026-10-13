@@ -1,0 +1,12 @@
+{
+  "base_commit": "b0118e99853f9785e930fbc3e01f47ce5c43ff79",
+  "base_image": "public.ecr.aws/docker/library/node:18-bookworm",
+  "install_command": "export COREPACK_HOME=/corepack; export YARN_ENABLE_GLOBAL_CACHE=true; export YARN_GLOBAL_FOLDER=/yarn-cache; corepack enable && corepack prepare yarn@4.2.2 --activate && yarn install --immutable",
+  "instance_id": "adobe__react-spectrum-7973",
+  "package_manager": "yarn@4.2.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "runtime": "public.ecr.aws/docker/library/node:18-bookworm; repository-locked official test runner",
+  "schema_version": "4.0",
+  "test_command": "/benchmark/harness/run.sh \"$INTERACT_RAW_RESULT\""
+}

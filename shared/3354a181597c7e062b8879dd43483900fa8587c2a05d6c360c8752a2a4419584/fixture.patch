@@ -1,0 +1,115 @@
+diff --git a/src/dev-app/BUILD.bazel b/src/dev-app/BUILD.bazel
+--- a/src/dev-app/BUILD.bazel
++++ b/src/dev-app/BUILD.bazel
+@@ -182,7 +182,46 @@ http_server(
+     deps = [
+         ":bundles",
+     ],
+ )
++
++ng_module(
++    name = "interactrepair-25077-app",
++    srcs = ["interactrepair-25077-main.ts", "interactrepair-25077-repro.ts"],
++    deps = [
++        "//src/cdk/scrolling",
++        "@npm//@angular/core",
++        "@npm//@angular/platform-browser",
++    ],
++)
++
++devmode_esbuild(
++    name = "interactrepair-25077-bundles",
++    config = ":esbuild_config",
++    entry_points = [":interactrepair-25077-main.ts"],
++    platform = "browser",
++    target = "es2016",
++    deps = LINKER_PROCESSED_FW_PACKAGES + [
++        ":interactrepair-25077-app",
++    ],
++)
++
++filegroup(
++    name = "interactrepair-25077-static",
++    srcs = [
++        "interactrepair-25077-index.html",
++        "@npm//:node_modules/zone.js/dist/zone.js",
++    ],
++)
++
++http_server(
++    name = "interactrepair-25077-devserver",
++    srcs = [":interactrepair-25077-static"],
++    additional_root_paths = [
++        "npm/node_modules",
++        "angular_material",
++    ],
++    deps = [":interactrepair-25077-bundles"],
++)
+ 
+ # Target that builds a static web package of the dev-app. The web package can be
+ # deployed on static hosting services (such as firebase).
+diff --git a/src/dev-app/interactrepair-25077-index.html b/src/dev-app/interactrepair-25077-index.html
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-25077-index.html
+@@ -0,0 +1,14 @@
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>Angular components 25077 minimal reproduction</title>
++    <link rel="icon" href="data:,">
++  </head>
++  <body>
++    <interactrepair-25077-repro>Loading reproduction...</interactrepair-25077-repro>
++    <script src="zone.js/dist/zone.js"></script>
++    <script src="interactrepair-25077-bundles/interactrepair-25077-main.js" type="module"></script>
++  </body>
++</html>
+diff --git a/src/dev-app/interactrepair-25077-main.ts b/src/dev-app/interactrepair-25077-main.ts
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-25077-main.ts
+@@ -0,0 +1,5 @@
++import {bootstrapApplication} from '@angular/platform-browser';
++
++import {InteractRepair25077Repro} from './interactrepair-25077-repro';
++
++bootstrapApplication(InteractRepair25077Repro);
+diff --git a/src/dev-app/interactrepair-25077-repro.ts b/src/dev-app/interactrepair-25077-repro.ts
+new file mode 100644
+--- /dev/null
++++ b/src/dev-app/interactrepair-25077-repro.ts
+@@ -0,0 +1,31 @@
++import {ChangeDetectionStrategy, Component} from '@angular/core';
++import {ScrollingModule} from '@angular/cdk/scrolling';
++
++@Component({
++  selector: 'interactrepair-25077-repro',
++  standalone: true,
++  imports: [ScrollingModule],
++  changeDetection: ChangeDetectionStrategy.OnPush,
++  template: `
++    <main>
++      <h1>Append-only virtual scroll reproduction</h1>
++      <p>Scroll the isolated viewport; rendered content must stay anchored at the top.</p>
++      <cdk-virtual-scroll-viewport
++        id="interactrepair-append-only"
++        appendOnly
++        [itemSize]="50"
++        style="display:block;height:240px;width:360px;border:1px solid #444"
++      >
++        <div
++          *cdkVirtualFor="let item of items"
++          style="height:50px;box-sizing:border-box;border-bottom:1px solid #ddd"
++        >
++          Item {{item}}
++        </div>
++      </cdk-virtual-scroll-viewport>
++    </main>
++  `,
++})
++export class InteractRepair25077Repro {
++  readonly items = Array.from({length: 200}, (_, index) => index);
++}

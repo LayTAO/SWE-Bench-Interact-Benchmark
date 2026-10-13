@@ -1,0 +1,19 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "A transition registered on an element that is detached before transitionend leaves the callback queued only in Buggy.",
+    "fixed_observed": false,
+    "name": "detached_transition_blocks_run_after_transition"
+  },
+  "expected": {
+    "buggy": {
+      "callback_status": "waiting",
+      "detached_element_count": 0
+    },
+    "fixed": {
+      "callback_status": "callback fired",
+      "detached_element_count": 0
+    }
+  },
+  "schema_version": "1.0"
+}

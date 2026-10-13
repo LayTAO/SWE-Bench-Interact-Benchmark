@@ -1,0 +1,25 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "value_before_select_all == SomeTex",
+      "value_after_selected_backspace == SomeText",
+      "last_tag_focused == true"
+    ]
+  },
+  "environment_gate": [
+    "The semantic TagPicker input is visible and existing tags are rendered."
+  ],
+  "expected": {
+    "active_element_testid": "tag-picker-input",
+    "bug_observed": true,
+    "last_tag_focused": false,
+    "value_after_selected_backspace": ""
+  },
+  "instance_id": "microsoft__fluentui-32260",
+  "predicate_id": "tag_picker_backspace_keeps_input_focus",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The interaction uses fill, Control+A and Backspace on the TagPicker input."
+  ]
+}

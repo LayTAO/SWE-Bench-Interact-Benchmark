@@ -1,0 +1,11 @@
+{
+  "base_commit": "6aee49af22267e1dfae14c7c2b3d39397a720e9a",
+  "base_image": "public.ecr.aws/docker/library/node:24-bookworm",
+  "install_command": "node .yarn/releases/yarn-4.2.2.cjs install --immutable",
+  "instance_id": "adobe__react-spectrum-9460",
+  "package_manager": "yarn@4.2.2",
+  "repo_url": "https://github.com/adobe/react-spectrum.git",
+  "repository": "adobe/react-spectrum",
+  "schema_version": "3.0",
+  "test_command": "node .yarn/releases/yarn-4.2.2.cjs jest packages/react-aria-components/test/Tooltip.test.js --runInBand -t \"shows on hover|shows on focus|should hide tooltip on scroll|should support custom Focusable trigger on hover\""
+}

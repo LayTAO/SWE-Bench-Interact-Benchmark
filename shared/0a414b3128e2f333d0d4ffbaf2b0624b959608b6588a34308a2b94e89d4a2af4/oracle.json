@@ -1,0 +1,20 @@
+{
+  "bug_predicate": {
+    "body_pointer_events_after_menu": "not none while Dialog remains visible"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "body_pointer_events_after_menu": "none",
+    "dialog_visible": true
+  },
+  "instance_id": "unovue__reka-ui-2674",
+  "rendering_gate": [
+    "Dialog, overlay, and nested menu have plausible independent geometry."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "The Dialog owns the body pointer lock before the menu closes."
+  ]
+}

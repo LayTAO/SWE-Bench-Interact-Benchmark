@@ -1,6 +1,4 @@
 {
-  "schema_version": 1,
-  "release_id": "paper-103",
   "expected_count": 103,
   "instance_ids": [
     "adobe__react-spectrum-10092",
@@ -106,5 +104,7 @@
     "unovue__reka-ui-2749",
     "vuetifyjs__vuetify-11989",
     "vuetifyjs__vuetify-22850"
-  ]
+  ],
+  "release_id": "paper-103",
+  "schema_version": 1
 }

@@ -1,0 +1,30 @@
+{
+  "bug_predicate": {
+    "all": [
+      "environment_valid == true",
+      "trigger_switch_completed == true",
+      "subsequent_trigger_actionable == true"
+    ]
+  },
+  "environment_gate": [
+    "target test file discovered",
+    "all selected assertions discovered",
+    "no browser startup or page-load failure"
+  ],
+  "expected": {
+    "bug_observed": true,
+    "buggy_named_assertions": [
+      "<NavigationMenu.Trigger /> releases the pointer-events lock on the list when the open trigger unmounts"
+    ],
+    "fixed_named_assertions": [],
+    "fixed_state": "快速切换后菜单仍可继续打开和交互。"
+  },
+  "instance_id": "mui__base-ui-5239",
+  "predicate_id": "mui_navigation_menu_does_not_freeze_after_rapid_switch",
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "打开菜单",
+    "快速切换 trigger",
+    "再次打开菜单"
+  ]
+}

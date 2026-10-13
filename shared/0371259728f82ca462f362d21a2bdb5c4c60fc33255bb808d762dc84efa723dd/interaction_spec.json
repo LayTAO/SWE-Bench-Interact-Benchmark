@@ -1,0 +1,38 @@
+{
+  "actions": [
+    "Load the exact source app.",
+    "Click Open dialog.",
+    "Click Notification field without first focusing the dialog.",
+    "Observe dialog visibility and active focus."
+  ],
+  "checkpoints": [
+    "Dialog is visible after opening.",
+    "Notification field receives focus.",
+    "Dialog remains open in Fixed and closes in Buggy."
+  ],
+  "expected_fixed_state": {
+    "bug_observed": false,
+    "dialog_visible_after_persistent_focus": true
+  },
+  "instance_id": "ariakit__ariakit-6344",
+  "observation_channels": [
+    "DOM",
+    "dialog visibility",
+    "focus",
+    "ARIA roles",
+    "console/page errors"
+  ],
+  "observed_buggy_state": {
+    "bug_observed": true,
+    "dialog_visible_after_persistent_focus": false
+  },
+  "preconditions": [
+    "The non-modal Dialog and persistent Notifications region render."
+  ],
+  "schema_version": "1.0",
+  "states": [
+    "The dialog opens without auto-focusing its contents.",
+    "The Notification field in getPersistentElements receives focus.",
+    "The dialog open state after that interaction is observed."
+  ]
+}

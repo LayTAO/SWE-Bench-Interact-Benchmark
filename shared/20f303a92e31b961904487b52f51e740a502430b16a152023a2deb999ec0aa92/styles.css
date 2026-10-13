@@ -1,0 +1,4 @@
+body { font-family: sans-serif; margin: 24px; min-height: 520px }
+main { display: grid; gap: 14px; max-width: 520px }
+button, input { font: inherit; padding: 8px }
+[data-testid="dialog"] { display: grid; gap: 12px; border: 1px solid #777; padding: 24px; background: white }

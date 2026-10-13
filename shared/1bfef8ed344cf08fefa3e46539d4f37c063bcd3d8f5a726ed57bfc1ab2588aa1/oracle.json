@@ -1,0 +1,18 @@
+{
+  "bug_predicate": {
+    "buggy_observed": true,
+    "condition": "After selecting Hello, Buggy remains aria-checked=false; Fixed reports aria-checked=true.",
+    "fixed_observed": false,
+    "name": "adobe__react-spectrum-8871"
+  },
+  "expected": {
+    "buggy": {
+      "bug_observed": true
+    },
+    "fixed": {
+      "bug_observed": false
+    }
+  },
+  "instance_id": "adobe__react-spectrum-8871",
+  "schema_version": "1.0"
+}

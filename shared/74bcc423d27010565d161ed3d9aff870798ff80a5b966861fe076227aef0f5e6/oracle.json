@@ -1,0 +1,24 @@
+{
+  "bug_predicate": {
+    "hour": "hour segment is not 14",
+    "value": "bound value does not start with 14:30:00"
+  },
+  "environment_gate": [
+    "No page or console errors."
+  ],
+  "expected": {
+    "environment_valid": true,
+    "hour": "14",
+    "rendering_valid": true,
+    "trigger_valid": true,
+    "value": "14:30:00"
+  },
+  "instance_id": "unovue__reka-ui-2463",
+  "rendering_gate": [
+    "The TimeField and hour segment are visible."
+  ],
+  "schema_version": "1.0",
+  "trigger_gate": [
+    "Typing two digits in the focused hour segment updates the hour and bound value."
+  ]
+}

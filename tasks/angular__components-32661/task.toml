@@ -1,0 +1,48 @@
+schema_version = "1.4"
+
+[task]
+name = "laytao/angular__components-32661"
+version = "0.2.0-candidate"
+description = "bug(sidenav): Focus trap is enabled with mode=side if there is another sidenav with mode=over or mode=push"
+
+[metadata]
+instance_id = "angular__components-32661"
+repository = "angular/components"
+base_commit = "c71256dfdb981a628120d6bbafdc3001836dd9a8"
+
+[agent]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
+timeout_sec = 1800.0
+
+[environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:27eaba80f15f4da1e8e16801accbf87a689d77b23dde3a1fd10498aa5cd86cad"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "public"
+
+[environment.healthcheck]
+command = "bash /opt/interactbench/capture_patch.sh snapshot /workspace/repo /logs/agent/interactbench-baseline"
+retries = 1
+timeout_sec = 120.0
+interval_sec = 1.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "docker.io/ltao615/swe-bench-interact@sha256:35af02cecf323369693cb7d46eccc35cf17a1e89ed350a6f9d0abaee01917a0d"
+build_timeout_sec = 1800.0
+os = "linux"
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+network_mode = "no-network"
+
+[[verifier.collect]]
+command = "bash /opt/interactbench/capture_patch.sh export /workspace/repo /logs/agent/interactbench-baseline /logs/artifacts"
+timeout_sec = 120.0

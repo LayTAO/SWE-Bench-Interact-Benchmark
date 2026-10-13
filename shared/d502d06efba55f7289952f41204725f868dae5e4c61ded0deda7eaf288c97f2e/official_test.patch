@@ -1,0 +1,271 @@
+diff --git a/app/src/sandbox/dialog-6344/index.react.tsx b/app/src/sandbox/dialog-6344/index.react.tsx
+new file mode 100644
+index 00000000..2d8ab2c0
+--- /dev/null
++++ b/app/src/sandbox/dialog-6344/index.react.tsx
+@@ -0,0 +1,82 @@
++import * as Ariakit from "@ariakit/react";
++import { useRef, useState } from "react";
++
++// Reproduces a non-modal dialog with getPersistentElements closing when the
++// user interacts with a persistent element before the dialog has been focused.
++// To see the bug:
++//   1. Click "Open dialog". The panel opens without taking focus
++//      (autoFocusOnShow={false}).
++//   2. Without clicking inside the dialog, click (or focus, or right-click) the
++//      "Notification field" input inside the persistent "Notifications" region.
++//   3. The dialog closes, even though the region is returned by
++//      getPersistentElements and should be treated as part of the dialog.
++// For contrast, focusing "Inside field" first makes the same interaction keep
++// the dialog open, as documented.
++export default function Example() {
++  const [open, setOpen] = useState(false);
++  const notificationsRef = useRef<HTMLDivElement>(null);
++
++  return (
++    <div className="flex flex-col items-start gap-3">
++      <Ariakit.Button
++        className="rounded bg-blue-600 px-3 py-1 text-white"
++        onClick={() => setOpen(true)}
++      >
++        Open dialog
++      </Ariakit.Button>
++
++      <Ariakit.Dialog
++        open={open}
++        onClose={() => setOpen(false)}
++        modal={false}
++        autoFocusOnShow={false}
++        getPersistentElements={() => {
++          const notifications = notificationsRef.current;
++          return notifications ? [notifications] : [];
++        }}
++        className="flex w-72 flex-col items-start gap-3 rounded-lg border border-gray-300 bg-white p-4 shadow-lg"
++      >
++        <Ariakit.DialogHeading className="text-lg font-medium">
++          Dialog
++        </Ariakit.DialogHeading>
++        <input
++          aria-label="Inside field"
++          placeholder="Inside field"
++          className="rounded border border-gray-300 px-3 py-1"
++        />
++        <Ariakit.DialogDismiss className="rounded border border-gray-300 px-3 py-1">
++          Close dialog
++        </Ariakit.DialogDismiss>
++      </Ariakit.Dialog>
++
++      {/* Persistent notifications region, like the dialog-react-toastify
++          example. Interacting with it must never close the dialog. */}
++      <div
++        ref={notificationsRef}
++        role="region"
++        aria-label="Notifications"
++        className="flex flex-col items-start gap-3 rounded-lg border border-gray-300 p-4"
++      >
++        <input
++          aria-label="Notification field"
++          placeholder="Notification field"
++          className="rounded border border-gray-300 px-3 py-1"
++        />
++        <button
++          type="button"
++          className="rounded border border-gray-300 px-3 py-1"
++        >
++          Dismiss notification
++        </button>
++      </div>
++
++      {/* A regular outside element: interacting with it must still close the
++          dialog. */}
++      <input
++        aria-label="Outside field"
++        placeholder="Outside field"
++        className="rounded border border-gray-300 px-3 py-1"
++      />
++    </div>
++  );
++}
+diff --git a/app/src/sandbox/dialog-6344/test-browser.ts b/app/src/sandbox/dialog-6344/test-browser.ts
+new file mode 100644
+index 00000000..121114f0
+--- /dev/null
++++ b/app/src/sandbox/dialog-6344/test-browser.ts
+@@ -0,0 +1,64 @@
++import { withFramework } from "#app/test-utils/preview.ts";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6344
++withFramework(import.meta.dirname, async ({ test }) => {
++  test("stays open when interacting with a persistent element before the dialog is focused", async ({
++    page,
++    q,
++  }) => {
++    await q.button("Open dialog").click();
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++
++    // The dialog hasn't been focused yet (autoFocusOnShow={false}). Clicking
++    // the persistent field must not close it. The bounded timeout guards
++    // against the assertion passing before the dialog processes the hide.
++    await q.textbox("Notification field").click();
++    await test.expect(q.textbox("Notification field")).toBeFocused();
++    await page.waitForTimeout(250);
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++
++    // Other interactions with the persistent region must not close it either.
++    await q.button("Dismiss notification").click();
++    await page.waitForTimeout(250);
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++  });
++
++  test("stays open on right-clicking a persistent element before the dialog is focused", async ({
++    page,
++    q,
++  }) => {
++    await q.button("Open dialog").click();
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++
++    await q.textbox("Notification field").click({ button: "right" });
++    await page.waitForTimeout(250);
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++  });
++
++  test("keeps the documented behavior after the dialog has been focused", async ({
++    page,
++    q,
++  }) => {
++    await q.button("Open dialog").click();
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++
++    // Focusing inside the dialog first is the documented, working path.
++    await q.textbox("Inside field").click();
++    await test.expect(q.textbox("Inside field")).toBeFocused();
++
++    await q.textbox("Notification field").click();
++    await test.expect(q.textbox("Notification field")).toBeFocused();
++    await page.waitForTimeout(250);
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++  });
++
++  test("still closes when interacting outside before the dialog is focused", async ({
++    q,
++  }) => {
++    await q.button("Open dialog").click();
++    await test.expect(q.dialog("Dialog")).toBeVisible();
++
++    await q.textbox("Outside field").click();
++    await test.expect(q.dialog("Dialog")).not.toBeVisible();
++  });
++});
+diff --git a/app/src/sandbox/dialog-6344/test.ts b/app/src/sandbox/dialog-6344/test.ts
+new file mode 100644
+index 00000000..e583c43e
+--- /dev/null
++++ b/app/src/sandbox/dialog-6344/test.ts
+@@ -0,0 +1,47 @@
++import { click, q, rightClick } from "@ariakit/test";
++import { expect, test } from "vitest";
++
++// Reproduces https://github.com/ariakit/ariakit/issues/6344
++test("stays open when interacting with a persistent element before the dialog is focused", async () => {
++  await click(q.button.ensure("Open dialog"));
++  expect(q.dialog("Dialog")).toBeVisible();
++
++  // The dialog hasn't been focused yet (autoFocusOnShow={false}). Clicking
++  // the persistent field must not close it.
++  await click(q.textbox.ensure("Notification field"));
++  expect(q.textbox("Notification field")).toHaveFocus();
++  expect(q.dialog("Dialog")).toBeVisible();
++
++  // Other interactions with the persistent region must not close it either.
++  await click(q.button.ensure("Dismiss notification"));
++  expect(q.dialog("Dialog")).toBeVisible();
++});
++
++test("stays open on right-clicking a persistent element before the dialog is focused", async () => {
++  await click(q.button.ensure("Open dialog"));
++  expect(q.dialog("Dialog")).toBeVisible();
++
++  await rightClick(q.textbox.ensure("Notification field"));
++  expect(q.dialog("Dialog")).toBeVisible();
++});
++
++test("keeps the documented behavior after the dialog has been focused", async () => {
++  await click(q.button.ensure("Open dialog"));
++  expect(q.dialog("Dialog")).toBeVisible();
++
++  // Focusing inside the dialog first is the documented, working path.
++  await click(q.textbox.ensure("Inside field"));
++  expect(q.textbox("Inside field")).toHaveFocus();
++
++  await click(q.textbox.ensure("Notification field"));
++  expect(q.textbox("Notification field")).toHaveFocus();
++  expect(q.dialog("Dialog")).toBeVisible();
++});
++
++test("still closes when interacting outside before the dialog is focused", async () => {
++  await click(q.button.ensure("Open dialog"));
++  expect(q.dialog("Dialog")).toBeVisible();
++
++  await click(q.textbox.ensure("Outside field"));
++  await expect.poll(q.dialog.hidden.lazy("Dialog")).not.toBeVisible();
++});
+diff --git a/packages/ariakit-react-components/src/dialog/utils/orchestrate.test.ts b/packages/ariakit-react-components/src/dialog/utils/orchestrate.test.ts
+index 0e51eff6..4e199069 100644
+--- a/packages/ariakit-react-components/src/dialog/utils/orchestrate.test.ts
++++ b/packages/ariakit-react-components/src/dialog/utils/orchestrate.test.ts
+@@ -1,6 +1,11 @@
+ import { afterEach, expect, test } from "vitest";
+ import { markAndDisableTreeOutside } from "./disable-tree.ts";
+-import { isElementMarked, markTreeOutside } from "./mark-tree-outside.ts";
++import {
++  isElementInside,
++  isElementMarked,
++  markTreeInside,
++  markTreeOutside,
++} from "./mark-tree-outside.ts";
+ import { assignStyle, setAttribute } from "./orchestrate.ts";
+ import { supportsInert } from "./supports-inert.ts";
+ import {
+@@ -194,6 +199,42 @@ test("markTreeOutside skips backdrops and restores marks", () => {
+   expect(isElementMarked(backdrop, "dialog")).toBe(false);
+ });
+ 
++test("markTreeInside marks the given elements and restores them", () => {
++  document.body.innerHTML = `
++    <div id="root">
++      <div id="dialog" data-dialog></div>
++      <section id="persistent">
++        <span id="persistent-child"></span>
++      </section>
++      <section id="outside"></section>
++    </div>
++  `;
++
++  const dialog = getElement("dialog");
++  const persistent = getElement("persistent");
++  const persistentChild = getElement("persistent-child");
++  const outside = getElement("outside");
++
++  const restoreInsideMarks = markTreeInside("dialog", [dialog, persistent]);
++  const restoreMarks = markTreeOutside("dialog", [dialog, persistent]);
++
++  expect(isElementInside(dialog, "dialog")).toBe(true);
++  expect(isElementInside(persistent, "dialog")).toBe(true);
++  // Descendants of inside elements are inside too, even when added after the
++  // dialog opens.
++  expect(isElementInside(persistentChild, "dialog")).toBe(true);
++  expect(isElementInside(outside, "dialog")).toBe(false);
++  expect(isElementMarked(persistent, "dialog")).toBe(false);
++  expect(isElementMarked(outside, "dialog")).toBe(true);
++
++  restoreMarks();
++  restoreInsideMarks();
++
++  expect(isElementInside(dialog, "dialog")).toBe(false);
++  expect(isElementInside(persistent, "dialog")).toBe(false);
++  expect(isElementInside(persistentChild, "dialog")).toBe(false);
++});
++
+ test("markTreeOutside restores previous marks after nested cleanup", () => {
+   document.body.innerHTML = `
+     <div id="root">
