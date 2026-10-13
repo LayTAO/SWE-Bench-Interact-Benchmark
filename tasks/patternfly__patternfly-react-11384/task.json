@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:44361bd86e458a5a405b14244d67eb83bda0ea38f85f7912724b09939970c072",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "official-browser-test"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "f8ecc18b5d67c9889dde6b9ce0dd0245bf285a4828d777288d086ab07be8ab63",
+      "canonical_validation_sha256": "aa191e8ae259fa49b95f5509d3773ba61f50aa15933a5d909abab0fd2a9709af",
+      "evaluation_bundle_sha256": "93f8a3b59400fe9b987eed1d853f640919281f871dc2b8b81c5866a2c7c2233e",
+      "evaluation_spec_sha256": "604d4ee437879e6695cc1d67d7867b590582fc2ea478cb4fc3671ba0df592aa6",
+      "gold_patch_sha256": "d853a3bde6291dce443ac34f9bd353e69e15c517b374d9bfb2df11f0b9e02ba1",
+      "official_test_patch_sha256": "eccd29da3f59b67d9d8fd004085fe5e899fa419a29fed95fdd18f9c3c2829a9a"
+    },
+    "f2p_count": 2,
+    "p2p_count": 3,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "patternfly__patternfly-react-11384",
   "instruction_path": "tasks/patternfly__patternfly-react-11384/instruction.md",
@@ -23,7 +51,7 @@
     "name": "patternfly/patternfly-react",
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

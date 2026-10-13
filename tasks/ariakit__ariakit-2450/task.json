@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:5a4eae55bf09dadc6b11d6d6781d022bfd64196bddbb920fc6af2581c9a260a9",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "00e9eb00f4e3ec2b49800f73704fdda53fcda441c86416ffe8e73dc0bc279966",
+      "canonical_validation_sha256": "92d8f340563fc922241fa5dcaa73af3ca56b9a966328dc4ffdedb20e8f4da373",
+      "evaluation_bundle_sha256": "2857628cfab5312c3b55de0d6782b5f4ccabcaa26df50e1488b915086668636b",
+      "evaluation_spec_sha256": "911acc1de7cbdc4da4c0f4843261e9d32ecea197eede922c2814d9e47995aa86",
+      "gold_patch_sha256": "fea297f7e9fd1ef83f76b43bd742123f376fe6f4f2cb91533c7b9e587b931401",
+      "official_test_patch_sha256": "65fd0150dabca286e9dae43367b8823066f3519e59a1097cafb9b850fb7a757e"
+    },
+    "f2p_count": 6,
+    "p2p_count": 3,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "ariakit__ariakit-2450",
   "instruction_path": "tasks/ariakit__ariakit-2450/instruction.md",
@@ -23,7 +51,7 @@
     "name": "ariakit/ariakit",
     "url": "https://github.com/ariakit/ariakit.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:d09dc0692da3bee42f0f414d8cc7c5068da1b3cd37ba2b6414a0f4c414138966",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "b88257aff12638e746c822021dafd07fbd011b7c958c5d28efdb7a55140e9c28",
+      "canonical_validation_sha256": "903fe5e063bd0afdd3e2899257c99516f2d843a2443508b3c4e1a8dd39a1418e",
+      "evaluation_bundle_sha256": "1fa80c3aa915aa6284494abf2fd3674d678b6a0665a58d7d98239540dda91714",
+      "evaluation_spec_sha256": "eae10d350fbe6093fdd56a21de97f749cf297f2b9e17d63b8308a0a19d55be66",
+      "gold_patch_sha256": "3f763c26ffa07d46159baa29cde9f749e8ead31417bfa05132694c7988e14571",
+      "official_test_patch_sha256": "c7243697ae0c5030b6f58dd88abf8c269a94e567d1aaba4ab9aefef69af6ffb8"
+    },
+    "f2p_count": 1,
+    "p2p_count": 13,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "melt-ui__melt-ui-945",
   "instruction_path": "tasks/melt-ui__melt-ui-945/instruction.md",
@@ -23,7 +51,7 @@
     "name": "melt-ui/melt-ui",
     "url": "https://github.com/melt-ui/melt-ui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

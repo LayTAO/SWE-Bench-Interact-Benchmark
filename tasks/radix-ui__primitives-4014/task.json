@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:c052e99265d4071cc2f6950c74ebe1d82bedd35a52f9f0ba6975cd44e41df499",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "f6cf5e230685732da3a83ed080ce447d05d6b042f04f75aabe011f19e62c71f5",
+      "canonical_validation_sha256": "f3a6c0a051d5353ae5b105547e75cd41066b010613653d032a7de1fcaf0f39dd",
+      "evaluation_bundle_sha256": "c8af6bd7125680f31835d846be871c851e60a06c27921bf3287afa30f0e19b9f",
+      "evaluation_spec_sha256": "292b8f30048cefd91448a56c25ae838ce66c5dc994475bc37d281a82a0e51eb0",
+      "gold_patch_sha256": "1264d64e10b11adde98e6a63cf0faa654067266b00d046aadb45d17412faee9c",
+      "official_test_patch_sha256": "1d6642a6e4da1d9ebc69c1616d7e8ca0ae1fc6bd1bad268b9fb560c0aa25bfe8"
+    },
+    "f2p_count": 2,
+    "p2p_count": 21,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "radix-ui__primitives-4014",
   "instruction_path": "tasks/radix-ui__primitives-4014/instruction.md",
@@ -23,7 +51,7 @@
     "name": "radix-ui/primitives",
     "url": "https://github.com/radix-ui/primitives.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:7d64066cb176c49f24e96462e883e117aa7b50c73449c9b5b4c85f4c5bb4e825",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "1488eb70c7544ccdc6125caa754b315e28097f40e86f146747590bcf69f44dd1",
+      "canonical_validation_sha256": "dc7a26e85a0b2dd41da57154c2df945168470d088759d44ccfe88df21b86b248",
+      "evaluation_bundle_sha256": "665ba8c612a673489423bad40c9ebd7fbe79849be3395dc7e44e7cc96fd4e92a",
+      "evaluation_spec_sha256": "39a0fa0bc72acd416c684dd52a7882c1d7cd322d894f119e39ad619b444503a8",
+      "gold_patch_sha256": "3c763c4d086f3b7b087886d6a85cc428bd43922ff70568727ec52f84e9880aac",
+      "official_test_patch_sha256": "a50620e28823f341a7fc23054961843bb7a659bb99086bd2119f89a8f038172c"
+    },
+    "f2p_count": 5,
+    "p2p_count": 128,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "mui__material-ui-45301",
   "instruction_path": "tasks/mui__material-ui-45301/instruction.md",
@@ -23,7 +51,7 @@
     "name": "mui/material-ui",
     "url": "https://github.com/mui/material-ui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

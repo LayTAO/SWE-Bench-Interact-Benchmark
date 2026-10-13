@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:f25f08e40ecb5d7c5cebd87d206c7618bb1279bcb26a36931506627f85bc49ec",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "93845070ccc23edd4d1ae00e8e9277fe1100a17adf8c1d0d785516809026505d",
+      "canonical_validation_sha256": "00eeaf0b8ef579ec34d2a79f958c739098772a6ea3c6c23e3f5eaf0713016a01",
+      "evaluation_bundle_sha256": "bc68f15b998f23666721d55ef1050c751f697d1c38dfdc1994bb0f071ebe0105",
+      "evaluation_spec_sha256": "3507cdcfe959aa3c0a0d17ba44ed8e1ea57ceb1aa8dc24a51a144becfa3280b7",
+      "gold_patch_sha256": "2f3d112aceccca7266830023526932c057e10b0a41d4d36fd116ff378d5fcd80",
+      "official_test_patch_sha256": "fc2536fa10def24c901c673675a5d768ca05e8fa13c01d4d09277de4d90aba81"
+    },
+    "f2p_count": 4,
+    "p2p_count": 9,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "motiondivision__motion-3028",
   "instruction_path": "tasks/motiondivision__motion-3028/instruction.md",
@@ -23,7 +51,7 @@
     "name": "motiondivision/motion",
     "url": "https://github.com/motiondivision/motion.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

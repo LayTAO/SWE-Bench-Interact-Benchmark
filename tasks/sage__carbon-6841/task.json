@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:be4e351f188048bb84aef59c03de17140a3671c9ebd379a499d08ccff994af3d",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "d0362ba6883afa1d6762cb3eec9a049203167af6ca42ba5b5604996c3d27cca6",
+      "canonical_validation_sha256": "5d1fea4b8986611103e0e1f200684a4f98cdd1771c6f9e7dfb5e10c012a39898",
+      "evaluation_bundle_sha256": "cca6efdec959ba7d50997ade2a9393fe887418416430e3cf2d9d657bbb2568a6",
+      "evaluation_spec_sha256": "4b2efaf3429b70941ea66d0a436b6489b46252271a19150e23c9beb5a8542581",
+      "gold_patch_sha256": "aeb6e1b847c437ce2cf277f2e0c8283fb1e2c0bf4c5326b7a6c5b54c1712103c",
+      "official_test_patch_sha256": "224427d09ea11811ba5ef50fa334be1c20288a27ec1fe52c740c6938e7dd2fd4"
+    },
+    "f2p_count": 6,
+    "p2p_count": 233,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "sage__carbon-6841",
   "instruction_path": "tasks/sage__carbon-6841/instruction.md",
@@ -23,7 +51,7 @@
     "name": "Sage/carbon",
     "url": "https://github.com/Sage/carbon.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

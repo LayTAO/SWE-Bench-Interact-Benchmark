@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:8e10a9e87cfe16c74500ba6bb098ae7829fcad6a5ee2446466029d3b39d86a76",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "ce11a7ec90c9974771397b34175e12ef4571e11c39fbed2aa898c5eea573d31d",
+      "canonical_validation_sha256": "45abf6f38788a6b064264bd20ea5612d4112e1d8474c28fd1fe0847d7d451e47",
+      "evaluation_bundle_sha256": "5e3ba856ad07318a47c794c734a1cae40e7052b92e063c486279491f24ec31de",
+      "evaluation_spec_sha256": "4544cb99a491b9260d3070556e6fd3117a89c9f26481e82a4af8f6b79da4a058",
+      "gold_patch_sha256": "080ab14fc620d83c05f27a0d2aded9172e468a8a5041d5eb257b07f096643559",
+      "official_test_patch_sha256": "1328bb81d329e20699af07904d98f156d087dc59730a48e4019bfe8565bfb469"
+    },
+    "f2p_count": 3,
+    "p2p_count": 141,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "mui__base-ui-4640",
   "instruction_path": "tasks/mui__base-ui-4640/instruction.md",
@@ -23,7 +51,7 @@
     "name": "mui/base-ui",
     "url": "https://github.com/mui/base-ui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

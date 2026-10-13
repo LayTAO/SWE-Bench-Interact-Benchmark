@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:15fe7a8d30fb19e19c74966c3af18610e8786fd012e7e94b5d7ef1c3cb7ac38a",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "repo-native-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "a3f20d28396303bc7032f1cccc7b5659fbf381f499af97da42e1eaf86a59ac97",
+      "canonical_validation_sha256": "f108e778d07b92267ac0f3838eb6311543cdfb9581648eb50e31582205731c19",
+      "evaluation_bundle_sha256": "3dc186978b02507b00f77ee482c65519a6cdce8635522061689200fa11087aa8",
+      "evaluation_spec_sha256": "7987bdcb410561e62e817ce419a88bf2b69adf15833d4ab58ef1a901568232c7",
+      "gold_patch_sha256": "d5fc1d16fc6d518df5e198ef99544baf64a42ec897f5136923a36b19944fac85",
+      "official_test_patch_sha256": "215c6d4b648ee4f247562d82e24feb1ef755993b6f0bfc553facc842610cc022"
+    },
+    "f2p_count": 1,
+    "p2p_count": 3,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "repo-native-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "carbon-design-system__carbon-17119",
   "instruction_path": "tasks/carbon-design-system__carbon-17119/instruction.md",
@@ -23,7 +51,7 @@
     "name": "carbon-design-system/carbon",
     "url": "https://github.com/carbon-design-system/carbon.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

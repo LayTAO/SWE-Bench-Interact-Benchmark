@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:6d54701aad20fea37a7219293601601b1a0764cbc82498d29835047fbb8b5a6e",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "repo-native-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "7ecb30d3595d46a555e3d9a40d60b4b927a682813749b4a24df00ad084bc84f2",
+      "canonical_validation_sha256": "49c96d21371b6abb2a4b41863d5d6ba636aea397309dcbf787cbb3673c53dd72",
+      "evaluation_bundle_sha256": "ebfaba5c3f6e65b94a202031e81ffdfd41b6c00abf24286b53ee3598014e44db",
+      "evaluation_spec_sha256": "b39ff31b376db025c056b16b9a7f764d4cdbdb90e30dc71200216d357d0668fe",
+      "gold_patch_sha256": "8833c2e2c2aa77032de13b0796a8c143fc64c60bedfa67a597fc8a1254ab89b1",
+      "official_test_patch_sha256": "946059e232fa379dae1ce766bbc0e9b95e0f4c8095222720858e6b2d2c166564"
+    },
+    "f2p_count": 6,
+    "p2p_count": 13,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "repo-native-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "primefaces__primevue-8100",
   "instruction_path": "tasks/primefaces__primevue-8100/instruction.md",
@@ -23,7 +51,7 @@
     "name": "primefaces/primevue",
     "url": "https://github.com/primefaces/primevue.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

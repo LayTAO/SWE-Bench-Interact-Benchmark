@@ -1,0 +1,71 @@
+{
+  "agent_image_digests_changed": false,
+  "authoritative_metadata": [
+    "tasks.jsonl",
+    "reproductions.jsonl",
+    "release-metadata.json"
+  ],
+  "cohort": "paper-103",
+  "commitment_methods": {
+    "canonical_repro_tree_sha256": "Tree hash of the current private reproduction bundle, including its retained metadata.",
+    "canonical_validation_sha256": "Hash of a retained historical validation summary, when present; not a new validation result.",
+    "evaluation_bundle_sha256": "Tree hash of the current complete private evaluation input bundle.",
+    "file": "SHA-256 of exact file bytes.",
+    "sha256-json-path-content-v1": "For every regular file recursively, form [POSIX relative path, lowercase SHA-256 of file bytes]. Sort entries by relative path; serialize with Python json.dumps(ensure_ascii=True, separators=(',', ':')), UTF-8, without a trailing newline; SHA-256 those bytes. Symlinks are rejected. File permissions and timestamps are not included."
+  },
+  "count_method": "Lengths of the disjoint FAIL_TO_PASS and PASS_TO_PASS lists in the current private evaluator, preserving name multiplicity. Carbon-21508 intentionally selects two distinct test leaves with the same title; its parser consumes separate recorded rows. These are declared assertion counts, not observed execution counts in this release.",
+  "coverage": {
+    "declared_f2p_assertion_entries": 379,
+    "declared_p2p_assertion_entries": 3252,
+    "reproduction_materialization": {
+      "page-directory": 79,
+      "repository-fixture-directory": 22,
+      "repository-fixture-patch": 2
+    },
+    "reproduction_page_materials_present": 103,
+    "reproduction_page_sources_released": 0,
+    "reproduction_types": {
+      "minimal-app-playwright": 80,
+      "repo-native-playwright": 23
+    },
+    "tasks_with_current_evaluation_commitments": 103,
+    "tasks_with_f2p_and_p2p_counts": 103
+  },
+  "historical_count_discrepancies_resolved_from_evaluator": [
+    {
+      "field": "f2p_count",
+      "historical_metadata_value": 2,
+      "instance_id": "mui__base-ui-4640",
+      "released_value": 3
+    },
+    {
+      "field": "p2p_count",
+      "historical_metadata_value": 142,
+      "instance_id": "mui__base-ui-4640",
+      "released_value": 141
+    }
+  ],
+  "image_layers_attested_by_these_hashes": false,
+  "markdown_coverage_statements_pending_revision": true,
+  "markdown_preserved_from_previous_release": true,
+  "network_metadata_scope": "Container and Agent policy declarations are separate. Runner enforcement and experiment-specific overrides are not established by task metadata.",
+  "registry_access_revalidated_in_this_release": false,
+  "release_date": "2026-10-13",
+  "release_version": "0.1.2",
+  "repositories": 28,
+  "runtime_revalidated_in_this_release": false,
+  "schema_version": "1.0",
+  "scope": "public-metadata-and-reproduction-inventory-only",
+  "task_schema_version": "1.1",
+  "tasks": 103,
+  "withheld": [
+    "page source code",
+    "hidden assertions",
+    "reference repairs",
+    "evaluation implementation",
+    "verifier image references",
+    "trajectories",
+    "logs",
+    "credentials"
+  ]
+}

@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:51a017ffdde03d62b4916eb48bf089accba7ef5f2cb0850209b2d2f74c500d9d",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "3c883ae571f97e61c86a604abaed578c995af79a559505b363be54e3a69f09ad",
+      "canonical_validation_sha256": "d34f6baaa3ab81d733b273e67da1047db16c6d76a664cd5523959140c1fc23d9",
+      "evaluation_bundle_sha256": "3260cd72cfb423fd40b728c07b9f23c408f01aef1c58751ee3202415221973a0",
+      "evaluation_spec_sha256": "3996125a858e20d1ea64c3ba124ffec013e5625ede76968554de205f56a4bf0b",
+      "gold_patch_sha256": "3ef5ef648eb945defd266eadbbbdaf5b18bcc5e6d03f5fc642e1f5f1c4bd71d6",
+      "official_test_patch_sha256": "d3e284bb862bfb2678304f8f7bf5a21bd35883d04a3eb50d15da40df93def6a9"
+    },
+    "f2p_count": 1,
+    "p2p_count": 29,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "microsoft__fluentui-32260",
   "instruction_path": "tasks/microsoft__fluentui-32260/instruction.md",
@@ -23,7 +51,7 @@
     "name": "microsoft/fluentui",
     "url": "https://github.com/microsoft/fluentui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

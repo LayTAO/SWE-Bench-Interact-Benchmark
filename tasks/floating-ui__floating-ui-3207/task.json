@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:37ffe1afe092d373e7627a1db40d4fb39f56f3b68f6c7e66f08eb85cd9c6f4d3",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "13016a34bfc065645626b5147108a58c2fe43c72f0350bbd6d2d08587d93665b",
+      "canonical_validation_sha256": "c175baea7feeaa25aed78604943e0e54b7d1971884536c7455b49f4f433fabd5",
+      "evaluation_bundle_sha256": "d13614c0dcc46df6f28f3f8cc23fdc82136a70208c59f95b4b2eb05c68fe9c3b",
+      "evaluation_spec_sha256": "1c60da1796a0060429bf2c550b5410d698ff6fe14ce24814a921cfc4a60b17a9",
+      "gold_patch_sha256": "d5bf1fd315bcc8cd535fff1d246b60d11c025ef3bcb14f5f4c29ac38cbde604a",
+      "official_test_patch_sha256": "99e0a1251bcd4a7e41f08bf54a81f4564fc2fad2fd955ea63f534c0f2d415cbf"
+    },
+    "f2p_count": 2,
+    "p2p_count": 54,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "floating-ui__floating-ui-3207",
   "instruction_path": "tasks/floating-ui__floating-ui-3207/instruction.md",
@@ -23,7 +51,7 @@
     "name": "floating-ui/floating-ui",
     "url": "https://github.com/floating-ui/floating-ui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

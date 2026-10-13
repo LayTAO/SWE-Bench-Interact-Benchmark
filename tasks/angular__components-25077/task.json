@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:5cb0477ff351f05304554f9cb059946d7beba853de312eae3460521a63613b5b",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "7e1720b6b3a5e872043f6e0cb4cf08d6f4ffac51b0093d8b13fa99799a3ddecd",
+      "canonical_validation_sha256": "69de015e9d669baa371009823cdbfee2c001ff2c49bc15d617e72dfcb8ac34c6",
+      "evaluation_bundle_sha256": "dcd7ead78963571f7ce1f432dda82b4a06f8a9e2c80dcfc47c9a1495f9f30453",
+      "evaluation_spec_sha256": "949db59cb95a906ec747bbbae42dc928e280d83ebafe5ac4bcead364d3356d25",
+      "gold_patch_sha256": "8ee4b20d5a61df18d81213c19fccc25effbba03b864fd9d7f983d5c5efdf3c68",
+      "official_test_patch_sha256": "95255b0553a7a84ff81a84af4f7a9571a5dbc61507e9de28cdc03c4e24e0f196"
+    },
+    "f2p_count": 1,
+    "p2p_count": 4,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "angular__components-25077",
   "instruction_path": "tasks/angular__components-25077/instruction.md",
@@ -23,7 +51,7 @@
     "name": "angular/components",
     "url": "https://github.com/angular/components.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

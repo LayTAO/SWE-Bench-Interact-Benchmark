@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:02385a5cee8f80661bf9d5cc63abc4831af0ceb0899625418d466325b03f8768",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "repo-native-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "dbe246e83968eed93d0c08a89683928f99df7e06858cddcf4dc2308cac514d98",
+      "canonical_validation_sha256": "7c7225caabe25c1a3a0dac8319f7cfef350f4497e20247c9b35dae047c1d7a87",
+      "evaluation_bundle_sha256": "0b604952bcf72ccceb87c3518dcc7c3ca85cf8800f427cc1522a0c32a350d751",
+      "evaluation_spec_sha256": "af9bf2cda4d3e5bb27f2b9607f98cb5d7855681e7fe7f4e5bb3749261d975ee9",
+      "gold_patch_sha256": "bfff327ea1b3a139a61423b6e26ad2f6521af454d1ad79a24b9264191839b0e3",
+      "official_test_patch_sha256": "4ad63024224900013eb74abfafcf6e4802530344f4041621a6b6f0dab315db3b"
+    },
+    "f2p_count": 3,
+    "p2p_count": 20,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "repo-native-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "shopify__polaris-react-7097",
   "instruction_path": "tasks/shopify__polaris-react-7097/instruction.md",
@@ -23,7 +51,7 @@
     "name": "Shopify/polaris-react",
     "url": "https://github.com/Shopify/polaris-react.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:3c0044398c09c39b9b50704d9f937f200bcb858793008557beb350aba2a97085",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "5e2172fd97874558a4ecee99cd094828a0055dd6294a7513bf913f3905cf7595",
+      "canonical_validation_sha256": "1bf7e2e898684ddcca30d36d7bee18ba8213411330758cb73d665dcba83b12e9",
+      "evaluation_bundle_sha256": "89dfb408885b39299254510fe30a1491e6f7928193c652142e793c5270e1331a",
+      "evaluation_spec_sha256": "b9e79c6077cae9040a7854c7e4b7a2164b99c50700ed67ebb3b3332593b1ed6b",
+      "gold_patch_sha256": "89f0361961037c8fcc6b283e1fadd31873bd57915416143159df0d200c6f4024",
+      "official_test_patch_sha256": "fde8fe093d86ea3199e7d9fbf6c6e58ca412b38e0651985cc88cfe9d2e002b6e"
+    },
+    "f2p_count": 4,
+    "p2p_count": 7,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "unovue__reka-ui-2674",
   "instruction_path": "tasks/unovue__reka-ui-2674/instruction.md",
@@ -23,7 +51,7 @@
     "name": "unovue/reka-ui",
     "url": "https://github.com/unovue/reka-ui.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

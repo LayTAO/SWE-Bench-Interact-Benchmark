@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:925a287770b92e1ae4d2818f25b1809383c7d3787bc020dfc899b2f86a718bb5",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "repo-native-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "aaede3a375d70815f8e72975b5bc87a18af6492a7cc06389fae0d9f2f847eed3",
+      "canonical_validation_sha256": "9e06d308ab13841acbd31a24f1980c5d957eb16d30fe0d95f3a0a82285218e61",
+      "evaluation_bundle_sha256": "1c2012e4375e90c42b52d8c1df3289dbaaac902c4adf706cf9dae6efdde12183",
+      "evaluation_spec_sha256": "55df20dae24dea08f775fbc99b196a9e56f16d9c6b0dddef2c046e48319fea10",
+      "gold_patch_sha256": "3c1ffeb3b6ae37fceb9f060b1a61d7c35a2f1f971d3435306fe768b5726172f0",
+      "official_test_patch_sha256": "e747b5e841aca1fcd0ac9366558ee3029adc7c0df09e5b6da5679b083f9fd581"
+    },
+    "f2p_count": 1,
+    "p2p_count": 10,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "repo-native-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "sl-design-system__components-3150",
   "instruction_path": "tasks/sl-design-system__components-3150/instruction.md",
@@ -23,7 +51,7 @@
     "name": "sl-design-system/components",
     "url": "https://github.com/sl-design-system/components.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

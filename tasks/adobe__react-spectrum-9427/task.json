@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:d3a1400ef2a62783d6457c17196087b51368b0733dff0fabf45b1bbd3df013f1",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "fcc54eac8e27003f3fa219b3c860201a587c065e9c66f91d2d9cf1650b343f23",
+      "canonical_validation_sha256": "b4c7e5e6ac26e42192b6e9d06347ee5993efe74da1b7f155376903a66a0a52d5",
+      "evaluation_bundle_sha256": "32997526e85bce5ebe9ff1b3b66fe2a525e6e7e1be5685fa01c3b2a90f22c926",
+      "evaluation_spec_sha256": "b46d360f672e93165e42f15f4c4ba3dd8fb34bbdafdc6908dde5ccff3e0f5af3",
+      "gold_patch_sha256": "110c602411670f0acc3ac1dfd0b6d63d56b6a375dabf23c2cb916a6dc73a35ef",
+      "official_test_patch_sha256": "7bbb147c54e8c500528d0e4b5bdee0a8f772826c01a7f2afc6b61e3646920372"
+    },
+    "f2p_count": 1,
+    "p2p_count": 5,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "adobe__react-spectrum-9427",
   "instruction_path": "tasks/adobe__react-spectrum-9427/instruction.md",
@@ -23,7 +51,7 @@
     "name": "adobe/react-spectrum",
     "url": "https://github.com/adobe/react-spectrum.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",

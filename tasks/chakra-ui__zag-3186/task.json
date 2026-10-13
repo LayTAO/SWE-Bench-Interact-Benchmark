@@ -1,5 +1,15 @@
 {
   "agent_environment": {
+    "agent_network_policy": {
+      "allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "enforced_by": "runner",
+      "mode": "allowlist",
+      "scope": "task-definition-not-experiment-runtime"
+    },
     "cpus": 2,
     "image": "docker.io/ltao615/swe-bench-interact@sha256:e9a09204b1d542276a5dc1a1e2f3deb95498130f7c740c1d0cd802a9e67fac80",
     "memory_mb": 4096,
@@ -9,10 +19,28 @@
     "timeout_sec": 1800.0
   },
   "evaluation": {
-    "commitments": {},
-    "f2p_count": null,
-    "p2p_count": null,
-    "reproduction_type": "minimal-app-playwright"
+    "commitment_scope": "current-authoring-files-not-image-layer-attestation",
+    "commitments": {
+      "canonical_repro_tree_sha256": "5b1df58ad02002874130e79768df7b4e5fca6e60e6d3361f2b779539bd325f7a",
+      "canonical_validation_sha256": "c676767ebeae09ea37283b7cdbe5f55cb55c908df3d8c5c0fbb9224930e1e180",
+      "evaluation_bundle_sha256": "8c3a2513dff4ae2f7c6249cd234947a48f1bfb7f510baaefa91c66d131dde9e4",
+      "evaluation_spec_sha256": "ba6d45d4c8379f80d5ea673ac5f90119fdfda61c5f16f89ac3b4636e10a2ab8c",
+      "gold_patch_sha256": "4970454b79537ff6fa5d4d7fddcb60949d2452b26662d2297e9a780c2cfcee79",
+      "official_test_patch_sha256": "233b46921b5f348ed97cc432780f73d9fd7f38d94c9f4107b5f1367663bd5f52"
+    },
+    "f2p_count": 1,
+    "p2p_count": 1,
+    "repeated_name_entries": {
+      "f2p": 0,
+      "p2p": 0
+    },
+    "reproduction_index": "reproductions.jsonl",
+    "reproduction_page_available": true,
+    "reproduction_page_source_released": false,
+    "reproduction_type": "minimal-app-playwright",
+    "test_count_source": "current-evaluator-test-lists",
+    "test_count_unit": "selected-assertion-entries-preserving-name-multiplicity",
+    "tree_hash_method": "sha256-json-path-content-v1"
   },
   "instance_id": "chakra-ui__zag-3186",
   "instruction_path": "tasks/chakra-ui__zag-3186/instruction.md",
@@ -23,7 +51,7 @@
     "name": "chakra-ui/zag",
     "url": "https://github.com/chakra-ui/zag.git"
   },
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "source": {
     "benchmark": "InteractRepair",
     "benchmark_version": "4.0",
