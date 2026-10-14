@@ -48,10 +48,6 @@ BuildKit, and Linux x86-64 container support. Source repositories, public base
 images, package registries, and browser downloads must be reachable during
 preparation and image construction.
 
-> **Release status:** this source-build release is a candidate. Static checks
-> have passed; all-task image builds and end-to-end execution have not yet been
-> validated. See [release.json](release.json).
-
 ### 1. Install and check the release
 
 Keep the virtual environment, build inputs, and job outputs outside the release
@@ -125,12 +121,6 @@ build, and runs two complementary kinds of checks:
   expected behavior during and after that interaction.
 - **Developer tests:** all selected fail-to-pass (F2P) and pass-to-pass (P2P)
   tests must pass.
-
-A failed browser check does not by itself skip developer tests when their
-prerequisites are satisfied. `reward=1` requires a valid, successfully applied
-patch, a successful required build, passing browser interaction checks, and all
-selected F2P/P2P tests passing. A failed required check yields `reward=0`.
-Agent-authored tests do not replace the fixed evaluation checks.
 
 ## Results
 
