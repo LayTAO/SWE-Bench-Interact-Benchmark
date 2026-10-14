@@ -23,9 +23,7 @@ implementations. During evaluation, an agent receives the issue and base
 repository; an independent verifier evaluates its candidate patch using the
 same fixed interaction checks and developer tests.
 
-<!-- FIGURE PLACEHOLDER: paper Figure 2, benchmark construction and evaluation.
-     Insert the standalone figure here, without page numbers or manuscript text. -->
-<p align="center"><em>[Benchmark overview figure — to be added]</em></p>
+![InteractBench task construction and repair evaluation](main.png)
 
 This repository distributes source-build tasks: users build the Agent and
 Verifier environments locally from the supplied Dockerfiles. Maintainer-built
@@ -39,9 +37,7 @@ the dropdown. A correct repair must allow the list to scroll while keeping the
 menu open. An image of an open menu alone cannot establish that scrolling
 actually occurred.
 
-<!-- FIGURE PLACEHOLDER: paper Figure 1, Vuetify #22850 buggy/fixed interaction.
-     Insert the standalone example figure here. -->
-<p align="center"><em>[Interaction example figure — to be added]</em></p>
+![Vuetify issue 22850: scrolling closes the buggy dropdown while the fixed menu stays open](22850.png)
 
 </details>
 
