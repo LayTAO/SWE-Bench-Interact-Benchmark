@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/motiondivision__motion-3028"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[BUG] Layout animations: bouncing occurs when duration is set, and the child size changes"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f25f08e40ecb5d7c5cebd87d206c7618bb1279bcb26a36931506627f85bc49ec"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:827a72d8e4dfc768ae0ded43fc7e621ff653ed2cf4c5c38097cd31ace21a47f8"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

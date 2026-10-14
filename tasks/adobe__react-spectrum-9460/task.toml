@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-9460"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Tooltip does not appear on hover when Button uses isPending"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:1844fd9bd55498b37cfa63d67ea5e84cfc92808161e89a6fc96f4530dc7a124b"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c0ad527619f1e7eb745004eb35cc95d61eb0836c60a986270fc2cc91439b2c2d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

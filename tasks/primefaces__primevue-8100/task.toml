@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/primefaces__primevue-8100"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Multiselect: MultiSelect checkboxes disappear when optionGroupLabel is set without group data"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:6d54701aad20fea37a7219293601601b1a0764cbc82498d29835047fbb8b5a6e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:1dc4cc673a5696f8d6979a8b0c419a484cf7194c363cc8c1dec32246e9a90da4"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

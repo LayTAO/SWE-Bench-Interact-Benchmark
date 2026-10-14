@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__base-ui-5239"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[navigation menu] NavigationMenu can permanently freeze"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:b0bd068b2bef986f592231da8fe3cbb90409a76a5e7d7fa82010ba00c8e615d7"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:9a6af3a6011a7b78f0571d6aaf380176e02321d4fbbb9833340c2eef6a69052d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-9748"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "ColorPicker's color field doesn't commit its value if the popover is dismissed via outside click"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a1c8ee6ac8da169864e77c367f992329c3e76cbc76511638e0e9ee81d1b3441e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:10234a5a4abc415f46ec67215225921acaf2059ea1b6ee46c98523d013cfd59e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

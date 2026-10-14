@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-7960"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Popover combined with Menu is not flipped when the content doesn't fit"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5d93ff23e4f89d50bb64abced96ff36cd217fcf6fa51d344a9a51c9952c8191e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:9b965fa8aa62eb4cb4110779fef65a037f9c21d5fc83c38b01304b01b1e9468f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

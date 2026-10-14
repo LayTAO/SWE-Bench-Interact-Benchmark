@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/sage__carbon-6841"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Disparity between Multi-select and Simple-select hit box"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:be4e351f188048bb84aef59c03de17140a3671c9ebd379a499d08ccff994af3d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5c5c68c08c4729abd564a0289e92be2acc32af43e16fb7978850fdfedfce11fb"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

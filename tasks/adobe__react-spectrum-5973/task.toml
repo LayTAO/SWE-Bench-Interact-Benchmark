@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-5973"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Tabs should expose keyboard focus state"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e7c7e5db6d438b0d5c53def1406122c136e526f3316600b964d1885cdfa8ac77"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7fb85705cb98aa184b4401e212757e6f5b71852d957c807ffe0455382416d239"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

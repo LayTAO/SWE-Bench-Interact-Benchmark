@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-9427"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Calendar Month/Year dropdown awkward autofocus behaviour (docs example)"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d3a1400ef2a62783d6457c17196087b51368b0733dff0fabf45b1bbd3df013f1"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:80abc2d3d6413d5c6338e81f2c2bbad38f02bb7d238e49cb00777c43f3375031"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

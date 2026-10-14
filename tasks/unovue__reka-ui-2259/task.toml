@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2259"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: Combobox tags input with add-on-blur adds input instead of selection"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3078a9d83e397aa835fcb360104f2b82ebd456f99f32972953e56fc41f5cce9b"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:4870915a459920854c4b83e3f00c85cc5f35bae940f4ec005f632e2794256eec"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -22,10 +22,11 @@ def validate(root: Path) -> dict:
     ids = cohort['instance_ids']
     require(len(ids) == len(set(ids)) == cohort['expected_count'] == 103, 'Expected 103 unique tasks')
     require({p.name for p in (root / 'tasks').iterdir()} == set(ids), 'Task directories differ')
-    images = json.loads((root / 'images.lock.json').read_text())
+    require(not (root / 'images.lock.json').exists(), 'Source release must not require image locks')
+    builds = json.loads((root / 'builds.json').read_text())
     records = [json.loads(line) for line in (root / 'tasks.jsonl').read_text().splitlines()]
     require(len(records) == 103 and {r['instance_id'] for r in records} == set(ids), 'Index differs')
-    require(set(images) == set(ids), 'Image lock differs')
+    require(set(builds) == set(ids), 'Build index differs')
     material_count = 0
     for instance in ids:
         task = root / 'tasks' / instance
@@ -33,9 +34,16 @@ def validate(root: Path) -> dict:
         require(config['metadata']['instance_id'] == instance, 'Task identity differs')
         require(config['verifier']['environment_mode'] == 'separate', 'Expected independent verifier')
         for role, env in [('agent', config['environment']), ('verifier', config['verifier']['environment'])]:
-            image = env['docker_image']
-            require(re.fullmatch(r'.+@sha256:[0-9a-f]{64}', image), 'Unpinned image')
-            require(images[instance][role] == image, 'Image lock differs from task')
+            require(not env.get('docker_image'), 'Source task must build its own image')
+            build = builds[instance][role]
+            recipe = member(root, build['dockerfile'])
+            text = recipe.read_text()
+            require(build['source_commit'] == config['metadata']['base_commit'], 'Build source differs')
+            require(hashlib.sha256(recipe.read_bytes()).hexdigest() == build['dockerfile_sha256'],
+                    'Dockerfile hash differs')
+            require('COPY base/' in text, 'Missing source input')
+            require(not re.search(r'(?:ltao615|laytao)/swe-bench-interact', text),
+                    'Build depends on a ready-made task image')
         require((task / 'instruction.md').is_file(), 'Missing instruction')
         materials = json.loads((task / 'tests/materials.json').read_text())
         require({'test.sh', 'verifier/evaluator.json', 'verifier/official_test.patch',

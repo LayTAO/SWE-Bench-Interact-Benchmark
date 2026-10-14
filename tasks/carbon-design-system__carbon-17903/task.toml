@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/carbon-design-system__carbon-17903"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "模态框内溢出菜单点击外部未关闭"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ca2c11fa608c5dbb4accfe59ba5bc1736174db104b5943a656e3a9b9f2bb8450"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:959d3a63d4c6dd8204bcc34af3a76926b253745203fc2f175355106a3c10a451"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/carbon-design-system__carbon-17119"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Carbon Combobox组件在清除搜索查询后不显示已选选项"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:15fe7a8d30fb19e19c74966c3af18610e8786fd012e7e94b5d7ef1c3cb7ac38a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:efcc5c320b064264023bdb7876b44905b81836e230159380f91767312bc91809"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

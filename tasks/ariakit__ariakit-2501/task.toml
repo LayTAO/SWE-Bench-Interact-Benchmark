@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-2501"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "`inert` attribute is not removed after nested dialog is closed"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:30381a7f0b46317d7ce3d34bc0f61284d84b9ac4448af267f63bd9b8f9742114"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:596537b9182f24a09818bbe141f588d8ec7770f76f7c1611dfd31d833db20297"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

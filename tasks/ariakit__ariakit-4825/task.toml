@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-4825"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Combobox input glitching when search results change"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a6e133bef885c70f7e5832829e097cc050b7ad5e9ab5f2ce9f9d4f13bae2aeed"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ebf0387366cea7856ad3e15f9fade7e9e6da060ab219023a8397d72aaf9b52ff"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

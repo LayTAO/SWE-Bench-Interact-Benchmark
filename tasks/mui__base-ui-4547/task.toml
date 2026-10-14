@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__base-ui-4547"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[slider] Value gets floating-point imprecision when using keyboard"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:81383c0ca575395539a7fc07013dbb9cb5f66d7a7479ca4ba6a468b10f9cc06b"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:37d2a9db35ef54353034764b7890f04689a5008198709af4bebe9bac7afdb4b7"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

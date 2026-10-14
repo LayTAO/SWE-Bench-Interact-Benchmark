@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/carbon-design-system__carbon-22320"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "MultiSelect 展开并选择选项后按 Tab，下拉框收起，但焦点没有进入正确的后续元素。"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:fa664ee11b466288645d0f7c786ff0c584649367ced9d8a4d16db2e7e8b1a6d3"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:81a6dfab7e16ad164b9594bc4ab55cf66d3aa8f2906f4ced1aa9e6ca609825c5"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

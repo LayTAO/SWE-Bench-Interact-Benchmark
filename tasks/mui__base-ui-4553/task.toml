@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__base-ui-4553"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[collapsible] Controlled keepMounted panel does not close"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:23762ec2fc9ec97b8ce9ebae98104c6dd1843aa82f24b80174b2825b47db9223"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:af12defe46f081cb8eb67e043c9ba5955f0dc8cf411309e07ac12d7f127fd85e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2375"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "PinInput placeholder after typing"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:b4c53733854f7178a3758f7480a1358dd477ae548e2a25b49df6d29ab3e7e6dc"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d53e9778f9f2905c81c58f6e4e77b94f864766a0a353599487b215e87d32eb3c"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

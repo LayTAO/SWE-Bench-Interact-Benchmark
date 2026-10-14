@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/shopify__polaris-react-3856"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Popover - closing with esc key should return focus back to the activator"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a4df0a35e923b367f7480c762a237b90106956254626a2933b7cbcb03e81b2f2"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d9ac4f7b818f6a83b4a0dc6ea9956201299c829de5419128fd5911ff56525205"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

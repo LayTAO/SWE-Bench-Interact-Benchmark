@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/angular__components-32661"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "bug(sidenav): Focus trap is enabled with mode=side if there is another sidenav with mode=over or mode=push"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:27eaba80f15f4da1e8e16801accbf87a689d77b23dde3a1fd10498aa5cd86cad"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:35af02cecf323369693cb7d46eccc35cf17a1e89ed350a6f9d0abaee01917a0d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

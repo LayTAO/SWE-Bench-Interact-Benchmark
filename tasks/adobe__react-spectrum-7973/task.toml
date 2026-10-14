@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-7973"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "FocusScope breaks when transitionend is never called"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e1a7ca5dd059414fe9a3f47b8c7728f5b84b9f22aecb6ebd817e1e94f4601b98"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:db7ceef515d7492d53485e8a5f0cc559c3dddd3e73b859c4a5e36bbc9e27ac90"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

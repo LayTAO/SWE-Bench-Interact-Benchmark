@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/motiondivision__motion-3232"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[BUG] CSS calc() with division transitions incorrectly to zero"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5b9084f787af9529ff2daba4a83f4acbc1b80b7c5739af7676ca68896629e4f0"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:fdd29a7620c5991a9579ff664bc86ce59213cbc308d1193fa4438b679c06c258"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

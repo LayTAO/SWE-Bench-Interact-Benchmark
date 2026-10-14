@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/react-bootstrap__react-bootstrap-6514"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Bug: keyboard param doesn't work for modals"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a526b910cf5c2207984c5a604c45b81a689d50b85cef1f646ccee6b064d69488"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:bbb30a1d75d1046354eba47b457491f895c67c2c2dd0cfa4db85446645dd139a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

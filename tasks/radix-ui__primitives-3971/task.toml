@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/radix-ui__primitives-3971"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Clicking outside a DropdownMenu inside a Dialog also dismisses the dialog"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:35bce2926dcc8ef8c46e6ef2ffc318c8c76fbeba482d36e7f05b872b91aa8286"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:bd12b7623854b568227b6c7fb87d991263c3d7c07032003a8a01c7a9a044963f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

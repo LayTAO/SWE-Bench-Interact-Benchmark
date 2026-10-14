@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-2181"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "ComboBox - Clicking outside the menu is selecting an item in the menu"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a7fdb44dc0f1c2b67428af678eb61733cb2cd5addde9eed47203f069e8f610e5"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:49b6b6e90e37f76319545859f7cc4cbbc40fc2e10275aca332d84f57d42770f2"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

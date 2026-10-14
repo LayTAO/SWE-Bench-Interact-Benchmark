@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-9949"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "`TabPanels` height animation does not work with CSS logical properties (block-size/inline-size)"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:6c139a46158f85161e231c933c9fb4a24bedd4e814f898dd709c8f56ce9169f0"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:9dc6f23854b688e5fd39af89c2e02f07f154aa1bcebf4192d43d5fb3ef480d8c"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

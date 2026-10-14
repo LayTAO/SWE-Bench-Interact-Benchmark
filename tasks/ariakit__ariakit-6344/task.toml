@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6344"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Dialog with getPersistentElements closes on focus into a persistent element if the dialog hasn't been focused yet (autoFocusOnShow={false})"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:dfefc0ed988334b01b100d533c71059940d29afc3b74f6cbf21e4ca9a0c1d02c"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3b154ea71c9f534d2e4ee6300df95d46e8555dc3eca80812c97b29e455910b3b"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

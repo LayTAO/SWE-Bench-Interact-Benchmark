@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__base-ui-5175"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[checkbox] onClick stopPropagation does not work inside Checkbox"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7e1af5ba529870295b505ab0abcecd73069d4ed3300f381805c2bde921a80779"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:38b2e9fb315858606c3b503e02ffa8059d94e34410ffcaae165b1ddb32c3d25f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

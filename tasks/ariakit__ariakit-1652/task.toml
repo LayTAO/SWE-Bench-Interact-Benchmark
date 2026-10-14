@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-1652"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Inconsistent behavior clearing combobox"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:c198547fef804be307141fb7744d34b33f7affe2a048c2b045b9b90f303d0738"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:8cfa2d5a627da384a5b208d400836cea443aba215c110108b4f6fe068c15e754"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

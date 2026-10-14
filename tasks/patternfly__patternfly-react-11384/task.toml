@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/patternfly__patternfly-react-11384"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "truncated content cannot be focused via keyboard"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:44361bd86e458a5a405b14244d67eb83bda0ea38f85f7912724b09939970c072"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:bfb2f15e9edeaad18119cd334fc9d480376d1de27120536778bd0d6541ac4430"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

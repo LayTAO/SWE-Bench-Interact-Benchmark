@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6346"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Tabs in a Select/Combobox popover: the first setSelectedId after the popover opens or toggles doesn't update the active tab"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:b6401f543cfb681a21c2ba90b51412e84988699031a73e5989b1b266c7ec6bce"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:89c670bd18cb8c21269a06934dbc876859036eb29ace70c549495923ecc280f7"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

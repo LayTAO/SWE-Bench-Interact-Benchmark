@@ -1,9 +1,11 @@
 {
-  "anonymous_image_pull_verified": false,
+  "builds_verified": false,
+  "distribution": "source-build",
+  "dockerfiles": 206,
   "harbor_version": "0.22.0",
-  "image_layer_disclosure_audited": false,
   "images_rebuilt": false,
   "material_references": 2635,
+  "ready_made_task_images_required": false,
   "reference_repairs_included": false,
   "repositories": 28,
   "resource_memory_mb": {
@@ -16,5 +18,5 @@
   "test_selection": "unchanged; repeated assertion names preserved",
   "trajectories_included": false,
   "unique_material_files": 1543,
-  "version": "0.2.0-candidate"
+  "version": "0.3.0-source-candidate"
 }

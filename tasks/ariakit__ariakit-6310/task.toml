@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6310"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Reopened portaled Popover doesn't receive focus when a hidden element comes first in its content"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:08db95f76fc8623ddc22c66ade9c7a446620202b0b2cd3ed1959992ca01a051e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2f124214b12f5d78060d4dfc8e26574d7921d044f37311def49ae4bfd4612dbf"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

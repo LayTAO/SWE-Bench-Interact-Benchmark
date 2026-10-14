@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/vuetifyjs__vuetify-22850"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Fix a Vuetify autocomplete, combobox, and select focus regression during menu scrolling."
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:8e85fd6c4ed4f2ec9dbea91bdbfd660f210504b4fe0b0a6ab315e6f9db228dbf"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:922142e422b016532b2ffa336bd7a8aaf873cc446de11d201cbd8a55c1c1e529"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

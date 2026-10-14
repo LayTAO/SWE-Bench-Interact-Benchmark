@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/element-plus__element-plus-24564"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Table filtered-value does not stay synchronized in single-select filtering"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:0e93e8d113c589cc352b5c8009f49eb2389385e31af86bf98a57861b7001c104"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ef88b29c75cb8fd3d415487ea98008e0b058d59b53ec4dcff8963c2ca34f69f2"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

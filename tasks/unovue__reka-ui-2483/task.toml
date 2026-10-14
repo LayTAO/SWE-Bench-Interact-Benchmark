@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2483"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: Combobox remains open when clicking select"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d9a232fc6b42f3e4af53abc2d591a4407d450728a759aa529ae4c20d99ac60e6"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:bfb2f5f30ccaf0eff58f37dfaade07ab322b103bb2de3966490c766730d4bd44"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

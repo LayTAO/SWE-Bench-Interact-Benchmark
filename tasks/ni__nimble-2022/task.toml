@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ni__nimble-2022"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Tabbing away from filterable select can cause value to change when it opens a second time"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:92da3f847dac6175145ff83a5e9c979e0f32f03a0dddd5f3eaa4c08d7e27dfdc"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:51dfb291e2428fcd71aac7c22f563f6ccaf1f0fc30a148545453663029212e85"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

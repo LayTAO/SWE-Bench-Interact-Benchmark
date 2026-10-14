@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2644"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: `ListboxItem` `v-memo` misses `disabled` dependency"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:eddade8d9833909a2a2d1e22a277c8cac124e8158e090c29ac5ce7ffb44bffff"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e4180aaed8150370002948ba9933fcafd23a15ff4b05736babf01c96aa6fd90d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

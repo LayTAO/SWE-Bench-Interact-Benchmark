@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/radix-ui__primitives-3232"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Dialog inside Dropdown Menu incorrectly intercepts Enter and Space"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2a426d06a7a5110b6b58821c2ff2c223282730e3489844b017061b242a753cef"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2bcdb641caeddaca80ca3b8fff235cf205ed86ec9764071a50752b84de6e50cc"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/shopify__polaris-react-7097"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Popover] unintentionally closes parent overlays when `onClick` event propogates"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:02385a5cee8f80661bf9d5cc63abc4831af0ceb0899625418d466325b03f8768"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ff5ae9e55835ff0bf638f4dc51f0f23ee3d793568dd0d8615d75d44e352f6eb0"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/sl-design-system__components-3150"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "sl-select dropdown closes when clicking listbox scrollbar inside a modal dialog"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:925a287770b92e1ae4d2818f25b1809383c7d3787bc020dfc899b2f86a718bb5"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a013688c3ba5771f8959122e1b87841a88c625f183c3e639786d8cba3eb614d2"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

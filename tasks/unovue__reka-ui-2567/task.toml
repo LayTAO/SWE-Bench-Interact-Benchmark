@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2567"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: TimeField changes focus prematurely when previous segment value was 0"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e07013f2a3e98c9108604fdc06a9a32c06b2cfb3c51607850a7ae2f572c2c8f4"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:0bddc753ca2459ac57867baa29712a1e662080a5cfbc11b1a8155ac88c8a4d9a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

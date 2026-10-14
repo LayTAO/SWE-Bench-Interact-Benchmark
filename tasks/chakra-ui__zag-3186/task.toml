@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/chakra-ui__zag-3186"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "date-picker blur validation skips range normalization"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e9a09204b1d542276a5dc1a1e2f3deb95498130f7c740c1d0cd802a9e67fac80"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2e2910f5717f86247cd426f315c6b866bdfbb89aaac8b04ba642e48a1c414373"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

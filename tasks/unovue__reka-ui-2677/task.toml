@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2677"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: DialogContentModal overrides disableOutsidePointerEvents"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e99b6855e6c491c11a3d9e80f23f80febf1b58b6951869eb884a2758368d93c8"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:1eac34632b8508ba389578b57f9b8e0fe31aa613e1b3ef2a43e112904bd06a4d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

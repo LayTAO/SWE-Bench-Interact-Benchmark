@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6663"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Combobox: autoSelect breaks Korean IME composition"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:ea5d8da87d78345e733f17686d1a6eb96125ae64102013cbdece98c74a89380e"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d850080c5e5d0be3e9f2f02bc22bbc33cefaf7d7b17f25b86c069ae685e38b20"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

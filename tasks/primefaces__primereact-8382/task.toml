@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/primefaces__primereact-8382"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "InputNumber rounds quarter-step values to one decimal place"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:33f3c25716afb57b5c390d813391eabe4c24e74fd80f34d36dae593b60ba1a52"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:142aa483fde69ca32f25f97dccbf1d304585ccb1223975d43ffcea3e59add630"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

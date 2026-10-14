@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/element-plus__element-plus-24075"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Component] [time-picker] Manual month adjustment can produce dates outside disabledDate range"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2049b672b2cf10b220be9ad87d07832e0c5d0a829192fe037b36000845bf4363"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:997542d8f5b40a6e5f511cd4d008d348e104ec769dcd7a5b7ffa00bf212c5bdc"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6297"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "ComboboxItem steals focus and overwrites the combobox value on Ctrl/Cmd shortcuts when virtual focus is disabled"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:adee355a36314f775a2ffa1aca5c095be84882c82eb72ae9695b1b4cc87da0a5"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d6bb8a2caa22ddd5859b467ba418d1f1e744e5bc3269c48eb5a3905529b5ac00"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

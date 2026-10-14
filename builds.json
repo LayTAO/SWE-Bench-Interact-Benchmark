@@ -1,0 +1,1650 @@
+{
+  "adobe__react-spectrum-10092": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-10092/environment/Dockerfile",
+      "dockerfile_sha256": "dc9b49e9c8bbc43605e9fc364185b35bfbe60f54dab80c7812c5c2eda975bf5b",
+      "mode": "source",
+      "source_commit": "7ef230221c459a0d8cd31f7a1e202ad4867bdb2f"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-10092/tests/Dockerfile",
+      "dockerfile_sha256": "18c791ba1dfcb431549b12fd4f289567167a579fc236708a5174b8f1d76329f7",
+      "mode": "source",
+      "source_commit": "7ef230221c459a0d8cd31f7a1e202ad4867bdb2f"
+    }
+  },
+  "adobe__react-spectrum-2181": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-2181/environment/Dockerfile",
+      "dockerfile_sha256": "a97939bf5e50d98026980e6a8da92f942168330fb79f54520e56027b95be4e3c",
+      "mode": "source",
+      "source_commit": "f847cd08b59ec7aa42b5f8bdd6b456738b9497ed"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-2181/tests/Dockerfile",
+      "dockerfile_sha256": "3cb3f8b321238b98ae8755a1f89b8823ce21426a9c168d1a7d92834ecd22d117",
+      "mode": "source",
+      "source_commit": "f847cd08b59ec7aa42b5f8bdd6b456738b9497ed"
+    }
+  },
+  "adobe__react-spectrum-5102": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5102/environment/Dockerfile",
+      "dockerfile_sha256": "e981674c873d3420b66880ce5c2066db2cc845bbc04171fdfbfa3d883b0b7b47",
+      "mode": "source",
+      "source_commit": "77b3442e4150116f3d35995b5a98b582d9e6f231"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5102/tests/Dockerfile",
+      "dockerfile_sha256": "d828dec4f8c8d0ed5ff769127d8d6a4e9182bdff9861cca672778f2c1febc750",
+      "mode": "source",
+      "source_commit": "77b3442e4150116f3d35995b5a98b582d9e6f231"
+    }
+  },
+  "adobe__react-spectrum-5338": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5338/environment/Dockerfile",
+      "dockerfile_sha256": "e2981e1abaaddaad2a68f41a71070ee7e1637090958c4324af64a2224094495e",
+      "mode": "source",
+      "source_commit": "1a2b8f860ef2cee6aa579aa6b5e7032ca3be1cb1"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5338/tests/Dockerfile",
+      "dockerfile_sha256": "48e3c784f23f0962e65fa537f87219607d06f4c1473155ff173bd973f729a623",
+      "mode": "source",
+      "source_commit": "1a2b8f860ef2cee6aa579aa6b5e7032ca3be1cb1"
+    }
+  },
+  "adobe__react-spectrum-5692": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5692/environment/Dockerfile",
+      "dockerfile_sha256": "d6fb31b6fc1e4a4385af8693397bb333f79be253cd087bac0ea85b31c2910088",
+      "mode": "source",
+      "source_commit": "99d073a7ab4f780adbf1c72e0138190a97915271"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5692/tests/Dockerfile",
+      "dockerfile_sha256": "d522c58a6f61c4dae058b0ca2b2230ad397e5a1fbff73984f64551b752f0e3bc",
+      "mode": "source",
+      "source_commit": "99d073a7ab4f780adbf1c72e0138190a97915271"
+    }
+  },
+  "adobe__react-spectrum-5973": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5973/environment/Dockerfile",
+      "dockerfile_sha256": "c6753b15178050986477871b55fb5f158705edaa7245f6d7f644bbac90770058",
+      "mode": "source",
+      "source_commit": "34924436f5b76b44b8adbb0a4fdb64c1c15de99f"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-5973/tests/Dockerfile",
+      "dockerfile_sha256": "c129ba3c134529b8c5dca7f40e6c22318a5ef7619b0524e7cfc7e4758044e29d",
+      "mode": "source",
+      "source_commit": "34924436f5b76b44b8adbb0a4fdb64c1c15de99f"
+    }
+  },
+  "adobe__react-spectrum-7960": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-7960/environment/Dockerfile",
+      "dockerfile_sha256": "29c901ecac564f7569e27182380b459a7d86ac4badef9681ab01d2a41768f1d6",
+      "mode": "source",
+      "source_commit": "05346a6a6f16f2e853ef01bed9149381eebedf26"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-7960/tests/Dockerfile",
+      "dockerfile_sha256": "f14d71bba29517a06b0c7acbba7d451627fb8aea66cce1eb6b38abeb539414ff",
+      "mode": "source",
+      "source_commit": "05346a6a6f16f2e853ef01bed9149381eebedf26"
+    }
+  },
+  "adobe__react-spectrum-7973": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-7973/environment/Dockerfile",
+      "dockerfile_sha256": "3bae79737b522ce6a274e765ab4f2bd2e4b7e75a0dee4e36c2b9f7c6436df8b5",
+      "mode": "source",
+      "source_commit": "b0118e99853f9785e930fbc3e01f47ce5c43ff79"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-7973/tests/Dockerfile",
+      "dockerfile_sha256": "11304979cb3465dfc96ad25bb6583a8656668adf1f13b61c855a0c12321f7141",
+      "mode": "source",
+      "source_commit": "b0118e99853f9785e930fbc3e01f47ce5c43ff79"
+    }
+  },
+  "adobe__react-spectrum-8198": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8198/environment/Dockerfile",
+      "dockerfile_sha256": "a6af56e8e17e9f9f4b443063fdf678d2e469a685d89d51a1bee54d0a6ad6f61b",
+      "mode": "source",
+      "source_commit": "e2414021454df4847d0f211dd98b44607b976917"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8198/tests/Dockerfile",
+      "dockerfile_sha256": "d2f3703a996d8fb7da917d8a41c3f826f1fd7ef41d210f3253c6e9986a9efac0",
+      "mode": "source",
+      "source_commit": "e2414021454df4847d0f211dd98b44607b976917"
+    }
+  },
+  "adobe__react-spectrum-8291": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8291/environment/Dockerfile",
+      "dockerfile_sha256": "a60f72decfc1045421258c3d7cdc36a2e4c43eeaa32e3b25ed83a30b2c402f27",
+      "mode": "source",
+      "source_commit": "155e361c6e2910c0b087ccba7cc61541fb50b0a7"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8291/tests/Dockerfile",
+      "dockerfile_sha256": "5726445b9c60070dd412730407f70904de11a01a33c00bd2467dfcef299219d4",
+      "mode": "source",
+      "source_commit": "155e361c6e2910c0b087ccba7cc61541fb50b0a7"
+    }
+  },
+  "adobe__react-spectrum-8556": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8556/environment/Dockerfile",
+      "dockerfile_sha256": "7478ea36fc6952f97921e4e930d2abe69c0de71737243ecef1621b099365e15b",
+      "mode": "source",
+      "source_commit": "863ac427ea3332ae7cd99ccaf2ad1c92a03c6545"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8556/tests/Dockerfile",
+      "dockerfile_sha256": "c2bc5abedb7fafb7580031da079dbc6ac0e051f1745ae0bf12feedbc3ca28ddc",
+      "mode": "source",
+      "source_commit": "863ac427ea3332ae7cd99ccaf2ad1c92a03c6545"
+    }
+  },
+  "adobe__react-spectrum-8871": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8871/environment/Dockerfile",
+      "dockerfile_sha256": "404fcbd801776d386a12dacc760bb9f547667d38943b7090b7e2fbe7e090d232",
+      "mode": "source",
+      "source_commit": "307b71c61074c33fae6e9eb79d3d29b9c83150a0"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-8871/tests/Dockerfile",
+      "dockerfile_sha256": "0bd20fa46aaa8f028e2e3ae12b132d79c77e4a826b02a393fc39aa7d92218320",
+      "mode": "source",
+      "source_commit": "307b71c61074c33fae6e9eb79d3d29b9c83150a0"
+    }
+  },
+  "adobe__react-spectrum-9215": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9215/environment/Dockerfile",
+      "dockerfile_sha256": "3b3ef4c103b28dd891584292d423171f8df62b61ad243ba4c991bef4fb0699bc",
+      "mode": "source",
+      "source_commit": "4c91299dab6579252a9d21029b9ba35c9763ad07"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9215/tests/Dockerfile",
+      "dockerfile_sha256": "a9a9058339a96e882e5c5e08a249f11b8e5d9581fd370f0f5a5db47b1b405b8a",
+      "mode": "source",
+      "source_commit": "4c91299dab6579252a9d21029b9ba35c9763ad07"
+    }
+  },
+  "adobe__react-spectrum-9427": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9427/environment/Dockerfile",
+      "dockerfile_sha256": "a146ebd09ccdefc893ffc1c67c58e5accbb7e2b28237bd98e684e1fc1ea1242b",
+      "mode": "source",
+      "source_commit": "2ff5b8198b376084c1eb5ef08e0b14233934e899"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9427/tests/Dockerfile",
+      "dockerfile_sha256": "8861e1a2051c2e0dba9683bec0d3590227e10846fa501144a089de795599dd3f",
+      "mode": "source",
+      "source_commit": "2ff5b8198b376084c1eb5ef08e0b14233934e899"
+    }
+  },
+  "adobe__react-spectrum-9460": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9460/environment/Dockerfile",
+      "dockerfile_sha256": "27ed5e54558a2aeb2c54faa6c8a3ce74cb2aa4529321231bff422b88b0b8b9fa",
+      "mode": "source",
+      "source_commit": "6aee49af22267e1dfae14c7c2b3d39397a720e9a"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9460/tests/Dockerfile",
+      "dockerfile_sha256": "653a2d82fec9c54b8e06494a74458289533cede0ecc80bf7444eb2052d7125ec",
+      "mode": "source",
+      "source_commit": "6aee49af22267e1dfae14c7c2b3d39397a720e9a"
+    }
+  },
+  "adobe__react-spectrum-9748": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9748/environment/Dockerfile",
+      "dockerfile_sha256": "b9a92417d36c7486118302f1efa1ca25282112317beb815971d36951edd4f338",
+      "mode": "source",
+      "source_commit": "80ef0d833d85f3897cfbab2b00291bf85f42e46a"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9748/tests/Dockerfile",
+      "dockerfile_sha256": "b26242c6bda919c2a6125f8247c8ecfa64a15e537e4e820ae0f3bd16926c32ae",
+      "mode": "source",
+      "source_commit": "80ef0d833d85f3897cfbab2b00291bf85f42e46a"
+    }
+  },
+  "adobe__react-spectrum-9949": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9949/environment/Dockerfile",
+      "dockerfile_sha256": "961c3c4acd23d3974d2de6131e2d9cdfcca107c1d5cc0368b278efd9368f57d0",
+      "mode": "source",
+      "source_commit": "c67ecf2954dda1f520fe3c4a68f1c6bc47a597d8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/adobe__react-spectrum-9949/tests/Dockerfile",
+      "dockerfile_sha256": "8616089d6213035f5ac2813e4a21862d879b7a224a38b33b2521a9ea879944fa",
+      "mode": "source",
+      "source_commit": "c67ecf2954dda1f520fe3c4a68f1c6bc47a597d8"
+    }
+  },
+  "angular__components-25077": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/angular__components-25077/environment/Dockerfile",
+      "dockerfile_sha256": "6c760f6d3c055b8d7700d32b4091ed5e5cf713d51fb1096e14fb81e90d6e89ae",
+      "mode": "source",
+      "source_commit": "8eab22fae4d49392ab095a03140d9a1b02c1fa1e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/angular__components-25077/tests/Dockerfile",
+      "dockerfile_sha256": "d84749dee3f8d48565d9cd7961c3ce205d718b4c9f1a76aea23a1decb0d7ba27",
+      "mode": "source",
+      "source_commit": "8eab22fae4d49392ab095a03140d9a1b02c1fa1e"
+    }
+  },
+  "angular__components-32661": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/angular__components-32661/environment/Dockerfile",
+      "dockerfile_sha256": "f95ef2a92d6f2b890ef8c98f2d07adf4654428f4ec3b55130447b594884fe4dc",
+      "mode": "source",
+      "source_commit": "c71256dfdb981a628120d6bbafdc3001836dd9a8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/angular__components-32661/tests/Dockerfile",
+      "dockerfile_sha256": "6b32b41a04136fd58a53fe4bc7cd2ec744879b9aca3303d0e18b2341826b558a",
+      "mode": "source",
+      "source_commit": "c71256dfdb981a628120d6bbafdc3001836dd9a8"
+    }
+  },
+  "ariakit__ariakit-1652": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-1652/environment/Dockerfile",
+      "dockerfile_sha256": "900c8931fa124c4194fb79ef8afa4bbdae07d16863eadf0c34b6ef1501801237",
+      "mode": "source",
+      "source_commit": "b4d916339554f64967ff7c1154b171f319bef28d"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-1652/tests/Dockerfile",
+      "dockerfile_sha256": "09f79924e2058384cb5837e0fb45de9bc8507db485f2d3acd0a56963ab4ae30a",
+      "mode": "source",
+      "source_commit": "b4d916339554f64967ff7c1154b171f319bef28d"
+    }
+  },
+  "ariakit__ariakit-2450": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-2450/environment/Dockerfile",
+      "dockerfile_sha256": "096d356b0bbe0b61ca393512d9de8bc9a75b9799c6d903004c7ba02a0b7ba2db",
+      "mode": "source",
+      "source_commit": "84ec907de4ebe841871cac2b9d2279f6446db606"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-2450/tests/Dockerfile",
+      "dockerfile_sha256": "c079acf918e5c6528a195788f15f884f39b172b53e26d7cb5e18dab1e23de7ff",
+      "mode": "source",
+      "source_commit": "84ec907de4ebe841871cac2b9d2279f6446db606"
+    }
+  },
+  "ariakit__ariakit-2501": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-2501/environment/Dockerfile",
+      "dockerfile_sha256": "a5d5f5683a1e6a678aae1e428d1ec089e5e98e0e3b953511c216e39627ba644f",
+      "mode": "source",
+      "source_commit": "d2c01cdbe4c6f79ca60ec8698b972c9e583dbb59"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-2501/tests/Dockerfile",
+      "dockerfile_sha256": "180d7a2d228dd129850a8f38ac2dfee341d3dd28f822106972d2db55f36e786e",
+      "mode": "source",
+      "source_commit": "d2c01cdbe4c6f79ca60ec8698b972c9e583dbb59"
+    }
+  },
+  "ariakit__ariakit-4825": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-4825/environment/Dockerfile",
+      "dockerfile_sha256": "4d493c7b75d1f633b408f094f5012ca1e6a02dec109c749d0ef5ec8eb7b566ed",
+      "mode": "source",
+      "source_commit": "b166c1a7fe8dc9eeca41af5fd420179df5bac493"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-4825/tests/Dockerfile",
+      "dockerfile_sha256": "ebec701ef2ab3d77afb3c96946be7a7917acdfc9f58ae436af7c196bec868090",
+      "mode": "source",
+      "source_commit": "b166c1a7fe8dc9eeca41af5fd420179df5bac493"
+    }
+  },
+  "ariakit__ariakit-6293": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6293/environment/Dockerfile",
+      "dockerfile_sha256": "e54ec667f7c802131859ef56a7d021b653b62a49df4546d106920d52950a6252",
+      "mode": "source",
+      "source_commit": "953dfa92d50a277578c0b0aad960dd612142b705"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6293/tests/Dockerfile",
+      "dockerfile_sha256": "b0da9749a6eea22ecb143ec802ace13fb5fd60dcc605c471ae2dd4426ad102cd",
+      "mode": "source",
+      "source_commit": "953dfa92d50a277578c0b0aad960dd612142b705"
+    }
+  },
+  "ariakit__ariakit-6297": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6297/environment/Dockerfile",
+      "dockerfile_sha256": "e54ec667f7c802131859ef56a7d021b653b62a49df4546d106920d52950a6252",
+      "mode": "source",
+      "source_commit": "953dfa92d50a277578c0b0aad960dd612142b705"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6297/tests/Dockerfile",
+      "dockerfile_sha256": "b0da9749a6eea22ecb143ec802ace13fb5fd60dcc605c471ae2dd4426ad102cd",
+      "mode": "source",
+      "source_commit": "953dfa92d50a277578c0b0aad960dd612142b705"
+    }
+  },
+  "ariakit__ariakit-6310": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6310/environment/Dockerfile",
+      "dockerfile_sha256": "aea29d5c2fa53b24bdd352f4687cb0a86f6ce0c55f952cf654a0f34ac9e7eb54",
+      "mode": "source",
+      "source_commit": "be8ee165b1ec6a197be0e4247a4359547f95b267"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6310/tests/Dockerfile",
+      "dockerfile_sha256": "1c8a1553b36a0a420696ee9b55511d7aff8cd53efb0f5f41eb04edf943a5f8d0",
+      "mode": "source",
+      "source_commit": "be8ee165b1ec6a197be0e4247a4359547f95b267"
+    }
+  },
+  "ariakit__ariakit-6344": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6344/environment/Dockerfile",
+      "dockerfile_sha256": "6549430fb1380a40e2761608155ddb7b241dd36e6d9574aac28b22d48e648a1c",
+      "mode": "source",
+      "source_commit": "0cdb9864926a3835a6a456906f7e2c64fe4a5ae5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6344/tests/Dockerfile",
+      "dockerfile_sha256": "f5ed8869bff28452700b562cbe66e6e096175ea3f913bc1c9f3031a02325992c",
+      "mode": "source",
+      "source_commit": "0cdb9864926a3835a6a456906f7e2c64fe4a5ae5"
+    }
+  },
+  "ariakit__ariakit-6346": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6346/environment/Dockerfile",
+      "dockerfile_sha256": "b120d59c3b881d79240dc5ec8f67763bc2d6ca29a2dcefee14e1726dab52c5bb",
+      "mode": "source",
+      "source_commit": "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6346/tests/Dockerfile",
+      "dockerfile_sha256": "744429140bab927286cda7cd2ab371ca73cac6dac03b33884c7df6a43bf3c74a",
+      "mode": "source",
+      "source_commit": "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888"
+    }
+  },
+  "ariakit__ariakit-6663": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6663/environment/Dockerfile",
+      "dockerfile_sha256": "192bff862fdd6399e78e5d40cc643a8f49efc293fc9add725511793374a7e0a0",
+      "mode": "source",
+      "source_commit": "1b7eb8ace9921b524ef5187052e744a261ebf163"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ariakit__ariakit-6663/tests/Dockerfile",
+      "dockerfile_sha256": "f34d263faf68fe524cc839137662ed430200898e097f86e716413d00ad2ed0d1",
+      "mode": "source",
+      "source_commit": "1b7eb8ace9921b524ef5187052e744a261ebf163"
+    }
+  },
+  "carbon-design-system__carbon-17119": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-17119/environment/Dockerfile",
+      "dockerfile_sha256": "e4bdaf46038942c078990f65cea7fecb2ecf5dfaf102d69166fc7789324a965b",
+      "mode": "source",
+      "source_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-17119/tests/Dockerfile",
+      "dockerfile_sha256": "556d1a86a098eb395181d52042bcc714f6431302bcdc21d5ae8088bae339a2a9",
+      "mode": "source",
+      "source_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b"
+    }
+  },
+  "carbon-design-system__carbon-17903": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-17903/environment/Dockerfile",
+      "dockerfile_sha256": "aaa15d8245f967aa612f6d8082ba9918582a05334a6c15e8a56b5979b8bc6021",
+      "mode": "source",
+      "source_commit": "ff57b2cbfb073c67981edbddeea8f66e9460e646"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-17903/tests/Dockerfile",
+      "dockerfile_sha256": "692d44ea58eef15ef372e9f112ac7fabd44c2b5fbb9543ff5cae8c78ef3e102d",
+      "mode": "source",
+      "source_commit": "ff57b2cbfb073c67981edbddeea8f66e9460e646"
+    }
+  },
+  "carbon-design-system__carbon-20349": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-20349/environment/Dockerfile",
+      "dockerfile_sha256": "83169db1ae4b7f4a02f9a0349556f0290ee1ec085ef9024cc3b83bc4ea6579ff",
+      "mode": "source",
+      "source_commit": "f7f4794017bd2fd915a6fda1572b28bb147b5e37"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-20349/tests/Dockerfile",
+      "dockerfile_sha256": "9d71872064a49f424fd077e4603badb9dba11e2d6396fab316303c5ba1078ac8",
+      "mode": "source",
+      "source_commit": "f7f4794017bd2fd915a6fda1572b28bb147b5e37"
+    }
+  },
+  "carbon-design-system__carbon-20771": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-20771/environment/Dockerfile",
+      "dockerfile_sha256": "a71c9d6b7ca231bbec8686c082c83361b9c33ce5efc886ae36417e0b094d59d2",
+      "mode": "source",
+      "source_commit": "925b746d92d72f9c9cf3fa3434843d049d630680"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-20771/tests/Dockerfile",
+      "dockerfile_sha256": "a8f6c356e46345f3175ff1a91d5d294ef66e550c0abaa26703ff26c5873cfe9d",
+      "mode": "source",
+      "source_commit": "925b746d92d72f9c9cf3fa3434843d049d630680"
+    }
+  },
+  "carbon-design-system__carbon-21508": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-21508/environment/Dockerfile",
+      "dockerfile_sha256": "ef539cad57610349f31d6ba6df1a444de6054864d05471133efcdca01611de9d",
+      "mode": "source",
+      "source_commit": "f5a7fd697b193da17d127d5726388b6ef2a5e449"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-21508/tests/Dockerfile",
+      "dockerfile_sha256": "04c7c6bb2a7163ae7545ed139c955043a587bfc550cc944210e8561f790d6eb9",
+      "mode": "source",
+      "source_commit": "f5a7fd697b193da17d127d5726388b6ef2a5e449"
+    }
+  },
+  "carbon-design-system__carbon-21872": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-21872/environment/Dockerfile",
+      "dockerfile_sha256": "a080ac45fbcbadff695bd4e5701eac1499079f2fc47e8e7f49cbde8fe84d82fb",
+      "mode": "source",
+      "source_commit": "f4aeceacca48b74cdd67bbd85f78e1da5459cda5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-21872/tests/Dockerfile",
+      "dockerfile_sha256": "515b071e49494d7c7cb242071042cf96892ca159b42910b2a1ad02947b7edd00",
+      "mode": "source",
+      "source_commit": "f4aeceacca48b74cdd67bbd85f78e1da5459cda5"
+    }
+  },
+  "carbon-design-system__carbon-22016": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-22016/environment/Dockerfile",
+      "dockerfile_sha256": "bb5ab7c1bc3f3de7d71430f151f84d76d2f300cd2e5f39fcc319749acb8394fa",
+      "mode": "source",
+      "source_commit": "e8153093a0673f7da2feb381eb6ab07074f47e2e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-22016/tests/Dockerfile",
+      "dockerfile_sha256": "f77f6c420e9d13f230918a54616522f11fddda216ad23870784883876c9538f0",
+      "mode": "source",
+      "source_commit": "e8153093a0673f7da2feb381eb6ab07074f47e2e"
+    }
+  },
+  "carbon-design-system__carbon-22320": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-22320/environment/Dockerfile",
+      "dockerfile_sha256": "8b7a775c34dca912ad0788c4f97c19638d90746a83d043b228c22f3356eeb821",
+      "mode": "source",
+      "source_commit": "6d7540d5a22a0c70b3b81bac0733e5abab5e8376"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/carbon-design-system__carbon-22320/tests/Dockerfile",
+      "dockerfile_sha256": "5bb078fe56d5c44ee60f33d9af1ed8d2f447e240616bacfad1a803a733a4d02c",
+      "mode": "source",
+      "source_commit": "6d7540d5a22a0c70b3b81bac0733e5abab5e8376"
+    }
+  },
+  "chakra-ui__zag-3186": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/chakra-ui__zag-3186/environment/Dockerfile",
+      "dockerfile_sha256": "d54b92fab983fdaf246eab28e4eb610cb193e7e8701a8e07750e6bed0c5ec2e5",
+      "mode": "source",
+      "source_commit": "2e2526447a2ebd9e6e7bffd6ea1ff22c19a57586"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/chakra-ui__zag-3186/tests/Dockerfile",
+      "dockerfile_sha256": "9a4f5c018d2b8c39a333ea8e247823084ed85605ebfa33fbf566f57f7bdfb8c1",
+      "mode": "source",
+      "source_commit": "2e2526447a2ebd9e6e7bffd6ea1ff22c19a57586"
+    }
+  },
+  "element-plus__element-plus-19051": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-19051/environment/Dockerfile",
+      "dockerfile_sha256": "64b7bbb5688e82fad27e86c2e049410c8fae26e7a18ffbe3a6506627578b2632",
+      "mode": "source",
+      "source_commit": "a4a6a1143235af4dba9bc88121f24e287757ef22"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-19051/tests/Dockerfile",
+      "dockerfile_sha256": "e55106fc99a484287cf88997b5e1aae61a6990d8559956324cfc5cd091953564",
+      "mode": "source",
+      "source_commit": "a4a6a1143235af4dba9bc88121f24e287757ef22"
+    }
+  },
+  "element-plus__element-plus-22878": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-22878/environment/Dockerfile",
+      "dockerfile_sha256": "eb1ae7d76a4bbee0ad7d9283b109d92059ce45661f5ea03296f1c09ac84dec1b",
+      "mode": "source",
+      "source_commit": "a482ba1d720a95ab38d0530998bd1bb94b86dba5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-22878/tests/Dockerfile",
+      "dockerfile_sha256": "aa25eb5629d0f82a49e8ee1b49d7a456784e4c7c50baacd4f5a407f8674c4720",
+      "mode": "source",
+      "source_commit": "a482ba1d720a95ab38d0530998bd1bb94b86dba5"
+    }
+  },
+  "element-plus__element-plus-24006": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24006/environment/Dockerfile",
+      "dockerfile_sha256": "138763b3b6e9215733e393dfca621b5ab8336b5098e8ce5cc82488081fad3d71",
+      "mode": "source",
+      "source_commit": "87fb0ab045ca1ecd6c50ba305616ca9bf10bba64"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24006/tests/Dockerfile",
+      "dockerfile_sha256": "518af648ecd493713304a2341ea12cc67d7796e0b4580a45438a0c861bf7f395",
+      "mode": "source",
+      "source_commit": "87fb0ab045ca1ecd6c50ba305616ca9bf10bba64"
+    }
+  },
+  "element-plus__element-plus-24075": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24075/environment/Dockerfile",
+      "dockerfile_sha256": "fd1023bff43eb225326f00edd30e1182357a723e34bf9734a77426248003864a",
+      "mode": "source",
+      "source_commit": "04f5bbc23b11dc09214596b5f014cee1db6f09a8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24075/tests/Dockerfile",
+      "dockerfile_sha256": "b49f4f92ce48327524b876c915e0bbdf8584f74aad40ef847369368f62b04980",
+      "mode": "source",
+      "source_commit": "04f5bbc23b11dc09214596b5f014cee1db6f09a8"
+    }
+  },
+  "element-plus__element-plus-24564": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24564/environment/Dockerfile",
+      "dockerfile_sha256": "76490719e6054813bb099f14e02543a8e98e77badab523ab9d270e629f0455ce",
+      "mode": "source",
+      "source_commit": "f2b994f72fb68f37d5d585e19f740b301e8eeeca"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/element-plus__element-plus-24564/tests/Dockerfile",
+      "dockerfile_sha256": "e74308da567c1b58812a3f262bdb696eef0b8cd80a70d39361bf37eb8e64e899",
+      "mode": "source",
+      "source_commit": "f2b994f72fb68f37d5d585e19f740b301e8eeeca"
+    }
+  },
+  "floating-ui__floating-ui-3207": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/floating-ui__floating-ui-3207/environment/Dockerfile",
+      "dockerfile_sha256": "7e91025b0a297ff53f1deddde06908e56cb680ae144a420c8468e8ef95fb27be",
+      "mode": "source",
+      "source_commit": "ba53ee87e2fb6d0addd99fa8d60b78b85660f847"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/floating-ui__floating-ui-3207/tests/Dockerfile",
+      "dockerfile_sha256": "199a598c7edaa3f25f6798e4cbf6fb318a0e82c5a62674a2dd94186a72b4e160",
+      "mode": "source",
+      "source_commit": "ba53ee87e2fb6d0addd99fa8d60b78b85660f847"
+    }
+  },
+  "heroui-inc__heroui-3276": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/heroui-inc__heroui-3276/environment/Dockerfile",
+      "dockerfile_sha256": "325f4598bc392be77b957f4ae7b167b7b4cdd836109b34a1b2b92fc555ad52be",
+      "mode": "source",
+      "source_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/heroui-inc__heroui-3276/tests/Dockerfile",
+      "dockerfile_sha256": "768e5645484b18d022021d962b68de3ea2e37dab88b03f497882f9e6cae320e4",
+      "mode": "source",
+      "source_commit": "c5ab49afa4b34ff52a7dc95fcc1709f5e3fdaf0b"
+    }
+  },
+  "mantinedev__mantine-9046": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mantinedev__mantine-9046/environment/Dockerfile",
+      "dockerfile_sha256": "9301c2ea69a5d35b3be3593ffb83fce25861a72497d9b48d4e68973e3192785c",
+      "mode": "source",
+      "source_commit": "2494b3eec8bddb3269d39dda0ea999bec1e3f98c"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mantinedev__mantine-9046/tests/Dockerfile",
+      "dockerfile_sha256": "25f06604522c2d2bebedee0aae1dfec00887c23a41821311a7240392b12c2b90",
+      "mode": "source",
+      "source_commit": "2494b3eec8bddb3269d39dda0ea999bec1e3f98c"
+    }
+  },
+  "melt-ui__melt-ui-1084": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/melt-ui__melt-ui-1084/environment/Dockerfile",
+      "dockerfile_sha256": "8bcf84ada84b009dc08c7fd2e5b907b6967e7b278149249b62fa43264ab7ff51",
+      "mode": "source",
+      "source_commit": "e682f497894ddd528ea427f2eaaa9014a01934b6"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/melt-ui__melt-ui-1084/tests/Dockerfile",
+      "dockerfile_sha256": "61f72a27ee657f3eddaa41e87f9080dca2d84508b3dfe853526ea5b0ffa3f588",
+      "mode": "source",
+      "source_commit": "e682f497894ddd528ea427f2eaaa9014a01934b6"
+    }
+  },
+  "melt-ui__melt-ui-945": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/melt-ui__melt-ui-945/environment/Dockerfile",
+      "dockerfile_sha256": "24e1e04e5850adf0af64dac32b7482392a2e815cedf3b5052e53f024026f6b4d",
+      "mode": "source",
+      "source_commit": "bd6ba738da4c3427b2b3fc716ac7730aab8254fb"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/melt-ui__melt-ui-945/tests/Dockerfile",
+      "dockerfile_sha256": "f6d20c86520beddff1a4f149e4f629f4800341f466d16746cc1ab39e82ea5332",
+      "mode": "source",
+      "source_commit": "bd6ba738da4c3427b2b3fc716ac7730aab8254fb"
+    }
+  },
+  "microsoft__fluentui-32260": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/microsoft__fluentui-32260/environment/Dockerfile",
+      "dockerfile_sha256": "5ed4721335a6c7b86f436b63bbbc1a38715686ffea9174e987251d5dc4c68936",
+      "mode": "source",
+      "source_commit": "b5e427c24efd04fbd54dd4e43819ddc24be0ac16"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/microsoft__fluentui-32260/tests/Dockerfile",
+      "dockerfile_sha256": "ac60aedd7df154a79a0e275ece7cdd814679b449f58b1f5c240b034df36a4949",
+      "mode": "source",
+      "source_commit": "b5e427c24efd04fbd54dd4e43819ddc24be0ac16"
+    }
+  },
+  "motiondivision__motion-3028": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/motiondivision__motion-3028/environment/Dockerfile",
+      "dockerfile_sha256": "c970ccff8df02e0d99a2b0ae14acb419625635e953fbf4be96d26188cd8f0ca9",
+      "mode": "source",
+      "source_commit": "947bc6b692d471cfca0320b163f0015527b0177f"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/motiondivision__motion-3028/tests/Dockerfile",
+      "dockerfile_sha256": "6ea1ddca9509f15b6a599b0d14ca1cd122134217fb2569e1546065182752b06f",
+      "mode": "source",
+      "source_commit": "947bc6b692d471cfca0320b163f0015527b0177f"
+    }
+  },
+  "motiondivision__motion-3232": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/motiondivision__motion-3232/environment/Dockerfile",
+      "dockerfile_sha256": "01c9fac45385103d836f8266983f8218dd5edf2b92fa5ea4d61d446186b8736b",
+      "mode": "source",
+      "source_commit": "fa398ade6d882d488e8db9b22e25aff71672b6a3"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/motiondivision__motion-3232/tests/Dockerfile",
+      "dockerfile_sha256": "f70aeb45d9969c2359538d5a971c55a0f9d2c6fb6cd74bfb8af16f40a7e8f128",
+      "mode": "source",
+      "source_commit": "fa398ade6d882d488e8db9b22e25aff71672b6a3"
+    }
+  },
+  "mui__base-ui-4471": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4471/environment/Dockerfile",
+      "dockerfile_sha256": "981ee151d0a38a917910ac1425c73bdae6b8197d9e08a48635f5d21fdb58b52a",
+      "mode": "source",
+      "source_commit": "4e5b1c21648df3bad0811615f2fc82b150c56a25"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4471/tests/Dockerfile",
+      "dockerfile_sha256": "e193d8916a24e50d08f6094dd9dd2d406fdeb7046b53439328b8c347e3f21f62",
+      "mode": "source",
+      "source_commit": "4e5b1c21648df3bad0811615f2fc82b150c56a25"
+    }
+  },
+  "mui__base-ui-4547": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4547/environment/Dockerfile",
+      "dockerfile_sha256": "8425bc38211179b8d4ac797dcb3b0d679203c434f28ee476423d4a69f72da8f4",
+      "mode": "source",
+      "source_commit": "1e718e9771aea4c4cecebb43731fc014b5bba71d"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4547/tests/Dockerfile",
+      "dockerfile_sha256": "5e8b8316773587fa7a65d94a1f27e61f0f43c4990fafd1995c192f42efdc2e04",
+      "mode": "source",
+      "source_commit": "1e718e9771aea4c4cecebb43731fc014b5bba71d"
+    }
+  },
+  "mui__base-ui-4553": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4553/environment/Dockerfile",
+      "dockerfile_sha256": "e2875c305e8bb068156d6ae67c0d3928f4823e9837f66563bc9eaf92d836d058",
+      "mode": "source",
+      "source_commit": "78f5bba616d1d2df883d8668309336644afd3dc5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4553/tests/Dockerfile",
+      "dockerfile_sha256": "d65618415c2d454d2dfe25a0159156a048070d882c82d2314f9d3a284ddf6a9e",
+      "mode": "source",
+      "source_commit": "78f5bba616d1d2df883d8668309336644afd3dc5"
+    }
+  },
+  "mui__base-ui-4640": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4640/environment/Dockerfile",
+      "dockerfile_sha256": "09fe59bc6fe760bc090f041c0bc8e5e3f293f4a4e5a9484818ccd433afea47bd",
+      "mode": "source",
+      "source_commit": "84ac4b79743533f5bac9cadcffb7c36bfcb9a5b9"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4640/tests/Dockerfile",
+      "dockerfile_sha256": "111fc348040ed43c8b5aab128b76907d9907dbe8f1dbd31ffc80d723046db23a",
+      "mode": "source",
+      "source_commit": "84ac4b79743533f5bac9cadcffb7c36bfcb9a5b9"
+    }
+  },
+  "mui__base-ui-4663": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4663/environment/Dockerfile",
+      "dockerfile_sha256": "cab2e172ac4faba9fe209875123323b2fa6dc40ca95f2cb5f68fd189b60d7b03",
+      "mode": "source",
+      "source_commit": "ad68e8404b965354526e0b9bc63e6c748fa3a954"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4663/tests/Dockerfile",
+      "dockerfile_sha256": "f2bebc47f97fd91beb3a253a8811e69c85916013bd6780de43698f9fe2972bb8",
+      "mode": "source",
+      "source_commit": "ad68e8404b965354526e0b9bc63e6c748fa3a954"
+    }
+  },
+  "mui__base-ui-4947": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4947/environment/Dockerfile",
+      "dockerfile_sha256": "e68d8c6919d2f8d58c58b75b6735e3cd89ba261f4d8b443ee2b65bf3b0a9aceb",
+      "mode": "source",
+      "source_commit": "08e9ba68ab42b306d4fcc5d7ba998e7b936bc23c"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-4947/tests/Dockerfile",
+      "dockerfile_sha256": "b60d462cf22b5715f404a6b8145894abd6737f6d57f7629a1f53ef2f4951062c",
+      "mode": "source",
+      "source_commit": "08e9ba68ab42b306d4fcc5d7ba998e7b936bc23c"
+    }
+  },
+  "mui__base-ui-5107": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5107/environment/Dockerfile",
+      "dockerfile_sha256": "81be83609ff7e94152c072dd6b2b86aa51fa26c1d992459696fc60429b826a75",
+      "mode": "source",
+      "source_commit": "51eb5c7dd54313226b1a28ab7d54388e1e1c941e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5107/tests/Dockerfile",
+      "dockerfile_sha256": "7d1d8381a49a499f5eafe6092fc7dbbf9441b448b39b3da098535ca18baa1d77",
+      "mode": "source",
+      "source_commit": "51eb5c7dd54313226b1a28ab7d54388e1e1c941e"
+    }
+  },
+  "mui__base-ui-5175": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5175/environment/Dockerfile",
+      "dockerfile_sha256": "b3a977f4581786f6d6235215bd3493c17728c5784f5ce07b7d8a21e75d35d36c",
+      "mode": "source",
+      "source_commit": "d5a03c8f1ae4e91d1cb02c0ea34daf2f7c0ed21d"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5175/tests/Dockerfile",
+      "dockerfile_sha256": "f883ac615fc44e3a4e1781a09cce3e76852ca3e589c25ef50bc0d71d574eb369",
+      "mode": "source",
+      "source_commit": "d5a03c8f1ae4e91d1cb02c0ea34daf2f7c0ed21d"
+    }
+  },
+  "mui__base-ui-5239": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5239/environment/Dockerfile",
+      "dockerfile_sha256": "b75f9a3760287433295f7dd7c9c2e2fbfca3b0b0c811312a3053dbcab06bff4b",
+      "mode": "source",
+      "source_commit": "eaf727ce9d4cdc520e8b1db1eb504c5dc0891eb9"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__base-ui-5239/tests/Dockerfile",
+      "dockerfile_sha256": "998432266da188d3c18921e0ebbb9a1497f9e19e2bb589fdb7278c0ab611f304",
+      "mode": "source",
+      "source_commit": "eaf727ce9d4cdc520e8b1db1eb504c5dc0891eb9"
+    }
+  },
+  "mui__material-ui-13962": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-13962/environment/Dockerfile",
+      "dockerfile_sha256": "987659c3b268254ad42c20a067e81220e383ac641f96899b33fa097d058fd191",
+      "mode": "source",
+      "source_commit": "7c29d28ac9ec1cbd5684069f949b00c95dd34fa4"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-13962/tests/Dockerfile",
+      "dockerfile_sha256": "4db99813d9e4dba90f959f673e2530578a5f69c3b0bb728c21e8031f5d04c807",
+      "mode": "source",
+      "source_commit": "7c29d28ac9ec1cbd5684069f949b00c95dd34fa4"
+    }
+  },
+  "mui__material-ui-36838": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-36838/environment/Dockerfile",
+      "dockerfile_sha256": "d09cad15279cd78b14e92cac9258612800449904fff28ad7aefdf6f5db547097",
+      "mode": "source",
+      "source_commit": "3cab2428c9ede4507c3040023aff31fd07eff76b"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-36838/tests/Dockerfile",
+      "dockerfile_sha256": "fd44cd7b233a058bcf55fecf1f63b3acaa4b2a994a9d90c0adc617a79611902a",
+      "mode": "source",
+      "source_commit": "3cab2428c9ede4507c3040023aff31fd07eff76b"
+    }
+  },
+  "mui__material-ui-40250": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-40250/environment/Dockerfile",
+      "dockerfile_sha256": "379a2e5950b141ebd1ff4cd78098812dcd27c96ed2c6bf97ae29fc95a3bb0198",
+      "mode": "source",
+      "source_commit": "2dc145f2d2bece8f30293137e276bdbdb4cda294"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-40250/tests/Dockerfile",
+      "dockerfile_sha256": "b47a4e2988f82a625a50c885a5e960e81633e80d93f51fe5fa5d67a521c20cf0",
+      "mode": "source",
+      "source_commit": "2dc145f2d2bece8f30293137e276bdbdb4cda294"
+    }
+  },
+  "mui__material-ui-45301": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-45301/environment/Dockerfile",
+      "dockerfile_sha256": "7f7138e11f672855ae32c3d802de809c5d2c6ca2b6ce6444709677a27c8897dd",
+      "mode": "source",
+      "source_commit": "a71da577d99d67680c6654e0ea2ebe20eed633a4"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-45301/tests/Dockerfile",
+      "dockerfile_sha256": "ec044351aae45418ab59a8540ef465b73d20a66d0f36c4dcba46d0324ae70831",
+      "mode": "source",
+      "source_commit": "a71da577d99d67680c6654e0ea2ebe20eed633a4"
+    }
+  },
+  "mui__material-ui-47203": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-47203/environment/Dockerfile",
+      "dockerfile_sha256": "c3c42fb6562bdd2dc1cadc8259f68f1d0d4a2316c01ecf9a23bff553cec38abf",
+      "mode": "source",
+      "source_commit": "3b84cd251606c66148197ef54a869f99b6662ac8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/mui__material-ui-47203/tests/Dockerfile",
+      "dockerfile_sha256": "b9d5b0afa53940eff8f6c3e01de6bf5a08d9eae0299f66383dd50b6169067f49",
+      "mode": "source",
+      "source_commit": "3b84cd251606c66148197ef54a869f99b6662ac8"
+    }
+  },
+  "ng-zorro__ng-zorro-antd-8865": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ng-zorro__ng-zorro-antd-8865/environment/Dockerfile",
+      "dockerfile_sha256": "b960fea58eca53bf14f27619227201441abe5e6536ac70fc0d8985062078bc21",
+      "mode": "source",
+      "source_commit": "30c25f0201130ccb00c8d2ba2e709763d7bcfd6e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ng-zorro__ng-zorro-antd-8865/tests/Dockerfile",
+      "dockerfile_sha256": "081d10c705c518bd261213ca073023254313974ef02acfe7ba11fdce40225a59",
+      "mode": "source",
+      "source_commit": "30c25f0201130ccb00c8d2ba2e709763d7bcfd6e"
+    }
+  },
+  "ni__nimble-2022": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/ni__nimble-2022/environment/Dockerfile",
+      "dockerfile_sha256": "22d11cf0df3cd5317052f12bee821569b6610581d8a58a0dd398e331cf2c83e2",
+      "mode": "source",
+      "source_commit": "0ac9d81713bf9e91e1d89578cabdbc4db0b67009"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/ni__nimble-2022/tests/Dockerfile",
+      "dockerfile_sha256": "062e47b022e7d78cf55221fae4d1e7ed482f41e92d42ac4b40ef61b8d7ce3793",
+      "mode": "source",
+      "source_commit": "0ac9d81713bf9e91e1d89578cabdbc4db0b67009"
+    }
+  },
+  "patternfly__patternfly-react-11384": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/patternfly__patternfly-react-11384/environment/Dockerfile",
+      "dockerfile_sha256": "f8d3e454ed34c3928e5eb1595f0efe2a8fc16442cc7b09eda79d66e5671fbe72",
+      "mode": "source",
+      "source_commit": "b9815886da3adc7a96bc2d48adacf86e8a752e61"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/patternfly__patternfly-react-11384/tests/Dockerfile",
+      "dockerfile_sha256": "cb9236208096a4dfa7944140098740c1404eeef1ce24ffc1bbcb083a44de72fa",
+      "mode": "source",
+      "source_commit": "b9815886da3adc7a96bc2d48adacf86e8a752e61"
+    }
+  },
+  "primefaces__primereact-8382": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/primefaces__primereact-8382/environment/Dockerfile",
+      "dockerfile_sha256": "2d8160875dd7cd7db4bfdb70fedfbd6e8352d389ec0a5be86b5791d8d455025a",
+      "mode": "source",
+      "source_commit": "f237f286f2968b79f08c3b7450f74d2295bb8cdf"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/primefaces__primereact-8382/tests/Dockerfile",
+      "dockerfile_sha256": "f30cbdf90dc7130fccb103657d7f81d9626bfb4f8a390dc2d33bd762ced7fca8",
+      "mode": "source",
+      "source_commit": "f237f286f2968b79f08c3b7450f74d2295bb8cdf"
+    }
+  },
+  "primefaces__primevue-8100": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/primefaces__primevue-8100/environment/Dockerfile",
+      "dockerfile_sha256": "733a5d041312e34386f69f3579bc79c8184bfa96fa099a639fcb210d4d8fa3b5",
+      "mode": "source",
+      "source_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/primefaces__primevue-8100/tests/Dockerfile",
+      "dockerfile_sha256": "1ab938a41f182a4309a5ea754aefe7c05afb3e5e1cec3a5b6b588ec264b53e04",
+      "mode": "source",
+      "source_commit": "1a28898c88905869c44f0c9f9d39f19c5af4dc0b"
+    }
+  },
+  "radix-ui__primitives-1287": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-1287/environment/Dockerfile",
+      "dockerfile_sha256": "c7bfab78716ed5019dae9d8463f21d5401e2f8514254f10c9d09831373f5fcf1",
+      "mode": "source",
+      "source_commit": "ddde23eaf8d143340f2bd61cc3212e29ba17bef9"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-1287/tests/Dockerfile",
+      "dockerfile_sha256": "13285d9784765d0dadaf0841cb7ce2faa3466adb96c1f248590ab7a5ab30d180",
+      "mode": "source",
+      "source_commit": "ddde23eaf8d143340f2bd61cc3212e29ba17bef9"
+    }
+  },
+  "radix-ui__primitives-3232": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-3232/environment/Dockerfile",
+      "dockerfile_sha256": "10a42dc44223484d0dc2f177006a3b289d61e5b6118d56bbce29341dfc3ba11e",
+      "mode": "source",
+      "source_commit": "1fa9b449bec168233b8cd7ab2ff2ddebebc454e5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-3232/tests/Dockerfile",
+      "dockerfile_sha256": "616adedb131e1af3770330406f6f338595b658f99545c527af9ce659487e9d5e",
+      "mode": "source",
+      "source_commit": "1fa9b449bec168233b8cd7ab2ff2ddebebc454e5"
+    }
+  },
+  "radix-ui__primitives-3971": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-3971/environment/Dockerfile",
+      "dockerfile_sha256": "49e41c06a486048d9e6eaa33beaadb797fd95163a341acf1d58e193cbc7d283a",
+      "mode": "source",
+      "source_commit": "73f489df31458a3c8ab6cc3789da54b21a63387e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-3971/tests/Dockerfile",
+      "dockerfile_sha256": "5be4e3e8a32c984697f272e02db5a8d932682a93307814f22c16e0e84a349667",
+      "mode": "source",
+      "source_commit": "73f489df31458a3c8ab6cc3789da54b21a63387e"
+    }
+  },
+  "radix-ui__primitives-4014": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-4014/environment/Dockerfile",
+      "dockerfile_sha256": "656bf66842b599d0074452974c2fb9418c9aff7e4faa946353566dd9ea355071",
+      "mode": "source",
+      "source_commit": "52682b33d149c58b2d3d2cd851c9b778eabc4dd6"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/radix-ui__primitives-4014/tests/Dockerfile",
+      "dockerfile_sha256": "4b9e47fbbf1c8c94b5be3a8d8b2a7015b1abc0d8f94ef146964ab686a544f366",
+      "mode": "source",
+      "source_commit": "52682b33d149c58b2d3d2cd851c9b778eabc4dd6"
+    }
+  },
+  "react-bootstrap__react-bootstrap-6514": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/react-bootstrap__react-bootstrap-6514/environment/Dockerfile",
+      "dockerfile_sha256": "4c25a253987bd2fbc9298347689fa4635cb097fb44b8499cadaffef8ff161522",
+      "mode": "source",
+      "source_commit": "847f04a613f523161f558e5fd2d406d9381cee9a"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/react-bootstrap__react-bootstrap-6514/tests/Dockerfile",
+      "dockerfile_sha256": "1a122c60654e99cc1051701da52eb10056eed490351d8f886bba01a579f92a19",
+      "mode": "source",
+      "source_commit": "847f04a613f523161f558e5fd2d406d9381cee9a"
+    }
+  },
+  "sage__carbon-6841": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/sage__carbon-6841/environment/Dockerfile",
+      "dockerfile_sha256": "5dde4bc10c7b5cb204c13c48ed042cc5de2b27688d48607c0b2b83f5b5775769",
+      "mode": "source",
+      "source_commit": "b03cee20bf9aa04a9f70ec2f7a1dc7251fa8938a"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/sage__carbon-6841/tests/Dockerfile",
+      "dockerfile_sha256": "64a935145e9f8e91d98b3cc79336817425479e61ebcdbf74b21fb3bb7e70ee84",
+      "mode": "source",
+      "source_commit": "b03cee20bf9aa04a9f70ec2f7a1dc7251fa8938a"
+    }
+  },
+  "shoelace-style__webawesome-2673": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/shoelace-style__webawesome-2673/environment/Dockerfile",
+      "dockerfile_sha256": "b03ca90db45efb1e5cc5922d9f23bd8e41aba39e42d2736b5b9347d4e5cbb206",
+      "mode": "source",
+      "source_commit": "b2f63906a701c4463f66c6ef557eb0a06fb0f36c"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/shoelace-style__webawesome-2673/tests/Dockerfile",
+      "dockerfile_sha256": "cc7dd5066824738d08913c6b28a14b741acd4bd77279a094c01052f9a92dd92a",
+      "mode": "source",
+      "source_commit": "b2f63906a701c4463f66c6ef557eb0a06fb0f36c"
+    }
+  },
+  "shopify__polaris-react-3856": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/shopify__polaris-react-3856/environment/Dockerfile",
+      "dockerfile_sha256": "7c2035613be72c30562bd755e54226b5db713a01219659329a82ba172559034e",
+      "mode": "source",
+      "source_commit": "7434e521de2833c38dd418726606351bad57d599"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/shopify__polaris-react-3856/tests/Dockerfile",
+      "dockerfile_sha256": "00f954862c673e40ebf259eda927841cb8c906772decaf756ad2f7462a2a255f",
+      "mode": "source",
+      "source_commit": "7434e521de2833c38dd418726606351bad57d599"
+    }
+  },
+  "shopify__polaris-react-7097": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/shopify__polaris-react-7097/environment/Dockerfile",
+      "dockerfile_sha256": "380c1935a2d9201f134bb5c0d84b6db0ff9a0ecb3c699d772e93df56082226ce",
+      "mode": "source",
+      "source_commit": "8e16d15d1249591e9e854ae294ec8ce8ab3e3594"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/shopify__polaris-react-7097/tests/Dockerfile",
+      "dockerfile_sha256": "2a93425c123d486e1f229ff1633cadbae7d25bc8e443c0f10990adc8613b7e3c",
+      "mode": "source",
+      "source_commit": "8e16d15d1249591e9e854ae294ec8ce8ab3e3594"
+    }
+  },
+  "sl-design-system__components-3150": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/sl-design-system__components-3150/environment/Dockerfile",
+      "dockerfile_sha256": "fcf2f704849ab7d268656e7b00b8e5b6d61e549f74e1f12f03017b14f1971db5",
+      "mode": "source",
+      "source_commit": "946eda3c933c3fe90c460f0645d90cd45e5738b4"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/sl-design-system__components-3150/tests/Dockerfile",
+      "dockerfile_sha256": "23f77e0ce01638e1d7e26fa56de199cbf54f047638c9655a33c4680484e9780e",
+      "mode": "source",
+      "source_commit": "946eda3c933c3fe90c460f0645d90cd45e5738b4"
+    }
+  },
+  "tailwindlabs__headlessui-3749": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/tailwindlabs__headlessui-3749/environment/Dockerfile",
+      "dockerfile_sha256": "7f5b500367f249f76108678915446cf8be72c8a02af8a9c843d4402536d9b447",
+      "mode": "source",
+      "source_commit": "a12f9f245f7a7a3baca1c52e25fd05642a0e11e8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/tailwindlabs__headlessui-3749/tests/Dockerfile",
+      "dockerfile_sha256": "e7089f332cb8ab32277be871b35152094b01d115f24eb59db1a605de67c46e76",
+      "mode": "source",
+      "source_commit": "a12f9f245f7a7a3baca1c52e25fd05642a0e11e8"
+    }
+  },
+  "unovue__reka-ui-1618": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-1618/environment/Dockerfile",
+      "dockerfile_sha256": "d42a95e2f324255f7db902d4ef350e234d21b08b92143b861f7d42ef595b719c",
+      "mode": "source",
+      "source_commit": "47b3dfadd12590d737b4f68736a314e6133cd49e"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-1618/tests/Dockerfile",
+      "dockerfile_sha256": "95da2080078db9f54776c701d794383ac8c9bf17557f7abf58bfe04573cf7609",
+      "mode": "source",
+      "source_commit": "47b3dfadd12590d737b4f68736a314e6133cd49e"
+    }
+  },
+  "unovue__reka-ui-2259": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2259/environment/Dockerfile",
+      "dockerfile_sha256": "f56af0d1659b07536c178e7547cdea511cd2308b173c0d161322de4d061270de",
+      "mode": "source",
+      "source_commit": "1c36b3c1845242b6a395be026fdfbf78b193f4cd"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2259/tests/Dockerfile",
+      "dockerfile_sha256": "196364daa00a573ef12301ca7ac0e2aa5587436ef2847fbf765df1266f150a67",
+      "mode": "source",
+      "source_commit": "1c36b3c1845242b6a395be026fdfbf78b193f4cd"
+    }
+  },
+  "unovue__reka-ui-2261": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2261/environment/Dockerfile",
+      "dockerfile_sha256": "c42397554e1c9095c1f8bc0e256f26a07411857d596ecc5e5ab49af32e9fc707",
+      "mode": "source",
+      "source_commit": "f69fe293675a6f71f4663a734891e1b2952722f3"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2261/tests/Dockerfile",
+      "dockerfile_sha256": "71859ce1cab2948b969f55f319d7bba1c6be19575fb53e05e082ea03dc65bf34",
+      "mode": "source",
+      "source_commit": "f69fe293675a6f71f4663a734891e1b2952722f3"
+    }
+  },
+  "unovue__reka-ui-2296": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2296/environment/Dockerfile",
+      "dockerfile_sha256": "f733d53bd45bd6fcda55302b3abe9dbd4f1847df525c65fabc6f020b5fe19729",
+      "mode": "source",
+      "source_commit": "178e6cdd787858552a3f9700dc2ba8ee9b9201e5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2296/tests/Dockerfile",
+      "dockerfile_sha256": "1b5ef21a42bf1f49c99eff7e887fa05e606d6f07ebbeab9ebb29e023a4a7d747",
+      "mode": "source",
+      "source_commit": "178e6cdd787858552a3f9700dc2ba8ee9b9201e5"
+    }
+  },
+  "unovue__reka-ui-2375": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2375/environment/Dockerfile",
+      "dockerfile_sha256": "1ffb9af381fb816976da66c5e852ce52b890c956b898e17213f710c17116b96c",
+      "mode": "source",
+      "source_commit": "b6e346b975fe7c8c72fe6ff3b59001417507eef8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2375/tests/Dockerfile",
+      "dockerfile_sha256": "09b79297b9b33132d50edd658c49b839bd2576ac3472947c0f2f5fc03ed5fbe3",
+      "mode": "source",
+      "source_commit": "b6e346b975fe7c8c72fe6ff3b59001417507eef8"
+    }
+  },
+  "unovue__reka-ui-2383": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2383/environment/Dockerfile",
+      "dockerfile_sha256": "404cb924293b232ed1c840b3bfe3de32d1a999c604ccde0169b6c70fa5cd0a3d",
+      "mode": "source",
+      "source_commit": "edb0789c60fe08a7632664acc7f9a702a1aae4f5"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2383/tests/Dockerfile",
+      "dockerfile_sha256": "22d19e530ac8e266e8e251e72a43dc3663698bba34c5e2362357b790f2713e4a",
+      "mode": "source",
+      "source_commit": "edb0789c60fe08a7632664acc7f9a702a1aae4f5"
+    }
+  },
+  "unovue__reka-ui-2463": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2463/environment/Dockerfile",
+      "dockerfile_sha256": "1ba9f0dc73d720ca82084a33f2576ce3623aa9ce3a61da90bfc73d72a8242970",
+      "mode": "source",
+      "source_commit": "84b044f3cf1f87a282952f9ed31967b89cd6776f"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2463/tests/Dockerfile",
+      "dockerfile_sha256": "e5e8915c5bcac0d0531e9243a170658efe8b9300f53081ce2c739e64b6f6b74e",
+      "mode": "source",
+      "source_commit": "84b044f3cf1f87a282952f9ed31967b89cd6776f"
+    }
+  },
+  "unovue__reka-ui-2474": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2474/environment/Dockerfile",
+      "dockerfile_sha256": "71ff9f129712a4effbe762e1ef1459704278522df99ecf91b49d1ec65472ad83",
+      "mode": "source",
+      "source_commit": "16abe8e19a8078d3a194bd7a01a161a9e7bc3fc0"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2474/tests/Dockerfile",
+      "dockerfile_sha256": "706e7da7b604393cf13dd1a5656410cc7314872026dd2395e2e8b933d19ee861",
+      "mode": "source",
+      "source_commit": "16abe8e19a8078d3a194bd7a01a161a9e7bc3fc0"
+    }
+  },
+  "unovue__reka-ui-2483": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2483/environment/Dockerfile",
+      "dockerfile_sha256": "37df7c6181fa0aec3c8d1cc92cc401e5e7ea99dae19ab59a4cf4eecf47b69fb6",
+      "mode": "source",
+      "source_commit": "dcad3850135534fa3ab9fe4a4fc1244ddbd1896a"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2483/tests/Dockerfile",
+      "dockerfile_sha256": "46a83e1e841fef638ccdf20c59c6f05ef069d6f763b1b940722bf74344d128e4",
+      "mode": "source",
+      "source_commit": "dcad3850135534fa3ab9fe4a4fc1244ddbd1896a"
+    }
+  },
+  "unovue__reka-ui-2505": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2505/environment/Dockerfile",
+      "dockerfile_sha256": "0c7b860ab2e22308829d3e123d6a1aa52e0aa810e1a789374d1ca10dc8d1aa94",
+      "mode": "source",
+      "source_commit": "883bb71d5c1928711ed2cd652dc093155d5260a8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2505/tests/Dockerfile",
+      "dockerfile_sha256": "6415056195b535537d215e1d14381c296a86373400034d15c7acab70927e9f20",
+      "mode": "source",
+      "source_commit": "883bb71d5c1928711ed2cd652dc093155d5260a8"
+    }
+  },
+  "unovue__reka-ui-2506": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2506/environment/Dockerfile",
+      "dockerfile_sha256": "54bfa4d2edce5b0437a4a62a42bcbfd4a0474765b60f7c4b6c2c5d2e94f1e725",
+      "mode": "source",
+      "source_commit": "49d1d32b0bfb82453632d0ca72f526a60efccaa9"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2506/tests/Dockerfile",
+      "dockerfile_sha256": "863cb550aefa06727ff045472640236fe1b963ff63f94d1a51de693114d1dbc1",
+      "mode": "source",
+      "source_commit": "49d1d32b0bfb82453632d0ca72f526a60efccaa9"
+    }
+  },
+  "unovue__reka-ui-2540": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2540/environment/Dockerfile",
+      "dockerfile_sha256": "f56af0d1659b07536c178e7547cdea511cd2308b173c0d161322de4d061270de",
+      "mode": "source",
+      "source_commit": "1c36b3c1845242b6a395be026fdfbf78b193f4cd"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2540/tests/Dockerfile",
+      "dockerfile_sha256": "196364daa00a573ef12301ca7ac0e2aa5587436ef2847fbf765df1266f150a67",
+      "mode": "source",
+      "source_commit": "1c36b3c1845242b6a395be026fdfbf78b193f4cd"
+    }
+  },
+  "unovue__reka-ui-2567": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2567/environment/Dockerfile",
+      "dockerfile_sha256": "e61bd1e48f4fbc866342df00589a959aae776717ba80e500df2e01eb07b9b50b",
+      "mode": "source",
+      "source_commit": "1eb104fd1907e96294aa3d3b3d6bcf7d49762200"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2567/tests/Dockerfile",
+      "dockerfile_sha256": "d827a4ab1a0d9d24d5cab4d8944562d76617fa939f40bcc24aa560ab45cf53ef",
+      "mode": "source",
+      "source_commit": "1eb104fd1907e96294aa3d3b3d6bcf7d49762200"
+    }
+  },
+  "unovue__reka-ui-2580": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2580/environment/Dockerfile",
+      "dockerfile_sha256": "85a9fb7f272cb04b792937cad3612823226e20fb001e86d71f37f2d1efdcba5b",
+      "mode": "source",
+      "source_commit": "56f04ba1ffc3a1717d51eec1a4b9aafc374e8091"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2580/tests/Dockerfile",
+      "dockerfile_sha256": "13bb917a1b38e534d520120a6d9cdcb5f60f5f1ac460f9142df7821e16859c4e",
+      "mode": "source",
+      "source_commit": "56f04ba1ffc3a1717d51eec1a4b9aafc374e8091"
+    }
+  },
+  "unovue__reka-ui-2599": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2599/environment/Dockerfile",
+      "dockerfile_sha256": "9698221d0ca06bb28c9055b2b13f09fb334bbca8ea5cddbcb6d3de8dda123b40",
+      "mode": "source",
+      "source_commit": "edbeb9348dba6eb7e9af208953f6c6a9e502fa9b"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2599/tests/Dockerfile",
+      "dockerfile_sha256": "87bec96ae8731da5df256e1c90593da0d53060679d227991917b88ff121338e5",
+      "mode": "source",
+      "source_commit": "edbeb9348dba6eb7e9af208953f6c6a9e502fa9b"
+    }
+  },
+  "unovue__reka-ui-2644": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2644/environment/Dockerfile",
+      "dockerfile_sha256": "db23b9914eeb554c9244a8087b7a65de58090f163d61d8b11d77ae8d6841767d",
+      "mode": "source",
+      "source_commit": "333707d0a2d68a1554c4cf4d96e41ffe30f1a070"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2644/tests/Dockerfile",
+      "dockerfile_sha256": "0fc0e2bd613b86ba706d0a0358ac6a922c4fb87874ddee37a564dc5f85bc4916",
+      "mode": "source",
+      "source_commit": "333707d0a2d68a1554c4cf4d96e41ffe30f1a070"
+    }
+  },
+  "unovue__reka-ui-2660": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2660/environment/Dockerfile",
+      "dockerfile_sha256": "acecd050d6a17787923ab6d218cc58d7d65516bf5bdf5120bca4ea36a4d24013",
+      "mode": "source",
+      "source_commit": "d3df6924e3892d6ebded7000efdaf3fce1f8f7ae"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2660/tests/Dockerfile",
+      "dockerfile_sha256": "b116def6465570dcfe1895fe1519604bc4309c40e70826fa6a41346395241fcf",
+      "mode": "source",
+      "source_commit": "d3df6924e3892d6ebded7000efdaf3fce1f8f7ae"
+    }
+  },
+  "unovue__reka-ui-2674": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2674/environment/Dockerfile",
+      "dockerfile_sha256": "1cd5c341189031ac941c219851b556b92623546f410be582cafebfe09104686d",
+      "mode": "source",
+      "source_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2674/tests/Dockerfile",
+      "dockerfile_sha256": "865d4c35c18397feb88dfc697b256cf10c70b0d287cf8a80fa333050651c4a60",
+      "mode": "source",
+      "source_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8"
+    }
+  },
+  "unovue__reka-ui-2677": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2677/environment/Dockerfile",
+      "dockerfile_sha256": "1cd5c341189031ac941c219851b556b92623546f410be582cafebfe09104686d",
+      "mode": "source",
+      "source_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2677/tests/Dockerfile",
+      "dockerfile_sha256": "e2dc8f18b08e2c4d9597af89982d480423c2eb4dcdf511a83e39ab24809cc2ed",
+      "mode": "source",
+      "source_commit": "091d6502cbcea41e5820114ae0118fa23498c3b8"
+    }
+  },
+  "unovue__reka-ui-2749": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2749/environment/Dockerfile",
+      "dockerfile_sha256": "995c964f296641ea593473f7a7bbc6bab97002af589eacbbf9ebc51e3f9fb088",
+      "mode": "source",
+      "source_commit": "c215ca6cf92fb0fbebe5821b5ad3597071d4c49f"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/unovue__reka-ui-2749/tests/Dockerfile",
+      "dockerfile_sha256": "bfd040d29066aa602d8c2ab6dc71ac146cbebbb8e2b7eef82f30a981d261461d",
+      "mode": "source",
+      "source_commit": "c215ca6cf92fb0fbebe5821b5ad3597071d4c49f"
+    }
+  },
+  "vuetifyjs__vuetify-11989": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/vuetifyjs__vuetify-11989/environment/Dockerfile",
+      "dockerfile_sha256": "ba64973ea64959d29b7d521cce8a9e551121022e2bf9206812ebc001bf63d815",
+      "mode": "source",
+      "source_commit": "7c8b0b4076ec1042c1892cc49f0adc4ce1159472"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/vuetifyjs__vuetify-11989/tests/Dockerfile",
+      "dockerfile_sha256": "e6c100ce2bda1b5625a207f4cde996b7d37aca8f45f9f53c9028ccbbf879a0d9",
+      "mode": "source",
+      "source_commit": "7c8b0b4076ec1042c1892cc49f0adc4ce1159472"
+    }
+  },
+  "vuetifyjs__vuetify-22850": {
+    "agent": {
+      "build_verified": false,
+      "dockerfile": "tasks/vuetifyjs__vuetify-22850/environment/Dockerfile",
+      "dockerfile_sha256": "f04abce92b5d235897e88fbfd395f0e5dbc200f7585e4262eba5bf6a028c814a",
+      "mode": "source",
+      "source_commit": "d8b16d4f793a813baabdceaf6171750d940bdf06"
+    },
+    "verifier": {
+      "build_verified": false,
+      "dockerfile": "tasks/vuetifyjs__vuetify-22850/tests/Dockerfile",
+      "dockerfile_sha256": "da73b242bc4eca79dec739b22c7529cf8e7da2f86f5e6e9ea93300e05cb3d30b",
+      "mode": "source",
+      "source_commit": "d8b16d4f793a813baabdceaf6171750d940bdf06"
+    }
+  }
+}

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/tailwindlabs__headlessui-3749"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "MenuButton forwarded ref click is not working"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a535850c9a1474e6bfc4fb6194f97cbb6834130ff832220c1ec4628887a1de94"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3213ae821540bcbe34e931c3578af338037e2adb353afcba2b4197936bf48bca"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

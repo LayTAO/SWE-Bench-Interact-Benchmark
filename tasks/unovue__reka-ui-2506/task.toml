@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/unovue__reka-ui-2506"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Dialog focus after reopening with SelectTrigger"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d27647117113f89e7dea6809cd07687ba24286deaabd27fe158c239059da25ca"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:2fb85557368fa0c7d464f8193683783d1ee72463c0354a1141fbd1c1fbfd0aae"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

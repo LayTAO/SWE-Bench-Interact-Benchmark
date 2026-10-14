@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/microsoft__fluentui-32260"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Bug]: TagPickerInput issue with removing all text when at least one tag is selected"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:51a017ffdde03d62b4916eb48bf089accba7ef5f2cb0850209b2d2f74c500d9d"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:a771f4311850155d57f2ce1b3baf91a09dcb43fafb15931e614a72566c932a37"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-5692"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Selecting unavailable dates with keyboard selects previous avaialable date in Calendar, DatePicker, useCalendarState, etc"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:aa5d5409ff09735c56f6d9be22d85460ba173c0a9e2b6759d5dcb649ce293ddb"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:76b8d294f818756757043aa046da21af3299dd5f01312a12b23b806750d06063"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

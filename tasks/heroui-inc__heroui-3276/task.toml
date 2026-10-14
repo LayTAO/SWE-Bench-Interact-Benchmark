@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/heroui-inc__heroui-3276"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Select 再次点击时无法关闭"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:032f0418faa081bc5fb0f35da12998f5f4aac055b94045a8e6691f1c2f604f3f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:f4a29623af34e4b48a1213cc42d02f0f77b74b881035b5a40ff454e7d7acb22a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

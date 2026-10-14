@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/floating-ui__floating-ui-3207"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Chrome blocked aria-hidden error when using virtualItemRef"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:37ffe1afe092d373e7627a1db40d4fb39f56f3b68f6c7e66f08eb85cd9c6f4d3"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:47fe3fc4b3d003e51103ce846ce90faa8e34208c8fd9ec1b2628dbb4427a0ae0"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

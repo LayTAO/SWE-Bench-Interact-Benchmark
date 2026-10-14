@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-8291"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[RAC] Tooltip is misaligned when using a CSS scale transition animation on [data-entering]"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:54a9535c13b9ffb83b38c5ad9c35f8fa22dd67aa1874ad31b4f2831bd4019c61"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3b3c1a0f5bf2664989f7e79d3a0d1e0a690f3c0da57aac5748a60a4d4f71a35a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

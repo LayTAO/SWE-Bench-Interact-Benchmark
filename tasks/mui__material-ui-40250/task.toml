@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__material-ui-40250"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[autocomplete] Options list scrolls to the top if more options are added after pulling the scroll handle to the bottom"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:35211022f624989a5210dafec4e3d3300ad893d88f970b640c2029abaa205837"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:9ae507816046c9baeef84e180ee1486f0d34775ab3c029dbf73fcd51c189a06f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

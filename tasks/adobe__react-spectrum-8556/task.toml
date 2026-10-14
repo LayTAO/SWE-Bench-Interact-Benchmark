@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/adobe__react-spectrum-8556"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "TooltipTrigger must preserve child tab-order properties"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:e955b0e50c1db86bab1290cd3ddf27c47eb74ceff5d4b14967a1fb0a724a1c63"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:97f35acc6897da304e1e187cc3ad12b47ded8ab85594f8bad31ccbe50041b5fa"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

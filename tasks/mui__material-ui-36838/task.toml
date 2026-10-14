@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__material-ui-36838"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Menu弹出菜单未留足够空间退出长列表"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:15f4891fbe449c6d010396f51cb5c04e22224175e3627014e63367db4e3d0d9f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:6be9fcbc8c3b53c1ae3f3d70eee7a3e08989c5d7819ca58a440389b14272f51f"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

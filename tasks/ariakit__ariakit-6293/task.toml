@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/ariakit__ariakit-6293"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "FormPush autoFocusOnClick focuses the previous field, and permanently stops working for arrays that start empty"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7757243b1a7cdc566a181ac8798386c28598119a311c6a552370f71a7562f77a"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:7c8e663b99f1792ea32efda1c78f05506929d7eddb8cb611e0be8236ce1ef0a6"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

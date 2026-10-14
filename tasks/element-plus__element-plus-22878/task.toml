@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/element-plus__element-plus-22878"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[Component] [time-picker] [TimePicker] Visual state becomes inconsistent with data model after keyboard modification"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:5fe38dc3fdb782dd0fbe4686432a901eb8335617814927cecbcb2a117352a6f1"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:3fa43d8cca34f99f3a7cd78273d121503ab8a0c8053e3277d4b945b22ed79a85"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

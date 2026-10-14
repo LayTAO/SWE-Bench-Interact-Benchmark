@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/mui__base-ui-4947"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "[autocomplete] AutocompleteInput cursor navigation with grid layout"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d5782c43a44ca76c27b95b42fad04ef2bbe1cb67b9638aff1b80919184443d76"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d3f6c823920ee1687c077880e402632439c345a983af9cc4dad248acc27731c9"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2

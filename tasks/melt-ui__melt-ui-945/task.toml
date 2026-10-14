@@ -2,7 +2,7 @@ schema_version = "1.4"
 
 [task]
 name = "laytao/melt-ui__melt-ui-945"
-version = "0.2.0-candidate"
+version = "0.3.0-source-candidate"
 description = "Tooltips stays open after scrolling away from trigger"
 
 [metadata]
@@ -16,7 +16,6 @@ allowed_hosts = ["api.openai.com", "auth.openai.com", "chatgpt.com"]
 timeout_sec = 1800.0
 
 [environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:d09dc0692da3bee42f0f414d8cc7c5068da1b3cd37ba2b6414a0f4c414138966"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
@@ -35,7 +34,6 @@ timeout_sec = 1800.0
 environment_mode = "separate"
 
 [verifier.environment]
-docker_image = "docker.io/ltao615/swe-bench-interact@sha256:da85671d91bd38545a7521222d25431a76ee6df1f3d9e295264487948022eb63"
 build_timeout_sec = 1800.0
 os = "linux"
 cpus = 2
