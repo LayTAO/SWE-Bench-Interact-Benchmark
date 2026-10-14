@@ -1,83 +1,165 @@
-# SWE-Bench-Interact
+# InteractBench
 
-SWE-Bench-Interact contains 103 Web-interaction repair tasks from 28 repositories.
-Every task includes an issue instruction, an exact base revision, a reproduction
-page, behavioral checks, and selected developer tests.
+### A Benchmark and Empirical Study of Coding Agents for Interaction-Driven Web UI Repair
 
-## Requirements
+[Overview](#overview) · [Quick Start](#quick-start) · [Evaluation](#evaluation) · [Results](#results) · [Citation](#citation)
 
-Use Python 3.12, Git, Harbor 0.22.0, Docker with Compose and BuildKit, and Linux
-x86-64 container support. This is a **source-build distribution**: each task
-provides independent Agent and Verifier Dockerfiles. No prebuilt task image
-from the benchmark maintainers is required. Public Node and Playwright base
-images, upstream source, package registries, and browser downloads must be
-reachable during preparation and image construction.
+InteractBench evaluates whether coding agents repair **how Web interfaces behave**,
+not just how they look. It contains **103 interaction-driven defects from 28
+open-source projects**, covering actions such as clicking, typing, keyboard
+navigation, scrolling, and hovering.
 
-Resource limits and timeouts are specified separately for each task's agent
-and verifier in `task.toml`. Image builds also consume host memory and disk;
-start with one task before increasing concurrency.
+Every task includes an issue description, a fixed base revision, a minimal
+reproduction page, Playwright interaction checks, and selected developer tests.
+Candidate patches are assessed in an independent verifier environment.
+
+<!-- Paper link: add the public paper URL when available. -->
+
+## Overview
+
+InteractBench pairs historical issues with reproducible browser interactions.
+During task construction, checks are validated against the pre-fix and fixed
+implementations. During evaluation, an agent receives the issue and base
+repository; an independent verifier evaluates its candidate patch using the
+same fixed interaction checks and developer tests.
+
+<!-- FIGURE PLACEHOLDER: paper Figure 2, benchmark construction and evaluation.
+     Insert the standalone figure here, without page numbers or manuscript text. -->
+<p align="center"><em>[Benchmark overview figure — to be added]</em></p>
+
+This repository distributes source-build tasks: users build the Agent and
+Verifier environments locally from the supplied Dockerfiles. Maintainer-built
+task images are not required.
+
+<details>
+<summary><strong>Example: a dropdown that closes while scrolling</strong></summary>
+
+In Vuetify issue #22850, scrolling an open autocomplete list unexpectedly closes
+the dropdown. A correct repair must allow the list to scroll while keeping the
+menu open. An image of an open menu alone cannot establish that scrolling
+actually occurred.
+
+<!-- FIGURE PLACEHOLDER: paper Figure 1, Vuetify #22850 buggy/fixed interaction.
+     Insert the standalone example figure here. -->
+<p align="center"><em>[Interaction example figure — to be added]</em></p>
+
+</details>
+
+## Quick Start
+
+**Requirements:** Python 3.12, Git, Harbor 0.22.0, and Docker with Compose,
+BuildKit, and Linux x86-64 container support. Source repositories, public base
+images, package registries, and browser downloads must be reachable during
+preparation and image construction.
+
+> **Release status:** this source-build release is a candidate. Static checks
+> have passed; all-task image builds and end-to-end execution have not yet been
+> validated. See [release.json](release.json).
+
+### 1. Install and check the release
+
+Keep the virtual environment, build inputs, and job outputs outside the release
+checkout so that its file-integrity checks remain valid.
 
 ```bash
-python3 -m venv .venv
-.venv/bin/pip install harbor==0.22.0
-python3 runtime/validate.py
-python3 runtime/prepare.py \
+git clone https://github.com/LayTAO/SWE-Bench-Interact-Benchmark.git
+cd SWE-Bench-Interact-Benchmark
+
+python3.12 -m venv ../interactbench-venv
+source ../interactbench-venv/bin/activate
+python -m pip install harbor==0.22.0
+python runtime/validate.py
+```
+
+### 2. Prepare one task
+
+```bash
+python runtime/prepare.py \
   --instance unovue__reka-ui-2749 \
   --output ../interactbench-single
 ```
 
-Preparation fetches the exact base commit, verifies its identity, and exports
-source without upstream Git history into each build context. It also expands
-the shared evaluation materials. Existing output directories are never
-overwritten. Keep generated source, caches, images, and results outside this
-release repository.
+Preparation fetches and verifies the exact base commit, exports history-free
+source into both build contexts, and materializes evaluation assets only in the
+Verifier context. It does not build the images. Existing output directories
+are never overwritten.
 
-To prepare the full frozen cohort instead:
+### 3. Configure and run
 
-```bash
-python3 runtime/prepare.py --all --output ../interactbench-prepared
-```
+Edit `../interactbench-single/job.json`:
 
-Both Dockerfiles receive the same base source. Evaluation materials are copied
-only into the Verifier context. Preparation records source archive hashes in
-`build-inputs.json`; Dockerfile hashes are recorded in `builds.json`.
+- Set `agents[0].name` and `agents[0].model_name` for your chosen agent and model.
+- Set `jobs_dir` to `../interactbench-runs` and `job_name` to `interactbench-single`.
+- Start with `n_concurrent_trials: 1`; keep `n_attempts: 1` for one attempt per task.
 
-## Run an evaluation
-
-Set the credentials required by your chosen agent using its documented
-environment variables. In `../interactbench-single/job.json`, set the agent,
-model, job output directory, and concurrency. The example starts with one
-concurrent trial and one attempt per task. Configure provider hosts in the
-agent network policy if your provider differs from the task defaults.
+Provide credentials through the agent's supported environment variables; do not
+put keys in the repository. If using a different provider, update
+`agent.allowed_hosts` in the prepared task's `task.toml` to permit its API hosts.
 
 ```bash
-.venv/bin/harbor run --config ../interactbench-single/job.json
-python3 runtime/summarize.py /absolute/path/to/your/job
+harbor run --config ../interactbench-single/job.json
+python runtime/summarize.py ../interactbench-runs/interactbench-single
 ```
 
-Harbor builds the Agent and Verifier images locally from the prepared
-Dockerfiles. There are no `docker_image` references to maintainer-built task
-images in the task configurations. Docker's build cache can be reused. For
-the full cohort, use `../interactbench-prepared/job.json` instead.
+Harbor builds the two images locally and runs the task. Subsequent builds can
+reuse Docker's build cache. Task-specific resource limits and timeouts are in
+`task.toml`; builds also require host memory and disk space.
 
-Rebuilding is not a claim of byte-for-byte equivalence with historical images.
-The frozen source, supplied recipes, and unchanged evaluation tests define
-this source release; full build and execution validation status is recorded
-in `release.json`.
+### Run all 103 tasks
+
+```bash
+python runtime/prepare.py --all --output ../interactbench-prepared
+```
+
+Configure `../interactbench-prepared/job.json` in the same way, choose a new job
+name, and run it with `harbor run --config`. Increase concurrency only after a
+single-task run succeeds and host resource usage has been checked.
 
 ## Evaluation
 
-The agent works on the base checkout in `/workspace/repo`. A shared runtime
-captures its production patch. Harbor transfers that patch to a fresh,
-independent verifier environment. Evaluation assets are mounted only in the
-verifier; they are not mounted in the agent environment.
+The agent works on the base repository in `/workspace/repo`. The runtime captures
+its production patch and transfers it to a separate verifier. Evaluation assets
+are not mounted into the Agent environment.
 
-The verifier applies the candidate to the base source, performs the required
-build, runs the fixed browser reproduction and behavioral checks, and executes
-the selected F2P and P2P tests. A failed browser check does not by itself skip
-the developer tests when their prerequisites are satisfied.
+The verifier applies the patch to clean base source, performs the required
+build, and runs two complementary kinds of checks:
 
-`reward=1` requires a valid candidate patch, a successful required build,
-passing canonical browser behavior, all F2P tests passing, and all P2P tests
-passing. Otherwise, `reward=0`. Agent-authored tests do not replace these checks.
-Resolved rate is the number of tasks with `reward=1` divided by the task count.
+- **Browser interaction checks:** Health checks the intended implementation is
+  running; Trigger checks the required interaction occurs; Symptom checks the
+  expected behavior during and after that interaction.
+- **Developer tests:** all selected fail-to-pass (F2P) and pass-to-pass (P2P)
+  tests must pass.
+
+A failed browser check does not by itself skip developer tests when their
+prerequisites are satisfied. `reward=1` requires a valid, successfully applied
+patch, a successful required build, passing browser interaction checks, and all
+selected F2P/P2P tests passing. A failed required check yields `reward=0`.
+Agent-authored tests do not replace the fixed evaluation checks.
+
+## Results
+
+The accompanying paper reports the following results on **103 tasks per
+configuration**. These describe the paper's experiments, not an end-to-end
+validation of the newly published source-build release. Cost is the paper's
+reported mean model-call cost per task in USD.
+
+| Agent | Model | Resolved | Resolved (%) | Avg. Cost (USD) |
+| --- | --- | --- | --- | --- |
+| Codex | GPT-5.6 Sol | 59/103 | 57.28% | $1.33 |
+| Codex | DeepSeek V4.1 Flash | 56/103 | 54.37% | $0.05 |
+| Codex | GPT-5.5 | 42/103 | 40.78% | $2.26 |
+| mini-swe-agent | DeepSeek V4.1 Flash | 59/103 | 57.28% | $0.08 |
+| mini-swe-agent | GPT-5.6 Sol | 51/103 | 49.51% | $2.94 |
+| mini-swe-agent | Gemini-3.7-Flash-High | 51/103 | 49.51% | $3.81 |
+| mini-swe-agent | Gemini-3.1-Flash-Lite | 17/103 | 16.50% | $0.09 |
+| mini-swe-agent | Qwen3-30B-A3B-Thinking-2507 | 15/103 | 14.56% | $0.04 |
+
+The study also examines repair failures, environment preparation, and differences
+between developer-test, interaction-based, and screenshot-based verification.
+
+## Citation
+
+Paper citation details and the public paper link will be added when available.
+Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
+
+<!-- Add the finalized paper BibTeX here; do not copy placeholder authors or DOI. -->
