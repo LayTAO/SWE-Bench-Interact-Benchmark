@@ -46,3 +46,12 @@ RUN git init -b main \
 # fall back to a native build when GitHub's prebuilt download times out; that
 # build requires libvips and is not used by the agent runtime.
 RUN export YARN_CACHE_FOLDER=/yarn-cache; yarn --version && yarn install --frozen-lockfile --non-interactive --ignore-scripts
+
+# Ready environment repair: public tools only; keep the buggy source baseline.
+ENV YARN_CACHE_FOLDER=/yarn-cache
+COPY ready/ /opt/swe-bench-ready/
+RUN chmod 0755 /opt/swe-bench-ready/*.sh \
+ && ln -s /opt/swe-bench-ready/prepare.sh /usr/local/bin/swe-bench-prepare \
+ && ln -s /opt/swe-bench-ready/test.sh /usr/local/bin/swe-bench-test \
+ && swe-bench-prepare \
+ && git diff --exit-code && git diff --cached --exit-code

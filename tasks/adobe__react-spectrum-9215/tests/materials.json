@@ -1,4 +1,9 @@
 {
+  "canonical_repro/app/candidate-workspace.mjs": {
+    "mode": 420,
+    "sha256": "584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee",
+    "source": "shared/584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee/candidate-workspace.mjs"
+  },
   "canonical_repro/app/index.html": {
     "mode": 420,
     "sha256": "1136244dc3506096aa3274b7b362f915054158ca47384a9f44bd4a3e7d5108bb",
@@ -46,8 +51,8 @@
   },
   "canonical_repro/app/vite.config.ts": {
     "mode": 420,
-    "sha256": "1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb",
-    "source": "shared/1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb/vite.config.ts"
+    "sha256": "81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d",
+    "source": "shared/81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d/vite.config.ts"
   },
   "canonical_repro/interaction_spec.json": {
     "mode": 420,
@@ -61,8 +66,8 @@
   },
   "canonical_repro/legacy/construction/scripts/verify_reproduction.sh": {
     "mode": 493,
-    "sha256": "333e7a520a379367f3012e1c3d4bdaff1a7bb1ef8f5bdb35c82b84e4dbd3526c",
-    "source": "shared/333e7a520a379367f3012e1c3d4bdaff1a7bb1ef8f5bdb35c82b84e4dbd3526c/verify_reproduction.sh"
+    "sha256": "37b01a157d15350f0adfebac500adf42be3c293ceda541fcb585b8dc18cb9fc7",
+    "source": "shared/37b01a157d15350f0adfebac500adf42be3c293ceda541fcb585b8dc18cb9fc7/verify_reproduction.sh"
   },
   "canonical_repro/legacy/environment/runner.json": {
     "mode": 420,
@@ -73,6 +78,11 @@
     "mode": 420,
     "sha256": "5343d478918bc9664fc46ef218a88248d0fe91994a996666a18441a6d3d68265",
     "source": "shared/5343d478918bc9664fc46ef218a88248d0fe91994a996666a18441a6d3d68265/official_test.patch"
+  },
+  "canonical_repro/legacy/public/repro/app/candidate-workspace.mjs": {
+    "mode": 420,
+    "sha256": "584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee",
+    "source": "shared/584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee/candidate-workspace.mjs"
   },
   "canonical_repro/legacy/public/repro/app/index.html": {
     "mode": 420,
@@ -121,8 +131,8 @@
   },
   "canonical_repro/legacy/public/repro/app/vite.config.ts": {
     "mode": 420,
-    "sha256": "1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb",
-    "source": "shared/1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb/vite.config.ts"
+    "sha256": "81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d",
+    "source": "shared/81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d/vite.config.ts"
   },
   "canonical_repro/legacy/public/repro/scripts/run.sh": {
     "mode": 493,
@@ -141,8 +151,8 @@
   },
   "canonical_repro/scripts/validate.sh": {
     "mode": 493,
-    "sha256": "25c8ad8bdec1dac2cd4e35dc81452e44b6168963babb6dd3248495be70d75773",
-    "source": "shared/25c8ad8bdec1dac2cd4e35dc81452e44b6168963babb6dd3248495be70d75773/validate.sh"
+    "sha256": "69208b5add4496fd6a32c52e25a69ff964e70cd8cfc4769a19438520a0e13699",
+    "source": "shared/69208b5add4496fd6a32c52e25a69ff964e70cd8cfc4769a19438520a0e13699/validate.sh"
   },
   "test.sh": {
     "mode": 493,
@@ -176,8 +186,8 @@
   },
   "verifier/run_canonical.sh": {
     "mode": 493,
-    "sha256": "3b0384f93bfeaf767e4577f444c218d9963a59bdc3118eb5e7341ae046c1168b",
-    "source": "shared/3b0384f93bfeaf767e4577f444c218d9963a59bdc3118eb5e7341ae046c1168b/run_canonical.sh"
+    "sha256": "f5f7ae5cb2b50aa1196cf82d985c1707bbd8813c7208a3fd5e84b17fdde79418",
+    "source": "shared/f5f7ae5cb2b50aa1196cf82d985c1707bbd8813c7208a3fd5e84b17fdde79418/run_canonical.sh"
   },
   "verifier/run_official.sh": {
     "mode": 493,

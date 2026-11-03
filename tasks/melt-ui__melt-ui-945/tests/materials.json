@@ -61,8 +61,8 @@
   },
   "test.sh": {
     "mode": 493,
-    "sha256": "42a8ed956bfaebcc19a9a70bae593033cd94f6accdba02fd41fdec0b2a6d8129",
-    "source": "shared/42a8ed956bfaebcc19a9a70bae593033cd94f6accdba02fd41fdec0b2a6d8129/test.sh"
+    "sha256": "7152cd1d1bd233ff760bbbae17fd7562d2d137b61903c34af2fde001e65e17d0",
+    "source": "shared/7152cd1d1bd233ff760bbbae17fd7562d2d137b61903c34af2fde001e65e17d0/test.sh"
   },
   "verifier/check-canonical.cjs": {
     "mode": 420,

@@ -46,8 +46,8 @@
   },
   "canonical_repro/legacy/public/repro/tooling/capture.mjs": {
     "mode": 420,
-    "sha256": "5e14025ac70076b48631f4a279275ee935ecbd48002b1401939022a9b6b26188",
-    "source": "shared/5e14025ac70076b48631f4a279275ee935ecbd48002b1401939022a9b6b26188/capture.mjs"
+    "sha256": "6f78843e825d3b8c08edbeefb4ad1a0f77a6fb286bb7ec34d3b93f6809e8df88",
+    "source": "shared/6f78843e825d3b8c08edbeefb4ad1a0f77a6fb286bb7ec34d3b93f6809e8df88/capture.mjs"
   },
   "canonical_repro/legacy/public/repro/tooling/package.json": {
     "mode": 420,

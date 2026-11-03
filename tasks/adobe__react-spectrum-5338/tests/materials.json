@@ -1,4 +1,9 @@
 {
+  "canonical_repro/app/candidate-workspace.mjs": {
+    "mode": 420,
+    "sha256": "584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee",
+    "source": "shared/584528b2762a65760ccfa217d5e596fa6e1a0307737cf85a11a3742ae8bf10ee/candidate-workspace.mjs"
+  },
   "canonical_repro/app/index.html": {
     "mode": 420,
     "sha256": "6905d53fe4eda7c7de702be41486d76ffb2125e141e3015806a794ae6b5f1a30",
@@ -31,8 +36,8 @@
   },
   "canonical_repro/app/vite.config.ts": {
     "mode": 420,
-    "sha256": "1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb",
-    "source": "shared/1e82baddf22889360775c216047716bde2e25087e843e99d03c75aa12ad5a6eb/vite.config.ts"
+    "sha256": "81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d",
+    "source": "shared/81e582cd099b7e5ff19a9e765b87c651629cb62d59546a75283bf1fedd48e01d/vite.config.ts"
   },
   "canonical_repro/interaction_spec.json": {
     "mode": 420,
@@ -61,13 +66,13 @@
   },
   "canonical_repro/scripts/container.sh": {
     "mode": 493,
-    "sha256": "fe8bc4c3a1a4dedfec586315efd2e6e6cab82e0bb5ef67f88ead600f38be1505",
-    "source": "shared/fe8bc4c3a1a4dedfec586315efd2e6e6cab82e0bb5ef67f88ead600f38be1505/container.sh"
+    "sha256": "d48ea3643a1a7f1a6bda9307c849fe885ff1730259e85e56f0378005f653042d",
+    "source": "shared/d48ea3643a1a7f1a6bda9307c849fe885ff1730259e85e56f0378005f653042d/container.sh"
   },
   "canonical_repro/scripts/validate.sh": {
     "mode": 493,
-    "sha256": "dc3af1389cb9641a40d3ba1290294071a0a9fb6f1b70e54ba5937090dbc8fdaa",
-    "source": "shared/dc3af1389cb9641a40d3ba1290294071a0a9fb6f1b70e54ba5937090dbc8fdaa/validate.sh"
+    "sha256": "a5b9f9483e650adef11faf63d8d3d9035437161d84b2cd9395b352cc0a703599",
+    "source": "shared/a5b9f9483e650adef11faf63d8d3d9035437161d84b2cd9395b352cc0a703599/validate.sh"
   },
   "canonical_repro/tooling/package-lock.json": {
     "mode": 420,
@@ -111,8 +116,8 @@
   },
   "verifier/run_canonical.sh": {
     "mode": 493,
-    "sha256": "b17c004eded4574d4509ed669c686b0294059aec9c0561e3665940a7a0586e27",
-    "source": "shared/b17c004eded4574d4509ed669c686b0294059aec9c0561e3665940a7a0586e27/run_canonical.sh"
+    "sha256": "f5f7ae5cb2b50aa1196cf82d985c1707bbd8813c7208a3fd5e84b17fdde79418",
+    "source": "shared/f5f7ae5cb2b50aa1196cf82d985c1707bbd8813c7208a3fd5e84b17fdde79418/run_canonical.sh"
   },
   "verifier/run_official.sh": {
     "mode": 493,

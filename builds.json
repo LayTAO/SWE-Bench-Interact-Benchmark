@@ -19,7 +19,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/adobe__react-spectrum-2181/environment/Dockerfile",
-      "dockerfile_sha256": "a97939bf5e50d98026980e6a8da92f942168330fb79f54520e56027b95be4e3c",
+      "dockerfile_sha256": "ea862c7e5a0def8b75f5643badb7cb3a0ecf979a9572a324446d5388c99d912e",
       "mode": "source",
       "source_commit": "f847cd08b59ec7aa42b5f8bdd6b456738b9497ed"
     },
@@ -35,7 +35,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/adobe__react-spectrum-5102/environment/Dockerfile",
-      "dockerfile_sha256": "e981674c873d3420b66880ce5c2066db2cc845bbc04171fdfbfa3d883b0b7b47",
+      "dockerfile_sha256": "6fcbd48d89d23fa5033a6defbae70e57b7cbf10fe24e8cdeaaf156e17cb434b7",
       "mode": "source",
       "source_commit": "77b3442e4150116f3d35995b5a98b582d9e6f231"
     },
@@ -115,7 +115,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/adobe__react-spectrum-7973/environment/Dockerfile",
-      "dockerfile_sha256": "3bae79737b522ce6a274e765ab4f2bd2e4b7e75a0dee4e36c2b9f7c6436df8b5",
+      "dockerfile_sha256": "5d2b041b77e46faba3f8e4fdaa2914c918542e98cc593261597080a5d2015512",
       "mode": "source",
       "source_commit": "b0118e99853f9785e930fbc3e01f47ce5c43ff79"
     },
@@ -419,7 +419,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/ariakit__ariakit-6344/environment/Dockerfile",
-      "dockerfile_sha256": "6549430fb1380a40e2761608155ddb7b241dd36e6d9574aac28b22d48e648a1c",
+      "dockerfile_sha256": "173d6c24678c8f6c8a72e3c1782b38aac4dfc7867f36a124bc5363ef011e1f64",
       "mode": "source",
       "source_commit": "0cdb9864926a3835a6a456906f7e2c64fe4a5ae5"
     },
@@ -435,7 +435,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/ariakit__ariakit-6346/environment/Dockerfile",
-      "dockerfile_sha256": "b120d59c3b881d79240dc5ec8f67763bc2d6ca29a2dcefee14e1726dab52c5bb",
+      "dockerfile_sha256": "9b46c8211e0aa8530e75deb01ddb33d3c03400021919a0af6223d5d624ed7ddf",
       "mode": "source",
       "source_commit": "61dbfcd19ac9ed48ba0f05a5e94dfb6f4e27a888"
     },
@@ -451,7 +451,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/ariakit__ariakit-6663/environment/Dockerfile",
-      "dockerfile_sha256": "192bff862fdd6399e78e5d40cc643a8f49efc293fc9add725511793374a7e0a0",
+      "dockerfile_sha256": "85a2990f1195a2d5ee42c16e54bf779c53344395a7093d3dfb50461ff84fa321",
       "mode": "source",
       "source_commit": "1b7eb8ace9921b524ef5187052e744a261ebf163"
     },
@@ -467,7 +467,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/carbon-design-system__carbon-17119/environment/Dockerfile",
-      "dockerfile_sha256": "e4bdaf46038942c078990f65cea7fecb2ecf5dfaf102d69166fc7789324a965b",
+      "dockerfile_sha256": "42ea5526172cf22ee3c4aa3795387f7bc6df2b8729ec8bde3ea6e09f468883e8",
       "mode": "source",
       "source_commit": "10ecdd310a8eaf2e0e7bf21ec522d0c8ff3a6f6b"
     },
@@ -483,7 +483,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/carbon-design-system__carbon-17903/environment/Dockerfile",
-      "dockerfile_sha256": "aaa15d8245f967aa612f6d8082ba9918582a05334a6c15e8a56b5979b8bc6021",
+      "dockerfile_sha256": "bb70209fbc0e290098838ac177f00f2254c9c3fcf5d0344be12c31e68a47f459",
       "mode": "source",
       "source_commit": "ff57b2cbfb073c67981edbddeea8f66e9460e646"
     },
@@ -515,7 +515,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/carbon-design-system__carbon-20771/environment/Dockerfile",
-      "dockerfile_sha256": "a71c9d6b7ca231bbec8686c082c83361b9c33ce5efc886ae36417e0b094d59d2",
+      "dockerfile_sha256": "8e97b843fd7c5633b282e8a8fae43c35f470120add5e60a1805e98a7a9321e22",
       "mode": "source",
       "source_commit": "925b746d92d72f9c9cf3fa3434843d049d630680"
     },
@@ -579,7 +579,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/carbon-design-system__carbon-22320/environment/Dockerfile",
-      "dockerfile_sha256": "8b7a775c34dca912ad0788c4f97c19638d90746a83d043b228c22f3356eeb821",
+      "dockerfile_sha256": "eeb1bf89002e3ad4f488a7e6380e1f67a0e1560f931c2e4e4832a3039968efea",
       "mode": "source",
       "source_commit": "6d7540d5a22a0c70b3b81bac0733e5abab5e8376"
     },
@@ -627,7 +627,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/element-plus__element-plus-22878/environment/Dockerfile",
-      "dockerfile_sha256": "eb1ae7d76a4bbee0ad7d9283b109d92059ce45661f5ea03296f1c09ac84dec1b",
+      "dockerfile_sha256": "b13f5837d3d9c42a6cbe4e4c32d4a00373cd779f6147281951206780b8031756",
       "mode": "source",
       "source_commit": "a482ba1d720a95ab38d0530998bd1bb94b86dba5"
     },
@@ -643,7 +643,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/element-plus__element-plus-24006/environment/Dockerfile",
-      "dockerfile_sha256": "138763b3b6e9215733e393dfca621b5ab8336b5098e8ce5cc82488081fad3d71",
+      "dockerfile_sha256": "fffb023765eba4f765e2209cde5747acdb5ac1e4dee3ff13848b547c36fdb184",
       "mode": "source",
       "source_commit": "87fb0ab045ca1ecd6c50ba305616ca9bf10bba64"
     },
@@ -1075,7 +1075,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/patternfly__patternfly-react-11384/environment/Dockerfile",
-      "dockerfile_sha256": "f8d3e454ed34c3928e5eb1595f0efe2a8fc16442cc7b09eda79d66e5671fbe72",
+      "dockerfile_sha256": "e2e086e7f6a1419eb523049036ab21be892c1843a5f7fea279fee2ea2afe199e",
       "mode": "source",
       "source_commit": "b9815886da3adc7a96bc2d48adacf86e8a752e61"
     },
@@ -1219,7 +1219,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/shoelace-style__webawesome-2673/environment/Dockerfile",
-      "dockerfile_sha256": "b03ca90db45efb1e5cc5922d9f23bd8e41aba39e42d2736b5b9347d4e5cbb206",
+      "dockerfile_sha256": "7c8c91f153c1a3900e1dc0bc9486be1944b594507a92d3361b2ddaedb7e9220e",
       "mode": "source",
       "source_commit": "b2f63906a701c4463f66c6ef557eb0a06fb0f36c"
     },
@@ -1251,14 +1251,14 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/shopify__polaris-react-7097/environment/Dockerfile",
-      "dockerfile_sha256": "380c1935a2d9201f134bb5c0d84b6db0ff9a0ecb3c699d772e93df56082226ce",
+      "dockerfile_sha256": "6d653433c5653a2212ee6701515ac5e99e9bd1499c1af50170b8e2094910758a",
       "mode": "source",
       "source_commit": "8e16d15d1249591e9e854ae294ec8ce8ab3e3594"
     },
     "verifier": {
       "build_verified": false,
       "dockerfile": "tasks/shopify__polaris-react-7097/tests/Dockerfile",
-      "dockerfile_sha256": "2a93425c123d486e1f229ff1633cadbae7d25bc8e443c0f10990adc8613b7e3c",
+      "dockerfile_sha256": "2f96531f0a014a5133bc75fad4a55851f3414ebb76624beb5921ceb7527e7cd2",
       "mode": "source",
       "source_commit": "8e16d15d1249591e9e854ae294ec8ce8ab3e3594"
     }
@@ -1267,7 +1267,7 @@
     "agent": {
       "build_verified": false,
       "dockerfile": "tasks/sl-design-system__components-3150/environment/Dockerfile",
-      "dockerfile_sha256": "fcf2f704849ab7d268656e7b00b8e5b6d61e549f74e1f12f03017b14f1971db5",
+      "dockerfile_sha256": "525697f9236b4f4f49a7142e4b489d1473441f45f005f09e758584aa03420960",
       "mode": "source",
       "source_commit": "946eda3c933c3fe90c460f0645d90cd45e5738b4"
     },
