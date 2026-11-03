@@ -61,8 +61,8 @@
   },
   "canonical_repro/legacy/public/repro/tooling/capture.mjs": {
     "mode": 420,
-    "sha256": "acaa1caa2312bd2abacdc4c1f0868b022593b57b587ff632749e6ad2d2157d56",
-    "source": "shared/acaa1caa2312bd2abacdc4c1f0868b022593b57b587ff632749e6ad2d2157d56/capture.mjs"
+    "sha256": "4dd00cf89e12ee608c3f67bdf18b0e2dbf1a2b888d0e58dcc5a46c86a5d18b53",
+    "source": "shared/4dd00cf89e12ee608c3f67bdf18b0e2dbf1a2b888d0e58dcc5a46c86a5d18b53/capture.mjs"
   },
   "canonical_repro/legacy/public/repro/tooling/package.json": {
     "mode": 420,
@@ -77,7 +77,7 @@
   "canonical_repro/playwright/scenario.spec.ts": {
     "mode": 420,
     "sha256": "acaa1caa2312bd2abacdc4c1f0868b022593b57b587ff632749e6ad2d2157d56",
-    "source": "shared/acaa1caa2312bd2abacdc4c1f0868b022593b57b587ff632749e6ad2d2157d56/capture.mjs"
+    "source": "shared/acaa1caa2312bd2abacdc4c1f0868b022593b57b587ff632749e6ad2d2157d56/scenario.spec.ts"
   },
   "canonical_repro/scripts/validate.sh": {
     "mode": 493,

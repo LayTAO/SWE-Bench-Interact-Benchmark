@@ -48,6 +48,8 @@ def prepare(root: Path, output: Path, instances=None, source_provider=None) -> d
             for file in ('Dockerfile', '.dockerignore'):
                 shutil.copyfile(source / name / file, task / name / file)
         shutil.copyfile(source / 'environment/docker-compose.yaml', task / 'environment/docker-compose.yaml')
+        if (source / 'environment/ready').is_dir():
+            shutil.copytree(source / 'environment/ready', task / 'environment/ready')
         materials = json.loads((source / 'tests/materials.json').read_text())
         mounts = []
         for relative, entry in materials.items():

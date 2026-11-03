@@ -31,3 +31,12 @@ RUN npm install --global yarn@1.22.22 \
 RUN yarn workspace @shopify/polaris-tokens build
 RUN sed -i "/    input: 'src\\/index.ts',/i\\    maxParallelFileReads: 32," polaris-icons/rollup.config.mjs \
  && yarn workspace @shopify/polaris-icons build
+
+# Ready environment repair: public tools only; keep the buggy source baseline.
+RUN git restore --source=HEAD --worktree -- yarn.lock polaris-icons/rollup.config.mjs
+COPY ready/ /opt/swe-bench-ready/
+RUN chmod 0755 /opt/swe-bench-ready/*.sh \
+ && ln -s /opt/swe-bench-ready/prepare.sh /usr/local/bin/swe-bench-prepare \
+ && ln -s /opt/swe-bench-ready/test.sh /usr/local/bin/swe-bench-test \
+ && swe-bench-prepare \
+ && git diff --exit-code && git diff --cached --exit-code

@@ -15,3 +15,12 @@ RUN git init -b main \
   && git add -A \
   && git commit -qm 'base snapshot'
 RUN export COREPACK_HOME=/corepack; corepack enable && corepack prepare pnpm@10.33.2 --activate && pnpm config set store-dir /pnpm/store && pnpm install --frozen-lockfile
+
+# Ready environment repair: public tools only; keep the buggy source baseline.
+ENV COREPACK_HOME=/corepack
+COPY ready/ /opt/swe-bench-ready/
+RUN chmod 0755 /opt/swe-bench-ready/*.sh \
+ && ln -s /opt/swe-bench-ready/prepare.sh /usr/local/bin/swe-bench-prepare \
+ && ln -s /opt/swe-bench-ready/test.sh /usr/local/bin/swe-bench-test \
+ && swe-bench-prepare \
+ && git diff --exit-code && git diff --cached --exit-code

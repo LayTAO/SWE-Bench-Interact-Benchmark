@@ -156,3 +156,8 @@ Arm the suppression only when the restore will actually produce a batch event, a
 One side effect to verify: today the init-time leak also swallows the very first `selectedId` batch event (typically the automatic `undefined` → first enabled tab assignment). Un-masking that flush means an `activeId` write at init can propagate to the parent select/combobox store (`activeId` is a shared key), so the first open of a combobox-with-tabs composition with uncontrolled `selectedId` should be checked; if that write turns out to be undesirable there, the sync should be guarded explicitly (e.g. while the parent popover is closed) rather than relying on the accidental swallow.
 
 *Found by an automated multi-agent audit of the repo at commit [`11bd4458d`](https://github.com/ariakit/ariakit/tree/11bd4458de6447b996dd882ea0c85eb801a6cd03) and verified with a real-browser Playwright reproduction (user-level interactions only).*
+
+Environment tools are preinstalled. From `/workspace/repo`, run `swe-bench-prepare`
+to regenerate the public workspace dependencies and `swe-bench-test` to run the
+focused development check. Additional test-runner flags can be appended. These
+checks exercise the base repository and are separate from final evaluation.

@@ -44,15 +44,20 @@
     "sha256": "8e9c3372068845713a3467547568e1221675cdd8fc8b7d1e813c754850752a42",
     "source": "shared/8e9c3372068845713a3467547568e1221675cdd8fc8b7d1e813c754850752a42/vite.config.mjs"
   },
+  "canonical_repro/legacy/public/repro/scripts/build-candidate.sh": {
+    "mode": 493,
+    "sha256": "60ab35d765680f079b552486b5d2f5bd581a1ca87b0fc0fb05b2e4c3e56a5f9a",
+    "source": "shared/60ab35d765680f079b552486b5d2f5bd581a1ca87b0fc0fb05b2e4c3e56a5f9a/build-candidate.sh"
+  },
   "canonical_repro/legacy/public/repro/scripts/container.sh": {
     "mode": 493,
-    "sha256": "b2c4e6908b056c4c0935539112fbd521180eab71ab2747f2445d0d2aa26721d9",
-    "source": "shared/b2c4e6908b056c4c0935539112fbd521180eab71ab2747f2445d0d2aa26721d9/container.sh"
+    "sha256": "032bf34a3732ab94985953cf283e02e986d567113d1ae00382ae23717a0e1c8e",
+    "source": "shared/032bf34a3732ab94985953cf283e02e986d567113d1ae00382ae23717a0e1c8e/container.sh"
   },
   "canonical_repro/legacy/public/repro/scripts/run.sh": {
     "mode": 493,
-    "sha256": "6754227169531fbffe17fe54df0fedd5dc2bd89785907e11c28b88c83f028a92",
-    "source": "shared/6754227169531fbffe17fe54df0fedd5dc2bd89785907e11c28b88c83f028a92/run.sh"
+    "sha256": "d2df9ac9d0b16526dcf37ff1cb308e6d2a5f17218751daa9c04fe90648e7c60a",
+    "source": "shared/d2df9ac9d0b16526dcf37ff1cb308e6d2a5f17218751daa9c04fe90648e7c60a/run.sh"
   },
   "canonical_repro/legacy/public/repro/tooling/package.json": {
     "mode": 420,

@@ -38,3 +38,6 @@ COPY canonical_repro/ /tests/canonical_repro/
 COPY verifier/ /tests/verifier/
 RUN for tooling_dir in /tests/canonical_repro/tooling /tests/canonical_repro/legacy/public/repro/tooling; do if [ -f "$tooling_dir/package-lock.json" ]; then npm ci --prefix "$tooling_dir" --no-audit --no-fund; elif [ -f "$tooling_dir/package.json" ]; then npm install --prefix "$tooling_dir" --no-audit --no-fund; fi; done
 RUN chmod 0755 /tests/test.sh /tests/verifier/*.sh && ln -sfn /tests/verifier/inprocess-engine.sh /usr/local/bin/docker && ln -sfn /tests/verifier /benchmark && mkdir -p /state-cache /logs
+
+# Keep environment build edits out of the source baseline.
+RUN git restore --source=HEAD --worktree -- yarn.lock polaris-icons/rollup.config.mjs

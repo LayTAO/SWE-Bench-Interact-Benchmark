@@ -23,3 +23,8 @@ https://github.com/user-attachments/assets/6d9ed9cc-9194-458a-a254-d6d21279bc8d
 ### Expected behavior
 
 Typing `사과` produces the string `사과` in the input, with `autoSelect` continuing to highlight the first matching item — same as when `autoSelect` is off, or on non-CJK keyboards.
+
+Environment tools are preinstalled. From `/workspace/repo`, run `swe-bench-prepare`
+to regenerate the public workspace dependencies and `swe-bench-test` to run the
+focused development check. Additional test-runner flags can be appended. These
+checks exercise the base repository and are separate from final evaluation.

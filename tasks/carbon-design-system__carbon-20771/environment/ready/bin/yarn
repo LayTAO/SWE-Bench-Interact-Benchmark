@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec node /workspace/repo/.yarn/releases/yarn-4.10.3.cjs "$@"

@@ -126,3 +126,8 @@ Make the protection for the dialog's own elements positive instead of relying on
 This preserves the hovercard/tooltip behavior from #6198 exactly: genuinely new DOM nodes carry neither mark, so they still trigger the close while the dialog is unfocused. When `focused` is true the new check is behaviorally redundant (inside elements were never marked outside, so the existing check already returned early). Both `markTreeOutside` call sites in `dialog.tsx` (modal and non-modal) are covered without changing their signatures.
 
 *Found by an automated multi-agent audit of the repo at commit [`11bd4458d`](https://github.com/ariakit/ariakit/tree/11bd4458de6447b996dd882ea0c85eb801a6cd03) and verified with a real-browser Playwright reproduction (user-level interactions only).*
+
+Environment tools are preinstalled. From `/workspace/repo`, run `swe-bench-prepare`
+to regenerate the public workspace dependencies and `swe-bench-test` to run the
+focused development check. Additional test-runner flags can be appended. These
+checks exercise the base repository and are separate from final evaluation.
